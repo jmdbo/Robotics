@@ -11,7 +11,7 @@
 #include "serial32.h"
 
 
-#define _USE_REAL_ROBOT_
+//#define _USE_REAL_ROBOT_
 
 
 

@@ -18,7 +18,7 @@ int InitializeRobot(TCommPort *Cp)
 void move_one_axis(TCommPort *Cp,int axis,int steps)
 {  
   int tam;
-  char command[20] = "0x08+axis-1,steps,3";
+  char command[20] = { 0x08 + axis - 1, steps, 3 };
   Cp->Enviar(command, 3, tam);
   printf("\n%s...", Cp->GetMensagem());
   Sleep(500);
@@ -35,8 +35,15 @@ void move_one_axis(TCommPort *Cp,int axis,int steps)
 
 void robot_control_routine(TCommPort *port)
 {
+	bool exit = FALSE;
 	//Create the control routine here with a menu that allows the user to choose
 	//which operation the robot should perform (e.g. move_one_axis, move_one_axis_speed...)
+	while (!exit){
+		move_one_axis(port, 1, 1);
+		getchar();
+		getchar();
+		exit = true;
+	}
 }
 
 void main(void)
