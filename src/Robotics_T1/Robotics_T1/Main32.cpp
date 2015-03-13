@@ -18,7 +18,16 @@ int InitializeRobot(TCommPort *Cp)
 void move_one_axis(TCommPort *Cp,int axis,int steps)
 {  
   int tam;
-  char Buff[20];
+  char command[20] = "0x08+axis-1,steps,3";
+  Cp->Enviar(command, 3, tam);
+  printf("\n%s...", Cp->GetMensagem());
+  Sleep(500);
+  //robot will respond with 15
+  char Buff[128];
+  Cp->EsperarRecepcao();
+  Cp->Receber(Buff, 1, tam);
+  printf("\n%s...", Cp->GetMensagem());
+  return;
   //YOUR CODE GOES HERE
 }
 
