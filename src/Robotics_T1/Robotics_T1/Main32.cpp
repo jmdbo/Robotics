@@ -28,7 +28,20 @@ void move_one_axis(TCommPort *Cp,int axis,int steps)
   Cp->Receber(Buff, 1, tam);
   printf("\n%s...", Cp->GetMensagem());
   return;
-  //YOUR CODE GOES HERE
+}
+
+void move_all_axis(TCommPort *Cp,int steps0,int steps1, int steps2, int steps3, int steps4, int steps5){
+	int tam;
+	char command[20] = { 0x0F, steps0, 3 };
+	Cp->Enviar(command, 3, tam);
+	printf("\n%s...", Cp->GetMensagem());
+	Sleep(500);
+	//robot will respond with 15
+	char Buff[128];
+	Cp->EsperarRecepcao();
+	Cp->Receber(Buff, 1, tam);
+	printf("\n%s...", Cp->GetMensagem());
+	return;
 }
 
 //You should implement the other required operations here.
@@ -39,7 +52,7 @@ void robot_control_routine(TCommPort *port)
 	//Create the control routine here with a menu that allows the user to choose
 	//which operation the robot should perform (e.g. move_one_axis, move_one_axis_speed...)
 	while (!exit){
-		move_one_axis(port, 1, 1);
+		move_one_axis(port, 2, 0);
 		getchar();
 		getchar();
 		exit = true;
