@@ -19,11 +19,12 @@ int InitializeRobot(TCommPort *Cp)
 void move_one_axis(TCommPort *Cp,int axis,int steps)
 {  
   int tam;
-  char Buff[20] = {0x08 + axis - 1, steps, 3};
+  char command[20] = {0x08 + axis - 1, steps, 3};
   
-  Cp->Enviar(Buff, 3, tam);
+  Cp->Enviar(command, 3, tam);
   printf("\n%s...", Cp->GetMensagem());
   Sleep(500);
+  char Buff[128];
   //robot will respond with 15
   Cp->EsperarRecepcao();
   Cp->Receber(Buff, 1, tam);
@@ -35,11 +36,12 @@ void move_one_axis(TCommPort *Cp,int axis,int steps)
 
 void move_one_axis_speed(TCommPort* Cp, int axis, int steps, int speed){
 	int tam;
-	char Buff[20] = { 0x08 + axis - 1, steps,speed, 3 };
+	char command[20] = { 0x08 + axis - 1, steps, speed, 3 };
 
-	Cp->Enviar(Buff, 4, tam);
+	Cp->Enviar(command, 4, tam);
 	printf("\n%s...", Cp->GetMensagem());
 	Sleep(500);
+	char Buff[128];
 	//robot will respond with 15
 	Cp->EsperarRecepcao();
 	Cp->Receber(Buff, 1, tam);
@@ -51,11 +53,12 @@ void move_one_axis_speed(TCommPort* Cp, int axis, int steps, int speed){
 
 void move_multiple_axis(TCommPort *Cp){
 	int tam;
-	char Buff[20] = { 0x0F, 0x96, 0x96, 0x96, 0x96, 0x96, 0x96, 3 };
+	char command[20]= { 0x0F, 0x96, 0x96, 0x96, 0x96, 0x96, 0x96, 3 };
 
-	Cp->Enviar(Buff, 8, tam);
+	Cp->Enviar(command, 8, tam);
 	printf("\n%s...", Cp->GetMensagem());
 	Sleep(500);
+	char Buff[128];
 	//robot wil respond with 15
 	Cp->EsperarRecepcao();
 	Cp->Receber(Buff, 1, tam);
