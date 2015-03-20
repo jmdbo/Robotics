@@ -51,9 +51,9 @@ void move_one_axis_speed(TCommPort* Cp, int axis, int steps, int speed){
 
 void move_multiple_axis(TCommPort *Cp){
 	int tam;
-	char Buff[20] = { 0x47, 180, 3 };
+	char Buff[20] = { 0x0F, 0x96, 0x96, 0x96, 0x96, 0x96, 0x96, 3 };
 
-	Cp->Enviar(Buff, 3, tam);
+	Cp->Enviar(Buff, 8, tam);
 	printf("\n%s...", Cp->GetMensagem());
 	Sleep(500);
 	//robot wil respond with 15
