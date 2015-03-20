@@ -108,6 +108,74 @@ void move_multiple_axis_speed(TCommPort *Cp, int* steps, int* speed){
 	return;
 }
 
+int degrees_to_steps(double degrees, int axis){
+	double stepF;
+	int step;
+	switch (axis)
+	{
+		case 1:
+			degrees = degrees + 80;
+			stepF = degrees / 0.62745098039215686274509803921569;
+			step = (int)stepF + 0.5;
+			break;
+		case 2:
+			degrees = degrees + 33.3333333333333333333333333333333;
+			stepF = degrees / 0.3921568627450980392156862745098;
+			step = (int)stepF + 0.5;
+			break;
+		case 3:
+			degrees = degrees + 100;
+			stepF = degrees / 0.3921568627450980392156862745098;
+			step = (int)stepF + 0.5;
+			break;
+		case 4:
+			degrees = degrees + 100;
+			stepF = degrees / 0.78431372549019607843137254901961;
+			step = (int)stepF + 0.5;
+			break;
+		case 5:
+			degrees = degrees + 200;
+			stepF = degrees / 0.78431372549019607843137254901961;
+			step = (int)stepF + 0.5;
+			break;
+		default:
+			break;
+	}
+	if (step > 255){
+		return -1;
+	} else return step;
+}
+
+double steps_to_degrees(int steps,int axis){
+	double degrees;
+	switch (axis)
+	{
+		case 1:
+			degrees = steps * 0.62745098039215686274509803921569;
+			degrees = degrees - 80;
+			break;
+		case 2:
+			degrees = steps * 0.3921568627450980392156862745098;
+			degrees = degrees - 33.3333333333333333333333333333333;
+			break;
+		case 3:
+			degrees = steps * 0.3921568627450980392156862745098;
+			degrees = degrees - 100;
+			break;
+		case 4:
+			degrees = steps * 0.78431372549019607843137254901961;
+			degrees = degrees - 100;
+			break;
+		case 5:
+			degrees = steps * 0.78431372549019607843137254901961;
+			degrees = degrees - 200;
+			break;
+		default:
+			break;
+	}
+	return degrees;
+}
+
 //You should implement the other required operations here.
 
 void robot_control_routine(TCommPort *port)
