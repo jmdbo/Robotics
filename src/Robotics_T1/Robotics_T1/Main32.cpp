@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "serial32.h"
+#define _CRT_SECURE_NO_WARNINGS
 
 int InitializeRobot(TCommPort *Cp)
 {
@@ -18,29 +19,48 @@ int InitializeRobot(TCommPort *Cp)
 void move_one_axis(TCommPort *Cp,int axis,int steps)
 {  
   int tam;
-  char command[20] = { 0x08 + axis - 1, steps, 3 };
-  Cp->Enviar(command, 3, tam);
+  char Buff[20] = {0x08 + axis - 1, steps, 3};
+  
+  Cp->Enviar(Buff, 3, tam);
   printf("\n%s...", Cp->GetMensagem());
   Sleep(500);
   //robot will respond with 15
-  char Buff[128];
   Cp->EsperarRecepcao();
   Cp->Receber(Buff, 1, tam);
   printf("\n%s...", Cp->GetMensagem());
+
+  
   return;
 }
 
-void move_all_axis(TCommPort *Cp,int steps0,int steps1, int steps2, int steps3, int steps4, int steps5){
+void move_one_axis_speed(TCommPort* Cp, int axis, int steps, int speed){
 	int tam;
-	char command[20] = { 0x0F, steps0, 3 };
-	Cp->Enviar(command, 3, tam);
+	char Buff[20] = { 0x08 + axis - 1, steps,speed, 3 };
+
+	Cp->Enviar(Buff, 4, tam);
 	printf("\n%s...", Cp->GetMensagem());
 	Sleep(500);
 	//robot will respond with 15
-	char Buff[128];
 	Cp->EsperarRecepcao();
 	Cp->Receber(Buff, 1, tam);
 	printf("\n%s...", Cp->GetMensagem());
+	
+
+	return;
+}
+
+void move_multiple_axis(TCommPort *Cp){
+	int tam;
+	char Buff[20] = { 0x0F, 0x96, 0x96, 0x96, 0x96, 0x96, 0x96, 3 };
+
+	Cp->Enviar(Buff, 8, tam);
+	printf("\n%s...", Cp->GetMensagem());
+	Sleep(500);
+	//robot wil respond with 15
+	Cp->EsperarRecepcao();
+	Cp->Receber(Buff, 1, tam);
+	printf("\n%s...",Cp->GetMensagem());
+
 	return;
 }
 
@@ -48,14 +68,39 @@ void move_all_axis(TCommPort *Cp,int steps0,int steps1, int steps2, int steps3, 
 
 void robot_control_routine(TCommPort *port)
 {
-	bool exit = FALSE;
 	//Create the control routine here with a menu that allows the user to choose
 	//which operation the robot should perform (e.g. move_one_axis, move_one_axis_speed...)
-	while (!exit){
-		move_one_axis(port, 2, 0);
-		getchar();
-		getchar();
-		exit = true;
+	int menu=0;
+	int axis = 0, steps = 0,speed=0;
+	bool exit = TRUE;
+
+	while (exit){	
+
+		printf("\n**********Menu**********\n1-move_one_axis\n2-multiple axis");
+		scanf(" %d", &menu);
+
+		switch (menu)
+		{
+			case 1: 
+				printf("axis steps: ");
+				scanf("%d %d", &axis, &steps);
+				move_one_axis(port, axis, steps); 
+				menu = 0; 
+				break;
+			case 2: 
+				move_multiple_axis(port);
+				break;
+			case 3:scanf(" %d %d %d",&axis, &steps,&speed);
+				move_one_axis_speed(port, axis, steps, speed);
+				break;
+			case 10: exit = FALSE;
+			case 0:
+			default: break;
+		}
+		axis = 0;
+		steps = 0;
+		speed = 0;
+		menu = 0;
 	}
 }
 
