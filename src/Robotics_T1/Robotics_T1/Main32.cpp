@@ -116,34 +116,50 @@ void robot_control_routine(TCommPort *port)
 	//which operation the robot should perform (e.g. move_one_axis, move_one_axis_speed...)
 	int menu=0;
 	int axis = 0, steps = 0,speed=0;
+	int steparray[6];
 	bool exit = TRUE;
 
 	while (exit){	
 
-		printf("\n**********Menu**********\n1-move_one_axis\n2-multiple axis");
+		printf("\n**********Menu**********\n1-move_one_axis\n2-move_one_axis_speed");
+		printf("\n3-multiple axis\n4-multiple axis_speed");
 		scanf(" %d", &menu);
 
 		switch (menu)
 		{
 			case 1: 
+				//move one axis
 				printf("axis steps: ");
 				scanf("%d %d", &axis, &steps);
 				move_one_axis(port, axis, steps); 
-				menu = 0; 
 				break;
 			case 2: 
+				//move one axis speed 
+				printf("axis steps speed: ");
+				scanf("%d %d %d", &axis, &steps, &speed);
+				move_one_axis_speed(port, axis, steps,speed);
+				break;
+			case 3:
+				// move multiple axis
+				for (int i = 0; i < 6; i++)
+				{
+					printf("Axis %d step: ");
+					scanf(" %d", steparray[i]);
+				}
+				move_multiple_axis(port, steparray);
+				break;
+			case 4:
+				//move multiple axis speed
+				printf("");
 				int vector[6];
 				for (int i = 0; i < 6; i++)
 				{
-					vector[i] = -1;
+					printf("Axis %d step: ");
+					scanf(" %d", steparray[i]); 
 				}
 				move_multiple_axis_speed(port, vector, vector);
 				break;
-			case 3:
-				printf("axis steps speed: ");
-				scanf(" %d %d %d",&axis, &steps,&speed);
-				move_one_axis_speed(port, axis, steps, speed);
-				break;
+
 			case 10: exit = FALSE;
 			case 0:
 			default: break;
