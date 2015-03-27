@@ -99,7 +99,8 @@ void move_multiple_axis_speed(TCommPort *Cp, int* steps, int* speed){
 }
 
 int* all_motor_status(TCommPort *Cp ){
-	int steps[6],tam;
+	int tam;
+	int* steps = (int*) malloc(6 * sizeof(int));
 	char Buff[128], command1[20] = { 0x47, 3 };
 
 	Cp->Enviar(command1, 2, tam);
@@ -121,29 +122,29 @@ int degrees_to_steps(double degrees, int axis){
 	switch (axis)
 	{
 	case 1:
-		degrees = degrees + 80;
+		degrees = 80 - degrees;
 		stepF = degrees / 0.62745098039215686274509803921569;
-		step = (int)stepF + 0.5;
+		step = (int)(stepF + 0.5);
 		break;
 	case 2:
-		degrees = degrees + 33.3333333333333333333333333333333;
+		degrees = 66.6666666666666666666666666666666 - degrees;
 		stepF = degrees / 0.3921568627450980392156862745098;
-		step = (int)stepF + 0.5;
+		step = (int)(stepF + 0.5);
 		break;
 	case 3:
-		degrees = degrees + 100;
+		degrees = 0 - degrees;
 		stepF = degrees / 0.3921568627450980392156862745098;
-		step = (int)stepF + 0.5;
+		step = (int)(stepF + 0.5);
 		break;
 	case 4:
-		degrees = degrees + 100;
+		degrees = 100-degrees ;
 		stepF = degrees / 0.78431372549019607843137254901961;
-		step = (int)stepF + 0.5;
+		step = (int)(stepF + 0.5);
 		break;
 	case 5:
-		degrees = degrees + 200;
+		degrees = 0 - degrees;
 		stepF = degrees / 0.78431372549019607843137254901961;
-		step = (int)stepF + 0.5;
+		step = (int)(stepF + 0.5);
 		break;
 	default:
 		break;
@@ -160,7 +161,7 @@ int mm_to_steps(double distance){
 
 	distance = distance + 60;
 	stepsf = distance / 0.2352941176470588;
-	steps = (int)stepsf + 0.5;
+	steps = (int)(stepsf + 0.5);
 
 	return steps;
 }
@@ -171,23 +172,21 @@ double steps_to_degrees(int steps, int axis){
 	{
 	case 1:
 		degrees = steps * 0.62745098039215686274509803921569;
-		degrees = degrees - 80;
+		degrees = degrees + 80;
 		break;
 	case 2:
 		degrees = steps * 0.3921568627450980392156862745098;
-		degrees = degrees - 33.3333333333333333333333333333333;
+		degrees = degrees + 66.6666666666666666666666666666666;
 		break;
 	case 3:
 		degrees = steps * 0.3921568627450980392156862745098;
-		degrees = degrees - 100;
 		break;
 	case 4:
 		degrees = steps * 0.78431372549019607843137254901961;
-		degrees = degrees - 100;
+		degrees = degrees + 100;
 		break;
 	case 5:
 		degrees = steps * 0.78431372549019607843137254901961;
-		degrees = degrees - 200;
 		break;
 	default:
 		break;
@@ -225,7 +224,7 @@ void robot_control_routine(TCommPort *port)
 		{
 		case 1:
 			//move one axis
-			printf("axis steps: ");
+			printf("axis degrees: ");
 			scanf("%d %d", &axis, &degrees);
 			move_one_axis(port, axis, degrees_to_steps(degrees,axis));
 			break;
@@ -246,7 +245,6 @@ void robot_control_routine(TCommPort *port)
 			break;
 		case 4:
 			//move multiple axis speed
-			int vector[6];
 			for (int i = 0; i < 6; i++)
 			{
 				printf("Axis %d step speed: ",i+1);

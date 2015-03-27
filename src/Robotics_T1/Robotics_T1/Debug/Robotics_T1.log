@@ -1,25 +1,18 @@
-﻿Build started 21/03/2015 20:41:27.
+﻿Build started 27/03/2015 16:56:15.
      1>Project "C:\dev\Robotics\src\Robotics_T1\Robotics_T1\Robotics_T1.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Main32.cpp
          Main32.cpp
-     1>c:\dev\robotics\src\robotics_t1\robotics_t1\main32.cpp(115): warning C4172: returning address of local variable or temporary
-     1>c:\dev\robotics\src\robotics_t1\robotics_t1\main32.cpp(126): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\dev\robotics\src\robotics_t1\robotics_t1\main32.cpp(131): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\dev\robotics\src\robotics_t1\robotics_t1\main32.cpp(136): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\dev\robotics\src\robotics_t1\robotics_t1\main32.cpp(141): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\dev\robotics\src\robotics_t1\robotics_t1\main32.cpp(146): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\dev\robotics\src\robotics_t1\robotics_t1\main32.cpp(202): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\dev\robotics\src\robotics_t1\robotics_t1\main32.cpp(221): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(283) : see declaration of 'scanf'
-     1>c:\dev\robotics\src\robotics_t1\robotics_t1\main32.cpp(209): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\dev\robotics\src\robotics_t1\robotics_t1\main32.cpp(228): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(283) : see declaration of 'scanf'
-     1>c:\dev\robotics\src\robotics_t1\robotics_t1\main32.cpp(215): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\dev\robotics\src\robotics_t1\robotics_t1\main32.cpp(234): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(283) : see declaration of 'scanf'
-     1>c:\dev\robotics\src\robotics_t1\robotics_t1\main32.cpp(223): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\dev\robotics\src\robotics_t1\robotics_t1\main32.cpp(242): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(283) : see declaration of 'scanf'
-     1>c:\dev\robotics\src\robotics_t1\robotics_t1\main32.cpp(233): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\dev\robotics\src\robotics_t1\robotics_t1\main32.cpp(251): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(283) : see declaration of 'scanf'
-     1>c:\dev\robotics\src\robotics_t1\robotics_t1\main32.cpp(229): warning C4101: 'vector' : unreferenced local variable
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\dev\Robotics\src\Robotics_T1\Debug\Robotics_T1.exe" /INCREMENTAL /NOLOGO wsock32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\dev\Robotics\src\Robotics_T1\Debug\Robotics_T1.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\dev\Robotics\src\Robotics_T1\Debug\Robotics_T1.lib" /MACHINE:X86 Debug\Main32.obj
          Debug\serial32.obj
@@ -29,4 +22,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:02.46
+Time Elapsed 00:00:00.64
