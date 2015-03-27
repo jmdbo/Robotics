@@ -1,6 +1,10 @@
+#define _CRT_SECURE_NO_WARNINGS
+
 #include "stdafx.h"
 #include "serial32.h"
-#define _CRT_SECURE_NO_WARNINGS
+#include "math.h"
+
+
 
 int InitializeRobot(TCommPort *Cp)
 {
@@ -14,6 +18,12 @@ int InitializeRobot(TCommPort *Cp)
 	Cp->Receber(Buff, 1, tam);
 	printf("\n%s...", Cp->GetMensagem());
 	return Buff[0];
+}
+
+int direct_kinematics(float* theta,float* posAtt){
+	if ( (sizeof(theta) != sizeof(float)*5) || (sizeof(posAtt) != sizeof(float)*6) ){
+		return -1;
+	}
 }
 
 void move_one_axis(TCommPort *Cp, int axis, int steps)
