@@ -3,15 +3,11 @@
 #include "stdafx.h"
 #include "serial32.h"
 #include "math.h"
-<<<<<<< HEAD
-#define _CRT_SECURE_NO_WARNINGS
-=======
 
-
->>>>>>> master
 
 int InitializeRobot(TCommPort *Cp)
 {
+
 	int tam;
 	Cp->Enviar(" ", 1, tam);
 	printf("\n%s...", Cp->GetMensagem());
@@ -112,14 +108,8 @@ void move_multiple_axis_speed(TCommPort *Cp, int* steps, int* speed){
 	}
 }
 
-<<<<<<< HEAD
 void all_motor_status(TCommPort *Cp,char* steps ){
 	int tam;
-=======
-int* all_motor_status(TCommPort *Cp ){
-	int tam;
-	int* steps = (int*) malloc(6 * sizeof(int));
->>>>>>> master
 	char Buff[128], command1[20] = { 0x47, 3 };
 
 	Cp->Enviar(command1, 2, tam);
