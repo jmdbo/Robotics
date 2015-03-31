@@ -5,9 +5,9 @@
 #include "math.h"
 
 
-
 int InitializeRobot(TCommPort *Cp)
 {
+
 	int tam;
 	Cp->Enviar(" ", 1, tam);
 	printf("\n%s...", Cp->GetMensagem());
@@ -108,9 +108,8 @@ void move_multiple_axis_speed(TCommPort *Cp, int* steps, int* speed){
 	}
 }
 
-int* all_motor_status(TCommPort *Cp ){
+void all_motor_status(TCommPort *Cp,char* steps ){
 	int tam;
-	int* steps = (int*) malloc(6 * sizeof(int));
 	char Buff[128], command1[20] = { 0x47, 3 };
 
 	Cp->Enviar(command1, 2, tam);
@@ -123,7 +122,6 @@ int* all_motor_status(TCommPort *Cp ){
 			steps[i] = (unsigned char)Buff[i + 1];
 		}
 	}
-	return steps;
 }
 
 int degrees_to_steps(double degrees, int axis){
@@ -211,6 +209,30 @@ double stpes_to_mm(int steps){
 	distance = distance - 60;
 
 	return distance;
+}
+
+int direct_kinematic(float* theta,float* posAtt ){
+	if ((sizeof(theta)!=sizeof(float)*5)||(sizeof(posAtt)!=sizeof(float)*6)){
+		return -1;
+	}
+
+	double nx = cos(theta[0])*cos(theta[4])*sin(theta[1] + theta[2] + theta[3]) - sin(theta[4]);
+	double ny = cos(theta[4])*sin(theta[0])*sin(theta[1] + theta[2] + theta[3]) + cos(theta[0])*sin(theta[4]);
+	double nz = -cos(theta[1] + theta[2] + theta[3])*cos(theta[4]);
+
+	double sx = -cos(theta[4])*sin(theta[0]) - cos(theta[0])*sin(theta[1] + theta[2] + theta[3])*sin(theta[4]);
+	double sy = (cos(theta[0])*cos(theta[4])) - (sin(theta[0])*sin(theta[1] + theta[2] + theta[3])*sin(theta[4]));
+	double sz = cos(theta[1] + theta[2] + theta[3])*sin(theta[4]);
+
+	double ax = cos(theta[0])*cos(theta[1] + theta[2] + theta[3]);
+	double ay = cos(theta[1] + theta[2] + theta[3])*sin(theta[0]);
+	double az = sin(theta[1] + theta[2] + theta[3]);
+
+	double px = cos(theta[0])*(200 * cos(theta[1]) + 130 * cos(theta[1] + theta[2]) + 130 * cos(theta[1] + theta[2] + theta[3]));
+	double py = (200 * cos(theta[1]) + 130 * cos(theta[1] + theta[2]) + 130 * cos(theta[1] + theta[2] + theta[3]))*sin(theta[0]);
+	double pz = 275 + 200 * sin(theta[1]) + 130 * sin(theta[1] + theta[2]) + 130 * sin(theta[1] + theta[2] + theta[3]);
+
+	return 0;
 }
 
 //You should implement the other required operations here.
