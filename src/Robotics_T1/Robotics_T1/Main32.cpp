@@ -20,12 +20,6 @@ int InitializeRobot(TCommPort *Cp)
 	return Buff[0];
 }
 
-int direct_kinematics(float* theta,float* posAtt){
-	if ( (sizeof(theta) != sizeof(float)*5) || (sizeof(posAtt) != sizeof(float)*6) ){
-		return -1;
-	}
-}
-
 void move_one_axis(TCommPort *Cp, int axis, int steps)
 {
 	int tam;
@@ -211,28 +205,58 @@ double stpes_to_mm(int steps){
 	return distance;
 }
 
-int direct_kinematic(float* theta,float* posAtt ){
-	if ((sizeof(theta)!=sizeof(float)*5)||(sizeof(posAtt)!=sizeof(float)*6)){
+int direct_kinematic(float* theta,double* posAtt ){
+	if ((sizeof(theta)!=sizeof(float)*5)||(sizeof(posAtt)!=sizeof(double)*6)){
 		return -1;
 	}
-
+	double DH[4][4];
 	double nx = cos(theta[0])*cos(theta[4])*sin(theta[1] + theta[2] + theta[3]) - sin(theta[4]);
+	DH[0][0]=nx;
 	double ny = cos(theta[4])*sin(theta[0])*sin(theta[1] + theta[2] + theta[3]) + cos(theta[0])*sin(theta[4]);
+	DH[1][0] = ny;
 	double nz = -cos(theta[1] + theta[2] + theta[3])*cos(theta[4]);
+	DH[2][0] = nz;
+	DH[3][0] = 0;
 
 	double sx = -cos(theta[4])*sin(theta[0]) - cos(theta[0])*sin(theta[1] + theta[2] + theta[3])*sin(theta[4]);
+	DH[0][1] = sx;
 	double sy = (cos(theta[0])*cos(theta[4])) - (sin(theta[0])*sin(theta[1] + theta[2] + theta[3])*sin(theta[4]));
+	DH[1][1] = sy;
 	double sz = cos(theta[1] + theta[2] + theta[3])*sin(theta[4]);
+	DH[2][1] = sz;
+	DH[2][1] = 0;
 
 	double ax = cos(theta[0])*cos(theta[1] + theta[2] + theta[3]);
+	DH[0][2] = ax;
 	double ay = cos(theta[1] + theta[2] + theta[3])*sin(theta[0]);
+	DH[1][2] = ay;
 	double az = sin(theta[1] + theta[2] + theta[3]);
+	DH[2][2] = az;
+	DH[3][2] = 0;
 
 	double px = cos(theta[0])*(200 * cos(theta[1]) + 130 * cos(theta[1] + theta[2]) + 130 * cos(theta[1] + theta[2] + theta[3]));
+	DH[0][3] = px;
 	double py = (200 * cos(theta[1]) + 130 * cos(theta[1] + theta[2]) + 130 * cos(theta[1] + theta[2] + theta[3]))*sin(theta[0]);
+	DH[1][3] = py;
 	double pz = 275 + 200 * sin(theta[1]) + 130 * sin(theta[1] + theta[2]) + 130 * sin(theta[1] + theta[2] + theta[3]);
+	DH[2][3] = pz;
+	DH[3][3] = 1;
+	
+	posAtt = (double*)malloc(sizeof(DH));
+	posAtt = (double*)DH;
 
 	return 0;
+}
+
+double s_atan2(double x, double y){
+	if (x!=0){
+		return -1;
+	}
+	else
+	{
+		return atan2(y,x);
+	}
+
 }
 
 //You should implement the other required operations here.
