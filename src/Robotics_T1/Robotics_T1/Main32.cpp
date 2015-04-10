@@ -2,7 +2,6 @@
 
 #include "stdafx.h"
 #include "serial32.h"
-#include "math.h"
 
 
 int InitializeRobot(TCommPort *Cp)
@@ -205,15 +204,35 @@ double stpes_to_mm(int steps){
 	return distance;
 }
 
-int direct_kinematic(float* theta,double* posAtt ){
-	if ((sizeof(theta)!=sizeof(float)*5)||(sizeof(posAtt)!=sizeof(double)*6)){
+double s_atan2(double x, double y){
+	if (x == 0){
 		return -1;
 	}
-	double nx = cos(theta[0])*cos(theta[4])*sin(theta[1] + theta[2] + theta[3]) - sin(theta[4]);
-	double ny = cos(theta[4])*sin(theta[0])*sin(theta[1] + theta[2] + theta[3]) + cos(theta[0])*sin(theta[4]);
-	double nz = -cos(theta[1] + theta[2] + theta[3])*cos(theta[4]);
+	else
+	{
+		return atan2(y, x);
+	}
 
-	double sx = -cos(theta[4])*sin(theta[0]) - cos(theta[0])*sin(theta[1] + theta[2] + theta[3])*sin(theta[4]);
+}
+
+double to_degrees(double radians) {
+	return radians * (180.0 / M_PI);
+}
+
+double to_radians(double degrees) {
+	return  degrees / (180.0 / M_PI);
+}
+int direct_kinematic(float* theta,double* posAtt ){
+
+	for (int i = 0; i < 5; i++){
+		theta[i] = to_radians(theta[i]);
+	}
+
+	double nx = cos(theta[0])*cos(theta[4])*sin(theta[1] + theta[2] + theta[3]) - sin(theta[0])*sin(theta[4]);
+	double ny = cos(theta[4])*sin(theta[0])*sin(theta[1] + theta[2] + theta[3]) + cos(theta[0])*sin(theta[4]);
+	double nz = 0-(cos(theta[1] + theta[2] + theta[3])*cos(theta[4]));
+
+	double sx = (0-cos(theta[4])*sin(theta[0])) - (cos(theta[0])*sin(theta[1] + theta[2] + theta[3])*sin(theta[4]));
 	double sy = (cos(theta[0])*cos(theta[4])) - (sin(theta[0])*sin(theta[1] + theta[2] + theta[3])*sin(theta[4]));
 	double sz = cos(theta[1] + theta[2] + theta[3])*sin(theta[4]);
 
@@ -225,29 +244,21 @@ int direct_kinematic(float* theta,double* posAtt ){
 	double py = (200 * cos(theta[1]) + 130 * cos(theta[1] + theta[2]) + 130 * cos(theta[1] + theta[2] + theta[3]))*sin(theta[0]);
 	double pz = 275 + 200 * sin(theta[1]) + 130 * sin(theta[1] + theta[2]) + 130 * sin(theta[1] + theta[2] + theta[3]);
 	
-	double roll = s_atan2(nx,ny);
-	double pitch = s_atan2(nx*cos(roll) + ny*sin(roll), -nz);
-	double yaw = s_atan2(sy*cos(roll) - sx*sin(roll), -ay*cos(roll) + ax*sin(roll));
+	double roll = s_atan2(ny,nx);
+	double pitch = s_atan2(-nz, nx*cos(roll) + ny*sin(roll));
+	double yaw = s_atan2(-ay*cos(roll) + ax*sin(roll), sy*cos(roll) - sx*sin(roll));
 	
 	posAtt[0] = px;
 	posAtt[1] = py;
 	posAtt[2] = pz;
+	roll = to_degrees(roll);
 	posAtt[3] = roll;
+	pitch = to_degrees(pitch);
 	posAtt[4] = pitch;
+	yaw = to_degrees(yaw);
 	posAtt[5] = yaw;
 
 	return 0;
-}
-
-double s_atan2(double x, double y){
-	if (x==0){
-		return -1;
-	}
-	else
-	{
-		return atan2(y,x);
-	}
-
 }
 
 //You should implement the other required operations here.
@@ -319,6 +330,12 @@ void main(void)
 {
 	TCommPort *Cp;
 	Cp = new TCommPort();
+	float theta[5] = { 40, 45, -30, 50, -75 };
+
+	double posAtt[6];
+	direct_kinematic(theta, posAtt);
+	printf("Valores Cinemática Directa: \n x= %lf y=%lf z=%lf \n Roll= %lf\n Pitch = %lf \n Yaw=%lf", posAtt[0], posAtt[1], posAtt[2], posAtt[3], posAtt[4], posAtt[5]);
+
 	if (!Cp->Abrir(L"\\\\.\\com6"))
 	{
 		printf("\n%s...", Cp->GetMensagem());
