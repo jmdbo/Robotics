@@ -209,47 +209,38 @@ int direct_kinematic(float* theta,double* posAtt ){
 	if ((sizeof(theta)!=sizeof(float)*5)||(sizeof(posAtt)!=sizeof(double)*6)){
 		return -1;
 	}
-	double DH[4][4];
 	double nx = cos(theta[0])*cos(theta[4])*sin(theta[1] + theta[2] + theta[3]) - sin(theta[4]);
-	DH[0][0]=nx;
 	double ny = cos(theta[4])*sin(theta[0])*sin(theta[1] + theta[2] + theta[3]) + cos(theta[0])*sin(theta[4]);
-	DH[1][0] = ny;
 	double nz = -cos(theta[1] + theta[2] + theta[3])*cos(theta[4]);
-	DH[2][0] = nz;
-	DH[3][0] = 0;
 
 	double sx = -cos(theta[4])*sin(theta[0]) - cos(theta[0])*sin(theta[1] + theta[2] + theta[3])*sin(theta[4]);
-	DH[0][1] = sx;
 	double sy = (cos(theta[0])*cos(theta[4])) - (sin(theta[0])*sin(theta[1] + theta[2] + theta[3])*sin(theta[4]));
-	DH[1][1] = sy;
 	double sz = cos(theta[1] + theta[2] + theta[3])*sin(theta[4]);
-	DH[2][1] = sz;
-	DH[2][1] = 0;
 
 	double ax = cos(theta[0])*cos(theta[1] + theta[2] + theta[3]);
-	DH[0][2] = ax;
 	double ay = cos(theta[1] + theta[2] + theta[3])*sin(theta[0]);
-	DH[1][2] = ay;
 	double az = sin(theta[1] + theta[2] + theta[3]);
-	DH[2][2] = az;
-	DH[3][2] = 0;
 
 	double px = cos(theta[0])*(200 * cos(theta[1]) + 130 * cos(theta[1] + theta[2]) + 130 * cos(theta[1] + theta[2] + theta[3]));
-	DH[0][3] = px;
 	double py = (200 * cos(theta[1]) + 130 * cos(theta[1] + theta[2]) + 130 * cos(theta[1] + theta[2] + theta[3]))*sin(theta[0]);
-	DH[1][3] = py;
 	double pz = 275 + 200 * sin(theta[1]) + 130 * sin(theta[1] + theta[2]) + 130 * sin(theta[1] + theta[2] + theta[3]);
-	DH[2][3] = pz;
-	DH[3][3] = 1;
 	
-	posAtt = (double*)malloc(sizeof(DH));
-	posAtt = (double*)DH;
+	double roll = s_atan2(nx,ny);
+	double pitch = s_atan2(nx*cos(roll) + ny*sin(roll), -nz);
+	double yaw = s_atan2(sy*cos(roll) - sx*sin(roll), -ay*cos(roll) + ax*sin(roll));
+	
+	posAtt[0] = px;
+	posAtt[1] = py;
+	posAtt[2] = pz;
+	posAtt[3] = roll;
+	posAtt[4] = pitch;
+	posAtt[5] = yaw;
 
 	return 0;
 }
 
 double s_atan2(double x, double y){
-	if (x!=0){
+	if (x==0){
 		return -1;
 	}
 	else
@@ -268,12 +259,13 @@ void robot_control_routine(TCommPort *port)
 	int menu = 0;
 	int axis = 0, steps = 0, speed = 0, degrees=0;
 	int steparray[6],speedarray[6];
+	double theta[6];
 	bool exit = TRUE;
 
 	while (exit){
 
 		printf("\n**********Menu**********\n1-move_one_axis\n2-move_one_axis_speed");
-		printf("\n3-multiple axis\n4-multiple axis_speed\n");
+		printf("\n3-multiple axis\n4-multiple axis_speed\n5-foward kinematics");
 		scanf(" %d", &menu);
 
 		switch (menu)
@@ -308,6 +300,10 @@ void robot_control_routine(TCommPort *port)
 			}
 			move_multiple_axis_speed(port, steparray, speedarray);
 			break;
+		case 5: 
+			//foward kinematics
+			printf("Já foste!!!");
+
 		case 10: exit = FALSE;
 		case 0:
 		default: break;
