@@ -1,9 +1,13 @@
+#define _CRT_SECURE_NO_WARNINGS
+
 #include "stdafx.h"
 #include "serial32.h"
-#define _CRT_SECURE_NO_WARNINGS
+#include "math.h"
+
 
 int InitializeRobot(TCommPort *Cp)
 {
+
 	int tam;
 	Cp->Enviar(" ", 1, tam);
 	printf("\n%s...", Cp->GetMensagem());
@@ -98,8 +102,8 @@ void move_multiple_axis_speed(TCommPort *Cp, int* steps, int* speed){
 	}
 }
 
-int* all_motor_status(TCommPort *Cp ){
-	int steps[6],tam;
+void all_motor_status(TCommPort *Cp,char* steps ){
+	int tam;
 	char Buff[128], command1[20] = { 0x47, 3 };
 
 	Cp->Enviar(command1, 2, tam);
@@ -112,7 +116,6 @@ int* all_motor_status(TCommPort *Cp ){
 			steps[i] = (unsigned char)Buff[i + 1];
 		}
 	}
-	return steps;
 }
 
 int degrees_to_steps(double degrees, int axis){
@@ -121,29 +124,29 @@ int degrees_to_steps(double degrees, int axis){
 	switch (axis)
 	{
 	case 1:
-		degrees = degrees + 80;
+		degrees = 80 - degrees;
 		stepF = degrees / 0.62745098039215686274509803921569;
-		step = (int)stepF + 0.5;
+		step = (int)(stepF + 0.5);
 		break;
 	case 2:
-		degrees = degrees + 33.3333333333333333333333333333333;
+		degrees = 66.6666666666666666666666666666666 - degrees;
 		stepF = degrees / 0.3921568627450980392156862745098;
-		step = (int)stepF + 0.5;
+		step = (int)(stepF + 0.5);
 		break;
 	case 3:
-		degrees = degrees + 100;
+		degrees = 0 - degrees;
 		stepF = degrees / 0.3921568627450980392156862745098;
-		step = (int)stepF + 0.5;
+		step = (int)(stepF + 0.5);
 		break;
 	case 4:
-		degrees = degrees + 100;
+		degrees = 100-degrees ;
 		stepF = degrees / 0.78431372549019607843137254901961;
-		step = (int)stepF + 0.5;
+		step = (int)(stepF + 0.5);
 		break;
 	case 5:
-		degrees = degrees + 200;
+		degrees = 0 - degrees;
 		stepF = degrees / 0.78431372549019607843137254901961;
-		step = (int)stepF + 0.5;
+		step = (int)(stepF + 0.5);
 		break;
 	default:
 		break;
@@ -160,7 +163,7 @@ int mm_to_steps(double distance){
 
 	distance = distance + 60;
 	stepsf = distance / 0.2352941176470588;
-	steps = (int)stepsf + 0.5;
+	steps = (int)(stepsf + 0.5);
 
 	return steps;
 }
@@ -171,23 +174,21 @@ double steps_to_degrees(int steps, int axis){
 	{
 	case 1:
 		degrees = steps * 0.62745098039215686274509803921569;
-		degrees = degrees - 80;
+		degrees = degrees + 80;
 		break;
 	case 2:
 		degrees = steps * 0.3921568627450980392156862745098;
-		degrees = degrees - 33.3333333333333333333333333333333;
+		degrees = degrees + 66.6666666666666666666666666666666;
 		break;
 	case 3:
 		degrees = steps * 0.3921568627450980392156862745098;
-		degrees = degrees - 100;
 		break;
 	case 4:
 		degrees = steps * 0.78431372549019607843137254901961;
-		degrees = degrees - 100;
+		degrees = degrees + 100;
 		break;
 	case 5:
 		degrees = steps * 0.78431372549019607843137254901961;
-		degrees = degrees - 200;
 		break;
 	default:
 		break;
@@ -204,6 +205,51 @@ double stpes_to_mm(int steps){
 	return distance;
 }
 
+int direct_kinematic(float* theta,double* posAtt ){
+	if ((sizeof(theta)!=sizeof(float)*5)||(sizeof(posAtt)!=sizeof(double)*6)){
+		return -1;
+	}
+	double nx = cos(theta[0])*cos(theta[4])*sin(theta[1] + theta[2] + theta[3]) - sin(theta[4]);
+	double ny = cos(theta[4])*sin(theta[0])*sin(theta[1] + theta[2] + theta[3]) + cos(theta[0])*sin(theta[4]);
+	double nz = -cos(theta[1] + theta[2] + theta[3])*cos(theta[4]);
+
+	double sx = -cos(theta[4])*sin(theta[0]) - cos(theta[0])*sin(theta[1] + theta[2] + theta[3])*sin(theta[4]);
+	double sy = (cos(theta[0])*cos(theta[4])) - (sin(theta[0])*sin(theta[1] + theta[2] + theta[3])*sin(theta[4]));
+	double sz = cos(theta[1] + theta[2] + theta[3])*sin(theta[4]);
+
+	double ax = cos(theta[0])*cos(theta[1] + theta[2] + theta[3]);
+	double ay = cos(theta[1] + theta[2] + theta[3])*sin(theta[0]);
+	double az = sin(theta[1] + theta[2] + theta[3]);
+
+	double px = cos(theta[0])*(200 * cos(theta[1]) + 130 * cos(theta[1] + theta[2]) + 130 * cos(theta[1] + theta[2] + theta[3]));
+	double py = (200 * cos(theta[1]) + 130 * cos(theta[1] + theta[2]) + 130 * cos(theta[1] + theta[2] + theta[3]))*sin(theta[0]);
+	double pz = 275 + 200 * sin(theta[1]) + 130 * sin(theta[1] + theta[2]) + 130 * sin(theta[1] + theta[2] + theta[3]);
+	
+	double roll = s_atan2(nx,ny);
+	double pitch = s_atan2(nx*cos(roll) + ny*sin(roll), -nz);
+	double yaw = s_atan2(sy*cos(roll) - sx*sin(roll), -ay*cos(roll) + ax*sin(roll));
+	
+	posAtt[0] = px;
+	posAtt[1] = py;
+	posAtt[2] = pz;
+	posAtt[3] = roll;
+	posAtt[4] = pitch;
+	posAtt[5] = yaw;
+
+	return 0;
+}
+
+double s_atan2(double x, double y){
+	if (x==0){
+		return -1;
+	}
+	else
+	{
+		return atan2(y,x);
+	}
+
+}
+
 //You should implement the other required operations here.
 
 void robot_control_routine(TCommPort *port)
@@ -213,19 +259,20 @@ void robot_control_routine(TCommPort *port)
 	int menu = 0;
 	int axis = 0, steps = 0, speed = 0, degrees=0;
 	int steparray[6],speedarray[6];
+	double theta[6];
 	bool exit = TRUE;
 
 	while (exit){
 
 		printf("\n**********Menu**********\n1-move_one_axis\n2-move_one_axis_speed");
-		printf("\n3-multiple axis\n4-multiple axis_speed\n");
+		printf("\n3-multiple axis\n4-multiple axis_speed\n5-foward kinematics");
 		scanf(" %d", &menu);
 
 		switch (menu)
 		{
 		case 1:
 			//move one axis
-			printf("axis steps: ");
+			printf("axis degrees: ");
 			scanf("%d %d", &axis, &degrees);
 			move_one_axis(port, axis, degrees_to_steps(degrees,axis));
 			break;
@@ -246,7 +293,6 @@ void robot_control_routine(TCommPort *port)
 			break;
 		case 4:
 			//move multiple axis speed
-			int vector[6];
 			for (int i = 0; i < 6; i++)
 			{
 				printf("Axis %d step speed: ",i+1);
@@ -254,6 +300,10 @@ void robot_control_routine(TCommPort *port)
 			}
 			move_multiple_axis_speed(port, steparray, speedarray);
 			break;
+		case 5: 
+			//foward kinematics
+			printf("Já foste!!!");
+
 		case 10: exit = FALSE;
 		case 0:
 		default: break;
