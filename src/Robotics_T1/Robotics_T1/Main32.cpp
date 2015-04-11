@@ -339,7 +339,7 @@ void robot_control_routine(TCommPort *port)
 	}
 }
 
-void main(void)
+void initialize_robot(void)
 {
 	TCommPort *Cp;
 	Cp = new TCommPort();

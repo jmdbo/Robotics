@@ -24,6 +24,9 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="RoboticForm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="serial32.h">
@@ -35,8 +38,19 @@
     <ClInclude Include="targetver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="Main32.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+=======
+    <ClInclude Include="RoboticForm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="RoboticForm.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+>>>>>>> Barata
   </ItemGroup>
 </Project>
