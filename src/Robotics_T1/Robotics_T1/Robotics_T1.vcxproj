@@ -101,13 +101,9 @@
     <ClCompile Include="stdafx.cpp" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-    <ClInclude Include="Main32.h" />
-=======
     <ClInclude Include="RoboticForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
->>>>>>> Barata
     <ClInclude Include="serial32.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
