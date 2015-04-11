@@ -1,8 +1,4 @@
-#define _CRT_SECURE_NO_WARNINGS
-
-#include "stdafx.h"
-#include "serial32.h"
-#include "math.h"
+#include "Main32.h"
 
 
 int InitializeRobot(TCommPort *Cp)
@@ -117,7 +113,17 @@ void all_motor_status(TCommPort *Cp,char* steps ){
 		}
 	}
 }
+// nao funca*********************
+void digital_outputs(TCommPort *Cp, int* data){
+	int tam;
+	char Buff[8], command[10] = {0x10, data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7],3};
 
+	Cp->Enviar(command, 10, tam);
+	Cp->EsperarRecepcao();
+	Cp->Receber(Buff, 8, tam);
+	printf("Cheguei");
+}
+//*******************************
 int degrees_to_steps(double degrees, int axis){
 	double stepF;
 	int step;
@@ -205,58 +211,61 @@ double stpes_to_mm(int steps){
 	return distance;
 }
 
-int direct_kinematic(float* theta,double* posAtt ){
-	if ((sizeof(theta)!=sizeof(float)*5)||(sizeof(posAtt)!=sizeof(double)*6)){
-		return -1;
-	}
-	double DH[4][4];
-	double nx = cos(theta[0])*cos(theta[4])*sin(theta[1] + theta[2] + theta[3]) - sin(theta[4]);
-	DH[0][0]=nx;
-	double ny = cos(theta[4])*sin(theta[0])*sin(theta[1] + theta[2] + theta[3]) + cos(theta[0])*sin(theta[4]);
-	DH[1][0] = ny;
-	double nz = -cos(theta[1] + theta[2] + theta[3])*cos(theta[4]);
-	DH[2][0] = nz;
-	DH[3][0] = 0;
-
-	double sx = -cos(theta[4])*sin(theta[0]) - cos(theta[0])*sin(theta[1] + theta[2] + theta[3])*sin(theta[4]);
-	DH[0][1] = sx;
-	double sy = (cos(theta[0])*cos(theta[4])) - (sin(theta[0])*sin(theta[1] + theta[2] + theta[3])*sin(theta[4]));
-	DH[1][1] = sy;
-	double sz = cos(theta[1] + theta[2] + theta[3])*sin(theta[4]);
-	DH[2][1] = sz;
-	DH[2][1] = 0;
-
-	double ax = cos(theta[0])*cos(theta[1] + theta[2] + theta[3]);
-	DH[0][2] = ax;
-	double ay = cos(theta[1] + theta[2] + theta[3])*sin(theta[0]);
-	DH[1][2] = ay;
-	double az = sin(theta[1] + theta[2] + theta[3]);
-	DH[2][2] = az;
-	DH[3][2] = 0;
-
-	double px = cos(theta[0])*(200 * cos(theta[1]) + 130 * cos(theta[1] + theta[2]) + 130 * cos(theta[1] + theta[2] + theta[3]));
-	DH[0][3] = px;
-	double py = (200 * cos(theta[1]) + 130 * cos(theta[1] + theta[2]) + 130 * cos(theta[1] + theta[2] + theta[3]))*sin(theta[0]);
-	DH[1][3] = py;
-	double pz = 275 + 200 * sin(theta[1]) + 130 * sin(theta[1] + theta[2]) + 130 * sin(theta[1] + theta[2] + theta[3]);
-	DH[2][3] = pz;
-	DH[3][3] = 1;
-	
-	posAtt = (double*)malloc(sizeof(DH));
-	posAtt = (double*)DH;
-
-	return 0;
-}
-
 double s_atan2(double x, double y){
-	if (x!=0){
+	if (x == 0){
 		return -1;
 	}
 	else
 	{
-		return atan2(y,x);
+		return atan2(y, x);
 	}
 
+}
+
+double to_degrees(double radians) {
+	return radians * 57.295779513;
+}
+
+double to_radians(double degrees) {
+	return  degrees / (180.0 / M_PI);
+}
+int direct_kinematic(float* theta,double* posAtt ){
+
+	for (int i = 0; i < 5; i++){
+		theta[i] = to_radians(theta[i]);
+	}
+
+	double nx = cos(theta[0])*cos(theta[4])*sin(theta[1] + theta[2] + theta[3]) - sin(theta[0])*sin(theta[4]);
+	double ny = cos(theta[4])*sin(theta[0])*sin(theta[1] + theta[2] + theta[3]) + cos(theta[0])*sin(theta[4]);
+	double nz =((-1)*cos(theta[1] + theta[2] + theta[3])*cos(theta[4]));
+
+	double sx = ((-1)*cos(theta[4])*sin(theta[0])) - (cos(theta[0])*sin(theta[1] + theta[2] + theta[3])*sin(theta[4]));
+	double sy = (cos(theta[0])*cos(theta[4])) - (sin(theta[0])*sin(theta[1] + theta[2] + theta[3])*sin(theta[4]));
+	double sz = cos(theta[1] + theta[2] + theta[3])*sin(theta[4]);
+
+	double ax = cos(theta[0])*cos(theta[1] + theta[2] + theta[3]);
+	double ay = cos(theta[1] + theta[2] + theta[3])*sin(theta[0]);
+	double az = sin(theta[1] + theta[2] + theta[3]);
+
+	double px = cos(theta[0])*(200 * cos(theta[1]) + 130 * cos(theta[1] + theta[2]) + 130 * cos(theta[1] + theta[2] + theta[3]));
+	double py = (200 * cos(theta[1]) + 130 * cos(theta[1] + theta[2]) + 130 * cos(theta[1] + theta[2] + theta[3]))*sin(theta[0]);
+	double pz = 275 + 200 * sin(theta[1]) + 130 * sin(theta[1] + theta[2]) + 130 * sin(theta[1] + theta[2] + theta[3]);
+	
+	double roll = s_atan2(nx,ny);
+	double pitch = s_atan2(nx*cos(roll) + ny*sin(roll), -nz);
+	double yaw = s_atan2(sy*cos(roll) - sx*sin(roll), -ay*cos(roll) + ax*sin(roll));
+	
+	posAtt[0] = px;
+	posAtt[1] = py;
+	posAtt[2] = pz;
+	roll = to_degrees(roll);
+	posAtt[3] = roll;
+	pitch = to_degrees(pitch);
+	posAtt[4] = pitch;
+	yaw = to_degrees(yaw);
+	posAtt[5] = yaw;
+
+	return 0;
 }
 
 //You should implement the other required operations here.
@@ -268,12 +277,14 @@ void robot_control_routine(TCommPort *port)
 	int menu = 0;
 	int axis = 0, steps = 0, speed = 0, degrees=0;
 	int steparray[6],speedarray[6];
+	double theta[6];
 	bool exit = TRUE;
+	int data[8] = { 7, 6, 5, 4, 3, 2, 1, 0 };
 
 	while (exit){
 
 		printf("\n**********Menu**********\n1-move_one_axis\n2-move_one_axis_speed");
-		printf("\n3-multiple axis\n4-multiple axis_speed\n");
+		printf("\n3-multiple axis\n4-multiple axis_speed\n5-foward kinematics");
 		scanf(" %d", &menu);
 
 		switch (menu)
@@ -308,8 +319,17 @@ void robot_control_routine(TCommPort *port)
 			}
 			move_multiple_axis_speed(port, steparray, speedarray);
 			break;
+		case 5: 
+			//foward kinematics
+			printf("Já foste!!!");
+			break;
+		case 6:
+			
+			digital_outputs(port, data);
+			break;
+
 		case 10: exit = FALSE;
-		case 0:
+		case 0: break;
 		default: break;
 		}
 		axis = 0;
@@ -323,6 +343,12 @@ void main(void)
 {
 	TCommPort *Cp;
 	Cp = new TCommPort();
+	float theta[5] = { 40, 45, -30, 50, -75 };
+
+	double posAtt[6];
+	direct_kinematic(theta, posAtt);
+	printf("Valores Cinemática Directa: \n x= %lf y=%lf z=%lf \n Roll= %lf\n Pitch = %lf \n Yaw=%lf", posAtt[0], posAtt[1], posAtt[2], posAtt[3], posAtt[4], posAtt[5]);
+
 	if (!Cp->Abrir(L"\\\\.\\com6"))
 	{
 		printf("\n%s...", Cp->GetMensagem());
