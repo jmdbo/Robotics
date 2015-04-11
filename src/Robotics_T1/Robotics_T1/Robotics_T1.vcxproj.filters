@@ -46,6 +46,5 @@
     <EmbeddedResource Include="RoboticForm.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
->>>>>>> Barata
   </ItemGroup>
 </Project>
