@@ -1,4 +1,5 @@
 #pragma once
+#include "Main32.h"
 
 namespace Robotics_T1 {
 
@@ -8,7 +9,6 @@ namespace Robotics_T1 {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
-
 	/// <summary>
 	/// Summary for RoboticForm
 	/// </summary>
@@ -125,6 +125,7 @@ namespace Robotics_T1 {
 	}
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e){
 		MessageBox::Show("Teste!");
+		Robot::initialize_robot();
 	}
 };
 }
