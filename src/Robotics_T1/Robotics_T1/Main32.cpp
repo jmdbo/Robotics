@@ -216,7 +216,7 @@ double s_atan2(double x, double y){
 }
 
 double to_degrees(double radians) {
-	return radians * (180.0 / M_PI);
+	return radians * 57.295779513;
 }
 
 double to_radians(double degrees) {
@@ -230,9 +230,9 @@ int direct_kinematic(float* theta,double* posAtt ){
 
 	double nx = cos(theta[0])*cos(theta[4])*sin(theta[1] + theta[2] + theta[3]) - sin(theta[0])*sin(theta[4]);
 	double ny = cos(theta[4])*sin(theta[0])*sin(theta[1] + theta[2] + theta[3]) + cos(theta[0])*sin(theta[4]);
-	double nz = 0-(cos(theta[1] + theta[2] + theta[3])*cos(theta[4]));
+	double nz =((-1)*cos(theta[1] + theta[2] + theta[3])*cos(theta[4]));
 
-	double sx = (0-cos(theta[4])*sin(theta[0])) - (cos(theta[0])*sin(theta[1] + theta[2] + theta[3])*sin(theta[4]));
+	double sx = ((-1)*cos(theta[4])*sin(theta[0])) - (cos(theta[0])*sin(theta[1] + theta[2] + theta[3])*sin(theta[4]));
 	double sy = (cos(theta[0])*cos(theta[4])) - (sin(theta[0])*sin(theta[1] + theta[2] + theta[3])*sin(theta[4]));
 	double sz = cos(theta[1] + theta[2] + theta[3])*sin(theta[4]);
 
@@ -244,9 +244,9 @@ int direct_kinematic(float* theta,double* posAtt ){
 	double py = (200 * cos(theta[1]) + 130 * cos(theta[1] + theta[2]) + 130 * cos(theta[1] + theta[2] + theta[3]))*sin(theta[0]);
 	double pz = 275 + 200 * sin(theta[1]) + 130 * sin(theta[1] + theta[2]) + 130 * sin(theta[1] + theta[2] + theta[3]);
 	
-	double roll = s_atan2(ny,nx);
-	double pitch = s_atan2(-nz, nx*cos(roll) + ny*sin(roll));
-	double yaw = s_atan2(-ay*cos(roll) + ax*sin(roll), sy*cos(roll) - sx*sin(roll));
+	double roll = s_atan2(nx,ny);
+	double pitch = s_atan2(nx*cos(roll) + ny*sin(roll), -nz);
+	double yaw = s_atan2(sy*cos(roll) - sx*sin(roll), -ay*cos(roll) + ax*sin(roll));
 	
 	posAtt[0] = px;
 	posAtt[1] = py;
