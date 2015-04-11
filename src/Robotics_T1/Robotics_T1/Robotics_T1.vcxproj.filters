@@ -41,6 +41,9 @@
     <ClInclude Include="RoboticForm.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Main32.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="RoboticForm.resx">
