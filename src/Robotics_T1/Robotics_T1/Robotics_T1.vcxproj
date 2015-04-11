@@ -82,6 +82,7 @@
     <ClCompile Include="stdafx.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Main32.h" />
     <ClInclude Include="serial32.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />

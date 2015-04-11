@@ -1,7 +1,4 @@
-#define _CRT_SECURE_NO_WARNINGS
-
-#include "stdafx.h"
-#include "serial32.h"
+#include "Main32.h"
 
 
 int InitializeRobot(TCommPort *Cp)
@@ -116,7 +113,17 @@ void all_motor_status(TCommPort *Cp,char* steps ){
 		}
 	}
 }
+// nao funca*********************
+void digital_outputs(TCommPort *Cp, int* data){
+	int tam;
+	char Buff[8], command[10] = {0x10, data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7],3};
 
+	Cp->Enviar(command, 10, tam);
+	Cp->EsperarRecepcao();
+	Cp->Receber(Buff, 8, tam);
+	printf("Cheguei");
+}
+//*******************************
 int degrees_to_steps(double degrees, int axis){
 	double stepF;
 	int step;
@@ -272,6 +279,7 @@ void robot_control_routine(TCommPort *port)
 	int steparray[6],speedarray[6];
 	double theta[6];
 	bool exit = TRUE;
+	int data[8] = { 7, 6, 5, 4, 3, 2, 1, 0 };
 
 	while (exit){
 
@@ -314,9 +322,14 @@ void robot_control_routine(TCommPort *port)
 		case 5: 
 			//foward kinematics
 			printf("Já foste!!!");
+			break;
+		case 6:
+			
+			digital_outputs(port, data);
+			break;
 
 		case 10: exit = FALSE;
-		case 0:
+		case 0: break;
 		default: break;
 		}
 		axis = 0;
