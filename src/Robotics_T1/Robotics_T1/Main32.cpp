@@ -37,7 +37,7 @@ void move_one_axis_speed(TCommPort* Cp, int axis, int steps, int speed)
 {
 	if (steps!= -1){
 		int tam;
-		char command[20] = { 0x07 + axis , steps, speed, 3 }, Buff[128];
+		char command[20] = { 0x78 + axis -1 , steps, speed, 3 }, Buff[128];
 		Cp->Enviar(command, 4, tam);
 		Sleep(1000);
 		//robot will respond with 15
