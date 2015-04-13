@@ -93,6 +93,12 @@ namespace Robotics_T1 {
 		{
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
+			this->textBox18 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox17 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox16 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox15 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox14 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox13 = (gcnew System::Windows::Forms::TextBox());
 			this->button11 = (gcnew System::Windows::Forms::Button());
 			this->button10 = (gcnew System::Windows::Forms::Button());
 			this->textBox12 = (gcnew System::Windows::Forms::TextBox());
@@ -118,12 +124,6 @@ namespace Robotics_T1 {
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
-			this->textBox13 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox14 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox15 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox16 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox17 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox18 = (gcnew System::Windows::Forms::TextBox());
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
 			this->SuspendLayout();
@@ -178,8 +178,57 @@ namespace Robotics_T1 {
 			this->tabPage1->Text = L"Robot Controls";
 			this->tabPage1->UseVisualStyleBackColor = true;
 			// 
+			// textBox18
+			// 
+			this->textBox18->Location = System::Drawing::Point(249, 167);
+			this->textBox18->Name = L"textBox18";
+			this->textBox18->ReadOnly = true;
+			this->textBox18->Size = System::Drawing::Size(75, 20);
+			this->textBox18->TabIndex = 30;
+			// 
+			// textBox17
+			// 
+			this->textBox17->Location = System::Drawing::Point(249, 141);
+			this->textBox17->Name = L"textBox17";
+			this->textBox17->ReadOnly = true;
+			this->textBox17->Size = System::Drawing::Size(75, 20);
+			this->textBox17->TabIndex = 29;
+			// 
+			// textBox16
+			// 
+			this->textBox16->Location = System::Drawing::Point(249, 115);
+			this->textBox16->Name = L"textBox16";
+			this->textBox16->ReadOnly = true;
+			this->textBox16->Size = System::Drawing::Size(75, 20);
+			this->textBox16->TabIndex = 28;
+			// 
+			// textBox15
+			// 
+			this->textBox15->Location = System::Drawing::Point(249, 88);
+			this->textBox15->Name = L"textBox15";
+			this->textBox15->ReadOnly = true;
+			this->textBox15->Size = System::Drawing::Size(75, 20);
+			this->textBox15->TabIndex = 27;
+			// 
+			// textBox14
+			// 
+			this->textBox14->Location = System::Drawing::Point(249, 62);
+			this->textBox14->Name = L"textBox14";
+			this->textBox14->ReadOnly = true;
+			this->textBox14->Size = System::Drawing::Size(75, 20);
+			this->textBox14->TabIndex = 26;
+			// 
+			// textBox13
+			// 
+			this->textBox13->Location = System::Drawing::Point(249, 36);
+			this->textBox13->Name = L"textBox13";
+			this->textBox13->ReadOnly = true;
+			this->textBox13->Size = System::Drawing::Size(75, 20);
+			this->textBox13->TabIndex = 25;
+			// 
 			// button11
 			// 
+			this->button11->Enabled = false;
 			this->button11->Location = System::Drawing::Point(330, 139);
 			this->button11->Name = L"button11";
 			this->button11->Size = System::Drawing::Size(75, 80);
@@ -190,6 +239,7 @@ namespace Robotics_T1 {
 			// 
 			// button10
 			// 
+			this->button10->Enabled = false;
 			this->button10->Location = System::Drawing::Point(168, 192);
 			this->button10->Name = L"button10";
 			this->button10->Size = System::Drawing::Size(156, 27);
@@ -235,6 +285,7 @@ namespace Robotics_T1 {
 			// 
 			// button9
 			// 
+			this->button9->Enabled = false;
 			this->button9->Location = System::Drawing::Point(330, 36);
 			this->button9->Name = L"button9";
 			this->button9->Size = System::Drawing::Size(75, 97);
@@ -261,6 +312,7 @@ namespace Robotics_T1 {
 			// 
 			// button8
 			// 
+			this->button8->Enabled = false;
 			this->button8->Location = System::Drawing::Point(7, 192);
 			this->button8->Name = L"button8";
 			this->button8->Size = System::Drawing::Size(155, 27);
@@ -271,6 +323,7 @@ namespace Robotics_T1 {
 			// 
 			// button7
 			// 
+			this->button7->Enabled = false;
 			this->button7->Location = System::Drawing::Point(86, 166);
 			this->button7->Name = L"button7";
 			this->button7->Size = System::Drawing::Size(76, 20);
@@ -281,6 +334,7 @@ namespace Robotics_T1 {
 			// 
 			// button6
 			// 
+			this->button6->Enabled = false;
 			this->button6->Location = System::Drawing::Point(86, 140);
 			this->button6->Name = L"button6";
 			this->button6->Size = System::Drawing::Size(76, 20);
@@ -291,6 +345,7 @@ namespace Robotics_T1 {
 			// 
 			// button5
 			// 
+			this->button5->Enabled = false;
 			this->button5->Location = System::Drawing::Point(87, 114);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(75, 20);
@@ -301,6 +356,7 @@ namespace Robotics_T1 {
 			// 
 			// button4
 			// 
+			this->button4->Enabled = false;
 			this->button4->Location = System::Drawing::Point(87, 87);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(75, 21);
@@ -339,6 +395,7 @@ namespace Robotics_T1 {
 			// 
 			// button3
 			// 
+			this->button3->Enabled = false;
 			this->button3->Location = System::Drawing::Point(87, 61);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(75, 20);
@@ -356,6 +413,7 @@ namespace Robotics_T1 {
 			// 
 			// button2
 			// 
+			this->button2->Enabled = false;
 			this->button2->Location = System::Drawing::Point(87, 35);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(75, 20);
@@ -391,54 +449,6 @@ namespace Robotics_T1 {
 			this->tabPage2->Text = L"tabPage2";
 			this->tabPage2->UseVisualStyleBackColor = true;
 			// 
-			// textBox13
-			// 
-			this->textBox13->Location = System::Drawing::Point(249, 36);
-			this->textBox13->Name = L"textBox13";
-			this->textBox13->ReadOnly = true;
-			this->textBox13->Size = System::Drawing::Size(75, 20);
-			this->textBox13->TabIndex = 25;
-			// 
-			// textBox14
-			// 
-			this->textBox14->Location = System::Drawing::Point(249, 62);
-			this->textBox14->Name = L"textBox14";
-			this->textBox14->ReadOnly = true;
-			this->textBox14->Size = System::Drawing::Size(75, 20);
-			this->textBox14->TabIndex = 26;
-			// 
-			// textBox15
-			// 
-			this->textBox15->Location = System::Drawing::Point(249, 88);
-			this->textBox15->Name = L"textBox15";
-			this->textBox15->ReadOnly = true;
-			this->textBox15->Size = System::Drawing::Size(75, 20);
-			this->textBox15->TabIndex = 27;
-			// 
-			// textBox16
-			// 
-			this->textBox16->Location = System::Drawing::Point(249, 115);
-			this->textBox16->Name = L"textBox16";
-			this->textBox16->ReadOnly = true;
-			this->textBox16->Size = System::Drawing::Size(75, 20);
-			this->textBox16->TabIndex = 28;
-			// 
-			// textBox17
-			// 
-			this->textBox17->Location = System::Drawing::Point(249, 141);
-			this->textBox17->Name = L"textBox17";
-			this->textBox17->ReadOnly = true;
-			this->textBox17->Size = System::Drawing::Size(75, 20);
-			this->textBox17->TabIndex = 29;
-			// 
-			// textBox18
-			// 
-			this->textBox18->Location = System::Drawing::Point(249, 167);
-			this->textBox18->Name = L"textBox18";
-			this->textBox18->ReadOnly = true;
-			this->textBox18->Size = System::Drawing::Size(75, 20);
-			this->textBox18->TabIndex = 30;
-			// 
 			// RoboticForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -462,12 +472,12 @@ namespace Robotics_T1 {
 		void motor_status(){
 			char steparray[6];
 			all_motor_status(Cp,steparray);
-			textBox13->Text = Convert::ToString((unsigned char)steparray[0]);
-			textBox14->Text = Convert::ToString((unsigned char)steparray[1]);
-			textBox15->Text = Convert::ToString((unsigned char)steparray[2]);
-			textBox16->Text = Convert::ToString((unsigned char)steparray[3]);
-			textBox17->Text = Convert::ToString((unsigned char)steparray[4]);
-			textBox18->Text = Convert::ToString((unsigned char)steparray[5]);
+			textBox13->Text = Convert::ToString(steps_to_degrees((unsigned char)steparray[0], 1));
+			textBox14->Text = Convert::ToString(steps_to_degrees((unsigned char)steparray[1], 2));
+			textBox15->Text = Convert::ToString(steps_to_degrees((unsigned char)steparray[2], 3));
+			textBox16->Text = Convert::ToString(steps_to_degrees((unsigned char)steparray[3], 4));
+			textBox17->Text = Convert::ToString(steps_to_degrees((unsigned char)steparray[4], 5));
+			textBox18->Text = Convert::ToString(steps_to_degrees((unsigned char)steparray[5], 6));
 		}
 
 	private: System::Void RoboticForm_Load(System::Object^  sender, System::EventArgs^  e) {
@@ -482,12 +492,25 @@ namespace Robotics_T1 {
 		else
 		{
 			MessageBox::Show("Connected!");
+			button2->Enabled = TRUE;
+			button3->Enabled = TRUE;
+			button4->Enabled = TRUE;
+			button5->Enabled = TRUE;
+			button6->Enabled = TRUE;
+			button7->Enabled = TRUE;
+			button8->Enabled = TRUE;
+			button9->Enabled = TRUE;
+			button10->Enabled = TRUE;
+			button11->Enabled = TRUE;
 		}
 
 	}
 
 	private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
 		int axis1 = Convert::ToInt32(textBox1->Text), steps;
+		
+		steps = degrees_to_steps(axis1, 1);
+
 		if (checkBox1->Checked == TRUE){
 			int speed = Convert::ToInt32(textBox7->Text);
 
@@ -496,52 +519,135 @@ namespace Robotics_T1 {
 				speed = 3;
 			}
 
-			steps = degrees_to_steps(axis1, 1);
 			move_one_axis_speed(Cp, 1, steps, speed);
 			textBox1->Clear();
 		}
 		else
 		{
-			steps = degrees_to_steps(axis1, 1);
 			move_one_axis(Cp, 1, steps);
 			textBox1->Clear();
 		}
-
+		motor_status();
 	}
 
 	private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
-		int axis2 = Convert::ToInt32(textBox2->Text), steps = 0;
-		steps = degrees_to_steps(axis2, 2);
-		move_one_axis(Cp, 2, steps);
-		textBox2->Clear();
+		int axis2 = Convert::ToInt32(textBox2->Text), steps;
+		
+		steps = degrees_to_steps(axis2, 1);
+
+		if (checkBox1->Checked == TRUE){
+			int speed = Convert::ToInt32(textBox8->Text);
+
+			if (speed < 0 || speed > 5){
+				MessageBox::Show("Speed 0-5, by default speed=3");
+				speed = 3;
+			}
+
+			move_one_axis_speed(Cp, 2, steps, speed);
+			textBox2->Clear();
+		}
+		else
+		{
+			move_one_axis(Cp, 2, steps);
+			textBox2->Clear();
+		}
+		motor_status();
 	}
 
 	private: System::Void button4_Click(System::Object^  sender, System::EventArgs^  e) {
-		int axis3 = Convert::ToInt32(textBox3->Text), steps = 0;
-		steps = degrees_to_steps(axis3, 3);
-		move_one_axis(Cp, 3, steps);
-		textBox3->Clear();
+		int axis3 = Convert::ToInt32(textBox3->Text), steps;
+
+		steps = degrees_to_steps(axis3, 1);
+
+		if (checkBox1->Checked == TRUE){
+			int speed = Convert::ToInt32(textBox9->Text);
+
+			if (speed < 0 || speed > 5){
+				MessageBox::Show("Speed 0-5, by default speed=3");
+				speed = 3;
+			}
+
+			move_one_axis_speed(Cp, 3, steps, speed);
+			textBox3->Clear();
+		}
+		else
+		{
+			move_one_axis(Cp, 3, steps);
+			textBox3->Clear();
+		}
+		motor_status();
 	}
 
 	private: System::Void button5_Click(System::Object^  sender, System::EventArgs^  e) {
-		int axis4 = Convert::ToInt32(textBox4->Text), steps = 0;
-		steps = degrees_to_steps(axis4, 4);
-		move_one_axis(Cp, 4, steps);
-		textBox4->Clear();
+		int axis4 = Convert::ToInt32(textBox4->Text), steps;
+
+		steps = degrees_to_steps(axis4, 1);
+
+		if (checkBox1->Checked == TRUE){
+			int speed = Convert::ToInt32(textBox10->Text);
+
+			if (speed < 0 || speed > 5){
+				MessageBox::Show("Speed 0-5, by default speed=3");
+				speed = 3;
+			}
+
+			move_one_axis_speed(Cp, 4, steps, speed);
+			textBox4->Clear();
+		}
+		else
+		{
+			move_one_axis(Cp, 4, steps);
+			textBox4->Clear();
+		}
+		motor_status();
 	}
 
 	private: System::Void button6_Click(System::Object^  sender, System::EventArgs^  e) {
-		int axis5 = Convert::ToInt32(textBox5->Text), steps = 0;
-		steps = degrees_to_steps(axis5, 3);
-		move_one_axis(Cp, 5, steps);
-		textBox5->Clear();
+		int axis5 = Convert::ToInt32(textBox5->Text), steps;
+
+		steps = degrees_to_steps(axis5, 1);
+
+		if (checkBox1->Checked == TRUE){
+			int speed = Convert::ToInt32(textBox11->Text);
+
+			if (speed < 0 || speed > 5){
+				MessageBox::Show("Speed 0-5, by default speed=3");
+				speed = 3;
+			}
+
+			move_one_axis_speed(Cp, 5, steps, speed);
+			textBox5->Clear();
+		}
+		else
+		{
+			move_one_axis(Cp, 5, steps);
+			textBox5->Clear();
+		}
+		motor_status();
 	}
 
 	private: System::Void button7_Click(System::Object^  sender, System::EventArgs^  e) {
-		int axis6 = Convert::ToInt32(textBox6->Text), steps = 0;
+		int axis6 = Convert::ToInt32(textBox6->Text), steps;
+
 		steps = mm_to_steps(axis6);
-		move_one_axis(Cp, 6, steps);
-		textBox6->Clear();
+
+		if (checkBox1->Checked == TRUE){
+			int speed = Convert::ToInt32(textBox12->Text);
+
+			if (speed < 0 || speed > 5){
+				MessageBox::Show("Speed 0-5, by default speed=3");
+				speed = 3;
+			}
+
+			move_one_axis_speed(Cp, 6, steps, speed);
+			textBox6->Clear();
+		}
+		else
+		{
+			move_one_axis(Cp, 6, steps);
+			textBox6->Clear();
+		}
+		motor_status();
 	}
 	private: System::Void button8_Click(System::Object^  sender, System::EventArgs^  e) {
 		int steparray[6] = { Convert::ToInt32(textBox1->Text)
@@ -577,6 +683,7 @@ namespace Robotics_T1 {
 		textBox4->Clear();
 		textBox5->Clear();
 		textBox6->Clear();
+		motor_status();
 	}
 
 	private: System::Void button10_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -591,17 +698,14 @@ namespace Robotics_T1 {
 	}
 
 	private: System::Void button11_Click(System::Object^  sender, System::EventArgs^  e) {
-		char steparray[6];
-		all_motor_status(Cp, steparray);
+		//calibrate(Cp);
 
-		textBox1->Text = Convert::ToString((unsigned char)steparray[0]);
-		textBox2->Text = Convert::ToString((unsigned char)steparray[1]);
-		textBox3->Text = Convert::ToString((unsigned char)steparray[2]);
-		textBox4->Text = Convert::ToString((unsigned char)steparray[3]);
-		textBox5->Text = Convert::ToString((unsigned char)steparray[4]);
-		textBox6->Text = Convert::ToString((unsigned char)steparray[5]);
+		//textBox7->Text = Convert::ToString(degrees_to_steps(0, 1));
 
-		motor_status();
+		//motor_status();
+		
+		int theta[5];
+			backward_kinematic(246.64, 206.934, 567.888, 6.280, -36.35, theta);
 	}
 	};
 

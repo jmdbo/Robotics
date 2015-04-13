@@ -1,4 +1,7 @@
 #include "Main32.h"
+#using <mscorlib.dll>
+
+using namespace System;
 
 
 
@@ -37,12 +40,15 @@ void move_one_axis_speed(TCommPort* Cp, int axis, int steps, int speed)
 {
 	if (steps!= -1){
 		int tam;
-		char command[20] = { 0x78 + axis -1 , steps, speed, 3 }, Buff[128];
+		char command[20] = { 0x78 + axis -1 , steps, speed, 3 };
 		Cp->Enviar(command, 4, tam);
-		Sleep(1000);
+		Sleep(500);
+		//*******************************************************
+		//Falar com Peres
 		//robot will respond with 15
 		//Cp->EsperarRecepcao();
 		//Cp->Receber(Buff, 1, tam);
+		//*******************************************************
 
 	}
 }
@@ -58,7 +64,7 @@ void move_multiple_axis(TCommPort *Cp, int* steps)
 
 	//robot wil respond with 15
 	Cp->EsperarRecepcao();
-	Cp->Receber(Buff, 1, tam);
+	Cp->Receber(Buff, 8, tam);
 	printf("\n%s...", Cp->GetMensagem());
 }
 
@@ -80,8 +86,8 @@ void move_multiple_axis_speed(TCommPort *Cp, int* steps, int* speed)
 	}
 
 	if (count <= 6){
-		char command[20] = { 0x0F, steps[0], steps[1], steps[2], steps[3], steps[4], steps[5], 3 };
-		Cp->Enviar(command, 8, tam);
+		char command[20] = { 0x7F, steps[0], speed[0], steps[1], speed[1], steps[2], speed[2], steps[3], speed[3], steps[4], speed[4], steps[5], speed[5], 3 };
+		Cp->Enviar(command, 14, tam);
 		printf("\n%s...", Cp->GetMensagem());
 		Sleep(500);
 		//robot wil respond with 15
@@ -94,17 +100,21 @@ void move_multiple_axis_speed(TCommPort *Cp, int* steps, int* speed)
 void all_motor_status(TCommPort *Cp, char* steps)
 {
 	int tam;
-	char Buff[128], command1[20] = { 0x47, 3 };
+	char command[20] = { 0x47, 3 };
+	char Buff[128];
 
-	Cp->Enviar(command1, 2, tam);
+
+	Cp->Enviar(command, 2, tam);
+	printf("\n%s...", Cp->GetMensagem());
+	Sleep(1000);
+
 	Cp->EsperarRecepcao();
 	Cp->Receber(Buff, 8, tam);
+	int *pos = new int[6];
 
 	for (int i = 0; i < 6; i++)
 	{
-		if (steps[i] == -1){
-			steps[i] = (unsigned char)Buff[i + 1];
-		}
+		steps[i] = (unsigned char)Buff[i + 1];
 	}
 }
 // nao funca*********************
@@ -127,9 +137,11 @@ int degrees_to_steps(double degrees, int axis)
 	switch (axis)
 	{
 	case 1:
+		if (degrees >= -80 && degrees <= 80){
 		degrees = 80 - degrees;
 		stepF = degrees / 0.62745098039215686274509803921569;
 		step = (int)(stepF + 0.5);
+	}
 		break;
 	case 2:
 		degrees = 66.6666666666666666666666666666666 - degrees;
@@ -371,4 +383,64 @@ int close_robot(TCommPort* Cp)
 		return 0;
 	}
 	else return -1;
+}
+
+void calibrate(TCommPort *Cp){
+	int steps[6] = { 27, 142, 203, 114, 44, 233 };
+	move_multiple_axis(Cp,steps);
+}
+
+void backward_kinematic(float px, float py, float pz, float pitch, float roll, int* theta)
+{
+	float pitch_rad, roll_rad; // Unidade em radianos
+	float teta1, teta2, teta3, teta4, teta5;
+	float d1, a2, a3, d5;
+	float q, qx, qy, qz, dmt;
+
+
+	//int *theta = new int[5];
+
+	// Converter o pitch e o roll de graus para radianos
+	pitch = to_radians(pitch);
+	roll = to_radians(roll);
+	//pitch = (pitch*M_PI) / 180;
+	//roll = (roll*M_PI) / 180;
+
+	// dmt = 10^(-30)
+	dmt = 0.000000000000000000000000000001;
+
+	d1 = 275;
+	a2 = 200;
+	a3 = 130;
+	d5 = 130;
+
+	teta1 = atan2f(py, (px + dmt));
+	qx = px - d5*cos(pitch_rad) * cos(teta1);
+	qy = py - d5*cos(pitch_rad) * sin(teta1);
+	qz = pz - d5*sin(pitch_rad);
+	q = sqrt(pow(qx, 2) + pow(qy, 2) + pow(qz, 2));
+
+	float a = pow((a2 + a3), 2) - pow(q, 2);
+	float b = pow(q, 2) - pow((a2 - a3), 2);
+	float c = pow(qx, 2) + pow(qy, 2);
+
+	if (a < 0)
+		a = 0;
+	if (b < 0)
+		b = 0;
+	if (c < 0)
+		c = 0;
+
+	teta3 = -2 * atan2f((sqrt(a)), (dmt + sqrt(b)));
+	teta2 = atan2f(qz, (dmt + sqrt(c))) - atan2f((a3*sin(teta3)), (dmt + a2 + a3*cos(teta3)));
+	teta4 = pitch_rad - teta2 - teta3;
+	teta5 = roll_rad - sin(pitch_rad)*teta1;
+
+	theta[0] = Convert::ToInt32(teta1 * 180 / M_PI);
+	theta[1] = Convert::ToInt32(teta2 * 180 / M_PI);
+	theta[2] = Convert::ToInt32(teta3 * 180 / M_PI);
+	theta[3] = Convert::ToInt32(teta4 * 180 / M_PI);
+	theta[4] = Convert::ToInt32(teta5 * 180 / M_PI);
+
+	//return theta;
 }
