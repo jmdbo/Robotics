@@ -137,11 +137,9 @@ int degrees_to_steps(double degrees, int axis)
 	switch (axis)
 	{
 	case 1:
-		if (degrees >= -80 && degrees <= 80){
-		degrees = 80 - degrees;
-		stepF = degrees / 0.62745098039215686274509803921569;
+		degrees = degrees - 80;
+		stepF = degrees / -0.62745098039215686274509803921569;
 		step = (int)(stepF + 0.5);
-	}
 		break;
 	case 2:
 		degrees = 66.6666666666666666666666666666666 - degrees;
@@ -159,7 +157,7 @@ int degrees_to_steps(double degrees, int axis)
 		step = (int)(stepF + 0.5);
 		break;
 	case 5:
-		degrees = 0 - degrees;
+		//degrees = 0 - degrees;
 		stepF = degrees / 0.78431372549019607843137254901961;
 		step = (int)(stepF + 0.5);
 		break;
@@ -177,8 +175,8 @@ int mm_to_steps(double distance)
 	int steps = 0;
 	double stepsf;
 
-	distance = distance + 60;
-	stepsf = distance / 0.2352941176470588;
+	distance = distance - 60;
+	stepsf = distance / -0.2352941176470588;
 	steps = (int)(stepsf + 0.5);
 
 	return steps;
@@ -191,18 +189,18 @@ double steps_to_degrees(int steps, int axis)
 	switch (axis)
 	{
 	case 1:
-		degrees = steps * 0.62745098039215686274509803921569;
+		degrees = steps * -0.62745098039215686274509803921569;
 		degrees = degrees + 80;
 		break;
 	case 2:
-		degrees = steps * 0.3921568627450980392156862745098;
+		degrees = steps * -0.3921568627450980392156862745098;
 		degrees = degrees + 66.6666666666666666666666666666666;
 		break;
 	case 3:
-		degrees = steps * 0.3921568627450980392156862745098;
+		degrees = steps * -0.3921568627450980392156862745098;
 		break;
 	case 4:
-		degrees = steps * 0.78431372549019607843137254901961;
+		degrees = steps * -0.78431372549019607843137254901961;
 		degrees = degrees + 100;
 		break;
 	case 5:
@@ -219,8 +217,8 @@ double stpes_to_mm(int steps)
 {
 	double distance;
 
-	distance = steps*0.2352941176470588;
-	distance = distance - 60;
+	distance = steps*-0.2352941176470588;
+	distance = distance + 60;
 
 	return distance;
 }
@@ -392,10 +390,10 @@ void calibrate(TCommPort *Cp){
 
 void backward_kinematic(float px, float py, float pz, float pitch, float roll, int* theta)
 {
-	float pitch_rad, roll_rad; // Unidade em radianos
-	float teta1, teta2, teta3, teta4, teta5;
-	float d1, a2, a3, d5;
-	float q, qx, qy, qz, dmt;
+	double pitch_rad, roll_rad; // Unidade em radianos
+	double teta1, teta2, teta3, teta4, teta5;
+	double d1, a2, a3, d5;
+	double q, qx, qy, qz, dmt;
 
 
 	//int *theta = new int[5];

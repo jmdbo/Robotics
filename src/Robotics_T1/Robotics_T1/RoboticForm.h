@@ -525,7 +525,7 @@ namespace Robotics_T1 {
 		else
 		{
 			move_one_axis(Cp, 1, steps);
-			textBox1->Clear();
+			//textBox1->Clear();
 		}
 		motor_status();
 	}
@@ -533,7 +533,7 @@ namespace Robotics_T1 {
 	private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
 		int axis2 = Convert::ToInt32(textBox2->Text), steps;
 		
-		steps = degrees_to_steps(axis2, 1);
+		steps = degrees_to_steps(axis2, 2);
 
 		if (checkBox1->Checked == TRUE){
 			int speed = Convert::ToInt32(textBox8->Text);
@@ -549,7 +549,7 @@ namespace Robotics_T1 {
 		else
 		{
 			move_one_axis(Cp, 2, steps);
-			textBox2->Clear();
+			//textBox2->Clear();
 		}
 		motor_status();
 	}
@@ -557,7 +557,7 @@ namespace Robotics_T1 {
 	private: System::Void button4_Click(System::Object^  sender, System::EventArgs^  e) {
 		int axis3 = Convert::ToInt32(textBox3->Text), steps;
 
-		steps = degrees_to_steps(axis3, 1);
+		steps = degrees_to_steps(axis3, 3);
 
 		if (checkBox1->Checked == TRUE){
 			int speed = Convert::ToInt32(textBox9->Text);
@@ -573,7 +573,7 @@ namespace Robotics_T1 {
 		else
 		{
 			move_one_axis(Cp, 3, steps);
-			textBox3->Clear();
+			//textBox3->Clear();
 		}
 		motor_status();
 	}
@@ -581,7 +581,7 @@ namespace Robotics_T1 {
 	private: System::Void button5_Click(System::Object^  sender, System::EventArgs^  e) {
 		int axis4 = Convert::ToInt32(textBox4->Text), steps;
 
-		steps = degrees_to_steps(axis4, 1);
+		steps = degrees_to_steps(axis4, 4);
 
 		if (checkBox1->Checked == TRUE){
 			int speed = Convert::ToInt32(textBox10->Text);
@@ -597,7 +597,7 @@ namespace Robotics_T1 {
 		else
 		{
 			move_one_axis(Cp, 4, steps);
-			textBox4->Clear();
+			//textBox4->Clear();
 		}
 		motor_status();
 	}
@@ -605,7 +605,7 @@ namespace Robotics_T1 {
 	private: System::Void button6_Click(System::Object^  sender, System::EventArgs^  e) {
 		int axis5 = Convert::ToInt32(textBox5->Text), steps;
 
-		steps = degrees_to_steps(axis5, 1);
+		steps = degrees_to_steps(axis5, 5);
 
 		if (checkBox1->Checked == TRUE){
 			int speed = Convert::ToInt32(textBox11->Text);
@@ -621,7 +621,7 @@ namespace Robotics_T1 {
 		else
 		{
 			move_one_axis(Cp, 5, steps);
-			textBox5->Clear();
+			//textBox5->Clear();
 		}
 		motor_status();
 	}
@@ -645,7 +645,7 @@ namespace Robotics_T1 {
 		else
 		{
 			move_one_axis(Cp, 6, steps);
-			textBox6->Clear();
+			//textBox6->Clear();
 		}
 		motor_status();
 	}
@@ -704,8 +704,9 @@ namespace Robotics_T1 {
 
 		//motor_status();
 		
-		int theta[5];
-			backward_kinematic(246.64, 206.934, 567.888, 6.280, -36.35, theta);
+		//int theta[5];
+		//	backward_kinematic(246.64, 206.934, 567.888, 6.280, -36.35, theta);
+		motor_status();
 	}
 	};
 
