@@ -13,7 +13,7 @@ int degrees_to_steps(double degrees, int axis);
 int mm_to_steps(double distance);
 double steps_to_degrees(int steps, int axis);
 double stpes_to_mm(int steps);
-int direct_kinematic(float* theta, double* posAtt);
+int direct_kinematic(double* theta, double* posAtt);
 void robot_control_routine(TCommPort *port);
 void digital_outputs(TCommPort *Cp, int* data);
 
