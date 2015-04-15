@@ -106,7 +106,7 @@ void all_motor_status(TCommPort *Cp, char* steps)
 
 	Cp->Enviar(command, 2, tam);
 	printf("\n%s...", Cp->GetMensagem());
-	Sleep(1000);
+	//Sleep(1000);
 
 	Cp->EsperarRecepcao();
 	Cp->Receber(Buff, 8, tam);
@@ -116,6 +116,22 @@ void all_motor_status(TCommPort *Cp, char* steps)
 	{
 		steps[i] = (unsigned char)Buff[i + 1];
 	}
+}
+
+int motor_status(TCommPort *Cp, int axis){
+	int tam;
+	char command[20] = { 0x40+axis-1, 3 };
+	char Buff[128];
+
+
+	Cp->Enviar(command, 2, tam);
+	printf("\n%s...", Cp->GetMensagem());
+	//Sleep(1000);
+
+	Cp->EsperarRecepcao();
+	Cp->Receber(Buff, 3, tam);
+	int pos=(unsigned char)Buff[1];
+	return pos;
 }
 // nao funca*********************
 void digital_outputs(TCommPort *Cp, int* data)
