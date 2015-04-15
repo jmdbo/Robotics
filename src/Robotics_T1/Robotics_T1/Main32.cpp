@@ -404,57 +404,49 @@ void calibrate(TCommPort *Cp){
 	move_multiple_axis(Cp,steps);
 }
 
-void backward_kinematic(float px, float py, float pz, float pitch, float roll, int* theta)
+void backward_kinematic(double *posAtt, double* theta)
 {
-	double pitch_rad, roll_rad; // Unidade em radianos
-	double teta1, teta2, teta3, teta4, teta5;
-	double d1, a2, a3, d5;
-	double q, qx, qy, qz, dmt;
+	//posAtt 0-px, 1-py, 2-pz, 3-roll, 4-pitch, 5-yaw.
+	double roll = to_radians(posAtt[3]), pitch = to_radians(posAtt[4]), yaw = to_radians(posAtt[5]);
+	double px = posAtt[0], py = posAtt[1], pz = posAtt[2];
+	
+	//valores D-H
+	int d1=275,d5 = 130;
+	int a2 = 200,a3 = 130;
 
+	//rotz(roll)*roty(pitch)*rotx(yaw)
+	double nx = cos(roll)*cos(pitch);
+	double ny = sin(roll)*cos(pitch);
+	double nz = -sin(pitch);
 
-	//int *theta = new int[5];
+	double sx = cos(roll)*sin(pitch)*sin(yaw) - sin(roll)*cos(yaw);
+	double sy = sin(roll)*sin(pitch)*sin(yaw) + cos(roll)*cos(yaw);
+	double sz = cos(pitch)*sin(yaw);
 
-	// Converter o pitch e o roll de graus para radianos
-	pitch = to_radians(pitch);
-	roll = to_radians(roll);
-	//pitch = (pitch*M_PI) / 180;
-	//roll = (roll*M_PI) / 180;
+	double ax = cos(roll)*sin(pitch)*cos(yaw) + sin(roll)*sin(yaw);
+	double ay = sin(roll)*sin(pitch)*cos(yaw) - cos(roll)*sin(yaw);
+	double az = cos(pitch)*cos(yaw);
 
-	// dmt = 10^(-30)
-	dmt = 0.000000000000000000000000000001;
+	theta[0] = s_atan2(px, py);
+	
+	//aux variables
+	double theta123 = s_atan2(ax*cos(theta[0]) + ay*sin(theta[0]),az);
+	double cost3 = ((pow((double)(px*cos(theta[0]) + py*sin(theta[0]) - d5*cos(theta123)), 2) + pow((double)(pz - d1-d5*sin(theta123)), 2) - pow((double)a2, 2) - pow((double)a3, 2))/(2*a2*a3));
+	double sint3 = 1 - pow(cost3, 2);
 
-	d1 = 275;
-	a2 = 200;
-	a3 = 130;
-	d5 = 130;
+	theta[2] = s_atan2(cost3,-sqrt(sint3));
+	long double x = (a2 + a3*cos(theta[2]))*(-d5*cos(theta123) + cos(theta[0])*px + sin(theta[0])*py) + a3*sin(theta[2])*(-d1 + pz - d5*sin(theta123));
+	long double y = (a2 + a3*cos(theta[2]))*(-d1 + pz - d5*sin(theta123)) - a3*sin(theta[2])*(cos(theta[0])*px + sin(theta[0])*py - d5*cos(theta123));
+	theta[1] = atan(y/x);
+	theta[3] = theta123 - theta[1] - theta[2];
+	double div1 = (ny*cos(theta[0]) - nx*sin(theta[0])) / (sy*cos(theta[0]) - sx*sin(theta[0]));
+	theta[4] = atan(div1);
 
-	teta1 = atan2f(py, (px + dmt));
-	qx = px - d5*cos(pitch_rad) * cos(teta1);
-	qy = py - d5*cos(pitch_rad) * sin(teta1);
-	qz = pz - d5*sin(pitch_rad);
-	q = sqrt(pow(qx, 2) + pow(qy, 2) + pow(qz, 2));
+	theta[0] = to_degrees(theta[0]);
+	theta[1] = to_degrees(theta[1]);
+	theta[2] = to_degrees(theta[2]);
+	theta[3] = to_degrees(theta[3]);
+	theta[4] = to_degrees(theta[4]);
 
-	float a = pow((a2 + a3), 2) - pow(q, 2);
-	float b = pow(q, 2) - pow((a2 - a3), 2);
-	float c = pow(qx, 2) + pow(qy, 2);
-
-	if (a < 0)
-		a = 0;
-	if (b < 0)
-		b = 0;
-	if (c < 0)
-		c = 0;
-
-	teta3 = -2 * atan2f((sqrt(a)), (dmt + sqrt(b)));
-	teta2 = atan2f(qz, (dmt + sqrt(c))) - atan2f((a3*sin(teta3)), (dmt + a2 + a3*cos(teta3)));
-	teta4 = pitch_rad - teta2 - teta3;
-	teta5 = roll_rad - sin(pitch_rad)*teta1;
-
-	theta[0] = Convert::ToInt32(teta1 * 180 / M_PI);
-	theta[1] = Convert::ToInt32(teta2 * 180 / M_PI);
-	theta[2] = Convert::ToInt32(teta3 * 180 / M_PI);
-	theta[3] = Convert::ToInt32(teta4 * 180 / M_PI);
-	theta[4] = Convert::ToInt32(teta5 * 180 / M_PI);
-
-	//return theta;
+	printf("cinematica");
 }
