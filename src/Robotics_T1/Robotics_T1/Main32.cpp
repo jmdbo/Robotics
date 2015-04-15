@@ -173,7 +173,8 @@ int degrees_to_steps(double degrees, int axis)
 		step = (int)(stepF + 0.5);
 		break;
 	case 5:
-		//degrees = 0 - degrees;
+		degrees = 0 - degrees;
+		//degrees = 200 - degrees;
 		stepF = degrees / 0.78431372549019607843137254901961;
 		step = (int)(stepF + 0.5);
 		break;
@@ -220,7 +221,8 @@ double steps_to_degrees(int steps, int axis)
 		degrees = degrees + 100;
 		break;
 	case 5:
-		degrees = steps * 0.78431372549019607843137254901961;
+		degrees = steps * -0.78431372549019607843137254901961;
+		//degrees = degrees - 200;
 		break;
 	default:
 		break;
