@@ -16,7 +16,7 @@ namespace Robotics_T1 {
 	public ref class RoboticForm : public System::Windows::Forms::Form
 	{
 	public:
-		TCommPort* Cp = NULL;
+		
 
 		RoboticForm(void)
 		{
@@ -37,6 +37,7 @@ namespace Robotics_T1 {
 				delete components;
 			}
 		}
+	private: TCommPort* Cp = NULL;
 	private: System::Windows::Forms::TabControl^  tabControl1;
 	protected:
 
@@ -77,6 +78,97 @@ namespace Robotics_T1 {
 	private: System::Windows::Forms::TextBox^  textBox15;
 	private: System::Windows::Forms::TextBox^  textBox14;
 	private: System::Windows::Forms::TextBox^  textBox13;
+	private: System::Windows::Forms::StatusStrip^  statusStrip1;
+	private: System::Windows::Forms::ToolStripStatusLabel^  toolStripStatusLabel1;
+	private: System::Windows::Forms::TrackBar^  trackBar6;
+	private: System::Windows::Forms::TrackBar^  trackBar5;
+	private: System::Windows::Forms::TrackBar^  trackBar4;
+	private: System::Windows::Forms::TrackBar^  trackBar3;
+	private: System::Windows::Forms::TrackBar^  trackBar2;
+	private: System::Windows::Forms::TrackBar^  trackBar1;
+	private: System::Windows::Forms::ComboBox^  speedStep6;
+	private: System::Windows::Forms::ComboBox^  speedStep5;
+	private: System::Windows::Forms::ComboBox^  speedStep4;
+	private: System::Windows::Forms::ComboBox^  speedStep3;
+	private: System::Windows::Forms::ComboBox^  speedStep2;
+	private: System::Windows::Forms::ComboBox^  speedStep1;
+
+
+
+
+
+
+	private: System::Windows::Forms::CheckBox^  checkBoxSpeedStep;
+
+	private: System::Windows::Forms::Button^  buttonAxis6Step;
+	private: System::Windows::Forms::Button^  buttonAxis5Step;
+	private: System::Windows::Forms::Button^  buttonAxis4Step;
+	private: System::Windows::Forms::Button^  buttonAxis3Step;
+	private: System::Windows::Forms::Button^  buttonAxis2Step;
+	private: System::Windows::Forms::Button^  buttonAxis1Step;
+	private: System::Windows::Forms::GroupBox^  groupBox1;
+	private: System::Windows::Forms::Button^  buttonUpdateA5;
+
+	private: System::Windows::Forms::Button^  buttonUpdateA4;
+
+	private: System::Windows::Forms::Button^  buttonUpdateA3;
+
+	private: System::Windows::Forms::Button^  buttonUpdateA2;
+
+	private: System::Windows::Forms::Button^  buttonUpdateA1;
+private: System::Windows::Forms::TextBox^  angleAxis5;
+
+
+private: System::Windows::Forms::TextBox^  angleAxis4;
+
+private: System::Windows::Forms::TextBox^  angleAxis3;
+
+private: System::Windows::Forms::TextBox^  angleAxis2;
+
+private: System::Windows::Forms::TextBox^  angleAxis1;
+
+	private: System::Windows::Forms::GroupBox^  groupBox3;
+	private: System::Windows::Forms::GroupBox^  groupBox2;
+private: System::Windows::Forms::Button^  buttonUpdateAA;
+private: System::Windows::Forms::TextBox^  stepAxis5;
+
+
+private: System::Windows::Forms::TextBox^  stepAxis4;
+
+private: System::Windows::Forms::TextBox^  stepAxis3;
+
+private: System::Windows::Forms::TextBox^  stepAxis2;
+
+private: System::Windows::Forms::TextBox^  stepAxis1;
+
+private: System::Windows::Forms::Button^  buttonMoveAA;
+
+private: System::Windows::Forms::TextBox^  textStepA6;
+
+private: System::Windows::Forms::TextBox^  textStepA5;
+
+private: System::Windows::Forms::TextBox^  textStepA4;
+
+private: System::Windows::Forms::TextBox^  textStepA3;
+
+private: System::Windows::Forms::TextBox^  textStepA2;
+
+private: System::Windows::Forms::TextBox^  textStepA1;
+
+private: System::Windows::Forms::GroupBox^  groupBox4;
+private: System::Windows::Forms::Label^  label1;
+private: System::Windows::Forms::Label^  label5;
+private: System::Windows::Forms::Label^  label4;
+private: System::Windows::Forms::Label^  label3;
+private: System::Windows::Forms::Label^  label2;
+private: System::Windows::Forms::Label^  labelYaw;
+private: System::Windows::Forms::Label^  labelRoll;
+private: System::Windows::Forms::Label^  labelPitch;
+private: System::Windows::Forms::Label^  labelZ;
+private: System::Windows::Forms::Label^  labelY;
+private: System::Windows::Forms::Label^  labelX;
+private: System::Windows::Forms::Label^  label6;
+private: System::Windows::Forms::TabPage^  tabPage3;
 
 	private:
 		/// <summary>
@@ -124,22 +216,97 @@ namespace Robotics_T1 {
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
+			this->groupBox3 = (gcnew System::Windows::Forms::GroupBox());
+			this->groupBox4 = (gcnew System::Windows::Forms::GroupBox());
+			this->labelYaw = (gcnew System::Windows::Forms::Label());
+			this->labelRoll = (gcnew System::Windows::Forms::Label());
+			this->labelPitch = (gcnew System::Windows::Forms::Label());
+			this->labelZ = (gcnew System::Windows::Forms::Label());
+			this->labelY = (gcnew System::Windows::Forms::Label());
+			this->labelX = (gcnew System::Windows::Forms::Label());
+			this->label6 = (gcnew System::Windows::Forms::Label());
+			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->buttonUpdateAA = (gcnew System::Windows::Forms::Button());
+			this->buttonUpdateA5 = (gcnew System::Windows::Forms::Button());
+			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
+			this->stepAxis5 = (gcnew System::Windows::Forms::TextBox());
+			this->stepAxis4 = (gcnew System::Windows::Forms::TextBox());
+			this->stepAxis3 = (gcnew System::Windows::Forms::TextBox());
+			this->stepAxis2 = (gcnew System::Windows::Forms::TextBox());
+			this->stepAxis1 = (gcnew System::Windows::Forms::TextBox());
+			this->buttonUpdateA4 = (gcnew System::Windows::Forms::Button());
+			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
+			this->angleAxis5 = (gcnew System::Windows::Forms::TextBox());
+			this->angleAxis4 = (gcnew System::Windows::Forms::TextBox());
+			this->angleAxis3 = (gcnew System::Windows::Forms::TextBox());
+			this->angleAxis2 = (gcnew System::Windows::Forms::TextBox());
+			this->angleAxis1 = (gcnew System::Windows::Forms::TextBox());
+			this->buttonUpdateA3 = (gcnew System::Windows::Forms::Button());
+			this->buttonUpdateA1 = (gcnew System::Windows::Forms::Button());
+			this->buttonUpdateA2 = (gcnew System::Windows::Forms::Button());
+			this->buttonMoveAA = (gcnew System::Windows::Forms::Button());
+			this->textStepA6 = (gcnew System::Windows::Forms::TextBox());
+			this->textStepA5 = (gcnew System::Windows::Forms::TextBox());
+			this->textStepA4 = (gcnew System::Windows::Forms::TextBox());
+			this->textStepA3 = (gcnew System::Windows::Forms::TextBox());
+			this->textStepA2 = (gcnew System::Windows::Forms::TextBox());
+			this->textStepA1 = (gcnew System::Windows::Forms::TextBox());
+			this->checkBoxSpeedStep = (gcnew System::Windows::Forms::CheckBox());
+			this->buttonAxis6Step = (gcnew System::Windows::Forms::Button());
+			this->buttonAxis5Step = (gcnew System::Windows::Forms::Button());
+			this->buttonAxis4Step = (gcnew System::Windows::Forms::Button());
+			this->buttonAxis3Step = (gcnew System::Windows::Forms::Button());
+			this->buttonAxis2Step = (gcnew System::Windows::Forms::Button());
+			this->buttonAxis1Step = (gcnew System::Windows::Forms::Button());
+			this->speedStep6 = (gcnew System::Windows::Forms::ComboBox());
+			this->speedStep5 = (gcnew System::Windows::Forms::ComboBox());
+			this->speedStep4 = (gcnew System::Windows::Forms::ComboBox());
+			this->speedStep3 = (gcnew System::Windows::Forms::ComboBox());
+			this->speedStep2 = (gcnew System::Windows::Forms::ComboBox());
+			this->speedStep1 = (gcnew System::Windows::Forms::ComboBox());
+			this->trackBar6 = (gcnew System::Windows::Forms::TrackBar());
+			this->trackBar5 = (gcnew System::Windows::Forms::TrackBar());
+			this->trackBar4 = (gcnew System::Windows::Forms::TrackBar());
+			this->trackBar3 = (gcnew System::Windows::Forms::TrackBar());
+			this->trackBar2 = (gcnew System::Windows::Forms::TrackBar());
+			this->trackBar1 = (gcnew System::Windows::Forms::TrackBar());
+			this->tabPage3 = (gcnew System::Windows::Forms::TabPage());
+			this->statusStrip1 = (gcnew System::Windows::Forms::StatusStrip());
+			this->toolStripStatusLabel1 = (gcnew System::Windows::Forms::ToolStripStatusLabel());
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
+			this->tabPage2->SuspendLayout();
+			this->groupBox3->SuspendLayout();
+			this->groupBox4->SuspendLayout();
+			this->groupBox2->SuspendLayout();
+			this->groupBox1->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->trackBar6))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->trackBar5))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->trackBar4))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->trackBar3))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->trackBar2))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->trackBar1))->BeginInit();
+			this->statusStrip1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// tabControl1
 			// 
 			this->tabControl1->Controls->Add(this->tabPage1);
 			this->tabControl1->Controls->Add(this->tabPage2);
+			this->tabControl1->Controls->Add(this->tabPage3);
 			this->tabControl1->Location = System::Drawing::Point(12, 12);
 			this->tabControl1->Name = L"tabControl1";
 			this->tabControl1->SelectedIndex = 0;
-			this->tabControl1->Size = System::Drawing::Size(1160, 537);
+			this->tabControl1->Size = System::Drawing::Size(760, 524);
 			this->tabControl1->TabIndex = 0;
 			// 
 			// tabPage1
 			// 
+			this->tabPage1->BackColor = System::Drawing::SystemColors::Control;
 			this->tabPage1->Controls->Add(this->textBox18);
 			this->tabPage1->Controls->Add(this->textBox17);
 			this->tabPage1->Controls->Add(this->textBox16);
@@ -173,10 +340,9 @@ namespace Robotics_T1 {
 			this->tabPage1->Location = System::Drawing::Point(4, 22);
 			this->tabPage1->Name = L"tabPage1";
 			this->tabPage1->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage1->Size = System::Drawing::Size(1152, 511);
+			this->tabPage1->Size = System::Drawing::Size(752, 498);
 			this->tabPage1->TabIndex = 0;
 			this->tabPage1->Text = L"Robot Controls";
-			this->tabPage1->UseVisualStyleBackColor = true;
 			// 
 			// textBox18
 			// 
@@ -441,35 +607,670 @@ namespace Robotics_T1 {
 			// 
 			// tabPage2
 			// 
+			this->tabPage2->BackColor = System::Drawing::SystemColors::Control;
+			this->tabPage2->Controls->Add(this->groupBox3);
+			this->tabPage2->Controls->Add(this->buttonMoveAA);
+			this->tabPage2->Controls->Add(this->textStepA6);
+			this->tabPage2->Controls->Add(this->textStepA5);
+			this->tabPage2->Controls->Add(this->textStepA4);
+			this->tabPage2->Controls->Add(this->textStepA3);
+			this->tabPage2->Controls->Add(this->textStepA2);
+			this->tabPage2->Controls->Add(this->textStepA1);
+			this->tabPage2->Controls->Add(this->checkBoxSpeedStep);
+			this->tabPage2->Controls->Add(this->buttonAxis6Step);
+			this->tabPage2->Controls->Add(this->buttonAxis5Step);
+			this->tabPage2->Controls->Add(this->buttonAxis4Step);
+			this->tabPage2->Controls->Add(this->buttonAxis3Step);
+			this->tabPage2->Controls->Add(this->buttonAxis2Step);
+			this->tabPage2->Controls->Add(this->buttonAxis1Step);
+			this->tabPage2->Controls->Add(this->speedStep6);
+			this->tabPage2->Controls->Add(this->speedStep5);
+			this->tabPage2->Controls->Add(this->speedStep4);
+			this->tabPage2->Controls->Add(this->speedStep3);
+			this->tabPage2->Controls->Add(this->speedStep2);
+			this->tabPage2->Controls->Add(this->speedStep1);
+			this->tabPage2->Controls->Add(this->trackBar6);
+			this->tabPage2->Controls->Add(this->trackBar5);
+			this->tabPage2->Controls->Add(this->trackBar4);
+			this->tabPage2->Controls->Add(this->trackBar3);
+			this->tabPage2->Controls->Add(this->trackBar2);
+			this->tabPage2->Controls->Add(this->trackBar1);
 			this->tabPage2->Location = System::Drawing::Point(4, 22);
 			this->tabPage2->Name = L"tabPage2";
 			this->tabPage2->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage2->Size = System::Drawing::Size(1152, 511);
+			this->tabPage2->Size = System::Drawing::Size(752, 498);
 			this->tabPage2->TabIndex = 1;
-			this->tabPage2->Text = L"tabPage2";
-			this->tabPage2->UseVisualStyleBackColor = true;
+			this->tabPage2->Text = L"Step Control";
+			// 
+			// groupBox3
+			// 
+			this->groupBox3->Controls->Add(this->groupBox4);
+			this->groupBox3->Controls->Add(this->buttonUpdateAA);
+			this->groupBox3->Controls->Add(this->buttonUpdateA5);
+			this->groupBox3->Controls->Add(this->groupBox2);
+			this->groupBox3->Controls->Add(this->buttonUpdateA4);
+			this->groupBox3->Controls->Add(this->groupBox1);
+			this->groupBox3->Controls->Add(this->buttonUpdateA3);
+			this->groupBox3->Controls->Add(this->buttonUpdateA1);
+			this->groupBox3->Controls->Add(this->buttonUpdateA2);
+			this->groupBox3->Location = System::Drawing::Point(7, 317);
+			this->groupBox3->Name = L"groupBox3";
+			this->groupBox3->Size = System::Drawing::Size(569, 175);
+			this->groupBox3->TabIndex = 38;
+			this->groupBox3->TabStop = false;
+			this->groupBox3->Text = L"Positions";
+			// 
+			// groupBox4
+			// 
+			this->groupBox4->Controls->Add(this->labelYaw);
+			this->groupBox4->Controls->Add(this->labelRoll);
+			this->groupBox4->Controls->Add(this->labelPitch);
+			this->groupBox4->Controls->Add(this->labelZ);
+			this->groupBox4->Controls->Add(this->labelY);
+			this->groupBox4->Controls->Add(this->labelX);
+			this->groupBox4->Controls->Add(this->label6);
+			this->groupBox4->Controls->Add(this->label5);
+			this->groupBox4->Controls->Add(this->label4);
+			this->groupBox4->Controls->Add(this->label3);
+			this->groupBox4->Controls->Add(this->label2);
+			this->groupBox4->Controls->Add(this->label1);
+			this->groupBox4->Location = System::Drawing::Point(322, 10);
+			this->groupBox4->Name = L"groupBox4";
+			this->groupBox4->Size = System::Drawing::Size(145, 165);
+			this->groupBox4->TabIndex = 39;
+			this->groupBox4->TabStop = false;
+			this->groupBox4->Text = L"Gripper Position";
+			// 
+			// labelYaw
+			// 
+			this->labelYaw->AutoSize = true;
+			this->labelYaw->Location = System::Drawing::Point(102, 132);
+			this->labelYaw->Name = L"labelYaw";
+			this->labelYaw->Size = System::Drawing::Size(13, 13);
+			this->labelYaw->TabIndex = 11;
+			this->labelYaw->Text = L"0";
+			// 
+			// labelRoll
+			// 
+			this->labelRoll->AutoSize = true;
+			this->labelRoll->Location = System::Drawing::Point(102, 113);
+			this->labelRoll->Name = L"labelRoll";
+			this->labelRoll->Size = System::Drawing::Size(13, 13);
+			this->labelRoll->TabIndex = 10;
+			this->labelRoll->Text = L"0";
+			// 
+			// labelPitch
+			// 
+			this->labelPitch->AutoSize = true;
+			this->labelPitch->Location = System::Drawing::Point(102, 93);
+			this->labelPitch->Name = L"labelPitch";
+			this->labelPitch->Size = System::Drawing::Size(13, 13);
+			this->labelPitch->TabIndex = 9;
+			this->labelPitch->Text = L"0";
+			// 
+			// labelZ
+			// 
+			this->labelZ->AutoSize = true;
+			this->labelZ->Location = System::Drawing::Point(102, 61);
+			this->labelZ->Name = L"labelZ";
+			this->labelZ->Size = System::Drawing::Size(13, 13);
+			this->labelZ->TabIndex = 8;
+			this->labelZ->Text = L"0";
+			// 
+			// labelY
+			// 
+			this->labelY->AutoSize = true;
+			this->labelY->Location = System::Drawing::Point(102, 45);
+			this->labelY->Name = L"labelY";
+			this->labelY->Size = System::Drawing::Size(13, 13);
+			this->labelY->TabIndex = 7;
+			this->labelY->Text = L"0";
+			// 
+			// labelX
+			// 
+			this->labelX->AutoSize = true;
+			this->labelX->Location = System::Drawing::Point(102, 27);
+			this->labelX->Name = L"labelX";
+			this->labelX->Size = System::Drawing::Size(13, 13);
+			this->labelX->TabIndex = 6;
+			this->labelX->Text = L"0";
+			// 
+			// label6
+			// 
+			this->label6->AutoSize = true;
+			this->label6->Location = System::Drawing::Point(6, 132);
+			this->label6->Name = L"label6";
+			this->label6->Size = System::Drawing::Size(41, 13);
+			this->label6->TabIndex = 5;
+			this->label6->Text = L"Yaw (º)";
+			// 
+			// label5
+			// 
+			this->label5->AutoSize = true;
+			this->label5->Location = System::Drawing::Point(6, 113);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(38, 13);
+			this->label5->TabIndex = 4;
+			this->label5->Text = L"Roll (º)";
+			// 
+			// label4
+			// 
+			this->label4->AutoSize = true;
+			this->label4->Location = System::Drawing::Point(6, 93);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(44, 13);
+			this->label4->TabIndex = 3;
+			this->label4->Text = L"Pitch (º)";
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Location = System::Drawing::Point(6, 62);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(59, 13);
+			this->label3->TabIndex = 2;
+			this->label3->Text = L"Z pos (mm)";
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Location = System::Drawing::Point(6, 45);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(59, 13);
+			this->label2->TabIndex = 1;
+			this->label2->Text = L"Y pos (mm)";
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Location = System::Drawing::Point(6, 27);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(59, 13);
+			this->label1->TabIndex = 0;
+			this->label1->Text = L"X pos (mm)";
+			// 
+			// buttonUpdateAA
+			// 
+			this->buttonUpdateAA->Location = System::Drawing::Point(484, 27);
+			this->buttonUpdateAA->Name = L"buttonUpdateAA";
+			this->buttonUpdateAA->Size = System::Drawing::Size(74, 137);
+			this->buttonUpdateAA->TabIndex = 29;
+			this->buttonUpdateAA->Text = L"Update All Axis";
+			this->buttonUpdateAA->UseVisualStyleBackColor = true;
+			// 
+			// buttonUpdateA5
+			// 
+			this->buttonUpdateA5->Location = System::Drawing::Point(6, 143);
+			this->buttonUpdateA5->Name = L"buttonUpdateA5";
+			this->buttonUpdateA5->Size = System::Drawing::Size(75, 23);
+			this->buttonUpdateA5->TabIndex = 28;
+			this->buttonUpdateA5->Text = L"Update A5";
+			this->buttonUpdateA5->UseVisualStyleBackColor = true;
+			// 
+			// groupBox2
+			// 
+			this->groupBox2->Controls->Add(this->stepAxis5);
+			this->groupBox2->Controls->Add(this->stepAxis4);
+			this->groupBox2->Controls->Add(this->stepAxis3);
+			this->groupBox2->Controls->Add(this->stepAxis2);
+			this->groupBox2->Controls->Add(this->stepAxis1);
+			this->groupBox2->Location = System::Drawing::Point(199, 10);
+			this->groupBox2->Name = L"groupBox2";
+			this->groupBox2->Size = System::Drawing::Size(117, 165);
+			this->groupBox2->TabIndex = 30;
+			this->groupBox2->TabStop = false;
+			this->groupBox2->Text = L"Step";
+			// 
+			// stepAxis5
+			// 
+			this->stepAxis5->Enabled = false;
+			this->stepAxis5->Location = System::Drawing::Point(5, 135);
+			this->stepAxis5->Name = L"stepAxis5";
+			this->stepAxis5->Size = System::Drawing::Size(100, 20);
+			this->stepAxis5->TabIndex = 23;
+			this->stepAxis5->Text = L"Axis 5";
+			// 
+			// stepAxis4
+			// 
+			this->stepAxis4->Enabled = false;
+			this->stepAxis4->Location = System::Drawing::Point(6, 106);
+			this->stepAxis4->Name = L"stepAxis4";
+			this->stepAxis4->Size = System::Drawing::Size(100, 20);
+			this->stepAxis4->TabIndex = 22;
+			this->stepAxis4->Text = L"Axis 4";
+			// 
+			// stepAxis3
+			// 
+			this->stepAxis3->Enabled = false;
+			this->stepAxis3->Location = System::Drawing::Point(5, 77);
+			this->stepAxis3->Name = L"stepAxis3";
+			this->stepAxis3->Size = System::Drawing::Size(100, 20);
+			this->stepAxis3->TabIndex = 21;
+			this->stepAxis3->Text = L"Axis 3";
+			// 
+			// stepAxis2
+			// 
+			this->stepAxis2->Enabled = false;
+			this->stepAxis2->Location = System::Drawing::Point(5, 48);
+			this->stepAxis2->Name = L"stepAxis2";
+			this->stepAxis2->Size = System::Drawing::Size(100, 20);
+			this->stepAxis2->TabIndex = 20;
+			this->stepAxis2->Text = L"Axis 2";
+			// 
+			// stepAxis1
+			// 
+			this->stepAxis1->Enabled = false;
+			this->stepAxis1->Location = System::Drawing::Point(5, 19);
+			this->stepAxis1->Name = L"stepAxis1";
+			this->stepAxis1->Size = System::Drawing::Size(100, 20);
+			this->stepAxis1->TabIndex = 19;
+			this->stepAxis1->Text = L"Axis 1";
+			// 
+			// buttonUpdateA4
+			// 
+			this->buttonUpdateA4->Location = System::Drawing::Point(6, 114);
+			this->buttonUpdateA4->Name = L"buttonUpdateA4";
+			this->buttonUpdateA4->Size = System::Drawing::Size(75, 23);
+			this->buttonUpdateA4->TabIndex = 27;
+			this->buttonUpdateA4->Text = L"Update A4";
+			this->buttonUpdateA4->UseVisualStyleBackColor = true;
+			// 
+			// groupBox1
+			// 
+			this->groupBox1->Controls->Add(this->angleAxis5);
+			this->groupBox1->Controls->Add(this->angleAxis4);
+			this->groupBox1->Controls->Add(this->angleAxis3);
+			this->groupBox1->Controls->Add(this->angleAxis2);
+			this->groupBox1->Controls->Add(this->angleAxis1);
+			this->groupBox1->Location = System::Drawing::Point(87, 10);
+			this->groupBox1->Name = L"groupBox1";
+			this->groupBox1->Size = System::Drawing::Size(111, 165);
+			this->groupBox1->TabIndex = 29;
+			this->groupBox1->TabStop = false;
+			this->groupBox1->Text = L"Angular";
+			// 
+			// angleAxis5
+			// 
+			this->angleAxis5->Enabled = false;
+			this->angleAxis5->Location = System::Drawing::Point(6, 135);
+			this->angleAxis5->Name = L"angleAxis5";
+			this->angleAxis5->Size = System::Drawing::Size(100, 20);
+			this->angleAxis5->TabIndex = 23;
+			this->angleAxis5->Text = L"Axis 5";
+			// 
+			// angleAxis4
+			// 
+			this->angleAxis4->Enabled = false;
+			this->angleAxis4->Location = System::Drawing::Point(6, 106);
+			this->angleAxis4->Name = L"angleAxis4";
+			this->angleAxis4->Size = System::Drawing::Size(100, 20);
+			this->angleAxis4->TabIndex = 22;
+			this->angleAxis4->Text = L"Axis 4";
+			// 
+			// angleAxis3
+			// 
+			this->angleAxis3->Enabled = false;
+			this->angleAxis3->Location = System::Drawing::Point(6, 77);
+			this->angleAxis3->Name = L"angleAxis3";
+			this->angleAxis3->Size = System::Drawing::Size(100, 20);
+			this->angleAxis3->TabIndex = 21;
+			this->angleAxis3->Text = L"Axis 3";
+			// 
+			// angleAxis2
+			// 
+			this->angleAxis2->Enabled = false;
+			this->angleAxis2->Location = System::Drawing::Point(6, 48);
+			this->angleAxis2->Name = L"angleAxis2";
+			this->angleAxis2->Size = System::Drawing::Size(100, 20);
+			this->angleAxis2->TabIndex = 20;
+			this->angleAxis2->Text = L"Axis 2";
+			// 
+			// angleAxis1
+			// 
+			this->angleAxis1->Enabled = false;
+			this->angleAxis1->Location = System::Drawing::Point(6, 19);
+			this->angleAxis1->Name = L"angleAxis1";
+			this->angleAxis1->Size = System::Drawing::Size(100, 20);
+			this->angleAxis1->TabIndex = 19;
+			this->angleAxis1->Text = L"Axis 1";
+			// 
+			// buttonUpdateA3
+			// 
+			this->buttonUpdateA3->Location = System::Drawing::Point(6, 85);
+			this->buttonUpdateA3->Name = L"buttonUpdateA3";
+			this->buttonUpdateA3->Size = System::Drawing::Size(75, 23);
+			this->buttonUpdateA3->TabIndex = 26;
+			this->buttonUpdateA3->Text = L"Update A3";
+			this->buttonUpdateA3->UseVisualStyleBackColor = true;
+			// 
+			// buttonUpdateA1
+			// 
+			this->buttonUpdateA1->Location = System::Drawing::Point(6, 27);
+			this->buttonUpdateA1->Name = L"buttonUpdateA1";
+			this->buttonUpdateA1->Size = System::Drawing::Size(75, 23);
+			this->buttonUpdateA1->TabIndex = 24;
+			this->buttonUpdateA1->Text = L"Update A1";
+			this->buttonUpdateA1->UseVisualStyleBackColor = true;
+			// 
+			// buttonUpdateA2
+			// 
+			this->buttonUpdateA2->Location = System::Drawing::Point(6, 56);
+			this->buttonUpdateA2->Name = L"buttonUpdateA2";
+			this->buttonUpdateA2->Size = System::Drawing::Size(75, 23);
+			this->buttonUpdateA2->TabIndex = 25;
+			this->buttonUpdateA2->Text = L"Update A2";
+			this->buttonUpdateA2->UseVisualStyleBackColor = true;
+			// 
+			// buttonMoveAA
+			// 
+			this->buttonMoveAA->Location = System::Drawing::Point(656, 344);
+			this->buttonMoveAA->Name = L"buttonMoveAA";
+			this->buttonMoveAA->Size = System::Drawing::Size(74, 139);
+			this->buttonMoveAA->TabIndex = 37;
+			this->buttonMoveAA->Text = L"Move All Axis";
+			this->buttonMoveAA->UseVisualStyleBackColor = true;
+			// 
+			// textStepA6
+			// 
+			this->textStepA6->Location = System::Drawing::Point(526, 282);
+			this->textStepA6->Name = L"textStepA6";
+			this->textStepA6->Size = System::Drawing::Size(100, 20);
+			this->textStepA6->TabIndex = 36;
+			this->textStepA6->Text = L"Axis";
+			// 
+			// textStepA5
+			// 
+			this->textStepA5->Location = System::Drawing::Point(526, 231);
+			this->textStepA5->Name = L"textStepA5";
+			this->textStepA5->Size = System::Drawing::Size(100, 20);
+			this->textStepA5->TabIndex = 35;
+			this->textStepA5->Text = L"Axis";
+			// 
+			// textStepA4
+			// 
+			this->textStepA4->Location = System::Drawing::Point(526, 182);
+			this->textStepA4->Name = L"textStepA4";
+			this->textStepA4->Size = System::Drawing::Size(100, 20);
+			this->textStepA4->TabIndex = 34;
+			this->textStepA4->Text = L"Axis";
+			// 
+			// textStepA3
+			// 
+			this->textStepA3->Location = System::Drawing::Point(526, 131);
+			this->textStepA3->Name = L"textStepA3";
+			this->textStepA3->Size = System::Drawing::Size(100, 20);
+			this->textStepA3->TabIndex = 33;
+			this->textStepA3->Text = L"Axis";
+			// 
+			// textStepA2
+			// 
+			this->textStepA2->Location = System::Drawing::Point(526, 80);
+			this->textStepA2->Name = L"textStepA2";
+			this->textStepA2->Size = System::Drawing::Size(100, 20);
+			this->textStepA2->TabIndex = 32;
+			this->textStepA2->Text = L"Axis";
+			// 
+			// textStepA1
+			// 
+			this->textStepA1->Location = System::Drawing::Point(526, 26);
+			this->textStepA1->Name = L"textStepA1";
+			this->textStepA1->Size = System::Drawing::Size(100, 20);
+			this->textStepA1->TabIndex = 31;
+			this->textStepA1->Text = L"Axis";
+			// 
+			// checkBoxSpeedStep
+			// 
+			this->checkBoxSpeedStep->AutoSize = true;
+			this->checkBoxSpeedStep->Location = System::Drawing::Point(673, 310);
+			this->checkBoxSpeedStep->Name = L"checkBoxSpeedStep";
+			this->checkBoxSpeedStep->Size = System::Drawing::Size(57, 17);
+			this->checkBoxSpeedStep->TabIndex = 18;
+			this->checkBoxSpeedStep->Text = L"Speed";
+			this->checkBoxSpeedStep->UseVisualStyleBackColor = true;
+			// 
+			// buttonAxis6Step
+			// 
+			this->buttonAxis6Step->Enabled = false;
+			this->buttonAxis6Step->Location = System::Drawing::Point(7, 280);
+			this->buttonAxis6Step->Name = L"buttonAxis6Step";
+			this->buttonAxis6Step->Size = System::Drawing::Size(75, 23);
+			this->buttonAxis6Step->TabIndex = 17;
+			this->buttonAxis6Step->Text = L"Axis 6";
+			this->buttonAxis6Step->UseVisualStyleBackColor = true;
+			this->buttonAxis6Step->Click += gcnew System::EventHandler(this, &RoboticForm::buttonAxis6Step_Click);
+			// 
+			// buttonAxis5Step
+			// 
+			this->buttonAxis5Step->Enabled = false;
+			this->buttonAxis5Step->Location = System::Drawing::Point(7, 229);
+			this->buttonAxis5Step->Name = L"buttonAxis5Step";
+			this->buttonAxis5Step->Size = System::Drawing::Size(75, 23);
+			this->buttonAxis5Step->TabIndex = 16;
+			this->buttonAxis5Step->Text = L"Axis 5";
+			this->buttonAxis5Step->UseVisualStyleBackColor = true;
+			this->buttonAxis5Step->Click += gcnew System::EventHandler(this, &RoboticForm::buttonAxis5Step_Click);
+			// 
+			// buttonAxis4Step
+			// 
+			this->buttonAxis4Step->Enabled = false;
+			this->buttonAxis4Step->Location = System::Drawing::Point(7, 180);
+			this->buttonAxis4Step->Name = L"buttonAxis4Step";
+			this->buttonAxis4Step->Size = System::Drawing::Size(75, 23);
+			this->buttonAxis4Step->TabIndex = 15;
+			this->buttonAxis4Step->Text = L"Axis 4";
+			this->buttonAxis4Step->UseVisualStyleBackColor = true;
+			this->buttonAxis4Step->Click += gcnew System::EventHandler(this, &RoboticForm::buttonAxis4Step_Click);
+			// 
+			// buttonAxis3Step
+			// 
+			this->buttonAxis3Step->Enabled = false;
+			this->buttonAxis3Step->Location = System::Drawing::Point(7, 129);
+			this->buttonAxis3Step->Name = L"buttonAxis3Step";
+			this->buttonAxis3Step->Size = System::Drawing::Size(75, 23);
+			this->buttonAxis3Step->TabIndex = 14;
+			this->buttonAxis3Step->Text = L"Axis 3";
+			this->buttonAxis3Step->UseVisualStyleBackColor = true;
+			this->buttonAxis3Step->Click += gcnew System::EventHandler(this, &RoboticForm::buttonAxis3Step_Click);
+			// 
+			// buttonAxis2Step
+			// 
+			this->buttonAxis2Step->Enabled = false;
+			this->buttonAxis2Step->Location = System::Drawing::Point(7, 78);
+			this->buttonAxis2Step->Name = L"buttonAxis2Step";
+			this->buttonAxis2Step->Size = System::Drawing::Size(75, 23);
+			this->buttonAxis2Step->TabIndex = 13;
+			this->buttonAxis2Step->Text = L"Axis 2";
+			this->buttonAxis2Step->UseVisualStyleBackColor = true;
+			this->buttonAxis2Step->Click += gcnew System::EventHandler(this, &RoboticForm::buttonAxis2Step_Click);
+			// 
+			// buttonAxis1Step
+			// 
+			this->buttonAxis1Step->Enabled = false;
+			this->buttonAxis1Step->Location = System::Drawing::Point(7, 24);
+			this->buttonAxis1Step->Name = L"buttonAxis1Step";
+			this->buttonAxis1Step->Size = System::Drawing::Size(75, 23);
+			this->buttonAxis1Step->TabIndex = 12;
+			this->buttonAxis1Step->Text = L"Axis 1";
+			this->buttonAxis1Step->UseVisualStyleBackColor = true;
+			this->buttonAxis1Step->Click += gcnew System::EventHandler(this, &RoboticForm::buttonAxis1Step_Click);
+			// 
+			// speedStep6
+			// 
+			this->speedStep6->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->speedStep6->FormattingEnabled = true;
+			this->speedStep6->Items->AddRange(gcnew cli::array< System::Object^  >(5) { L"5", L"4", L"3", L"2", L"1" });
+			this->speedStep6->Location = System::Drawing::Point(632, 282);
+			this->speedStep6->Name = L"speedStep6";
+			this->speedStep6->Size = System::Drawing::Size(114, 21);
+			this->speedStep6->TabIndex = 11;
+			// 
+			// speedStep5
+			// 
+			this->speedStep5->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->speedStep5->FormattingEnabled = true;
+			this->speedStep5->Items->AddRange(gcnew cli::array< System::Object^  >(5) { L"5", L"4", L"3", L"2", L"1" });
+			this->speedStep5->Location = System::Drawing::Point(632, 231);
+			this->speedStep5->Name = L"speedStep5";
+			this->speedStep5->Size = System::Drawing::Size(114, 21);
+			this->speedStep5->TabIndex = 10;
+			// 
+			// speedStep4
+			// 
+			this->speedStep4->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->speedStep4->FormattingEnabled = true;
+			this->speedStep4->Items->AddRange(gcnew cli::array< System::Object^  >(5) { L"5", L"4", L"3", L"2", L"1" });
+			this->speedStep4->Location = System::Drawing::Point(632, 180);
+			this->speedStep4->Name = L"speedStep4";
+			this->speedStep4->Size = System::Drawing::Size(114, 21);
+			this->speedStep4->TabIndex = 9;
+			// 
+			// speedStep3
+			// 
+			this->speedStep3->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->speedStep3->FormattingEnabled = true;
+			this->speedStep3->Items->AddRange(gcnew cli::array< System::Object^  >(5) { L"5", L"4", L"3", L"2", L"1" });
+			this->speedStep3->Location = System::Drawing::Point(632, 129);
+			this->speedStep3->Name = L"speedStep3";
+			this->speedStep3->Size = System::Drawing::Size(114, 21);
+			this->speedStep3->TabIndex = 8;
+			// 
+			// speedStep2
+			// 
+			this->speedStep2->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->speedStep2->FormattingEnabled = true;
+			this->speedStep2->Items->AddRange(gcnew cli::array< System::Object^  >(5) { L"5", L"4", L"3", L"2", L"1" });
+			this->speedStep2->Location = System::Drawing::Point(632, 78);
+			this->speedStep2->Name = L"speedStep2";
+			this->speedStep2->Size = System::Drawing::Size(114, 21);
+			this->speedStep2->TabIndex = 7;
+			// 
+			// speedStep1
+			// 
+			this->speedStep1->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->speedStep1->FormattingEnabled = true;
+			this->speedStep1->Items->AddRange(gcnew cli::array< System::Object^  >(5) { L"5", L"4", L"3", L"2", L"1" });
+			this->speedStep1->Location = System::Drawing::Point(632, 26);
+			this->speedStep1->Name = L"speedStep1";
+			this->speedStep1->Size = System::Drawing::Size(114, 21);
+			this->speedStep1->TabIndex = 6;
+			// 
+			// trackBar6
+			// 
+			this->trackBar6->Location = System::Drawing::Point(86, 282);
+			this->trackBar6->Maximum = 255;
+			this->trackBar6->Name = L"trackBar6";
+			this->trackBar6->Size = System::Drawing::Size(434, 45);
+			this->trackBar6->TabIndex = 5;
+			this->trackBar6->Scroll += gcnew System::EventHandler(this, &RoboticForm::trackBar6_Scroll);
+			// 
+			// trackBar5
+			// 
+			this->trackBar5->Location = System::Drawing::Point(86, 231);
+			this->trackBar5->Maximum = 255;
+			this->trackBar5->Name = L"trackBar5";
+			this->trackBar5->Size = System::Drawing::Size(434, 45);
+			this->trackBar5->TabIndex = 4;
+			this->trackBar5->Scroll += gcnew System::EventHandler(this, &RoboticForm::trackBar5_Scroll);
+			// 
+			// trackBar4
+			// 
+			this->trackBar4->Location = System::Drawing::Point(86, 180);
+			this->trackBar4->Maximum = 255;
+			this->trackBar4->Name = L"trackBar4";
+			this->trackBar4->Size = System::Drawing::Size(434, 45);
+			this->trackBar4->TabIndex = 3;
+			this->trackBar4->Scroll += gcnew System::EventHandler(this, &RoboticForm::trackBar4_Scroll);
+			// 
+			// trackBar3
+			// 
+			this->trackBar3->Location = System::Drawing::Point(86, 129);
+			this->trackBar3->Maximum = 255;
+			this->trackBar3->Name = L"trackBar3";
+			this->trackBar3->Size = System::Drawing::Size(434, 45);
+			this->trackBar3->TabIndex = 2;
+			this->trackBar3->Scroll += gcnew System::EventHandler(this, &RoboticForm::trackBar3_Scroll);
+			// 
+			// trackBar2
+			// 
+			this->trackBar2->Location = System::Drawing::Point(86, 78);
+			this->trackBar2->Maximum = 255;
+			this->trackBar2->Name = L"trackBar2";
+			this->trackBar2->Size = System::Drawing::Size(434, 45);
+			this->trackBar2->TabIndex = 1;
+			this->trackBar2->Scroll += gcnew System::EventHandler(this, &RoboticForm::trackBar2_Scroll);
+			// 
+			// trackBar1
+			// 
+			this->trackBar1->Location = System::Drawing::Point(86, 27);
+			this->trackBar1->Maximum = 255;
+			this->trackBar1->Name = L"trackBar1";
+			this->trackBar1->Size = System::Drawing::Size(434, 45);
+			this->trackBar1->TabIndex = 0;
+			this->trackBar1->Scroll += gcnew System::EventHandler(this, &RoboticForm::trackBar1_Scroll);
+			// 
+			// tabPage3
+			// 
+			this->tabPage3->Location = System::Drawing::Point(4, 22);
+			this->tabPage3->Name = L"tabPage3";
+			this->tabPage3->Padding = System::Windows::Forms::Padding(3);
+			this->tabPage3->Size = System::Drawing::Size(752, 498);
+			this->tabPage3->TabIndex = 2;
+			this->tabPage3->Text = L"Angular Control";
+			this->tabPage3->UseVisualStyleBackColor = true;
+			// 
+			// statusStrip1
+			// 
+			this->statusStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->toolStripStatusLabel1 });
+			this->statusStrip1->Location = System::Drawing::Point(0, 539);
+			this->statusStrip1->Name = L"statusStrip1";
+			this->statusStrip1->Size = System::Drawing::Size(788, 22);
+			this->statusStrip1->TabIndex = 1;
+			this->statusStrip1->Text = L"statusStrip1";
+			// 
+			// toolStripStatusLabel1
+			// 
+			this->toolStripStatusLabel1->Name = L"toolStripStatusLabel1";
+			this->toolStripStatusLabel1->Size = System::Drawing::Size(79, 17);
+			this->toolStripStatusLabel1->Text = L"Disconnected";
 			// 
 			// RoboticForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoSize = true;
-			this->ClientSize = System::Drawing::Size(1184, 561);
+			this->ClientSize = System::Drawing::Size(788, 561);
+			this->Controls->Add(this->statusStrip1);
 			this->Controls->Add(this->tabControl1);
-			this->MaximumSize = System::Drawing::Size(1200, 600);
-			this->MinimumSize = System::Drawing::Size(1200, 600);
 			this->Name = L"RoboticForm";
 			this->Text = L"RoboticForm";
 			this->Load += gcnew System::EventHandler(this, &RoboticForm::RoboticForm_Load);
 			this->tabControl1->ResumeLayout(false);
 			this->tabPage1->ResumeLayout(false);
 			this->tabPage1->PerformLayout();
+			this->tabPage2->ResumeLayout(false);
+			this->tabPage2->PerformLayout();
+			this->groupBox3->ResumeLayout(false);
+			this->groupBox4->ResumeLayout(false);
+			this->groupBox4->PerformLayout();
+			this->groupBox2->ResumeLayout(false);
+			this->groupBox2->PerformLayout();
+			this->groupBox1->ResumeLayout(false);
+			this->groupBox1->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->trackBar6))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->trackBar5))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->trackBar4))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->trackBar3))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->trackBar2))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->trackBar1))->EndInit();
+			this->statusStrip1->ResumeLayout(false);
+			this->statusStrip1->PerformLayout();
 			this->ResumeLayout(false);
+			this->PerformLayout();
 
 		}
 #pragma endregion
 
-		void motor_status(){
+		void motor_status_all(){
 			char steparray[6];
 			all_motor_status(Cp,steparray);
 			textBox13->Text = Convert::ToString(steps_to_degrees((unsigned char)steparray[0], 1));
@@ -491,7 +1292,8 @@ namespace Robotics_T1 {
 		}
 		else
 		{
-			MessageBox::Show("Connected!");
+			//MessageBox::Show("Connected!");
+			toolStripStatusLabel1->Text = "Connected";
 			button2->Enabled = TRUE;
 			button3->Enabled = TRUE;
 			button4->Enabled = TRUE;
@@ -502,6 +1304,18 @@ namespace Robotics_T1 {
 			button9->Enabled = TRUE;
 			button10->Enabled = TRUE;
 			button11->Enabled = TRUE;
+			buttonAxis1Step->Enabled = TRUE;
+			buttonAxis2Step->Enabled = TRUE;
+			buttonAxis3Step->Enabled = TRUE;
+			buttonAxis4Step->Enabled = TRUE;
+			buttonAxis5Step->Enabled = TRUE;
+			buttonAxis6Step->Enabled = TRUE;
+			speedStep1->SelectedIndex = 2;
+			speedStep2->SelectedIndex = 2;
+			speedStep3->SelectedIndex = 2;
+			speedStep4->SelectedIndex = 2;
+			speedStep5->SelectedIndex = 2;
+			speedStep6->SelectedIndex = 2;
 		}
 
 	}
@@ -525,15 +1339,15 @@ namespace Robotics_T1 {
 		else
 		{
 			move_one_axis(Cp, 1, steps);
-			textBox1->Clear();
+			//textBox1->Clear();
 		}
-		motor_status();
+		motor_status_all();
 	}
 
 	private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
 		int axis2 = Convert::ToInt32(textBox2->Text), steps;
 		
-		steps = degrees_to_steps(axis2, 1);
+		steps = degrees_to_steps(axis2, 2);
 
 		if (checkBox1->Checked == TRUE){
 			int speed = Convert::ToInt32(textBox8->Text);
@@ -549,15 +1363,15 @@ namespace Robotics_T1 {
 		else
 		{
 			move_one_axis(Cp, 2, steps);
-			textBox2->Clear();
+			//textBox2->Clear();
 		}
-		motor_status();
+		motor_status_all();
 	}
 
 	private: System::Void button4_Click(System::Object^  sender, System::EventArgs^  e) {
 		int axis3 = Convert::ToInt32(textBox3->Text), steps;
 
-		steps = degrees_to_steps(axis3, 1);
+		steps = degrees_to_steps(axis3, 3);
 
 		if (checkBox1->Checked == TRUE){
 			int speed = Convert::ToInt32(textBox9->Text);
@@ -573,15 +1387,15 @@ namespace Robotics_T1 {
 		else
 		{
 			move_one_axis(Cp, 3, steps);
-			textBox3->Clear();
+			//textBox3->Clear();
 		}
-		motor_status();
+		motor_status_all();
 	}
 
 	private: System::Void button5_Click(System::Object^  sender, System::EventArgs^  e) {
 		int axis4 = Convert::ToInt32(textBox4->Text), steps;
 
-		steps = degrees_to_steps(axis4, 1);
+		steps = degrees_to_steps(axis4, 4);
 
 		if (checkBox1->Checked == TRUE){
 			int speed = Convert::ToInt32(textBox10->Text);
@@ -597,15 +1411,15 @@ namespace Robotics_T1 {
 		else
 		{
 			move_one_axis(Cp, 4, steps);
-			textBox4->Clear();
+			//textBox4->Clear();
 		}
-		motor_status();
+		motor_status_all();
 	}
 
 	private: System::Void button6_Click(System::Object^  sender, System::EventArgs^  e) {
 		int axis5 = Convert::ToInt32(textBox5->Text), steps;
 
-		steps = degrees_to_steps(axis5, 1);
+		steps = degrees_to_steps(axis5, 5);
 
 		if (checkBox1->Checked == TRUE){
 			int speed = Convert::ToInt32(textBox11->Text);
@@ -621,9 +1435,9 @@ namespace Robotics_T1 {
 		else
 		{
 			move_one_axis(Cp, 5, steps);
-			textBox5->Clear();
+			//textBox5->Clear();
 		}
-		motor_status();
+		motor_status_all();
 	}
 
 	private: System::Void button7_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -645,9 +1459,9 @@ namespace Robotics_T1 {
 		else
 		{
 			move_one_axis(Cp, 6, steps);
-			textBox6->Clear();
+			//textBox6->Clear();
 		}
-		motor_status();
+		motor_status_all();
 	}
 	private: System::Void button8_Click(System::Object^  sender, System::EventArgs^  e) {
 		int steparray[6] = { Convert::ToInt32(textBox1->Text)
@@ -683,7 +1497,7 @@ namespace Robotics_T1 {
 		textBox4->Clear();
 		textBox5->Clear();
 		textBox6->Clear();
-		motor_status();
+		motor_status_all();
 	}
 
 	private: System::Void button10_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -704,9 +1518,71 @@ namespace Robotics_T1 {
 
 		//motor_status();
 		
-		int theta[5];
-			backward_kinematic(246.64, 206.934, 567.888, 6.280, -36.35, theta);
+		//int theta[5];
+		//	backward_kinematic(246.64, 206.934, 567.888, 6.280, -36.35, theta);
+		motor_status_all();
 	}
-	};
 
+private: System::Void trackBar1_Scroll(System::Object^  sender, System::EventArgs^  e) {
+	textStepA1->Text = Convert::ToString(trackBar1->Value);
+}
+private: System::Void trackBar2_Scroll(System::Object^  sender, System::EventArgs^  e) {
+	textStepA2->Text = Convert::ToString(trackBar2->Value);
+}
+private: System::Void trackBar3_Scroll(System::Object^  sender, System::EventArgs^  e) {
+	textStepA3->Text = Convert::ToString(trackBar3->Value);
+}
+private: System::Void trackBar4_Scroll(System::Object^  sender, System::EventArgs^  e) {
+	textStepA4->Text = Convert::ToString(trackBar4->Value);
+}
+private: System::Void trackBar5_Scroll(System::Object^  sender, System::EventArgs^  e) {
+	textStepA5->Text = Convert::ToString(trackBar5->Value);
+}
+private: System::Void trackBar6_Scroll(System::Object^  sender, System::EventArgs^  e) {
+	textStepA6->Text = Convert::ToString(trackBar6->Value);
+}
+private: System::Void buttonAxis1Step_Click(System::Object^  sender, System::EventArgs^  e) {
+	int axis1;
+
+	try{
+		axis1 = Convert::ToInt32(textStepA1->Text);
+	}
+	catch (...){
+		MessageBox::Show("Input incorrecto! Eixo 1");
+		textStepA1->Text = Convert::ToString(trackBar1->Value);
+		return;
+	}
+	if (axis1 > 255 || axis1 < 0){
+		MessageBox::Show("Input incorrecto! Eixo 1");
+		textStepA1->Text = Convert::ToString(trackBar1->Value);
+		return;
+	}
+
+	if (checkBoxSpeedStep->Checked == TRUE){
+		int speed = Convert::ToInt32(speedStep1->ValueMember);
+
+		if (speed < 0 || speed > 5){
+			MessageBox::Show("Speed 0-5, by default speed=3");
+			speed = 3;
+		}
+
+		move_one_axis_speed(Cp, 1, axis1, speed);
+	}
+	else
+	{
+		move_one_axis(Cp, 1, axis1);
+	}
+	stepAxis1->Text=Convert::ToString(motor_status(Cp, 1));
+}
+private: System::Void buttonAxis2Step_Click(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void buttonAxis3Step_Click(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void buttonAxis4Step_Click(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void buttonAxis5Step_Click(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void buttonAxis6Step_Click(System::Object^  sender, System::EventArgs^  e) {
+}
+};
 }

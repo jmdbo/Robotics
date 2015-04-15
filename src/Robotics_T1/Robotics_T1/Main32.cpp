@@ -106,7 +106,7 @@ void all_motor_status(TCommPort *Cp, char* steps)
 
 	Cp->Enviar(command, 2, tam);
 	printf("\n%s...", Cp->GetMensagem());
-	Sleep(1000);
+	//Sleep(1000);
 
 	Cp->EsperarRecepcao();
 	Cp->Receber(Buff, 8, tam);
@@ -116,6 +116,22 @@ void all_motor_status(TCommPort *Cp, char* steps)
 	{
 		steps[i] = (unsigned char)Buff[i + 1];
 	}
+}
+
+int motor_status(TCommPort *Cp, int axis){
+	int tam;
+	char command[20] = { 0x40+axis-1, 3 };
+	char Buff[128];
+
+
+	Cp->Enviar(command, 2, tam);
+	printf("\n%s...", Cp->GetMensagem());
+	//Sleep(1000);
+
+	Cp->EsperarRecepcao();
+	Cp->Receber(Buff, 3, tam);
+	int pos=(unsigned char)Buff[1];
+	return pos;
 }
 // nao funca*********************
 void digital_outputs(TCommPort *Cp, int* data)
@@ -137,11 +153,9 @@ int degrees_to_steps(double degrees, int axis)
 	switch (axis)
 	{
 	case 1:
-		if (degrees >= -80 && degrees <= 80){
-		degrees = 80 - degrees;
-		stepF = degrees / 0.62745098039215686274509803921569;
+		degrees = degrees - 80;
+		stepF = degrees / -0.62745098039215686274509803921569;
 		step = (int)(stepF + 0.5);
-	}
 		break;
 	case 2:
 		degrees = 66.6666666666666666666666666666666 - degrees;
@@ -159,7 +173,7 @@ int degrees_to_steps(double degrees, int axis)
 		step = (int)(stepF + 0.5);
 		break;
 	case 5:
-		degrees = 0 - degrees;
+		//degrees = 0 - degrees;
 		stepF = degrees / 0.78431372549019607843137254901961;
 		step = (int)(stepF + 0.5);
 		break;
@@ -177,8 +191,8 @@ int mm_to_steps(double distance)
 	int steps = 0;
 	double stepsf;
 
-	distance = distance + 60;
-	stepsf = distance / 0.2352941176470588;
+	distance = distance - 60;
+	stepsf = distance / -0.2352941176470588;
 	steps = (int)(stepsf + 0.5);
 
 	return steps;
@@ -191,18 +205,18 @@ double steps_to_degrees(int steps, int axis)
 	switch (axis)
 	{
 	case 1:
-		degrees = steps * 0.62745098039215686274509803921569;
+		degrees = steps * -0.62745098039215686274509803921569;
 		degrees = degrees + 80;
 		break;
 	case 2:
-		degrees = steps * 0.3921568627450980392156862745098;
+		degrees = steps * -0.3921568627450980392156862745098;
 		degrees = degrees + 66.6666666666666666666666666666666;
 		break;
 	case 3:
-		degrees = steps * 0.3921568627450980392156862745098;
+		degrees = steps * -0.3921568627450980392156862745098;
 		break;
 	case 4:
-		degrees = steps * 0.78431372549019607843137254901961;
+		degrees = steps * -0.78431372549019607843137254901961;
 		degrees = degrees + 100;
 		break;
 	case 5:
@@ -219,8 +233,8 @@ double stpes_to_mm(int steps)
 {
 	double distance;
 
-	distance = steps*0.2352941176470588;
-	distance = distance - 60;
+	distance = steps*-0.2352941176470588;
+	distance = distance + 60;
 
 	return distance;
 }
@@ -392,6 +406,7 @@ void calibrate(TCommPort *Cp){
 
 void backward_kinematic(double *posAtt, double* theta)
 {
+<<<<<<< HEAD
 	//posAtt 0-px, 1-py, 2-pz, 3-roll, 4-pitch, 5-yaw.
 	double roll = to_radians(posAtt[3]), pitch = to_radians(posAtt[4]), yaw = to_radians(posAtt[5]);
 	double px = posAtt[0], py = posAtt[1], pz = posAtt[2];
@@ -439,3 +454,57 @@ void backward_kinematic(double *posAtt, double* theta)
 
 
 
+=======
+	double pitch_rad, roll_rad; // Unidade em radianos
+	double teta1, teta2, teta3, teta4, teta5;
+	double d1, a2, a3, d5;
+	double q, qx, qy, qz, dmt;
+
+
+	//int *theta = new int[5];
+
+	// Converter o pitch e o roll de graus para radianos
+	pitch = to_radians(pitch);
+	roll = to_radians(roll);
+	//pitch = (pitch*M_PI) / 180;
+	//roll = (roll*M_PI) / 180;
+
+	// dmt = 10^(-30)
+	dmt = 0.000000000000000000000000000001;
+
+	d1 = 275;
+	a2 = 200;
+	a3 = 130;
+	d5 = 130;
+
+	teta1 = atan2f(py, (px + dmt));
+	qx = px - d5*cos(pitch_rad) * cos(teta1);
+	qy = py - d5*cos(pitch_rad) * sin(teta1);
+	qz = pz - d5*sin(pitch_rad);
+	q = sqrt(pow(qx, 2) + pow(qy, 2) + pow(qz, 2));
+
+	float a = pow((a2 + a3), 2) - pow(q, 2);
+	float b = pow(q, 2) - pow((a2 - a3), 2);
+	float c = pow(qx, 2) + pow(qy, 2);
+
+	if (a < 0)
+		a = 0;
+	if (b < 0)
+		b = 0;
+	if (c < 0)
+		c = 0;
+
+	teta3 = -2 * atan2f((sqrt(a)), (dmt + sqrt(b)));
+	teta2 = atan2f(qz, (dmt + sqrt(c))) - atan2f((a3*sin(teta3)), (dmt + a2 + a3*cos(teta3)));
+	teta4 = pitch_rad - teta2 - teta3;
+	teta5 = roll_rad - sin(pitch_rad)*teta1;
+
+	theta[0] = Convert::ToInt32(teta1 * 180 / M_PI);
+	theta[1] = Convert::ToInt32(teta2 * 180 / M_PI);
+	theta[2] = Convert::ToInt32(teta3 * 180 / M_PI);
+	theta[3] = Convert::ToInt32(teta4 * 180 / M_PI);
+	theta[4] = Convert::ToInt32(teta5 * 180 / M_PI);
+
+	//return theta;
+}
+>>>>>>> Barata
