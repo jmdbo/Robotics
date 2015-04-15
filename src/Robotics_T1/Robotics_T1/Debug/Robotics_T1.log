@@ -1,4 +1,2 @@
-﻿  Main32.cpp
-Main32.cpp(43): warning C4101: 'Buff' : unreferenced local variable
-Main32.cpp(74): warning C4101: 'Buff' : unreferenced local variable
+﻿  RoboticForm.cpp
   Robotics_T1.vcxproj -> C:\dev\Robotics\src\Robotics_T1\Debug\Robotics_T1.exe
