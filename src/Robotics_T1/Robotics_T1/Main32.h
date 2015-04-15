@@ -19,4 +19,4 @@ void digital_outputs(TCommPort *Cp, int* data);
 TCommPort* initialize_robot();
 int close_robot(TCommPort* Cp);
 void calibrate(TCommPort * Cp);
-void backward_kinematic(float px, float py, float pz, float pitch, float roll, int* theta);
+void backward_kinematic(double *posAtt, double* theta);
