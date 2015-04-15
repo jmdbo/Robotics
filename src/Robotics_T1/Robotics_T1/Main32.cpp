@@ -406,7 +406,6 @@ void calibrate(TCommPort *Cp){
 
 void backward_kinematic(double *posAtt, double* theta)
 {
-<<<<<<< HEAD
 	//posAtt 0-px, 1-py, 2-pz, 3-roll, 4-pitch, 5-yaw.
 	double roll = to_radians(posAtt[3]), pitch = to_radians(posAtt[4]), yaw = to_radians(posAtt[5]);
 	double px = posAtt[0], py = posAtt[1], pz = posAtt[2];
@@ -451,60 +450,3 @@ void backward_kinematic(double *posAtt, double* theta)
 
 	printf("cinematica");
 }
-
-
-
-=======
-	double pitch_rad, roll_rad; // Unidade em radianos
-	double teta1, teta2, teta3, teta4, teta5;
-	double d1, a2, a3, d5;
-	double q, qx, qy, qz, dmt;
-
-
-	//int *theta = new int[5];
-
-	// Converter o pitch e o roll de graus para radianos
-	pitch = to_radians(pitch);
-	roll = to_radians(roll);
-	//pitch = (pitch*M_PI) / 180;
-	//roll = (roll*M_PI) / 180;
-
-	// dmt = 10^(-30)
-	dmt = 0.000000000000000000000000000001;
-
-	d1 = 275;
-	a2 = 200;
-	a3 = 130;
-	d5 = 130;
-
-	teta1 = atan2f(py, (px + dmt));
-	qx = px - d5*cos(pitch_rad) * cos(teta1);
-	qy = py - d5*cos(pitch_rad) * sin(teta1);
-	qz = pz - d5*sin(pitch_rad);
-	q = sqrt(pow(qx, 2) + pow(qy, 2) + pow(qz, 2));
-
-	float a = pow((a2 + a3), 2) - pow(q, 2);
-	float b = pow(q, 2) - pow((a2 - a3), 2);
-	float c = pow(qx, 2) + pow(qy, 2);
-
-	if (a < 0)
-		a = 0;
-	if (b < 0)
-		b = 0;
-	if (c < 0)
-		c = 0;
-
-	teta3 = -2 * atan2f((sqrt(a)), (dmt + sqrt(b)));
-	teta2 = atan2f(qz, (dmt + sqrt(c))) - atan2f((a3*sin(teta3)), (dmt + a2 + a3*cos(teta3)));
-	teta4 = pitch_rad - teta2 - teta3;
-	teta5 = roll_rad - sin(pitch_rad)*teta1;
-
-	theta[0] = Convert::ToInt32(teta1 * 180 / M_PI);
-	theta[1] = Convert::ToInt32(teta2 * 180 / M_PI);
-	theta[2] = Convert::ToInt32(teta3 * 180 / M_PI);
-	theta[3] = Convert::ToInt32(teta4 * 180 / M_PI);
-	theta[4] = Convert::ToInt32(teta5 * 180 / M_PI);
-
-	//return theta;
-}
->>>>>>> Barata
