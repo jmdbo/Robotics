@@ -169,6 +169,117 @@ private: System::Windows::Forms::Label^  labelY;
 private: System::Windows::Forms::Label^  labelX;
 private: System::Windows::Forms::Label^  label6;
 private: System::Windows::Forms::TabPage^  tabPage3;
+private: System::Windows::Forms::Button^  buttonCalibrate;
+private: System::Windows::Forms::Button^  calibrateAngle;
+
+private: System::Windows::Forms::GroupBox^  groupBox5;
+private: System::Windows::Forms::GroupBox^  groupBox6;
+private: System::Windows::Forms::Label^  labelYawAngle;
+
+private: System::Windows::Forms::Label^  labelRollAngle;
+
+private: System::Windows::Forms::Label^  labelPitchAngle;
+
+private: System::Windows::Forms::Label^  labelZAngle;
+
+private: System::Windows::Forms::Label^  labelYAngle;
+
+private: System::Windows::Forms::Label^  labelXAngle;
+
+private: System::Windows::Forms::Label^  label13;
+private: System::Windows::Forms::Label^  label14;
+private: System::Windows::Forms::Label^  label15;
+private: System::Windows::Forms::Label^  label16;
+private: System::Windows::Forms::Label^  label17;
+private: System::Windows::Forms::Label^  label18;
+private: System::Windows::Forms::Button^  updateAAAngle;
+private: System::Windows::Forms::Button^  updateA5Angle;
+
+
+private: System::Windows::Forms::GroupBox^  groupBox7;
+private: System::Windows::Forms::TextBox^  stepAngleBox5;
+
+private: System::Windows::Forms::TextBox^  stepAngleBox4;
+
+private: System::Windows::Forms::TextBox^  stepAngleBox3;
+
+private: System::Windows::Forms::TextBox^  stepAngleBox2;
+
+private: System::Windows::Forms::TextBox^  stepAngleBox1;
+private: System::Windows::Forms::Button^  updateA4Angle;
+
+
+private: System::Windows::Forms::GroupBox^  groupBox8;
+private: System::Windows::Forms::TextBox^  angleAngleBox5;
+
+private: System::Windows::Forms::TextBox^  angleAngleBox4;
+
+private: System::Windows::Forms::TextBox^  angleAngleBox3;
+private: System::Windows::Forms::TextBox^  angleAngleBox2;
+
+
+private: System::Windows::Forms::TextBox^  angleAngleBox1;
+private: System::Windows::Forms::Button^  updateA3Angle;
+
+
+private: System::Windows::Forms::Button^  updateA1Angle;
+private: System::Windows::Forms::Button^  updateA2Angle;
+
+
+private: System::Windows::Forms::Button^  moveAAAngle;
+
+private: System::Windows::Forms::TextBox^  angleBox6;
+
+private: System::Windows::Forms::TextBox^  angleBox5;
+
+private: System::Windows::Forms::TextBox^  angleBox4;
+
+private: System::Windows::Forms::TextBox^  angleBox3;
+
+private: System::Windows::Forms::TextBox^  angleBox2;
+
+private: System::Windows::Forms::TextBox^  angleBox1;
+private: System::Windows::Forms::CheckBox^  checkSpeedAngle;
+
+
+private: System::Windows::Forms::Button^  buttonAxis6Angular;
+
+private: System::Windows::Forms::Button^  buttonAxis5Angular;
+
+private: System::Windows::Forms::Button^  buttonAxis4Angular;
+
+private: System::Windows::Forms::Button^  buttonAxis3Angular;
+
+private: System::Windows::Forms::Button^  buttonAxis2Angular;
+
+private: System::Windows::Forms::Button^  buttonAxis1Angular;
+private: System::Windows::Forms::ComboBox^  speedBoxAngle6;
+
+
+
+private: System::Windows::Forms::ComboBox^  speedBoxAngle5;
+
+private: System::Windows::Forms::ComboBox^  speedBoxAngle4;
+
+private: System::Windows::Forms::ComboBox^  speedBoxAngle3;
+
+private: System::Windows::Forms::ComboBox^  speedBoxAngle2;
+
+private: System::Windows::Forms::ComboBox^  speedBoxAngle1;
+
+private: System::Windows::Forms::TrackBar^  angleBar6;
+
+private: System::Windows::Forms::TrackBar^  angleBar5;
+
+private: System::Windows::Forms::TrackBar^  angleBar4;
+
+private: System::Windows::Forms::TrackBar^  angleBar3;
+
+private: System::Windows::Forms::TrackBar^  angleBar2;
+
+private: System::Windows::Forms::TrackBar^  angleBar1;
+private: System::Windows::Forms::TabPage^  tabPage4;
+
 
 	private:
 		/// <summary>
@@ -277,6 +388,67 @@ private: System::Windows::Forms::TabPage^  tabPage3;
 			this->tabPage3 = (gcnew System::Windows::Forms::TabPage());
 			this->statusStrip1 = (gcnew System::Windows::Forms::StatusStrip());
 			this->toolStripStatusLabel1 = (gcnew System::Windows::Forms::ToolStripStatusLabel());
+			this->buttonCalibrate = (gcnew System::Windows::Forms::Button());
+			this->calibrateAngle = (gcnew System::Windows::Forms::Button());
+			this->groupBox5 = (gcnew System::Windows::Forms::GroupBox());
+			this->groupBox6 = (gcnew System::Windows::Forms::GroupBox());
+			this->labelYawAngle = (gcnew System::Windows::Forms::Label());
+			this->labelRollAngle = (gcnew System::Windows::Forms::Label());
+			this->labelPitchAngle = (gcnew System::Windows::Forms::Label());
+			this->labelZAngle = (gcnew System::Windows::Forms::Label());
+			this->labelYAngle = (gcnew System::Windows::Forms::Label());
+			this->labelXAngle = (gcnew System::Windows::Forms::Label());
+			this->label13 = (gcnew System::Windows::Forms::Label());
+			this->label14 = (gcnew System::Windows::Forms::Label());
+			this->label15 = (gcnew System::Windows::Forms::Label());
+			this->label16 = (gcnew System::Windows::Forms::Label());
+			this->label17 = (gcnew System::Windows::Forms::Label());
+			this->label18 = (gcnew System::Windows::Forms::Label());
+			this->updateAAAngle = (gcnew System::Windows::Forms::Button());
+			this->updateA5Angle = (gcnew System::Windows::Forms::Button());
+			this->groupBox7 = (gcnew System::Windows::Forms::GroupBox());
+			this->stepAngleBox5 = (gcnew System::Windows::Forms::TextBox());
+			this->stepAngleBox4 = (gcnew System::Windows::Forms::TextBox());
+			this->stepAngleBox3 = (gcnew System::Windows::Forms::TextBox());
+			this->stepAngleBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->stepAngleBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->updateA4Angle = (gcnew System::Windows::Forms::Button());
+			this->groupBox8 = (gcnew System::Windows::Forms::GroupBox());
+			this->angleAngleBox5 = (gcnew System::Windows::Forms::TextBox());
+			this->angleAngleBox4 = (gcnew System::Windows::Forms::TextBox());
+			this->angleAngleBox3 = (gcnew System::Windows::Forms::TextBox());
+			this->angleAngleBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->angleAngleBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->updateA3Angle = (gcnew System::Windows::Forms::Button());
+			this->updateA1Angle = (gcnew System::Windows::Forms::Button());
+			this->updateA2Angle = (gcnew System::Windows::Forms::Button());
+			this->moveAAAngle = (gcnew System::Windows::Forms::Button());
+			this->angleBox6 = (gcnew System::Windows::Forms::TextBox());
+			this->angleBox5 = (gcnew System::Windows::Forms::TextBox());
+			this->angleBox4 = (gcnew System::Windows::Forms::TextBox());
+			this->angleBox3 = (gcnew System::Windows::Forms::TextBox());
+			this->angleBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->angleBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->checkSpeedAngle = (gcnew System::Windows::Forms::CheckBox());
+			this->buttonAxis6Angular = (gcnew System::Windows::Forms::Button());
+			this->buttonAxis5Angular = (gcnew System::Windows::Forms::Button());
+			this->buttonAxis4Angular = (gcnew System::Windows::Forms::Button());
+			this->buttonAxis3Angular = (gcnew System::Windows::Forms::Button());
+			this->buttonAxis2Angular = (gcnew System::Windows::Forms::Button());
+			this->buttonAxis1Angular = (gcnew System::Windows::Forms::Button());
+			this->speedBoxAngle6 = (gcnew System::Windows::Forms::ComboBox());
+			this->speedBoxAngle5 = (gcnew System::Windows::Forms::ComboBox());
+			this->speedBoxAngle4 = (gcnew System::Windows::Forms::ComboBox());
+			this->speedBoxAngle3 = (gcnew System::Windows::Forms::ComboBox());
+			this->speedBoxAngle2 = (gcnew System::Windows::Forms::ComboBox());
+			this->speedBoxAngle1 = (gcnew System::Windows::Forms::ComboBox());
+			this->angleBar6 = (gcnew System::Windows::Forms::TrackBar());
+			this->angleBar5 = (gcnew System::Windows::Forms::TrackBar());
+			this->angleBar4 = (gcnew System::Windows::Forms::TrackBar());
+			this->angleBar3 = (gcnew System::Windows::Forms::TrackBar());
+			this->angleBar2 = (gcnew System::Windows::Forms::TrackBar());
+			this->angleBar1 = (gcnew System::Windows::Forms::TrackBar());
+			this->tabPage4 = (gcnew System::Windows::Forms::TabPage());
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
 			this->tabPage2->SuspendLayout();
@@ -290,7 +462,18 @@ private: System::Windows::Forms::TabPage^  tabPage3;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->trackBar3))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->trackBar2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->trackBar1))->BeginInit();
+			this->tabPage3->SuspendLayout();
 			this->statusStrip1->SuspendLayout();
+			this->groupBox5->SuspendLayout();
+			this->groupBox6->SuspendLayout();
+			this->groupBox7->SuspendLayout();
+			this->groupBox8->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->angleBar6))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->angleBar5))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->angleBar4))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->angleBar3))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->angleBar2))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->angleBar1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// tabControl1
@@ -298,6 +481,7 @@ private: System::Windows::Forms::TabPage^  tabPage3;
 			this->tabControl1->Controls->Add(this->tabPage1);
 			this->tabControl1->Controls->Add(this->tabPage2);
 			this->tabControl1->Controls->Add(this->tabPage3);
+			this->tabControl1->Controls->Add(this->tabPage4);
 			this->tabControl1->Location = System::Drawing::Point(12, 12);
 			this->tabControl1->Name = L"tabControl1";
 			this->tabControl1->SelectedIndex = 0;
@@ -608,6 +792,7 @@ private: System::Windows::Forms::TabPage^  tabPage3;
 			// tabPage2
 			// 
 			this->tabPage2->BackColor = System::Drawing::SystemColors::Control;
+			this->tabPage2->Controls->Add(this->buttonCalibrate);
 			this->tabPage2->Controls->Add(this->groupBox3);
 			this->tabPage2->Controls->Add(this->buttonMoveAA);
 			this->tabPage2->Controls->Add(this->textStepA6);
@@ -797,6 +982,7 @@ private: System::Windows::Forms::TabPage^  tabPage3;
 			this->buttonUpdateAA->TabIndex = 29;
 			this->buttonUpdateAA->Text = L"Update All Axis";
 			this->buttonUpdateAA->UseVisualStyleBackColor = true;
+			this->buttonUpdateAA->Click += gcnew System::EventHandler(this, &RoboticForm::buttonUpdateAA_Click);
 			// 
 			// buttonUpdateA5
 			// 
@@ -963,12 +1149,13 @@ private: System::Windows::Forms::TabPage^  tabPage3;
 			// 
 			// buttonMoveAA
 			// 
-			this->buttonMoveAA->Location = System::Drawing::Point(656, 344);
+			this->buttonMoveAA->Location = System::Drawing::Point(669, 344);
 			this->buttonMoveAA->Name = L"buttonMoveAA";
 			this->buttonMoveAA->Size = System::Drawing::Size(74, 139);
 			this->buttonMoveAA->TabIndex = 37;
 			this->buttonMoveAA->Text = L"Move All Axis";
 			this->buttonMoveAA->UseVisualStyleBackColor = true;
+			this->buttonMoveAA->Click += gcnew System::EventHandler(this, &RoboticForm::buttonMoveAA_Click);
 			// 
 			// textStepA6
 			// 
@@ -1210,13 +1397,41 @@ private: System::Windows::Forms::TabPage^  tabPage3;
 			// 
 			// tabPage3
 			// 
+			this->tabPage3->BackColor = System::Drawing::SystemColors::Control;
+			this->tabPage3->Controls->Add(this->calibrateAngle);
+			this->tabPage3->Controls->Add(this->groupBox5);
+			this->tabPage3->Controls->Add(this->moveAAAngle);
+			this->tabPage3->Controls->Add(this->angleBox6);
+			this->tabPage3->Controls->Add(this->angleBox5);
+			this->tabPage3->Controls->Add(this->angleBox4);
+			this->tabPage3->Controls->Add(this->angleBox3);
+			this->tabPage3->Controls->Add(this->angleBox2);
+			this->tabPage3->Controls->Add(this->angleBox1);
+			this->tabPage3->Controls->Add(this->checkSpeedAngle);
+			this->tabPage3->Controls->Add(this->buttonAxis6Angular);
+			this->tabPage3->Controls->Add(this->buttonAxis5Angular);
+			this->tabPage3->Controls->Add(this->buttonAxis4Angular);
+			this->tabPage3->Controls->Add(this->buttonAxis3Angular);
+			this->tabPage3->Controls->Add(this->buttonAxis2Angular);
+			this->tabPage3->Controls->Add(this->buttonAxis1Angular);
+			this->tabPage3->Controls->Add(this->speedBoxAngle6);
+			this->tabPage3->Controls->Add(this->speedBoxAngle5);
+			this->tabPage3->Controls->Add(this->speedBoxAngle4);
+			this->tabPage3->Controls->Add(this->speedBoxAngle3);
+			this->tabPage3->Controls->Add(this->speedBoxAngle2);
+			this->tabPage3->Controls->Add(this->speedBoxAngle1);
+			this->tabPage3->Controls->Add(this->angleBar6);
+			this->tabPage3->Controls->Add(this->angleBar5);
+			this->tabPage3->Controls->Add(this->angleBar4);
+			this->tabPage3->Controls->Add(this->angleBar3);
+			this->tabPage3->Controls->Add(this->angleBar2);
+			this->tabPage3->Controls->Add(this->angleBar1);
 			this->tabPage3->Location = System::Drawing::Point(4, 22);
 			this->tabPage3->Name = L"tabPage3";
 			this->tabPage3->Padding = System::Windows::Forms::Padding(3);
 			this->tabPage3->Size = System::Drawing::Size(752, 498);
 			this->tabPage3->TabIndex = 2;
 			this->tabPage3->Text = L"Angular Control";
-			this->tabPage3->UseVisualStyleBackColor = true;
 			// 
 			// statusStrip1
 			// 
@@ -1232,6 +1447,597 @@ private: System::Windows::Forms::TabPage^  tabPage3;
 			this->toolStripStatusLabel1->Name = L"toolStripStatusLabel1";
 			this->toolStripStatusLabel1->Size = System::Drawing::Size(79, 17);
 			this->toolStripStatusLabel1->Text = L"Disconnected";
+			// 
+			// buttonCalibrate
+			// 
+			this->buttonCalibrate->Location = System::Drawing::Point(588, 343);
+			this->buttonCalibrate->Name = L"buttonCalibrate";
+			this->buttonCalibrate->Size = System::Drawing::Size(74, 139);
+			this->buttonCalibrate->TabIndex = 39;
+			this->buttonCalibrate->Text = L"Calibrate";
+			this->buttonCalibrate->UseVisualStyleBackColor = true;
+			// 
+			// calibrateAngle
+			// 
+			this->calibrateAngle->Location = System::Drawing::Point(588, 340);
+			this->calibrateAngle->Name = L"calibrateAngle";
+			this->calibrateAngle->Size = System::Drawing::Size(74, 139);
+			this->calibrateAngle->TabIndex = 67;
+			this->calibrateAngle->Text = L"Calibrate";
+			this->calibrateAngle->UseVisualStyleBackColor = true;
+			// 
+			// groupBox5
+			// 
+			this->groupBox5->Controls->Add(this->groupBox6);
+			this->groupBox5->Controls->Add(this->updateAAAngle);
+			this->groupBox5->Controls->Add(this->updateA5Angle);
+			this->groupBox5->Controls->Add(this->groupBox7);
+			this->groupBox5->Controls->Add(this->updateA4Angle);
+			this->groupBox5->Controls->Add(this->groupBox8);
+			this->groupBox5->Controls->Add(this->updateA3Angle);
+			this->groupBox5->Controls->Add(this->updateA1Angle);
+			this->groupBox5->Controls->Add(this->updateA2Angle);
+			this->groupBox5->Location = System::Drawing::Point(7, 314);
+			this->groupBox5->Name = L"groupBox5";
+			this->groupBox5->Size = System::Drawing::Size(569, 175);
+			this->groupBox5->TabIndex = 66;
+			this->groupBox5->TabStop = false;
+			this->groupBox5->Text = L"Positions";
+			// 
+			// groupBox6
+			// 
+			this->groupBox6->Controls->Add(this->labelYawAngle);
+			this->groupBox6->Controls->Add(this->labelRollAngle);
+			this->groupBox6->Controls->Add(this->labelPitchAngle);
+			this->groupBox6->Controls->Add(this->labelZAngle);
+			this->groupBox6->Controls->Add(this->labelYAngle);
+			this->groupBox6->Controls->Add(this->labelXAngle);
+			this->groupBox6->Controls->Add(this->label13);
+			this->groupBox6->Controls->Add(this->label14);
+			this->groupBox6->Controls->Add(this->label15);
+			this->groupBox6->Controls->Add(this->label16);
+			this->groupBox6->Controls->Add(this->label17);
+			this->groupBox6->Controls->Add(this->label18);
+			this->groupBox6->Location = System::Drawing::Point(322, 10);
+			this->groupBox6->Name = L"groupBox6";
+			this->groupBox6->Size = System::Drawing::Size(145, 165);
+			this->groupBox6->TabIndex = 39;
+			this->groupBox6->TabStop = false;
+			this->groupBox6->Text = L"Gripper Position";
+			// 
+			// labelYawAngle
+			// 
+			this->labelYawAngle->AutoSize = true;
+			this->labelYawAngle->Location = System::Drawing::Point(102, 132);
+			this->labelYawAngle->Name = L"labelYawAngle";
+			this->labelYawAngle->Size = System::Drawing::Size(13, 13);
+			this->labelYawAngle->TabIndex = 11;
+			this->labelYawAngle->Text = L"0";
+			// 
+			// labelRollAngle
+			// 
+			this->labelRollAngle->AutoSize = true;
+			this->labelRollAngle->Location = System::Drawing::Point(102, 113);
+			this->labelRollAngle->Name = L"labelRollAngle";
+			this->labelRollAngle->Size = System::Drawing::Size(13, 13);
+			this->labelRollAngle->TabIndex = 10;
+			this->labelRollAngle->Text = L"0";
+			// 
+			// labelPitchAngle
+			// 
+			this->labelPitchAngle->AutoSize = true;
+			this->labelPitchAngle->Location = System::Drawing::Point(102, 93);
+			this->labelPitchAngle->Name = L"labelPitchAngle";
+			this->labelPitchAngle->Size = System::Drawing::Size(13, 13);
+			this->labelPitchAngle->TabIndex = 9;
+			this->labelPitchAngle->Text = L"0";
+			// 
+			// labelZAngle
+			// 
+			this->labelZAngle->AutoSize = true;
+			this->labelZAngle->Location = System::Drawing::Point(102, 61);
+			this->labelZAngle->Name = L"labelZAngle";
+			this->labelZAngle->Size = System::Drawing::Size(13, 13);
+			this->labelZAngle->TabIndex = 8;
+			this->labelZAngle->Text = L"0";
+			// 
+			// labelYAngle
+			// 
+			this->labelYAngle->AutoSize = true;
+			this->labelYAngle->Location = System::Drawing::Point(102, 45);
+			this->labelYAngle->Name = L"labelYAngle";
+			this->labelYAngle->Size = System::Drawing::Size(13, 13);
+			this->labelYAngle->TabIndex = 7;
+			this->labelYAngle->Text = L"0";
+			// 
+			// labelXAngle
+			// 
+			this->labelXAngle->AutoSize = true;
+			this->labelXAngle->Location = System::Drawing::Point(102, 27);
+			this->labelXAngle->Name = L"labelXAngle";
+			this->labelXAngle->Size = System::Drawing::Size(13, 13);
+			this->labelXAngle->TabIndex = 6;
+			this->labelXAngle->Text = L"0";
+			// 
+			// label13
+			// 
+			this->label13->AutoSize = true;
+			this->label13->Location = System::Drawing::Point(6, 132);
+			this->label13->Name = L"label13";
+			this->label13->Size = System::Drawing::Size(41, 13);
+			this->label13->TabIndex = 5;
+			this->label13->Text = L"Yaw (º)";
+			// 
+			// label14
+			// 
+			this->label14->AutoSize = true;
+			this->label14->Location = System::Drawing::Point(6, 113);
+			this->label14->Name = L"label14";
+			this->label14->Size = System::Drawing::Size(38, 13);
+			this->label14->TabIndex = 4;
+			this->label14->Text = L"Roll (º)";
+			// 
+			// label15
+			// 
+			this->label15->AutoSize = true;
+			this->label15->Location = System::Drawing::Point(6, 93);
+			this->label15->Name = L"label15";
+			this->label15->Size = System::Drawing::Size(44, 13);
+			this->label15->TabIndex = 3;
+			this->label15->Text = L"Pitch (º)";
+			// 
+			// label16
+			// 
+			this->label16->AutoSize = true;
+			this->label16->Location = System::Drawing::Point(6, 62);
+			this->label16->Name = L"label16";
+			this->label16->Size = System::Drawing::Size(59, 13);
+			this->label16->TabIndex = 2;
+			this->label16->Text = L"Z pos (mm)";
+			// 
+			// label17
+			// 
+			this->label17->AutoSize = true;
+			this->label17->Location = System::Drawing::Point(6, 45);
+			this->label17->Name = L"label17";
+			this->label17->Size = System::Drawing::Size(59, 13);
+			this->label17->TabIndex = 1;
+			this->label17->Text = L"Y pos (mm)";
+			// 
+			// label18
+			// 
+			this->label18->AutoSize = true;
+			this->label18->Location = System::Drawing::Point(6, 27);
+			this->label18->Name = L"label18";
+			this->label18->Size = System::Drawing::Size(59, 13);
+			this->label18->TabIndex = 0;
+			this->label18->Text = L"X pos (mm)";
+			// 
+			// updateAAAngle
+			// 
+			this->updateAAAngle->Location = System::Drawing::Point(484, 27);
+			this->updateAAAngle->Name = L"updateAAAngle";
+			this->updateAAAngle->Size = System::Drawing::Size(74, 137);
+			this->updateAAAngle->TabIndex = 29;
+			this->updateAAAngle->Text = L"Update All Axis";
+			this->updateAAAngle->UseVisualStyleBackColor = true;
+			// 
+			// updateA5Angle
+			// 
+			this->updateA5Angle->Location = System::Drawing::Point(6, 143);
+			this->updateA5Angle->Name = L"updateA5Angle";
+			this->updateA5Angle->Size = System::Drawing::Size(75, 23);
+			this->updateA5Angle->TabIndex = 28;
+			this->updateA5Angle->Text = L"Update A5";
+			this->updateA5Angle->UseVisualStyleBackColor = true;
+			// 
+			// groupBox7
+			// 
+			this->groupBox7->Controls->Add(this->stepAngleBox5);
+			this->groupBox7->Controls->Add(this->stepAngleBox4);
+			this->groupBox7->Controls->Add(this->stepAngleBox3);
+			this->groupBox7->Controls->Add(this->stepAngleBox2);
+			this->groupBox7->Controls->Add(this->stepAngleBox1);
+			this->groupBox7->Location = System::Drawing::Point(199, 10);
+			this->groupBox7->Name = L"groupBox7";
+			this->groupBox7->Size = System::Drawing::Size(117, 165);
+			this->groupBox7->TabIndex = 30;
+			this->groupBox7->TabStop = false;
+			this->groupBox7->Text = L"Step";
+			// 
+			// stepAngleBox5
+			// 
+			this->stepAngleBox5->Enabled = false;
+			this->stepAngleBox5->Location = System::Drawing::Point(5, 135);
+			this->stepAngleBox5->Name = L"stepAngleBox5";
+			this->stepAngleBox5->Size = System::Drawing::Size(100, 20);
+			this->stepAngleBox5->TabIndex = 23;
+			this->stepAngleBox5->Text = L"Axis 5";
+			// 
+			// stepAngleBox4
+			// 
+			this->stepAngleBox4->Enabled = false;
+			this->stepAngleBox4->Location = System::Drawing::Point(6, 106);
+			this->stepAngleBox4->Name = L"stepAngleBox4";
+			this->stepAngleBox4->Size = System::Drawing::Size(100, 20);
+			this->stepAngleBox4->TabIndex = 22;
+			this->stepAngleBox4->Text = L"Axis 4";
+			// 
+			// stepAngleBox3
+			// 
+			this->stepAngleBox3->Enabled = false;
+			this->stepAngleBox3->Location = System::Drawing::Point(5, 77);
+			this->stepAngleBox3->Name = L"stepAngleBox3";
+			this->stepAngleBox3->Size = System::Drawing::Size(100, 20);
+			this->stepAngleBox3->TabIndex = 21;
+			this->stepAngleBox3->Text = L"Axis 3";
+			// 
+			// stepAngleBox2
+			// 
+			this->stepAngleBox2->Enabled = false;
+			this->stepAngleBox2->Location = System::Drawing::Point(5, 48);
+			this->stepAngleBox2->Name = L"stepAngleBox2";
+			this->stepAngleBox2->Size = System::Drawing::Size(100, 20);
+			this->stepAngleBox2->TabIndex = 20;
+			this->stepAngleBox2->Text = L"Axis 2";
+			// 
+			// stepAngleBox1
+			// 
+			this->stepAngleBox1->Enabled = false;
+			this->stepAngleBox1->Location = System::Drawing::Point(5, 19);
+			this->stepAngleBox1->Name = L"stepAngleBox1";
+			this->stepAngleBox1->Size = System::Drawing::Size(100, 20);
+			this->stepAngleBox1->TabIndex = 19;
+			this->stepAngleBox1->Text = L"Axis 1";
+			// 
+			// updateA4Angle
+			// 
+			this->updateA4Angle->Location = System::Drawing::Point(6, 114);
+			this->updateA4Angle->Name = L"updateA4Angle";
+			this->updateA4Angle->Size = System::Drawing::Size(75, 23);
+			this->updateA4Angle->TabIndex = 27;
+			this->updateA4Angle->Text = L"Update A4";
+			this->updateA4Angle->UseVisualStyleBackColor = true;
+			// 
+			// groupBox8
+			// 
+			this->groupBox8->Controls->Add(this->angleAngleBox5);
+			this->groupBox8->Controls->Add(this->angleAngleBox4);
+			this->groupBox8->Controls->Add(this->angleAngleBox3);
+			this->groupBox8->Controls->Add(this->angleAngleBox2);
+			this->groupBox8->Controls->Add(this->angleAngleBox1);
+			this->groupBox8->Location = System::Drawing::Point(87, 10);
+			this->groupBox8->Name = L"groupBox8";
+			this->groupBox8->Size = System::Drawing::Size(111, 165);
+			this->groupBox8->TabIndex = 29;
+			this->groupBox8->TabStop = false;
+			this->groupBox8->Text = L"Angular";
+			// 
+			// angleAngleBox5
+			// 
+			this->angleAngleBox5->Enabled = false;
+			this->angleAngleBox5->Location = System::Drawing::Point(6, 135);
+			this->angleAngleBox5->Name = L"angleAngleBox5";
+			this->angleAngleBox5->Size = System::Drawing::Size(100, 20);
+			this->angleAngleBox5->TabIndex = 23;
+			this->angleAngleBox5->Text = L"Axis 5";
+			// 
+			// angleAngleBox4
+			// 
+			this->angleAngleBox4->Enabled = false;
+			this->angleAngleBox4->Location = System::Drawing::Point(6, 106);
+			this->angleAngleBox4->Name = L"angleAngleBox4";
+			this->angleAngleBox4->Size = System::Drawing::Size(100, 20);
+			this->angleAngleBox4->TabIndex = 22;
+			this->angleAngleBox4->Text = L"Axis 4";
+			// 
+			// angleAngleBox3
+			// 
+			this->angleAngleBox3->Enabled = false;
+			this->angleAngleBox3->Location = System::Drawing::Point(6, 77);
+			this->angleAngleBox3->Name = L"angleAngleBox3";
+			this->angleAngleBox3->Size = System::Drawing::Size(100, 20);
+			this->angleAngleBox3->TabIndex = 21;
+			this->angleAngleBox3->Text = L"Axis 3";
+			// 
+			// angleAngleBox2
+			// 
+			this->angleAngleBox2->Enabled = false;
+			this->angleAngleBox2->Location = System::Drawing::Point(6, 48);
+			this->angleAngleBox2->Name = L"angleAngleBox2";
+			this->angleAngleBox2->Size = System::Drawing::Size(100, 20);
+			this->angleAngleBox2->TabIndex = 20;
+			this->angleAngleBox2->Text = L"Axis 2";
+			// 
+			// angleAngleBox1
+			// 
+			this->angleAngleBox1->Enabled = false;
+			this->angleAngleBox1->Location = System::Drawing::Point(6, 19);
+			this->angleAngleBox1->Name = L"angleAngleBox1";
+			this->angleAngleBox1->Size = System::Drawing::Size(100, 20);
+			this->angleAngleBox1->TabIndex = 19;
+			this->angleAngleBox1->Text = L"Axis 1";
+			// 
+			// updateA3Angle
+			// 
+			this->updateA3Angle->Location = System::Drawing::Point(6, 85);
+			this->updateA3Angle->Name = L"updateA3Angle";
+			this->updateA3Angle->Size = System::Drawing::Size(75, 23);
+			this->updateA3Angle->TabIndex = 26;
+			this->updateA3Angle->Text = L"Update A3";
+			this->updateA3Angle->UseVisualStyleBackColor = true;
+			// 
+			// updateA1Angle
+			// 
+			this->updateA1Angle->Location = System::Drawing::Point(6, 27);
+			this->updateA1Angle->Name = L"updateA1Angle";
+			this->updateA1Angle->Size = System::Drawing::Size(75, 23);
+			this->updateA1Angle->TabIndex = 24;
+			this->updateA1Angle->Text = L"Update A1";
+			this->updateA1Angle->UseVisualStyleBackColor = true;
+			// 
+			// updateA2Angle
+			// 
+			this->updateA2Angle->Location = System::Drawing::Point(6, 56);
+			this->updateA2Angle->Name = L"updateA2Angle";
+			this->updateA2Angle->Size = System::Drawing::Size(75, 23);
+			this->updateA2Angle->TabIndex = 25;
+			this->updateA2Angle->Text = L"Update A2";
+			this->updateA2Angle->UseVisualStyleBackColor = true;
+			// 
+			// moveAAAngle
+			// 
+			this->moveAAAngle->Location = System::Drawing::Point(669, 341);
+			this->moveAAAngle->Name = L"moveAAAngle";
+			this->moveAAAngle->Size = System::Drawing::Size(74, 139);
+			this->moveAAAngle->TabIndex = 65;
+			this->moveAAAngle->Text = L"Move All Axis";
+			this->moveAAAngle->UseVisualStyleBackColor = true;
+			// 
+			// angleBox6
+			// 
+			this->angleBox6->Location = System::Drawing::Point(526, 279);
+			this->angleBox6->Name = L"angleBox6";
+			this->angleBox6->Size = System::Drawing::Size(100, 20);
+			this->angleBox6->TabIndex = 64;
+			this->angleBox6->Text = L"Axis";
+			// 
+			// angleBox5
+			// 
+			this->angleBox5->Location = System::Drawing::Point(526, 228);
+			this->angleBox5->Name = L"angleBox5";
+			this->angleBox5->Size = System::Drawing::Size(100, 20);
+			this->angleBox5->TabIndex = 63;
+			this->angleBox5->Text = L"Axis";
+			// 
+			// angleBox4
+			// 
+			this->angleBox4->Location = System::Drawing::Point(526, 179);
+			this->angleBox4->Name = L"angleBox4";
+			this->angleBox4->Size = System::Drawing::Size(100, 20);
+			this->angleBox4->TabIndex = 62;
+			this->angleBox4->Text = L"Axis";
+			// 
+			// angleBox3
+			// 
+			this->angleBox3->Location = System::Drawing::Point(526, 128);
+			this->angleBox3->Name = L"angleBox3";
+			this->angleBox3->Size = System::Drawing::Size(100, 20);
+			this->angleBox3->TabIndex = 61;
+			this->angleBox3->Text = L"Axis";
+			// 
+			// angleBox2
+			// 
+			this->angleBox2->Location = System::Drawing::Point(526, 77);
+			this->angleBox2->Name = L"angleBox2";
+			this->angleBox2->Size = System::Drawing::Size(100, 20);
+			this->angleBox2->TabIndex = 60;
+			this->angleBox2->Text = L"Axis";
+			// 
+			// angleBox1
+			// 
+			this->angleBox1->Location = System::Drawing::Point(526, 23);
+			this->angleBox1->Name = L"angleBox1";
+			this->angleBox1->Size = System::Drawing::Size(100, 20);
+			this->angleBox1->TabIndex = 59;
+			this->angleBox1->Text = L"Axis";
+			// 
+			// checkSpeedAngle
+			// 
+			this->checkSpeedAngle->AutoSize = true;
+			this->checkSpeedAngle->Location = System::Drawing::Point(673, 307);
+			this->checkSpeedAngle->Name = L"checkSpeedAngle";
+			this->checkSpeedAngle->Size = System::Drawing::Size(57, 17);
+			this->checkSpeedAngle->TabIndex = 58;
+			this->checkSpeedAngle->Text = L"Speed";
+			this->checkSpeedAngle->UseVisualStyleBackColor = true;
+			// 
+			// buttonAxis6Angular
+			// 
+			this->buttonAxis6Angular->Enabled = false;
+			this->buttonAxis6Angular->Location = System::Drawing::Point(7, 277);
+			this->buttonAxis6Angular->Name = L"buttonAxis6Angular";
+			this->buttonAxis6Angular->Size = System::Drawing::Size(75, 23);
+			this->buttonAxis6Angular->TabIndex = 57;
+			this->buttonAxis6Angular->Text = L"Axis 6";
+			this->buttonAxis6Angular->UseVisualStyleBackColor = true;
+			// 
+			// buttonAxis5Angular
+			// 
+			this->buttonAxis5Angular->Enabled = false;
+			this->buttonAxis5Angular->Location = System::Drawing::Point(7, 226);
+			this->buttonAxis5Angular->Name = L"buttonAxis5Angular";
+			this->buttonAxis5Angular->Size = System::Drawing::Size(75, 23);
+			this->buttonAxis5Angular->TabIndex = 56;
+			this->buttonAxis5Angular->Text = L"Axis 5";
+			this->buttonAxis5Angular->UseVisualStyleBackColor = true;
+			// 
+			// buttonAxis4Angular
+			// 
+			this->buttonAxis4Angular->Enabled = false;
+			this->buttonAxis4Angular->Location = System::Drawing::Point(7, 177);
+			this->buttonAxis4Angular->Name = L"buttonAxis4Angular";
+			this->buttonAxis4Angular->Size = System::Drawing::Size(75, 23);
+			this->buttonAxis4Angular->TabIndex = 55;
+			this->buttonAxis4Angular->Text = L"Axis 4";
+			this->buttonAxis4Angular->UseVisualStyleBackColor = true;
+			// 
+			// buttonAxis3Angular
+			// 
+			this->buttonAxis3Angular->Enabled = false;
+			this->buttonAxis3Angular->Location = System::Drawing::Point(7, 126);
+			this->buttonAxis3Angular->Name = L"buttonAxis3Angular";
+			this->buttonAxis3Angular->Size = System::Drawing::Size(75, 23);
+			this->buttonAxis3Angular->TabIndex = 54;
+			this->buttonAxis3Angular->Text = L"Axis 3";
+			this->buttonAxis3Angular->UseVisualStyleBackColor = true;
+			// 
+			// buttonAxis2Angular
+			// 
+			this->buttonAxis2Angular->Enabled = false;
+			this->buttonAxis2Angular->Location = System::Drawing::Point(7, 75);
+			this->buttonAxis2Angular->Name = L"buttonAxis2Angular";
+			this->buttonAxis2Angular->Size = System::Drawing::Size(75, 23);
+			this->buttonAxis2Angular->TabIndex = 53;
+			this->buttonAxis2Angular->Text = L"Axis 2";
+			this->buttonAxis2Angular->UseVisualStyleBackColor = true;
+			// 
+			// buttonAxis1Angular
+			// 
+			this->buttonAxis1Angular->Enabled = false;
+			this->buttonAxis1Angular->Location = System::Drawing::Point(7, 21);
+			this->buttonAxis1Angular->Name = L"buttonAxis1Angular";
+			this->buttonAxis1Angular->Size = System::Drawing::Size(75, 23);
+			this->buttonAxis1Angular->TabIndex = 52;
+			this->buttonAxis1Angular->Text = L"Axis 1";
+			this->buttonAxis1Angular->UseVisualStyleBackColor = true;
+			this->buttonAxis1Angular->Click += gcnew System::EventHandler(this, &RoboticForm::buttonAxis1Angular_Click);
+			// 
+			// speedBoxAngle6
+			// 
+			this->speedBoxAngle6->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->speedBoxAngle6->FormattingEnabled = true;
+			this->speedBoxAngle6->Items->AddRange(gcnew cli::array< System::Object^  >(5) { L"5", L"4", L"3", L"2", L"1" });
+			this->speedBoxAngle6->Location = System::Drawing::Point(632, 279);
+			this->speedBoxAngle6->Name = L"speedBoxAngle6";
+			this->speedBoxAngle6->Size = System::Drawing::Size(114, 21);
+			this->speedBoxAngle6->TabIndex = 51;
+			// 
+			// speedBoxAngle5
+			// 
+			this->speedBoxAngle5->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->speedBoxAngle5->FormattingEnabled = true;
+			this->speedBoxAngle5->Items->AddRange(gcnew cli::array< System::Object^  >(5) { L"5", L"4", L"3", L"2", L"1" });
+			this->speedBoxAngle5->Location = System::Drawing::Point(632, 228);
+			this->speedBoxAngle5->Name = L"speedBoxAngle5";
+			this->speedBoxAngle5->Size = System::Drawing::Size(114, 21);
+			this->speedBoxAngle5->TabIndex = 50;
+			// 
+			// speedBoxAngle4
+			// 
+			this->speedBoxAngle4->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->speedBoxAngle4->FormattingEnabled = true;
+			this->speedBoxAngle4->Items->AddRange(gcnew cli::array< System::Object^  >(5) { L"5", L"4", L"3", L"2", L"1" });
+			this->speedBoxAngle4->Location = System::Drawing::Point(632, 177);
+			this->speedBoxAngle4->Name = L"speedBoxAngle4";
+			this->speedBoxAngle4->Size = System::Drawing::Size(114, 21);
+			this->speedBoxAngle4->TabIndex = 49;
+			// 
+			// speedBoxAngle3
+			// 
+			this->speedBoxAngle3->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->speedBoxAngle3->FormattingEnabled = true;
+			this->speedBoxAngle3->Items->AddRange(gcnew cli::array< System::Object^  >(5) { L"5", L"4", L"3", L"2", L"1" });
+			this->speedBoxAngle3->Location = System::Drawing::Point(632, 126);
+			this->speedBoxAngle3->Name = L"speedBoxAngle3";
+			this->speedBoxAngle3->Size = System::Drawing::Size(114, 21);
+			this->speedBoxAngle3->TabIndex = 48;
+			// 
+			// speedBoxAngle2
+			// 
+			this->speedBoxAngle2->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->speedBoxAngle2->FormattingEnabled = true;
+			this->speedBoxAngle2->Items->AddRange(gcnew cli::array< System::Object^  >(5) { L"5", L"4", L"3", L"2", L"1" });
+			this->speedBoxAngle2->Location = System::Drawing::Point(632, 75);
+			this->speedBoxAngle2->Name = L"speedBoxAngle2";
+			this->speedBoxAngle2->Size = System::Drawing::Size(114, 21);
+			this->speedBoxAngle2->TabIndex = 47;
+			// 
+			// speedBoxAngle1
+			// 
+			this->speedBoxAngle1->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->speedBoxAngle1->FormattingEnabled = true;
+			this->speedBoxAngle1->Items->AddRange(gcnew cli::array< System::Object^  >(5) { L"5", L"4", L"3", L"2", L"1" });
+			this->speedBoxAngle1->Location = System::Drawing::Point(632, 23);
+			this->speedBoxAngle1->Name = L"speedBoxAngle1";
+			this->speedBoxAngle1->Size = System::Drawing::Size(114, 21);
+			this->speedBoxAngle1->TabIndex = 46;
+			// 
+			// angleBar6
+			// 
+			this->angleBar6->Location = System::Drawing::Point(86, 279);
+			this->angleBar6->Maximum = 60;
+			this->angleBar6->Name = L"angleBar6";
+			this->angleBar6->Size = System::Drawing::Size(434, 45);
+			this->angleBar6->TabIndex = 45;
+			this->angleBar6->Value = 30;
+			// 
+			// angleBar5
+			// 
+			this->angleBar5->Location = System::Drawing::Point(86, 228);
+			this->angleBar5->Maximum = 0;
+			this->angleBar5->Minimum = -200;
+			this->angleBar5->Name = L"angleBar5";
+			this->angleBar5->Size = System::Drawing::Size(434, 45);
+			this->angleBar5->TabIndex = 44;
+			this->angleBar5->Value = -100;
+			// 
+			// angleBar4
+			// 
+			this->angleBar4->Location = System::Drawing::Point(86, 177);
+			this->angleBar4->Maximum = 100;
+			this->angleBar4->Minimum = -100;
+			this->angleBar4->Name = L"angleBar4";
+			this->angleBar4->Size = System::Drawing::Size(434, 45);
+			this->angleBar4->TabIndex = 43;
+			// 
+			// angleBar3
+			// 
+			this->angleBar3->Location = System::Drawing::Point(86, 126);
+			this->angleBar3->Maximum = 0;
+			this->angleBar3->Minimum = -100;
+			this->angleBar3->Name = L"angleBar3";
+			this->angleBar3->Size = System::Drawing::Size(434, 45);
+			this->angleBar3->TabIndex = 42;
+			this->angleBar3->Value = -50;
+			// 
+			// angleBar2
+			// 
+			this->angleBar2->Location = System::Drawing::Point(86, 75);
+			this->angleBar2->Maximum = 33;
+			this->angleBar2->Minimum = -33;
+			this->angleBar2->Name = L"angleBar2";
+			this->angleBar2->Size = System::Drawing::Size(434, 45);
+			this->angleBar2->TabIndex = 41;
+			// 
+			// angleBar1
+			// 
+			this->angleBar1->Location = System::Drawing::Point(86, 24);
+			this->angleBar1->Maximum = 80;
+			this->angleBar1->Minimum = -80;
+			this->angleBar1->Name = L"angleBar1";
+			this->angleBar1->Size = System::Drawing::Size(434, 45);
+			this->angleBar1->TabIndex = 40;
+			// 
+			// tabPage4
+			// 
+			this->tabPage4->BackColor = System::Drawing::SystemColors::Control;
+			this->tabPage4->Location = System::Drawing::Point(4, 22);
+			this->tabPage4->Name = L"tabPage4";
+			this->tabPage4->Padding = System::Windows::Forms::Padding(3);
+			this->tabPage4->Size = System::Drawing::Size(752, 498);
+			this->tabPage4->TabIndex = 3;
+			this->tabPage4->Text = L"PositionControl";
 			// 
 			// RoboticForm
 			// 
@@ -1262,8 +2068,23 @@ private: System::Windows::Forms::TabPage^  tabPage3;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->trackBar3))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->trackBar2))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->trackBar1))->EndInit();
+			this->tabPage3->ResumeLayout(false);
+			this->tabPage3->PerformLayout();
 			this->statusStrip1->ResumeLayout(false);
 			this->statusStrip1->PerformLayout();
+			this->groupBox5->ResumeLayout(false);
+			this->groupBox6->ResumeLayout(false);
+			this->groupBox6->PerformLayout();
+			this->groupBox7->ResumeLayout(false);
+			this->groupBox7->PerformLayout();
+			this->groupBox8->ResumeLayout(false);
+			this->groupBox8->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->angleBar6))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->angleBar5))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->angleBar4))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->angleBar3))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->angleBar2))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->angleBar1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -1274,11 +2095,17 @@ private: System::Windows::Forms::TabPage^  tabPage3;
 			char steparray[6];
 			all_motor_status(Cp,steparray);
 			textBox13->Text = Convert::ToString(steps_to_degrees((unsigned char)steparray[0], 1));
+			angleAxis1->Text = Convert::ToString(steps_to_degrees((unsigned char)steparray[0], 1));
 			textBox14->Text = Convert::ToString(steps_to_degrees((unsigned char)steparray[1], 2));
+			angleAxis2->Text = Convert::ToString(steps_to_degrees((unsigned char)steparray[1], 2));
 			textBox15->Text = Convert::ToString(steps_to_degrees((unsigned char)steparray[2], 3));
+			angleAxis3->Text = Convert::ToString(steps_to_degrees((unsigned char)steparray[2], 3));
 			textBox16->Text = Convert::ToString(steps_to_degrees((unsigned char)steparray[3], 4));
+			angleAxis4->Text = Convert::ToString(steps_to_degrees((unsigned char)steparray[3], 4));
 			textBox17->Text = Convert::ToString(steps_to_degrees((unsigned char)steparray[4], 5));
+			angleAxis5->Text = Convert::ToString(steps_to_degrees((unsigned char)steparray[4], 5));
 			textBox18->Text = Convert::ToString(steps_to_degrees((unsigned char)steparray[5], 6));
+
 		}
 
 	private: System::Void RoboticForm_Load(System::Object^  sender, System::EventArgs^  e) {
@@ -1542,17 +2369,17 @@ private: System::Void trackBar6_Scroll(System::Object^  sender, System::EventArg
 	textStepA6->Text = Convert::ToString(trackBar6->Value);
 }
 private: System::Void buttonAxis1Step_Click(System::Object^  sender, System::EventArgs^  e) {
-	int axis1;
+	int axis;
 
 	try{
-		axis1 = Convert::ToInt32(textStepA1->Text);
+		axis = Convert::ToInt32(textStepA1->Text);
 	}
 	catch (...){
 		MessageBox::Show("Input incorrecto! Eixo 1");
 		textStepA1->Text = Convert::ToString(trackBar1->Value);
 		return;
 	}
-	if (axis1 > 255 || axis1 < 0){
+	if (axis > 255 || axis < 0){
 		MessageBox::Show("Input incorrecto! Eixo 1");
 		textStepA1->Text = Convert::ToString(trackBar1->Value);
 		return;
@@ -1566,23 +2393,195 @@ private: System::Void buttonAxis1Step_Click(System::Object^  sender, System::Eve
 			speed = 3;
 		}
 
-		move_one_axis_speed(Cp, 1, axis1, speed);
+		move_one_axis_speed(Cp, 1, axis, speed);
 	}
 	else
 	{
-		move_one_axis(Cp, 1, axis1);
+		move_one_axis(Cp, 1, axis);
 	}
 	stepAxis1->Text=Convert::ToString(motor_status(Cp, 1));
 }
 private: System::Void buttonAxis2Step_Click(System::Object^  sender, System::EventArgs^  e) {
+	int axis;
+
+	try{
+		axis = Convert::ToInt32(textStepA2->Text);
+	}
+	catch (...){
+		MessageBox::Show("Input incorrecto! Eixo 2");
+		textStepA2->Text = Convert::ToString(trackBar2->Value);
+		return;
+	}
+	if (axis > 255 || axis < 0){
+		MessageBox::Show("Input incorrecto! Eixo 2");
+		textStepA2->Text = Convert::ToString(trackBar2->Value);
+		return;
+	}
+
+	if (checkBoxSpeedStep->Checked == TRUE){
+		int speed = Convert::ToInt32(speedStep2->ValueMember);
+
+		if (speed < 0 || speed > 5){
+			MessageBox::Show("Speed 0-5, by default speed=3");
+			speed = 3;
+		}
+
+		move_one_axis_speed(Cp, 2, axis, speed);
+	}
+	else
+	{
+		move_one_axis(Cp, 2, axis);
+	}
+	int steps = motor_status(Cp, 2);
+	stepAxis2->Text = Convert::ToString(steps);
+	angleAxis2->Text = Convert::ToString(steps_to_degrees(steps, 2));
 }
 private: System::Void buttonAxis3Step_Click(System::Object^  sender, System::EventArgs^  e) {
+	int axis;
+
+	try{
+		axis = Convert::ToInt32(textStepA3->Text);
+	}
+	catch (...){
+		MessageBox::Show("Input incorrecto! Eixo 3");
+		textStepA3->Text = Convert::ToString(trackBar3->Value);
+		return;
+	}
+	if (axis > 255 || axis < 0){
+		MessageBox::Show("Input incorrecto! Eixo 3");
+		textStepA3->Text = Convert::ToString(trackBar3->Value);
+		return;
+	}
+
+	if (checkBoxSpeedStep->Checked == TRUE){
+		int speed = Convert::ToInt32(speedStep3->ValueMember);
+
+		if (speed < 0 || speed > 5){
+			MessageBox::Show("Speed 0-5, by default speed=3");
+			speed = 3;
+		}
+
+		move_one_axis_speed(Cp, 3, axis, speed);
+	}
+	else
+	{
+		move_one_axis(Cp, 3, axis);
+	}
+	int steps = motor_status(Cp, 3);
+	stepAxis3->Text = Convert::ToString(steps);
+	angleAxis3->Text = Convert::ToString(steps_to_degrees(steps, 3));
 }
 private: System::Void buttonAxis4Step_Click(System::Object^  sender, System::EventArgs^  e) {
+	int axis;
+
+	try{
+		axis = Convert::ToInt32(textStepA4->Text);
+	}
+	catch (...){
+		MessageBox::Show("Input incorrecto! Eixo 4");
+		textStepA4->Text = Convert::ToString(trackBar4->Value);
+		return;
+	}
+	if (axis > 255 || axis < 0){
+		MessageBox::Show("Input incorrecto! Eixo 4");
+		textStepA4->Text = Convert::ToString(trackBar4->Value);
+		return;
+	}
+
+	if (checkBoxSpeedStep->Checked == TRUE){
+		int speed = Convert::ToInt32(speedStep4->ValueMember);
+
+		if (speed < 0 || speed > 5){
+			MessageBox::Show("Speed 0-5, by default speed=3");
+			speed = 3;
+		}
+
+		move_one_axis_speed(Cp, 4, axis, speed);
+	}
+	else
+	{
+		move_one_axis(Cp, 4, axis);
+	}
+	int steps = motor_status(Cp, 4);
+	stepAxis4->Text = Convert::ToString(steps);
+	angleAxis4->Text = Convert::ToString(steps_to_degrees(steps, 4));
 }
 private: System::Void buttonAxis5Step_Click(System::Object^  sender, System::EventArgs^  e) {
+	int axis;
+
+	try{
+		axis = Convert::ToInt32(textStepA5->Text);
+	}
+	catch (...){
+		MessageBox::Show("Input incorrecto! Eixo 5");
+		textStepA5->Text = Convert::ToString(trackBar5->Value);
+		return;
+	}
+	if (axis > 255 || axis < 0){
+		MessageBox::Show("Input incorrecto! Eixo 5");
+		textStepA5->Text = Convert::ToString(trackBar5->Value);
+		return;
+	}
+
+	if (checkBoxSpeedStep->Checked == TRUE){
+		int speed = Convert::ToInt32(speedStep5->ValueMember);
+
+		if (speed < 0 || speed > 5){
+			MessageBox::Show("Speed 0-5, by default speed=3");
+			speed = 3;
+		}
+
+		move_one_axis_speed(Cp, 5, axis, speed);
+	}
+	else
+	{
+		move_one_axis(Cp, 5, axis);
+	}
+	int steps = motor_status(Cp, 5);
+	stepAxis5->Text = Convert::ToString(steps);
+	angleAxis5->Text = Convert::ToString(steps_to_degrees(steps, 5));
 }
 private: System::Void buttonAxis6Step_Click(System::Object^  sender, System::EventArgs^  e) {
+	int axis;
+
+	try{
+		axis = Convert::ToInt32(textStepA6->Text);
+	}
+	catch (...){
+		MessageBox::Show("Input incorrecto! Eixo 6");
+		textStepA6->Text = Convert::ToString(trackBar6->Value);
+		return;
+	}
+	if (axis > 255 || axis < 0){
+		MessageBox::Show("Input incorrecto! Eixo 6");
+		textStepA6->Text = Convert::ToString(trackBar6->Value);
+		return;
+	}
+
+	if (checkBoxSpeedStep->Checked == TRUE){
+		int speed = Convert::ToInt32(speedStep6->ValueMember);
+
+		if (speed < 0 || speed > 5){
+			MessageBox::Show("Speed 0-5, by default speed=3");
+			speed = 3;
+		}
+
+		move_one_axis_speed(Cp, 6, axis, speed);
+	}
+	else
+	{
+		move_one_axis(Cp, 6, axis);
+	}
+	int steps = motor_status(Cp, 6);
+	//stepAxis6->Text = Convert::ToString(steps);
+	//angleAxis6->Text = Convert::ToString(steps_to_degrees(steps, 6));
+}
+private: System::Void buttonUpdateAA_Click(System::Object^  sender, System::EventArgs^  e) {
+	motor_status_all();
+}
+private: System::Void buttonMoveAA_Click(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void buttonAxis1Angular_Click(System::Object^  sender, System::EventArgs^  e) {
 }
 };
 }
