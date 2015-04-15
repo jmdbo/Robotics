@@ -411,10 +411,10 @@ void backward_kinematic(double *posAtt, double* theta)
 	//posAtt 0-px, 1-py, 2-pz, 3-roll, 4-pitch, 5-yaw.
 	double roll = to_radians(posAtt[3]), pitch = to_radians(posAtt[4]), yaw = to_radians(posAtt[5]);
 	double px = posAtt[0], py = posAtt[1], pz = posAtt[2];
-	
+
 	//valores D-H
-	int d1=275,d5 = 130;
-	int a2 = 200,a3 = 130;
+	int d1 = 275, d5 = 130;
+	int a2 = 200, a3 = 130;
 
 	//rotz(roll)*roty(pitch)*rotx(yaw)
 	double nx = cos(roll)*cos(pitch);
@@ -430,19 +430,28 @@ void backward_kinematic(double *posAtt, double* theta)
 	double az = cos(pitch)*cos(yaw);
 
 	theta[0] = s_atan2(px, py);
-	
-	//aux variables
-	double theta123 = s_atan2(ax*cos(theta[0]) + ay*sin(theta[0]),az);
-	double cost3 = ((pow((double)(px*cos(theta[0]) + py*sin(theta[0]) - d5*cos(theta123)), 2) + pow((double)(pz - d1-d5*sin(theta123)), 2) - pow((double)a2, 2) - pow((double)a3, 2))/(2*a2*a3));
-	double sint3 = 1 - pow(cost3, 2);
 
-	theta[2] = s_atan2(cost3,-sqrt(sint3));
+	//aux variables
+	double theta123 = s_atan2(ax*cos(theta[0]) + ay*sin(theta[0]), az);
+	double cost2 = ((pow((double)(px*cos(theta[0]) + py*sin(theta[0]) - d5*cos(theta123)), 2) + pow((double)(pz - d1 - d5*sin(theta123)), 2) - pow((double)a2, 2) - pow((double)a3, 2)) / (2 * a2*a3));
+	double sint2 = 1 - pow(cost2, 2);
+	if (sint2 < 0){
+		sint2 = 0;
+	}
+
+	theta[2] = s_atan2(cost2, -sqrt(sint2));
+	if (theta[2] > 0){
+		s_atan2(cost2, sqrt(sint2));
+	}
 	long double x = (a2 + a3*cos(theta[2]))*(-d5*cos(theta123) + cos(theta[0])*px + sin(theta[0])*py) + a3*sin(theta[2])*(-d1 + pz - d5*sin(theta123));
 	long double y = (a2 + a3*cos(theta[2]))*(-d1 + pz - d5*sin(theta123)) - a3*sin(theta[2])*(cos(theta[0])*px + sin(theta[0])*py - d5*cos(theta123));
-	theta[1] = atan(y/x);
+	theta[1] = atan(y / x);
 	theta[3] = theta123 - theta[1] - theta[2];
 	double div1 = (ny*cos(theta[0]) - nx*sin(theta[0])) / (sy*cos(theta[0]) - sx*sin(theta[0]));
 	theta[4] = atan(div1);
+	if (theta[4] > 0){
+		theta[4] = 0;
+	}
 
 	theta[0] = to_degrees(theta[0]);
 	theta[1] = to_degrees(theta[1]);
