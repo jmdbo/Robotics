@@ -40,6 +40,7 @@ void move_one_axis_speed(TCommPort* Cp, int axis, int steps, int speed)
 {
 	if (steps!= -1){
 		int tam;
+		char Buff[128];
 		char command[20] = { 0x78 + axis -1 , steps, speed, 3 };
 		Cp->Enviar(command, 4, tam);
 		Sleep(500);
@@ -48,8 +49,7 @@ void move_one_axis_speed(TCommPort* Cp, int axis, int steps, int speed)
 		//robot will respond with 15
 		//Cp->EsperarRecepcao();
 		//Cp->Receber(Buff, 1, tam);
-		//*******************************************************
-
+		//printf("\n%s...", Cp->GetMensagem());
 	}
 }
 
@@ -72,11 +72,11 @@ void move_multiple_axis_speed(TCommPort *Cp, int* steps, int* speed)
 {
 	int tam, count = 0;
 	char Buff[128], command1[20] = { 0x47, 3 };
-
+	/**
 	Cp->Enviar(command1, 2, tam);
 	Cp->EsperarRecepcao();
 	Cp->Receber(Buff, 8, tam);
-
+	
 	for (int i = 0; i < 6; i++)
 	{
 		if (steps[i] == -1){
@@ -84,17 +84,17 @@ void move_multiple_axis_speed(TCommPort *Cp, int* steps, int* speed)
 			count++;
 		}
 	}
-
-	if (count <= 6){
-		char command[20] = { 0x7F, steps[0], speed[0], steps[1], speed[1], steps[2], speed[2], steps[3], speed[3], steps[4], speed[4], steps[5], speed[5], 3 };
-		Cp->Enviar(command, 14, tam);
-		printf("\n%s...", Cp->GetMensagem());
-		Sleep(500);
-		//robot wil respond with 15
-		Cp->EsperarRecepcao();
-		Cp->Receber(Buff, 1, tam);
-		printf("\n%s...", Cp->GetMensagem());
-	}
+	*/
+	//if (count <= 6){
+	char command[20] = { 0x7F, steps[0], speed[0], steps[1], speed[1], steps[2], speed[2], steps[3], speed[3], steps[4], speed[4], steps[5], speed[5], 3 };
+	Cp->Enviar(command, 14, tam);
+	printf("\n%s...", Cp->GetMensagem());
+	Sleep(500);
+	//robot wil respond with 15
+	//Cp->EsperarRecepcao();
+	//Cp->Receber(Buff, 1, tam);
+	//printf("\n%s...", Cp->GetMensagem());
+	//}
 }
 
 void all_motor_status(TCommPort *Cp, char* steps)
@@ -106,7 +106,7 @@ void all_motor_status(TCommPort *Cp, char* steps)
 
 	Cp->Enviar(command, 2, tam);
 	printf("\n%s...", Cp->GetMensagem());
-	//Sleep(1000);
+	Sleep(500);
 
 	Cp->EsperarRecepcao();
 	Cp->Receber(Buff, 8, tam);
@@ -126,7 +126,7 @@ int motor_status(TCommPort *Cp, int axis){
 
 	Cp->Enviar(command, 2, tam);
 	printf("\n%s...", Cp->GetMensagem());
-	//Sleep(1000);
+	Sleep(500);
 
 	Cp->EsperarRecepcao();
 	Cp->Receber(Buff, 3, tam);
@@ -263,7 +263,7 @@ double to_radians(double degrees)
 	return  degrees / (180.0 / M_PI);
 }
 
-int direct_kinematic(float* theta, double* posAtt){
+int direct_kinematic(double* theta, double* posAtt){
 
 	for (int i = 0; i < 5; i++){
 		theta[i] = (float)to_radians(theta[i]);
@@ -313,7 +313,7 @@ void robot_control_routine(TCommPort *port)
 	int steparray[6], speedarray[6];
 	bool exit = TRUE;
 	int data[8] = { 7, 6, 5, 4, 3, 2, 1, 0 };
-	float theta[5] = { 40, 45, -30, 50, -75 };
+	double theta[5] = { 40, 45, -30, 50, -75 };
 
 	while (exit){
 
@@ -405,7 +405,8 @@ void calibrate(TCommPort *Cp){
 	int steps[6] = { 27, 142, 203, 114, 44, 233 };
 	move_multiple_axis(Cp,steps);
 }
-
+//Implements the inverse kinematics
+// Vector posAtt 1: X 2: Y 3: Z 4: Roll 5: Pitch 6: Yaw
 void backward_kinematic(double *posAtt, double* theta)
 {
 	//posAtt 0-px, 1-py, 2-pz, 3-roll, 4-pitch, 5-yaw.
@@ -435,14 +436,23 @@ void backward_kinematic(double *posAtt, double* theta)
 	double theta123 = s_atan2(ax*cos(theta[0]) + ay*sin(theta[0]),az);
 	double cost3 = ((pow((double)(px*cos(theta[0]) + py*sin(theta[0]) - d5*cos(theta123)), 2) + pow((double)(pz - d1-d5*sin(theta123)), 2) - pow((double)a2, 2) - pow((double)a3, 2))/(2*a2*a3));
 	double sint3 = 1 - pow(cost3, 2);
+	if (sint3 < 0){
+		sint3 = 0;
+	}
 
 	theta[2] = s_atan2(cost3,-sqrt(sint3));
+	if (theta[2] > 0){
+		s_atan2(cost3, sqrt(sint3));
+	}
 	long double x = (a2 + a3*cos(theta[2]))*(-d5*cos(theta123) + cos(theta[0])*px + sin(theta[0])*py) + a3*sin(theta[2])*(-d1 + pz - d5*sin(theta123));
 	long double y = (a2 + a3*cos(theta[2]))*(-d1 + pz - d5*sin(theta123)) - a3*sin(theta[2])*(cos(theta[0])*px + sin(theta[0])*py - d5*cos(theta123));
 	theta[1] = atan(y/x);
 	theta[3] = theta123 - theta[1] - theta[2];
 	double div1 = (ny*cos(theta[0]) - nx*sin(theta[0])) / (sy*cos(theta[0]) - sx*sin(theta[0]));
 	theta[4] = atan(div1);
+	if (theta[4] > 0){
+		theta[4] = 0;
+	}
 
 	theta[0] = to_degrees(theta[0]);
 	theta[1] = to_degrees(theta[1]);
