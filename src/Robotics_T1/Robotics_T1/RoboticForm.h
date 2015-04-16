@@ -16,7 +16,7 @@ namespace Robotics_T1 {
 	public ref class RoboticForm : public System::Windows::Forms::Form
 	{
 	public:
-		
+
 
 		RoboticForm(void)
 		{
@@ -47,37 +47,6 @@ namespace Robotics_T1 {
 	private: System::Windows::Forms::TabPage^  tabPage1;
 	private: System::Windows::Forms::TabPage^  tabPage2;
 	private: System::Windows::Forms::Button^  button1;
-	private: System::Windows::Forms::TextBox^  textBox1;
-	private: System::Windows::Forms::Button^  button2;
-
-	private: System::Windows::Forms::Button^  button7;
-	private: System::Windows::Forms::Button^  button6;
-	private: System::Windows::Forms::Button^  button5;
-	private: System::Windows::Forms::Button^  button4;
-
-	private: System::Windows::Forms::TextBox^  textBox6;
-	private: System::Windows::Forms::TextBox^  textBox5;
-	private: System::Windows::Forms::TextBox^  textBox4;
-	private: System::Windows::Forms::TextBox^  textBox3;
-	private: System::Windows::Forms::Button^  button3;
-	private: System::Windows::Forms::TextBox^  textBox2;
-	private: System::Windows::Forms::Button^  button8;
-	private: System::Windows::Forms::TextBox^  textBox7;
-	private: System::Windows::Forms::CheckBox^  checkBox1;
-	private: System::Windows::Forms::Button^  button9;
-	private: System::Windows::Forms::TextBox^  textBox12;
-	private: System::Windows::Forms::TextBox^  textBox11;
-	private: System::Windows::Forms::TextBox^  textBox10;
-	private: System::Windows::Forms::TextBox^  textBox9;
-	private: System::Windows::Forms::TextBox^  textBox8;
-	private: System::Windows::Forms::Button^  button10;
-	private: System::Windows::Forms::Button^  button11;
-	private: System::Windows::Forms::TextBox^  textBox18;
-	private: System::Windows::Forms::TextBox^  textBox17;
-	private: System::Windows::Forms::TextBox^  textBox16;
-	private: System::Windows::Forms::TextBox^  textBox15;
-	private: System::Windows::Forms::TextBox^  textBox14;
-	private: System::Windows::Forms::TextBox^  textBox13;
 	private: System::Windows::Forms::StatusStrip^  statusStrip1;
 	private: System::Windows::Forms::ToolStripStatusLabel^  toolStripStatusLabel1;
 	private: System::Windows::Forms::TrackBar^  trackBar6;
@@ -92,14 +61,7 @@ namespace Robotics_T1 {
 	private: System::Windows::Forms::ComboBox^  speedStep3;
 	private: System::Windows::Forms::ComboBox^  speedStep2;
 	private: System::Windows::Forms::ComboBox^  speedStep1;
-
-
-
-
-
-
 	private: System::Windows::Forms::CheckBox^  checkBoxSpeedStep;
-
 	private: System::Windows::Forms::Button^  buttonAxis6Step;
 	private: System::Windows::Forms::Button^  buttonAxis5Step;
 	private: System::Windows::Forms::Button^  buttonAxis4Step;
@@ -108,193 +70,98 @@ namespace Robotics_T1 {
 	private: System::Windows::Forms::Button^  buttonAxis1Step;
 	private: System::Windows::Forms::GroupBox^  groupBox1;
 	private: System::Windows::Forms::Button^  buttonUpdateA5;
-
 	private: System::Windows::Forms::Button^  buttonUpdateA4;
-
 	private: System::Windows::Forms::Button^  buttonUpdateA3;
-
 	private: System::Windows::Forms::Button^  buttonUpdateA2;
-
 	private: System::Windows::Forms::Button^  buttonUpdateA1;
-private: System::Windows::Forms::TextBox^  angleAxis5;
-
-
-private: System::Windows::Forms::TextBox^  angleAxis4;
-
-private: System::Windows::Forms::TextBox^  angleAxis3;
-
-private: System::Windows::Forms::TextBox^  angleAxis2;
-
-private: System::Windows::Forms::TextBox^  angleAxis1;
-
+	private: System::Windows::Forms::TextBox^  angleAxis5;
+	private: System::Windows::Forms::TextBox^  angleAxis4;
+	private: System::Windows::Forms::TextBox^  angleAxis3;
+	private: System::Windows::Forms::TextBox^  angleAxis2;
+	private: System::Windows::Forms::TextBox^  angleAxis1;
 	private: System::Windows::Forms::GroupBox^  groupBox3;
 	private: System::Windows::Forms::GroupBox^  groupBox2;
-private: System::Windows::Forms::Button^  buttonUpdateAA;
-private: System::Windows::Forms::TextBox^  stepAxis5;
-
-
-private: System::Windows::Forms::TextBox^  stepAxis4;
-
-private: System::Windows::Forms::TextBox^  stepAxis3;
-
-private: System::Windows::Forms::TextBox^  stepAxis2;
-
-private: System::Windows::Forms::TextBox^  stepAxis1;
-
-private: System::Windows::Forms::Button^  buttonMoveAA;
-
-private: System::Windows::Forms::TextBox^  textStepA6;
-
-private: System::Windows::Forms::TextBox^  textStepA5;
-
-private: System::Windows::Forms::TextBox^  textStepA4;
-
-private: System::Windows::Forms::TextBox^  textStepA3;
-
-private: System::Windows::Forms::TextBox^  textStepA2;
-
-private: System::Windows::Forms::TextBox^  textStepA1;
-
-private: System::Windows::Forms::GroupBox^  groupBox4;
-private: System::Windows::Forms::Label^  label1;
-private: System::Windows::Forms::Label^  label5;
-private: System::Windows::Forms::Label^  label4;
-private: System::Windows::Forms::Label^  label3;
-private: System::Windows::Forms::Label^  label2;
-private: System::Windows::Forms::Label^  labelYaw;
-private: System::Windows::Forms::Label^  labelRoll;
-private: System::Windows::Forms::Label^  labelPitch;
-private: System::Windows::Forms::Label^  labelZ;
-private: System::Windows::Forms::Label^  labelY;
-private: System::Windows::Forms::Label^  labelX;
-private: System::Windows::Forms::Label^  label6;
-private: System::Windows::Forms::TabPage^  tabPage3;
-private: System::Windows::Forms::Button^  buttonCalibrate;
-private: System::Windows::Forms::Button^  calibrateAngle;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-private: System::Windows::Forms::Button^  moveAAAngle;
-
-private: System::Windows::Forms::TextBox^  angleBox6;
-
-private: System::Windows::Forms::TextBox^  angleBox5;
-
-private: System::Windows::Forms::TextBox^  angleBox4;
-
-private: System::Windows::Forms::TextBox^  angleBox3;
-
-private: System::Windows::Forms::TextBox^  angleBox2;
-
-private: System::Windows::Forms::TextBox^  angleBox1;
-private: System::Windows::Forms::CheckBox^  checkSpeedAngle;
-
-
-private: System::Windows::Forms::Button^  buttonAxis6Angular;
-
-private: System::Windows::Forms::Button^  buttonAxis5Angular;
-
-private: System::Windows::Forms::Button^  buttonAxis4Angular;
-
-private: System::Windows::Forms::Button^  buttonAxis3Angular;
-
-private: System::Windows::Forms::Button^  buttonAxis2Angular;
-
-private: System::Windows::Forms::Button^  buttonAxis1Angular;
-private: System::Windows::Forms::ComboBox^  speedBoxAngle6;
-
-
-
-private: System::Windows::Forms::ComboBox^  speedBoxAngle5;
-
-private: System::Windows::Forms::ComboBox^  speedBoxAngle4;
-
-private: System::Windows::Forms::ComboBox^  speedBoxAngle3;
-
-private: System::Windows::Forms::ComboBox^  speedBoxAngle2;
-
-private: System::Windows::Forms::ComboBox^  speedBoxAngle1;
-
-private: System::Windows::Forms::TrackBar^  angleBar6;
-
-private: System::Windows::Forms::TrackBar^  angleBar5;
-
-private: System::Windows::Forms::TrackBar^  angleBar4;
-
-private: System::Windows::Forms::TrackBar^  angleBar3;
-
-private: System::Windows::Forms::TrackBar^  angleBar2;
-
-private: System::Windows::Forms::TrackBar^  angleBar1;
-private: System::Windows::Forms::TabPage^  tabPage4;
-
-private: System::Windows::Forms::Button^  buttonGoToPos;
-private: System::Windows::Forms::TextBox^  textBox24;
-private: System::Windows::Forms::TextBox^  textBox23;
-private: System::Windows::Forms::TextBox^  textBox22;
-private: System::Windows::Forms::TextBox^  textBox21;
-private: System::Windows::Forms::TextBox^  textBox20;
-private: System::Windows::Forms::TextBox^  textBox19;
-private: System::Windows::Forms::PictureBox^  pictureBox1;
-private: System::Windows::Forms::Label^  label7;
-private: System::Windows::Forms::Label^  label8;
-private: System::Windows::Forms::Label^  label9;
-private: System::Windows::Forms::Label^  label10;
-private: System::Windows::Forms::Label^  label11;
-private: System::Windows::Forms::Label^  label12;
-
+	private: System::Windows::Forms::Button^  buttonUpdateAA;
+	private: System::Windows::Forms::TextBox^  stepAxis5;
+	private: System::Windows::Forms::TextBox^  stepAxis4;
+	private: System::Windows::Forms::TextBox^  stepAxis3;
+	private: System::Windows::Forms::TextBox^  stepAxis2;
+	private: System::Windows::Forms::TextBox^  stepAxis1;
+	private: System::Windows::Forms::Button^  buttonMoveAA;
+	private: System::Windows::Forms::TextBox^  textStepA6;
+	private: System::Windows::Forms::TextBox^  textStepA5;
+	private: System::Windows::Forms::TextBox^  textStepA4;
+	private: System::Windows::Forms::TextBox^  textStepA3;
+	private: System::Windows::Forms::TextBox^  textStepA2;
+	private: System::Windows::Forms::TextBox^  textStepA1;
+	private: System::Windows::Forms::GroupBox^  groupBox4;
+	private: System::Windows::Forms::Label^  label1;
+	private: System::Windows::Forms::Label^  label5;
+	private: System::Windows::Forms::Label^  label4;
+	private: System::Windows::Forms::Label^  label3;
+	private: System::Windows::Forms::Label^  label2;
+	private: System::Windows::Forms::Label^  labelYaw;
+	private: System::Windows::Forms::Label^  labelRoll;
+	private: System::Windows::Forms::Label^  labelPitch;
+	private: System::Windows::Forms::Label^  labelZ;
+	private: System::Windows::Forms::Label^  labelY;
+	private: System::Windows::Forms::Label^  labelX;
+	private: System::Windows::Forms::Label^  label6;
+	private: System::Windows::Forms::TabPage^  tabPage3;
+	private: System::Windows::Forms::Button^  buttonCalibrate;
+	private: System::Windows::Forms::Button^  calibrateAngle;
+	private: System::Windows::Forms::Button^  moveAAAngle;
+	private: System::Windows::Forms::TextBox^  angleBox6;
+	private: System::Windows::Forms::TextBox^  angleBox5;
+	private: System::Windows::Forms::TextBox^  angleBox4;
+	private: System::Windows::Forms::TextBox^  angleBox3;
+	private: System::Windows::Forms::TextBox^  angleBox2;
+	private: System::Windows::Forms::TextBox^  angleBox1;
+	private: System::Windows::Forms::CheckBox^  checkSpeedAngle;
+	private: System::Windows::Forms::Button^  buttonAxis6Angular;
+	private: System::Windows::Forms::Button^  buttonAxis5Angular;
+	private: System::Windows::Forms::Button^  buttonAxis4Angular;
+	private: System::Windows::Forms::Button^  buttonAxis3Angular;
+	private: System::Windows::Forms::Button^  buttonAxis2Angular;
+	private: System::Windows::Forms::Button^  buttonAxis1Angular;
+	private: System::Windows::Forms::ComboBox^  speedBoxAngle6;
+	private: System::Windows::Forms::ComboBox^  speedBoxAngle5;
+	private: System::Windows::Forms::ComboBox^  speedBoxAngle4;
+	private: System::Windows::Forms::ComboBox^  speedBoxAngle3;
+	private: System::Windows::Forms::ComboBox^  speedBoxAngle2;
+	private: System::Windows::Forms::ComboBox^  speedBoxAngle1;
+	private: System::Windows::Forms::TrackBar^  angleBar6;
+	private: System::Windows::Forms::TrackBar^  angleBar5;
+	private: System::Windows::Forms::TrackBar^  angleBar4;
+	private: System::Windows::Forms::TrackBar^  angleBar3;
+	private: System::Windows::Forms::TrackBar^  angleBar2;
+	private: System::Windows::Forms::TrackBar^  angleBar1;
+	private: System::Windows::Forms::TabPage^  tabPage4;
+	private: System::Windows::Forms::Button^  buttonGoToPos;
+private: System::Windows::Forms::TextBox^  posYawBox;
+
+private: System::Windows::Forms::TextBox^  posPitchBox;
+
+private: System::Windows::Forms::TextBox^  posRollBox;
+
+private: System::Windows::Forms::TextBox^  posZBox;
+
+private: System::Windows::Forms::TextBox^  posYBox;
+
+private: System::Windows::Forms::TextBox^  posXBox;
+
+	private: System::Windows::Forms::PictureBox^  pictureBox1;
+	private: System::Windows::Forms::Label^  label7;
+	private: System::Windows::Forms::Label^  label8;
+	private: System::Windows::Forms::Label^  label9;
+	private: System::Windows::Forms::Label^  label10;
+	private: System::Windows::Forms::Label^  label11;
+	private: System::Windows::Forms::Label^  label12;
+	private: System::Windows::Forms::Label^  label17;
+	private: System::Windows::Forms::Label^  label16;
+	private: System::Windows::Forms::Label^  label15;
+	private: System::Windows::Forms::Label^  label14;
+	private: System::Windows::Forms::Label^  label13;
 
 	private:
 		/// <summary>
@@ -312,36 +179,11 @@ private: System::Windows::Forms::Label^  label12;
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(RoboticForm::typeid));
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
-			this->textBox18 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox17 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox16 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox15 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox14 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox13 = (gcnew System::Windows::Forms::TextBox());
-			this->button11 = (gcnew System::Windows::Forms::Button());
-			this->button10 = (gcnew System::Windows::Forms::Button());
-			this->textBox12 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox11 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox10 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox9 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
-			this->button9 = (gcnew System::Windows::Forms::Button());
-			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
-			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
-			this->button8 = (gcnew System::Windows::Forms::Button());
-			this->button7 = (gcnew System::Windows::Forms::Button());
-			this->button6 = (gcnew System::Windows::Forms::Button());
-			this->button5 = (gcnew System::Windows::Forms::Button());
-			this->button4 = (gcnew System::Windows::Forms::Button());
-			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
-			this->button3 = (gcnew System::Windows::Forms::Button());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
-			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->label17 = (gcnew System::Windows::Forms::Label());
+			this->label16 = (gcnew System::Windows::Forms::Label());
+			this->label15 = (gcnew System::Windows::Forms::Label());
+			this->label14 = (gcnew System::Windows::Forms::Label());
+			this->label13 = (gcnew System::Windows::Forms::Label());
 			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
 			this->buttonCalibrate = (gcnew System::Windows::Forms::Button());
 			this->buttonMoveAA = (gcnew System::Windows::Forms::Button());
@@ -407,12 +249,13 @@ private: System::Windows::Forms::Label^  label12;
 			this->label11 = (gcnew System::Windows::Forms::Label());
 			this->label12 = (gcnew System::Windows::Forms::Label());
 			this->buttonGoToPos = (gcnew System::Windows::Forms::Button());
-			this->textBox24 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox23 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox22 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox21 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox20 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox19 = (gcnew System::Windows::Forms::TextBox());
+			this->posYawBox = (gcnew System::Windows::Forms::TextBox());
+			this->posPitchBox = (gcnew System::Windows::Forms::TextBox());
+			this->posRollBox = (gcnew System::Windows::Forms::TextBox());
+			this->posZBox = (gcnew System::Windows::Forms::TextBox());
+			this->posYBox = (gcnew System::Windows::Forms::TextBox());
+			this->posXBox = (gcnew System::Windows::Forms::TextBox());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->groupBox3 = (gcnew System::Windows::Forms::GroupBox());
 			this->groupBox4 = (gcnew System::Windows::Forms::GroupBox());
 			this->labelYaw = (gcnew System::Windows::Forms::Label());
@@ -483,41 +326,15 @@ private: System::Windows::Forms::Label^  label12;
 			this->tabControl1->SelectedIndex = 0;
 			this->tabControl1->Size = System::Drawing::Size(760, 404);
 			this->tabControl1->TabIndex = 0;
-			this->tabControl1->SelectedIndexChanged += gcnew System::EventHandler(this, &RoboticForm::tabControl1_SelectedIndexChanged);
 			// 
 			// tabPage1
 			// 
 			this->tabPage1->BackColor = System::Drawing::SystemColors::Control;
-			this->tabPage1->Controls->Add(this->textBox18);
-			this->tabPage1->Controls->Add(this->textBox17);
-			this->tabPage1->Controls->Add(this->textBox16);
-			this->tabPage1->Controls->Add(this->textBox15);
-			this->tabPage1->Controls->Add(this->textBox14);
-			this->tabPage1->Controls->Add(this->textBox13);
-			this->tabPage1->Controls->Add(this->button11);
-			this->tabPage1->Controls->Add(this->button10);
-			this->tabPage1->Controls->Add(this->textBox12);
-			this->tabPage1->Controls->Add(this->textBox11);
-			this->tabPage1->Controls->Add(this->textBox10);
-			this->tabPage1->Controls->Add(this->textBox9);
-			this->tabPage1->Controls->Add(this->textBox8);
-			this->tabPage1->Controls->Add(this->button9);
-			this->tabPage1->Controls->Add(this->textBox7);
-			this->tabPage1->Controls->Add(this->checkBox1);
-			this->tabPage1->Controls->Add(this->button8);
-			this->tabPage1->Controls->Add(this->button7);
-			this->tabPage1->Controls->Add(this->button6);
-			this->tabPage1->Controls->Add(this->button5);
-			this->tabPage1->Controls->Add(this->button4);
-			this->tabPage1->Controls->Add(this->textBox6);
-			this->tabPage1->Controls->Add(this->textBox5);
-			this->tabPage1->Controls->Add(this->textBox4);
-			this->tabPage1->Controls->Add(this->textBox3);
-			this->tabPage1->Controls->Add(this->button3);
-			this->tabPage1->Controls->Add(this->textBox2);
-			this->tabPage1->Controls->Add(this->button2);
-			this->tabPage1->Controls->Add(this->textBox1);
-			this->tabPage1->Controls->Add(this->button1);
+			this->tabPage1->Controls->Add(this->label17);
+			this->tabPage1->Controls->Add(this->label16);
+			this->tabPage1->Controls->Add(this->label15);
+			this->tabPage1->Controls->Add(this->label14);
+			this->tabPage1->Controls->Add(this->label13);
 			this->tabPage1->Location = System::Drawing::Point(4, 22);
 			this->tabPage1->Name = L"tabPage1";
 			this->tabPage1->Padding = System::Windows::Forms::Padding(3);
@@ -525,266 +342,61 @@ private: System::Windows::Forms::Label^  label12;
 			this->tabPage1->TabIndex = 0;
 			this->tabPage1->Text = L"Robot Controls";
 			// 
-			// textBox18
+			// label17
 			// 
-			this->textBox18->Location = System::Drawing::Point(249, 167);
-			this->textBox18->Name = L"textBox18";
-			this->textBox18->ReadOnly = true;
-			this->textBox18->Size = System::Drawing::Size(75, 20);
-			this->textBox18->TabIndex = 30;
+			this->label17->AutoSize = true;
+			this->label17->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 24, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label17->Location = System::Drawing::Point(171, 296);
+			this->label17->Name = L"label17";
+			this->label17->Size = System::Drawing::Size(388, 37);
+			this->label17->TabIndex = 5;
+			this->label17->Text = L"Alexandra Videira - 37246";
 			// 
-			// textBox17
+			// label16
 			// 
-			this->textBox17->Location = System::Drawing::Point(249, 141);
-			this->textBox17->Name = L"textBox17";
-			this->textBox17->ReadOnly = true;
-			this->textBox17->Size = System::Drawing::Size(75, 20);
-			this->textBox17->TabIndex = 29;
+			this->label16->AutoSize = true;
+			this->label16->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 24, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label16->Location = System::Drawing::Point(153, 242);
+			this->label16->Name = L"label16";
+			this->label16->Size = System::Drawing::Size(423, 37);
+			this->label16->TabIndex = 4;
+			this->label16->Text = L"João Barata Oliveira - 31559";
 			// 
-			// textBox16
+			// label15
 			// 
-			this->textBox16->Location = System::Drawing::Point(249, 115);
-			this->textBox16->Name = L"textBox16";
-			this->textBox16->ReadOnly = true;
-			this->textBox16->Size = System::Drawing::Size(75, 20);
-			this->textBox16->TabIndex = 28;
+			this->label15->AutoSize = true;
+			this->label15->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 24, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label15->Location = System::Drawing::Point(194, 192);
+			this->label15->Name = L"label15";
+			this->label15->Size = System::Drawing::Size(330, 37);
+			this->label15->TabIndex = 3;
+			this->label15->Text = L"Pedro Martins - 31501";
 			// 
-			// textBox15
+			// label14
 			// 
-			this->textBox15->Location = System::Drawing::Point(249, 88);
-			this->textBox15->Name = L"textBox15";
-			this->textBox15->ReadOnly = true;
-			this->textBox15->Size = System::Drawing::Size(75, 20);
-			this->textBox15->TabIndex = 27;
+			this->label14->AutoSize = true;
+			this->label14->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 26.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label14->Location = System::Drawing::Point(144, 135);
+			this->label14->Name = L"label14";
+			this->label14->Size = System::Drawing::Size(455, 39);
+			this->label14->TabIndex = 2;
+			this->label14->Text = L"Assignment 1 - Kinematics";
 			// 
-			// textBox14
+			// label13
 			// 
-			this->textBox14->Location = System::Drawing::Point(249, 62);
-			this->textBox14->Name = L"textBox14";
-			this->textBox14->ReadOnly = true;
-			this->textBox14->Size = System::Drawing::Size(75, 20);
-			this->textBox14->TabIndex = 26;
-			// 
-			// textBox13
-			// 
-			this->textBox13->Location = System::Drawing::Point(249, 36);
-			this->textBox13->Name = L"textBox13";
-			this->textBox13->ReadOnly = true;
-			this->textBox13->Size = System::Drawing::Size(75, 20);
-			this->textBox13->TabIndex = 25;
-			// 
-			// button11
-			// 
-			this->button11->Enabled = false;
-			this->button11->Location = System::Drawing::Point(330, 139);
-			this->button11->Name = L"button11";
-			this->button11->Size = System::Drawing::Size(75, 80);
-			this->button11->TabIndex = 24;
-			this->button11->Text = L"Calibrar";
-			this->button11->UseVisualStyleBackColor = true;
-			this->button11->Click += gcnew System::EventHandler(this, &RoboticForm::button11_Click);
-			// 
-			// button10
-			// 
-			this->button10->Enabled = false;
-			this->button10->Location = System::Drawing::Point(168, 192);
-			this->button10->Name = L"button10";
-			this->button10->Size = System::Drawing::Size(156, 27);
-			this->button10->TabIndex = 23;
-			this->button10->Text = L"Clear Speed";
-			this->button10->UseVisualStyleBackColor = true;
-			this->button10->Click += gcnew System::EventHandler(this, &RoboticForm::button10_Click);
-			// 
-			// textBox12
-			// 
-			this->textBox12->Location = System::Drawing::Point(168, 166);
-			this->textBox12->Name = L"textBox12";
-			this->textBox12->Size = System::Drawing::Size(75, 20);
-			this->textBox12->TabIndex = 22;
-			// 
-			// textBox11
-			// 
-			this->textBox11->Location = System::Drawing::Point(168, 141);
-			this->textBox11->Name = L"textBox11";
-			this->textBox11->Size = System::Drawing::Size(75, 20);
-			this->textBox11->TabIndex = 21;
-			// 
-			// textBox10
-			// 
-			this->textBox10->Location = System::Drawing::Point(168, 114);
-			this->textBox10->Name = L"textBox10";
-			this->textBox10->Size = System::Drawing::Size(75, 20);
-			this->textBox10->TabIndex = 20;
-			// 
-			// textBox9
-			// 
-			this->textBox9->Location = System::Drawing::Point(168, 88);
-			this->textBox9->Name = L"textBox9";
-			this->textBox9->Size = System::Drawing::Size(75, 20);
-			this->textBox9->TabIndex = 19;
-			// 
-			// textBox8
-			// 
-			this->textBox8->Location = System::Drawing::Point(168, 62);
-			this->textBox8->Name = L"textBox8";
-			this->textBox8->Size = System::Drawing::Size(75, 20);
-			this->textBox8->TabIndex = 18;
-			// 
-			// button9
-			// 
-			this->button9->Enabled = false;
-			this->button9->Location = System::Drawing::Point(330, 36);
-			this->button9->Name = L"button9";
-			this->button9->Size = System::Drawing::Size(75, 97);
-			this->button9->TabIndex = 17;
-			this->button9->Text = L"Dance";
-			this->button9->UseVisualStyleBackColor = true;
-			// 
-			// textBox7
-			// 
-			this->textBox7->Location = System::Drawing::Point(168, 36);
-			this->textBox7->Name = L"textBox7";
-			this->textBox7->Size = System::Drawing::Size(75, 20);
-			this->textBox7->TabIndex = 16;
-			// 
-			// checkBox1
-			// 
-			this->checkBox1->AutoSize = true;
-			this->checkBox1->Location = System::Drawing::Point(168, 10);
-			this->checkBox1->Name = L"checkBox1";
-			this->checkBox1->Size = System::Drawing::Size(57, 17);
-			this->checkBox1->TabIndex = 15;
-			this->checkBox1->Text = L"Speed";
-			this->checkBox1->UseVisualStyleBackColor = true;
-			// 
-			// button8
-			// 
-			this->button8->Enabled = false;
-			this->button8->Location = System::Drawing::Point(7, 192);
-			this->button8->Name = L"button8";
-			this->button8->Size = System::Drawing::Size(155, 27);
-			this->button8->TabIndex = 14;
-			this->button8->Text = L"Multiple Axis";
-			this->button8->UseVisualStyleBackColor = true;
-			this->button8->Click += gcnew System::EventHandler(this, &RoboticForm::button8_Click);
-			// 
-			// button7
-			// 
-			this->button7->Enabled = false;
-			this->button7->Location = System::Drawing::Point(86, 166);
-			this->button7->Name = L"button7";
-			this->button7->Size = System::Drawing::Size(76, 20);
-			this->button7->TabIndex = 13;
-			this->button7->Text = L"Axis6";
-			this->button7->UseVisualStyleBackColor = true;
-			this->button7->Click += gcnew System::EventHandler(this, &RoboticForm::button7_Click);
-			// 
-			// button6
-			// 
-			this->button6->Enabled = false;
-			this->button6->Location = System::Drawing::Point(86, 140);
-			this->button6->Name = L"button6";
-			this->button6->Size = System::Drawing::Size(76, 20);
-			this->button6->TabIndex = 12;
-			this->button6->Text = L"Axis5";
-			this->button6->UseVisualStyleBackColor = true;
-			this->button6->Click += gcnew System::EventHandler(this, &RoboticForm::button6_Click);
-			// 
-			// button5
-			// 
-			this->button5->Enabled = false;
-			this->button5->Location = System::Drawing::Point(87, 114);
-			this->button5->Name = L"button5";
-			this->button5->Size = System::Drawing::Size(75, 20);
-			this->button5->TabIndex = 11;
-			this->button5->Text = L"Axis4";
-			this->button5->UseVisualStyleBackColor = true;
-			this->button5->Click += gcnew System::EventHandler(this, &RoboticForm::button5_Click);
-			// 
-			// button4
-			// 
-			this->button4->Enabled = false;
-			this->button4->Location = System::Drawing::Point(87, 87);
-			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(75, 21);
-			this->button4->TabIndex = 10;
-			this->button4->Text = L"Axis3";
-			this->button4->UseVisualStyleBackColor = true;
-			this->button4->Click += gcnew System::EventHandler(this, &RoboticForm::button4_Click);
-			// 
-			// textBox6
-			// 
-			this->textBox6->Location = System::Drawing::Point(7, 166);
-			this->textBox6->Name = L"textBox6";
-			this->textBox6->Size = System::Drawing::Size(74, 20);
-			this->textBox6->TabIndex = 8;
-			// 
-			// textBox5
-			// 
-			this->textBox5->Location = System::Drawing::Point(7, 140);
-			this->textBox5->Name = L"textBox5";
-			this->textBox5->Size = System::Drawing::Size(74, 20);
-			this->textBox5->TabIndex = 7;
-			// 
-			// textBox4
-			// 
-			this->textBox4->Location = System::Drawing::Point(7, 114);
-			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(74, 20);
-			this->textBox4->TabIndex = 6;
-			// 
-			// textBox3
-			// 
-			this->textBox3->Location = System::Drawing::Point(7, 88);
-			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(74, 20);
-			this->textBox3->TabIndex = 5;
-			// 
-			// button3
-			// 
-			this->button3->Enabled = false;
-			this->button3->Location = System::Drawing::Point(87, 61);
-			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(75, 20);
-			this->button3->TabIndex = 4;
-			this->button3->Text = L"Axis2";
-			this->button3->UseVisualStyleBackColor = true;
-			this->button3->Click += gcnew System::EventHandler(this, &RoboticForm::button3_Click);
-			// 
-			// textBox2
-			// 
-			this->textBox2->Location = System::Drawing::Point(7, 62);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(74, 20);
-			this->textBox2->TabIndex = 3;
-			// 
-			// button2
-			// 
-			this->button2->Enabled = false;
-			this->button2->Location = System::Drawing::Point(87, 35);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(75, 20);
-			this->button2->TabIndex = 2;
-			this->button2->Text = L"Axis 1";
-			this->button2->UseVisualStyleBackColor = true;
-			this->button2->Click += gcnew System::EventHandler(this, &RoboticForm::button2_Click);
-			// 
-			// textBox1
-			// 
-			this->textBox1->Location = System::Drawing::Point(6, 35);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(75, 20);
-			this->textBox1->TabIndex = 1;
-			// 
-			// button1
-			// 
-			this->button1->Location = System::Drawing::Point(7, 6);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(155, 23);
-			this->button1->TabIndex = 0;
-			this->button1->Text = L"Connect";
-			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &RoboticForm::button1_Click);
+			this->label13->AutoSize = true;
+			this->label13->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 72, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label13->ForeColor = System::Drawing::Color::Teal;
+			this->label13->Location = System::Drawing::Point(160, 3);
+			this->label13->Name = L"label13";
+			this->label13->Size = System::Drawing::Size(425, 108);
+			this->label13->TabIndex = 1;
+			this->label13->Text = L"Robotics";
 			// 
 			// tabPage2
 			// 
@@ -1129,7 +741,7 @@ private: System::Windows::Forms::Label^  label12;
 			this->calibrateAngle->TabIndex = 67;
 			this->calibrateAngle->Text = L"Calibrate";
 			this->calibrateAngle->UseVisualStyleBackColor = true;
-			this->calibrateAngle->Click += gcnew System::EventHandler(this, &RoboticForm::calibrateAngle_Click);
+			this->calibrateAngle->Click += gcnew System::EventHandler(this, &RoboticForm::buttonCalibrate_Click);
 			// 
 			// moveAAAngle
 			// 
@@ -1400,19 +1012,18 @@ private: System::Windows::Forms::Label^  label12;
 			this->tabPage4->Controls->Add(this->label11);
 			this->tabPage4->Controls->Add(this->label12);
 			this->tabPage4->Controls->Add(this->buttonGoToPos);
-			this->tabPage4->Controls->Add(this->textBox24);
-			this->tabPage4->Controls->Add(this->textBox23);
-			this->tabPage4->Controls->Add(this->textBox22);
-			this->tabPage4->Controls->Add(this->textBox21);
-			this->tabPage4->Controls->Add(this->textBox20);
-			this->tabPage4->Controls->Add(this->textBox19);
+			this->tabPage4->Controls->Add(this->posYawBox);
+			this->tabPage4->Controls->Add(this->posPitchBox);
+			this->tabPage4->Controls->Add(this->posRollBox);
+			this->tabPage4->Controls->Add(this->posZBox);
+			this->tabPage4->Controls->Add(this->posYBox);
+			this->tabPage4->Controls->Add(this->posXBox);
 			this->tabPage4->Location = System::Drawing::Point(4, 22);
 			this->tabPage4->Name = L"tabPage4";
 			this->tabPage4->Padding = System::Windows::Forms::Padding(3);
 			this->tabPage4->Size = System::Drawing::Size(752, 378);
 			this->tabPage4->TabIndex = 3;
 			this->tabPage4->Text = L"PositionControl";
-			this->tabPage4->Click += gcnew System::EventHandler(this, &RoboticForm::tabPage4_Click);
 			// 
 			// pictureBox1
 			// 
@@ -1486,48 +1097,59 @@ private: System::Windows::Forms::Label^  label12;
 			this->buttonGoToPos->TabIndex = 6;
 			this->buttonGoToPos->Text = L"Go To Position";
 			this->buttonGoToPos->UseVisualStyleBackColor = true;
+			this->buttonGoToPos->Click += gcnew System::EventHandler(this, &RoboticForm::buttonGoToPos_Click);
 			// 
-			// textBox24
+			// posYawBox
 			// 
-			this->textBox24->Location = System::Drawing::Point(145, 203);
-			this->textBox24->Name = L"textBox24";
-			this->textBox24->Size = System::Drawing::Size(100, 20);
-			this->textBox24->TabIndex = 5;
+			this->posYawBox->Location = System::Drawing::Point(145, 203);
+			this->posYawBox->Name = L"posYawBox";
+			this->posYawBox->Size = System::Drawing::Size(100, 20);
+			this->posYawBox->TabIndex = 5;
 			// 
-			// textBox23
+			// posPitchBox
 			// 
-			this->textBox23->Location = System::Drawing::Point(145, 177);
-			this->textBox23->Name = L"textBox23";
-			this->textBox23->Size = System::Drawing::Size(100, 20);
-			this->textBox23->TabIndex = 4;
+			this->posPitchBox->Location = System::Drawing::Point(145, 177);
+			this->posPitchBox->Name = L"posPitchBox";
+			this->posPitchBox->Size = System::Drawing::Size(100, 20);
+			this->posPitchBox->TabIndex = 4;
 			// 
-			// textBox22
+			// posRollBox
 			// 
-			this->textBox22->Location = System::Drawing::Point(145, 151);
-			this->textBox22->Name = L"textBox22";
-			this->textBox22->Size = System::Drawing::Size(100, 20);
-			this->textBox22->TabIndex = 3;
+			this->posRollBox->Location = System::Drawing::Point(145, 151);
+			this->posRollBox->Name = L"posRollBox";
+			this->posRollBox->Size = System::Drawing::Size(100, 20);
+			this->posRollBox->TabIndex = 3;
 			// 
-			// textBox21
+			// posZBox
 			// 
-			this->textBox21->Location = System::Drawing::Point(145, 114);
-			this->textBox21->Name = L"textBox21";
-			this->textBox21->Size = System::Drawing::Size(100, 20);
-			this->textBox21->TabIndex = 2;
+			this->posZBox->Location = System::Drawing::Point(145, 114);
+			this->posZBox->Name = L"posZBox";
+			this->posZBox->Size = System::Drawing::Size(100, 20);
+			this->posZBox->TabIndex = 2;
 			// 
-			// textBox20
+			// posYBox
 			// 
-			this->textBox20->Location = System::Drawing::Point(145, 88);
-			this->textBox20->Name = L"textBox20";
-			this->textBox20->Size = System::Drawing::Size(100, 20);
-			this->textBox20->TabIndex = 1;
+			this->posYBox->Location = System::Drawing::Point(145, 88);
+			this->posYBox->Name = L"posYBox";
+			this->posYBox->Size = System::Drawing::Size(100, 20);
+			this->posYBox->TabIndex = 1;
 			// 
-			// textBox19
+			// posXBox
 			// 
-			this->textBox19->Location = System::Drawing::Point(145, 62);
-			this->textBox19->Name = L"textBox19";
-			this->textBox19->Size = System::Drawing::Size(100, 20);
-			this->textBox19->TabIndex = 0;
+			this->posXBox->Location = System::Drawing::Point(145, 62);
+			this->posXBox->Name = L"posXBox";
+			this->posXBox->Size = System::Drawing::Size(100, 20);
+			this->posXBox->TabIndex = 0;
+			// 
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(12, 603);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(155, 23);
+			this->button1->TabIndex = 0;
+			this->button1->Text = L"Connect";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &RoboticForm::button1_Click);
 			// 
 			// groupBox3
 			// 
@@ -1878,6 +1500,7 @@ private: System::Windows::Forms::Label^  label12;
 			this->ClientSize = System::Drawing::Size(788, 659);
 			this->Controls->Add(this->statusStrip1);
 			this->Controls->Add(this->groupBox3);
+			this->Controls->Add(this->button1);
 			this->Controls->Add(this->tabControl1);
 			this->Name = L"RoboticForm";
 			this->Text = L"RoboticForm";
@@ -1922,19 +1545,12 @@ private: System::Windows::Forms::Label^  label12;
 		void motor_status_all(){
 			char steparray[6];
 			double theta[5], posAtt[6];
-			all_motor_status(Cp,steparray);
+			all_motor_status(Cp, steparray);
 			for (size_t i = 0; i < 5; i++)
 			{
 				theta[i] = steps_to_degrees((unsigned char)steparray[i], i + 1);
 			}
-			
-			textBox13->Text = Convert::ToString(steps_to_degrees((unsigned char)steparray[0], 1));
-			
-			textBox14->Text = Convert::ToString(steps_to_degrees((unsigned char)steparray[1], 2));
-			textBox15->Text = Convert::ToString(steps_to_degrees((unsigned char)steparray[2], 3));
-			textBox16->Text = Convert::ToString(steps_to_degrees((unsigned char)steparray[3], 4));
-			textBox17->Text = Convert::ToString(steps_to_degrees((unsigned char)steparray[4], 5));
-			textBox18->Text = Convert::ToString(steps_to_degrees((unsigned char)steparray[5], 6));
+
 
 			angleAxis1->Text = Convert::ToString(theta[0]);
 			angleAxis2->Text = Convert::ToString(theta[1]);
@@ -1962,7 +1578,7 @@ private: System::Windows::Forms::Label^  label12;
 			stepAxis3->Text = Convert::ToString((unsigned char)steparray[2]);
 			stepAxis4->Text = Convert::ToString((unsigned char)steparray[3]);
 			stepAxis5->Text = Convert::ToString((unsigned char)steparray[4]);
-			
+
 
 		}
 
@@ -1996,199 +1612,9 @@ private: System::Windows::Forms::Label^  label12;
 			speedBoxAngle4->SelectedIndex = 2;
 			speedBoxAngle5->SelectedIndex = 2;
 			speedBoxAngle6->SelectedIndex = 2;
+			button1->Enabled = FALSE;
 		}
 
-	}
-
-	private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
-		int axis1 = Convert::ToInt32(textBox1->Text), steps;
-		
-		steps = degrees_to_steps(axis1, 1);
-
-		if (checkBox1->Checked == TRUE){
-			int speed = Convert::ToInt32(textBox7->Text);
-
-			if (speed < 0 || speed > 5){
-				MessageBox::Show("Speed 0-5, by default speed=3");
-				speed = 3;
-			}
-
-			move_one_axis_speed(Cp, 1, steps, speed);
-			textBox1->Clear();
-		}
-		else
-		{
-			move_one_axis(Cp, 1, steps);
-			//textBox1->Clear();
-		}
-		motor_status_all();
-	}
-
-	private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
-		int axis2 = Convert::ToInt32(textBox2->Text), steps;
-		
-		steps = degrees_to_steps(axis2, 2);
-
-		if (checkBox1->Checked == TRUE){
-			int speed = Convert::ToInt32(textBox8->Text);
-
-			if (speed < 0 || speed > 5){
-				MessageBox::Show("Speed 0-5, by default speed=3");
-				speed = 3;
-			}
-
-			move_one_axis_speed(Cp, 2, steps, speed);
-			textBox2->Clear();
-		}
-		else
-		{
-			move_one_axis(Cp, 2, steps);
-			//textBox2->Clear();
-		}
-		motor_status_all();
-	}
-
-	private: System::Void button4_Click(System::Object^  sender, System::EventArgs^  e) {
-		int axis3 = Convert::ToInt32(textBox3->Text), steps;
-
-		steps = degrees_to_steps(axis3, 3);
-
-		if (checkBox1->Checked == TRUE){
-			int speed = Convert::ToInt32(textBox9->Text);
-
-			if (speed < 0 || speed > 5){
-				MessageBox::Show("Speed 0-5, by default speed=3");
-				speed = 3;
-			}
-
-			move_one_axis_speed(Cp, 3, steps, speed);
-			textBox3->Clear();
-		}
-		else
-		{
-			move_one_axis(Cp, 3, steps);
-			//textBox3->Clear();
-		}
-		motor_status_all();
-	}
-
-	private: System::Void button5_Click(System::Object^  sender, System::EventArgs^  e) {
-		int axis4 = Convert::ToInt32(textBox4->Text), steps;
-
-		steps = degrees_to_steps(axis4, 4);
-
-		if (checkBox1->Checked == TRUE){
-			int speed = Convert::ToInt32(textBox10->Text);
-
-			if (speed < 0 || speed > 5){
-				MessageBox::Show("Speed 0-5, by default speed=3");
-				speed = 3;
-			}
-
-			move_one_axis_speed(Cp, 4, steps, speed);
-			textBox4->Clear();
-		}
-		else
-		{
-			move_one_axis(Cp, 4, steps);
-			//textBox4->Clear();
-		}
-		motor_status_all();
-	}
-
-	private: System::Void button6_Click(System::Object^  sender, System::EventArgs^  e) {
-		int axis5 = Convert::ToInt32(textBox5->Text), steps;
-
-		steps = degrees_to_steps(axis5, 5);
-
-		if (checkBox1->Checked == TRUE){
-			int speed = Convert::ToInt32(textBox11->Text);
-
-			if (speed < 0 || speed > 5){
-				MessageBox::Show("Speed 0-5, by default speed=3");
-				speed = 3;
-			}
-
-			move_one_axis_speed(Cp, 5, steps, speed);
-			textBox5->Clear();
-		}
-		else
-		{
-			move_one_axis(Cp, 5, steps);
-			//textBox5->Clear();
-		}
-		motor_status_all();
-	}
-
-	private: System::Void button7_Click(System::Object^  sender, System::EventArgs^  e) {
-		int axis6 = Convert::ToInt32(textBox6->Text), steps;
-
-		steps = mm_to_steps(axis6);
-
-		if (checkBox1->Checked == TRUE){
-			int speed = Convert::ToInt32(textBox12->Text);
-
-			if (speed < 0 || speed > 5){
-				MessageBox::Show("Speed 0-5, by default speed=3");
-				speed = 3;
-			}
-
-			move_one_axis_speed(Cp, 6, steps, speed);
-			textBox6->Clear();
-		}
-		else
-		{
-			move_one_axis(Cp, 6, steps);
-			//textBox6->Clear();
-		}
-		motor_status_all();
-	}
-	private: System::Void button8_Click(System::Object^  sender, System::EventArgs^  e) {
-		int steparray[6] = { Convert::ToInt32(textBox1->Text)
-			, Convert::ToInt32(textBox2->Text)
-			, Convert::ToInt32(textBox3->Text)
-			, Convert::ToInt32(textBox4->Text)
-			, Convert::ToInt32(textBox5->Text)
-			, Convert::ToInt32(textBox6->Text) };
-
-		for (int i = 0; i < 5; i++)
-		{
-			steparray[i] = degrees_to_steps(steparray[i], i + 1);
-		}
-		steparray[5] = mm_to_steps(steparray[5]);
-
-		if (checkBox1->Checked == FALSE){
-			move_multiple_axis(Cp, steparray);
-		}
-		else{
-			int speedarray[6] = { Convert::ToInt32(textBox7->Text)
-				, Convert::ToInt32(textBox8->Text)
-				, Convert::ToInt32(textBox9->Text)
-				, Convert::ToInt32(textBox10->Text)
-				, Convert::ToInt32(textBox11->Text)
-				, Convert::ToInt32(textBox12->Text) };
-
-			move_multiple_axis_speed(Cp, steparray, speedarray);
-		}
-
-		textBox1->Clear();
-		textBox2->Clear();
-		textBox3->Clear();
-		textBox4->Clear();
-		textBox5->Clear();
-		textBox6->Clear();
-		motor_status_all();
-	}
-
-	private: System::Void button10_Click(System::Object^  sender, System::EventArgs^  e) {
-		textBox7->Clear();
-		textBox8->Clear();
-		textBox9->Clear();
-		textBox10->Clear();
-		textBox11->Clear();
-		textBox12->Clear();
-
-		checkBox1->Checked = FALSE;
 	}
 
 	private: System::Void button11_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -2197,7 +1623,7 @@ private: System::Windows::Forms::Label^  label12;
 		//textBox7->Text = Convert::ToString(degrees_to_steps(0, 1));
 
 		//motor_status();
-		
+
 		//int theta[5];
 		//	backward_kinematic(246.64, 206.934, 567.888, 6.280, -36.35, theta);
 		double theta_tk[5] = { 0, 0, 0, 0, 0 };
@@ -2209,443 +1635,826 @@ private: System::Windows::Forms::Label^  label12;
 		motor_status_all();
 	}
 
-private: System::Void trackBar1_Scroll(System::Object^  sender, System::EventArgs^  e) {
-	textStepA1->Text = Convert::ToString(trackBar1->Value);
-}
-private: System::Void trackBar2_Scroll(System::Object^  sender, System::EventArgs^  e) {
-	textStepA2->Text = Convert::ToString(trackBar2->Value);
-}
-private: System::Void trackBar3_Scroll(System::Object^  sender, System::EventArgs^  e) {
-	textStepA3->Text = Convert::ToString(trackBar3->Value);
-}
-private: System::Void trackBar4_Scroll(System::Object^  sender, System::EventArgs^  e) {
-	textStepA4->Text = Convert::ToString(trackBar4->Value);
-}
-private: System::Void trackBar5_Scroll(System::Object^  sender, System::EventArgs^  e) {
-	textStepA5->Text = Convert::ToString(trackBar5->Value);
-}
-private: System::Void trackBar6_Scroll(System::Object^  sender, System::EventArgs^  e) {
-	textStepA6->Text = Convert::ToString(trackBar6->Value);
-}
-private: System::Void buttonAxis1Step_Click(System::Object^  sender, System::EventArgs^  e) {
-	int axis;
-
-	try{
-		axis = Convert::ToInt32(textStepA1->Text);
-	}
-	catch (...){
-		MessageBox::Show("Input incorrecto! Eixo 1");
+	private: System::Void trackBar1_Scroll(System::Object^  sender, System::EventArgs^  e) {
 		textStepA1->Text = Convert::ToString(trackBar1->Value);
-		return;
 	}
-	if (axis > 255 || axis < 0){
-		MessageBox::Show("Input incorrecto! Eixo 1");
-		textStepA1->Text = Convert::ToString(trackBar1->Value);
-		return;
-	}
-	trackBar1->Value = axis;
-	if (checkBoxSpeedStep->Checked == TRUE){
-		int speed = Convert::ToInt32(speedStep1->SelectedItem);
-
-		if (speed < 0 || speed > 5){
-			MessageBox::Show("Speed 0-5, by default speed=3");
-			speed = 3;
-		}
-
-		move_one_axis_speed(Cp, 1, axis, speed);
-	}
-	else
-	{
-		move_one_axis(Cp, 1, axis);
-	}
-	int steps = motor_status(Cp, 1);
-	stepAxis1->Text = Convert::ToString(steps);
-	angleAxis1->Text = Convert::ToString(steps_to_degrees(steps, 1));
-}
-private: System::Void buttonAxis2Step_Click(System::Object^  sender, System::EventArgs^  e) {
-	int axis;
-
-	try{
-		axis = Convert::ToInt32(textStepA2->Text);
-	}
-	catch (...){
-		MessageBox::Show("Input incorrecto! Eixo 2");
+	private: System::Void trackBar2_Scroll(System::Object^  sender, System::EventArgs^  e) {
 		textStepA2->Text = Convert::ToString(trackBar2->Value);
-		return;
 	}
-	if (axis > 255 || axis < 0){
-		MessageBox::Show("Input incorrecto! Eixo 2");
-		textStepA2->Text = Convert::ToString(trackBar2->Value);
-		return;
-	}
-	trackBar2->Value = axis;
-	if (checkBoxSpeedStep->Checked == TRUE){
-		int speed = Convert::ToInt32(speedStep2->SelectedItem);
-
-		if (speed < 0 || speed > 5){
-			MessageBox::Show("Speed 0-5, by default speed=3");
-			speed = 3;
-		}
-
-		move_one_axis_speed(Cp, 2, axis, speed);
-	}
-	else
-	{
-		move_one_axis(Cp, 2, axis);
-	}
-	int steps = motor_status(Cp, 2);
-	stepAxis2->Text = Convert::ToString(steps);
-	angleAxis2->Text = Convert::ToString(steps_to_degrees(steps, 2));
-}
-private: System::Void buttonAxis3Step_Click(System::Object^  sender, System::EventArgs^  e) {
-	int axis;
-
-	try{
-		axis = Convert::ToInt32(textStepA3->Text);
-	}
-	catch (...){
-		MessageBox::Show("Input incorrecto! Eixo 3");
+	private: System::Void trackBar3_Scroll(System::Object^  sender, System::EventArgs^  e) {
 		textStepA3->Text = Convert::ToString(trackBar3->Value);
-		return;
 	}
-	if (axis > 255 || axis < 0){
-		MessageBox::Show("Input incorrecto! Eixo 3");
-		textStepA3->Text = Convert::ToString(trackBar3->Value);
-		return;
-	}
-	trackBar3->Value = axis;
-	if (checkBoxSpeedStep->Checked == TRUE){
-		int speed = Convert::ToInt32(speedStep3->SelectedItem);
-
-		if (speed < 0 || speed > 5){
-			MessageBox::Show("Speed 0-5, by default speed=3");
-			speed = 3;
-		}
-
-		move_one_axis_speed(Cp, 3, axis, speed);
-	}
-	else
-	{
-		move_one_axis(Cp, 3, axis);
-	}
-	int steps = motor_status(Cp, 3);
-	stepAxis3->Text = Convert::ToString(steps);
-	angleAxis3->Text = Convert::ToString(steps_to_degrees(steps, 3));
-}
-private: System::Void buttonAxis4Step_Click(System::Object^  sender, System::EventArgs^  e) {
-	int axis;
-
-	try{
-		axis = Convert::ToInt32(textStepA4->Text);
-	}
-	catch (...){
-		MessageBox::Show("Input incorrecto! Eixo 4");
+	private: System::Void trackBar4_Scroll(System::Object^  sender, System::EventArgs^  e) {
 		textStepA4->Text = Convert::ToString(trackBar4->Value);
-		return;
 	}
-	if (axis > 255 || axis < 0){
-		MessageBox::Show("Input incorrecto! Eixo 4");
-		textStepA4->Text = Convert::ToString(trackBar4->Value);
-		return;
-	}
-	trackBar4->Value = axis;
-	if (checkBoxSpeedStep->Checked == TRUE){
-		int speed = Convert::ToInt32(speedStep4->SelectedItem);
-
-		if (speed < 0 || speed > 5){
-			MessageBox::Show("Speed 0-5, by default speed=3");
-			speed = 3;
-		}
-
-		move_one_axis_speed(Cp, 4, axis, speed);
-	}
-	else
-	{
-		move_one_axis(Cp, 4, axis);
-	}
-	int steps = motor_status(Cp, 4);
-	stepAxis4->Text = Convert::ToString(steps);
-	angleAxis4->Text = Convert::ToString(steps_to_degrees(steps, 4));
-}
-private: System::Void buttonAxis5Step_Click(System::Object^  sender, System::EventArgs^  e) {
-	int axis;
-
-	try{
-		axis = Convert::ToInt32(textStepA5->Text);
-	}
-	catch (...){
-		MessageBox::Show("Input incorrecto! Eixo 5");
+	private: System::Void trackBar5_Scroll(System::Object^  sender, System::EventArgs^  e) {
 		textStepA5->Text = Convert::ToString(trackBar5->Value);
-		return;
 	}
-	if (axis > 255 || axis < 0){
-		MessageBox::Show("Input incorrecto! Eixo 5");
-		textStepA5->Text = Convert::ToString(trackBar5->Value);
-		return;
+	private: System::Void trackBar6_Scroll(System::Object^  sender, System::EventArgs^  e) {
+		textStepA6->Text = Convert::ToString(trackBar6->Value);
 	}
-	trackBar5->Value = axis;
-	if (checkBoxSpeedStep->Checked == TRUE){
-		int speed = Convert::ToInt32(speedStep5->SelectedItem);
+	private: System::Void buttonAxis1Step_Click(System::Object^  sender, System::EventArgs^  e) {
+		int axis;
 
-		if (speed < 0 || speed > 5){
-			MessageBox::Show("Speed 0-5, by default speed=3");
-			speed = 3;
+		try{
+			axis = Convert::ToInt32(textStepA1->Text);
 		}
-
-		move_one_axis_speed(Cp, 5, axis, speed);
-	}
-	else
-	{
-		move_one_axis(Cp, 5, axis);
-	}
-	int steps = motor_status(Cp, 5);
-	stepAxis5->Text = Convert::ToString(steps);
-	angleAxis5->Text = Convert::ToString(steps_to_degrees(steps, 5));
-}
-private: System::Void buttonAxis6Step_Click(System::Object^  sender, System::EventArgs^  e) {
-	int axis;
-
-	try{
-		axis = Convert::ToInt32(textStepA6->Text);
-	}
-	catch (...){
-		MessageBox::Show("Input incorrecto! Eixo 6");
-		textStepA6->Text = Convert::ToString(trackBar6->Value);
-		return;
-	}
-	if (axis > 255 || axis < 0){
-		MessageBox::Show("Input incorrecto! Eixo 6");
-		textStepA6->Text = Convert::ToString(trackBar6->Value);
-		return;
-	}
-	trackBar6->Value = axis;
-	if (checkBoxSpeedStep->Checked == TRUE){
-		int speed = Convert::ToInt32(speedStep6->SelectedItem);
-
-		if (speed < 0 || speed > 5){
-			MessageBox::Show("Speed 0-5, by default speed=3");
-			speed = 3;
+		catch (...){
+			MessageBox::Show("Input incorrecto! Eixo 1");
+			textStepA1->Text = Convert::ToString(trackBar1->Value);
+			return;
 		}
+		if (axis > 255 || axis < 0){
+			MessageBox::Show("Input incorrecto! Eixo 1");
+			textStepA1->Text = Convert::ToString(trackBar1->Value);
+			return;
+		}
+		trackBar1->Value = axis;
+		if (checkBoxSpeedStep->Checked == TRUE){
+			int speed = Convert::ToInt32(speedStep1->SelectedItem);
 
-		move_one_axis_speed(Cp, 6, axis, speed);
-	}
-	else
-	{
-		move_one_axis(Cp, 6, axis);
-	}
-	int steps = motor_status(Cp, 6);
-	//stepAxis6->Text = Convert::ToString(steps);
-	//angleAxis6->Text = Convert::ToString(steps_to_degrees(steps, 6));
-}
-private: System::Void buttonUpdateAA_Click(System::Object^  sender, System::EventArgs^  e) {
-	motor_status_all();
-}
-		 /* Move All Axis in steps functionality
-		 Read all data from form and move all axis at the same time
-		 */
-private: System::Void buttonMoveAA_Click(System::Object^  sender, System::EventArgs^  e) {
-	int axis[6];
+			if (speed < 0 || speed > 5){
+				MessageBox::Show("Speed 0-5, by default speed=3");
+				speed = 3;
+			}
 
-	try{
-		axis[0] = Convert::ToInt32(textStepA1->Text);
+			move_one_axis_speed(Cp, 1, axis, speed);
+		}
+		else
+		{
+			move_one_axis(Cp, 1, axis);
+		}
+		int steps = motor_status(Cp, 1);
+		stepAxis1->Text = Convert::ToString(steps);
+		angleAxis1->Text = Convert::ToString(steps_to_degrees(steps, 1));
+		updateGripperPosition();
 	}
-	catch (...){
-		MessageBox::Show("Input incorrecto! 0 < Steps < 255");
-		textStepA1->Text = Convert::ToString(trackBar1->Value);
-		return;
+	private: System::Void buttonAxis2Step_Click(System::Object^  sender, System::EventArgs^  e) {
+		int axis;
+
+		try{
+			axis = Convert::ToInt32(textStepA2->Text);
+		}
+		catch (...){
+			MessageBox::Show("Input incorrecto! Eixo 2");
+			textStepA2->Text = Convert::ToString(trackBar2->Value);
+			return;
+		}
+		if (axis > 255 || axis < 0){
+			MessageBox::Show("Input incorrecto! Eixo 2");
+			textStepA2->Text = Convert::ToString(trackBar2->Value);
+			return;
+		}
+		trackBar2->Value = axis;
+		if (checkBoxSpeedStep->Checked == TRUE){
+			int speed = Convert::ToInt32(speedStep2->SelectedItem);
+
+			if (speed < 0 || speed > 5){
+				MessageBox::Show("Speed 0-5, by default speed=3");
+				speed = 3;
+			}
+
+			move_one_axis_speed(Cp, 2, axis, speed);
+		}
+		else
+		{
+			move_one_axis(Cp, 2, axis);
+		}
+		int steps = motor_status(Cp, 2);
+		stepAxis2->Text = Convert::ToString(steps);
+		angleAxis2->Text = Convert::ToString(steps_to_degrees(steps, 2));
+		updateGripperPosition();
 	}
-	try{
-		axis[1] = Convert::ToInt32(textStepA2->Text);
+	private: System::Void buttonAxis3Step_Click(System::Object^  sender, System::EventArgs^  e) {
+		int axis;
+
+		try{
+			axis = Convert::ToInt32(textStepA3->Text);
+		}
+		catch (...){
+			MessageBox::Show("Input incorrecto! Eixo 3");
+			textStepA3->Text = Convert::ToString(trackBar3->Value);
+			return;
+		}
+		if (axis > 255 || axis < 0){
+			MessageBox::Show("Input incorrecto! Eixo 3");
+			textStepA3->Text = Convert::ToString(trackBar3->Value);
+			return;
+		}
+		trackBar3->Value = axis;
+		if (checkBoxSpeedStep->Checked == TRUE){
+			int speed = Convert::ToInt32(speedStep3->SelectedItem);
+
+			if (speed < 0 || speed > 5){
+				MessageBox::Show("Speed 0-5, by default speed=3");
+				speed = 3;
+			}
+
+			move_one_axis_speed(Cp, 3, axis, speed);
+		}
+		else
+		{
+			move_one_axis(Cp, 3, axis);
+		}
+		int steps = motor_status(Cp, 3);
+		stepAxis3->Text = Convert::ToString(steps);
+		angleAxis3->Text = Convert::ToString(steps_to_degrees(steps, 3));
+		updateGripperPosition();
 	}
-	catch (...){
-		MessageBox::Show("Input incorrecto! 0 < Steps < 255");
-		textStepA2->Text = Convert::ToString(trackBar2->Value);
-		return;
+	private: System::Void buttonAxis4Step_Click(System::Object^  sender, System::EventArgs^  e) {
+		int axis;
+
+		try{
+			axis = Convert::ToInt32(textStepA4->Text);
+		}
+		catch (...){
+			MessageBox::Show("Input incorrecto! Eixo 4");
+			textStepA4->Text = Convert::ToString(trackBar4->Value);
+			return;
+		}
+		if (axis > 255 || axis < 0){
+			MessageBox::Show("Input incorrecto! Eixo 4");
+			textStepA4->Text = Convert::ToString(trackBar4->Value);
+			return;
+		}
+		trackBar4->Value = axis;
+		if (checkBoxSpeedStep->Checked == TRUE){
+			int speed = Convert::ToInt32(speedStep4->SelectedItem);
+
+			if (speed < 0 || speed > 5){
+				MessageBox::Show("Speed 0-5, by default speed=3");
+				speed = 3;
+			}
+
+			move_one_axis_speed(Cp, 4, axis, speed);
+		}
+		else
+		{
+			move_one_axis(Cp, 4, axis);
+		}
+		int steps = motor_status(Cp, 4);
+		stepAxis4->Text = Convert::ToString(steps);
+		angleAxis4->Text = Convert::ToString(steps_to_degrees(steps, 4));
+		updateGripperPosition();
 	}
-	try{
-		axis[2] = Convert::ToInt32(textStepA3->Text);
-	}
-	catch (...){
-		MessageBox::Show("Input incorrecto! 0 < Steps < 255");
-		textStepA3->Text = Convert::ToString(trackBar3->Value);
-		return;
-	}
-	try{
-		axis[3] = Convert::ToInt32(textStepA4->Text);
-	}
-	catch (...){
-		MessageBox::Show("Input incorrecto! 0 < Steps < 255");
-		textStepA4->Text = Convert::ToString(trackBar4->Value);
-		return;
-	}
-	try{
-		axis[4] = Convert::ToInt32(textStepA5->Text);
-	}
-	catch (...){
-		MessageBox::Show("Input incorrecto! 0 < Steps < 255");
-		textStepA5->Text = Convert::ToString(trackBar5->Value);
-		return;
-	}
-	try{
-		axis[5] = Convert::ToInt32(textStepA6->Text);
-	}
-	catch (...){
-		MessageBox::Show("Input incorrecto! 0 < Steps < 255");
-		textStepA6->Text = Convert::ToString(trackBar6->Value);
-		return;
-	}
-	for (size_t i = 0; i < 6; i++)
-	{
-		if (axis[i] > 255 || axis[i] < 0){
-			MessageBox::Show("Input incorrecto!  0 < Steps < 255");
+	private: System::Void buttonAxis5Step_Click(System::Object^  sender, System::EventArgs^  e) {
+		int axis;
+
+		try{
+			axis = Convert::ToInt32(textStepA5->Text);
+		}
+		catch (...){
+			MessageBox::Show("Input incorrecto! Eixo 5");
 			textStepA5->Text = Convert::ToString(trackBar5->Value);
 			return;
 		}
-	}
+		if (axis > 255 || axis < 0){
+			MessageBox::Show("Input incorrecto! Eixo 5");
+			textStepA5->Text = Convert::ToString(trackBar5->Value);
+			return;
+		}
+		trackBar5->Value = axis;
+		if (checkBoxSpeedStep->Checked == TRUE){
+			int speed = Convert::ToInt32(speedStep5->SelectedItem);
 
-	if (checkBoxSpeedStep->Checked == TRUE){
-		int speed[6];
-		speed[0] = Convert::ToInt32(speedStep1->SelectedItem);
-		speed[1] = Convert::ToInt32(speedStep2->SelectedItem);
-		speed[2] = Convert::ToInt32(speedStep3->SelectedItem);
-		speed[3] = Convert::ToInt32(speedStep4->SelectedItem);
-		speed[4] = Convert::ToInt32(speedStep5->SelectedItem);
-		speed[5] = Convert::ToInt32(speedStep6->SelectedItem);
+			if (speed < 0 || speed > 5){
+				MessageBox::Show("Speed 0-5, by default speed=3");
+				speed = 3;
+			}
+
+			move_one_axis_speed(Cp, 5, axis, speed);
+		}
+		else
+		{
+			move_one_axis(Cp, 5, axis);
+		}
+		int steps = motor_status(Cp, 5);
+		stepAxis5->Text = Convert::ToString(steps);
+		angleAxis5->Text = Convert::ToString(steps_to_degrees(steps, 5));
+		updateGripperPosition();
+	}
+	private: System::Void buttonAxis6Step_Click(System::Object^  sender, System::EventArgs^  e) {
+		int axis;
+
+		try{
+			axis = Convert::ToInt32(textStepA6->Text);
+		}
+		catch (...){
+			MessageBox::Show("Input incorrecto! Eixo 6");
+			textStepA6->Text = Convert::ToString(trackBar6->Value);
+			return;
+		}
+		if (axis > 255 || axis < 0){
+			MessageBox::Show("Input incorrecto! Eixo 6");
+			textStepA6->Text = Convert::ToString(trackBar6->Value);
+			return;
+		}
+		trackBar6->Value = axis;
+		if (checkBoxSpeedStep->Checked == TRUE){
+			int speed = Convert::ToInt32(speedStep6->SelectedItem);
+
+			if (speed < 0 || speed > 5){
+				MessageBox::Show("Speed 0-5, by default speed=3");
+				speed = 3;
+			}
+
+			move_one_axis_speed(Cp, 6, axis, speed);
+		}
+		else
+		{
+			move_one_axis(Cp, 6, axis);
+		}
+		int steps = motor_status(Cp, 6);
+		//stepAxis6->Text = Convert::ToString(steps);
+		//angleAxis6->Text = Convert::ToString(steps_to_degrees(steps, 6));
+	}
+	private: System::Void buttonUpdateAA_Click(System::Object^  sender, System::EventArgs^  e) {
+		motor_status_all();
+	}
+			 /* Move All Axis in steps functionality
+			 Read all data from form and move all axis at the same time
+			 */
+	private: System::Void buttonMoveAA_Click(System::Object^  sender, System::EventArgs^  e) {
+		int axis[6];
+
+		try{
+			axis[0] = Convert::ToInt32(textStepA1->Text);
+		}
+		catch (...){
+			MessageBox::Show("Input incorrecto! 0 < Steps < 255");
+			textStepA1->Text = Convert::ToString(trackBar1->Value);
+			return;
+		}
+		try{
+			axis[1] = Convert::ToInt32(textStepA2->Text);
+		}
+		catch (...){
+			MessageBox::Show("Input incorrecto! 0 < Steps < 255");
+			textStepA2->Text = Convert::ToString(trackBar2->Value);
+			return;
+		}
+		try{
+			axis[2] = Convert::ToInt32(textStepA3->Text);
+		}
+		catch (...){
+			MessageBox::Show("Input incorrecto! 0 < Steps < 255");
+			textStepA3->Text = Convert::ToString(trackBar3->Value);
+			return;
+		}
+		try{
+			axis[3] = Convert::ToInt32(textStepA4->Text);
+		}
+		catch (...){
+			MessageBox::Show("Input incorrecto! 0 < Steps < 255");
+			textStepA4->Text = Convert::ToString(trackBar4->Value);
+			return;
+		}
+		try{
+			axis[4] = Convert::ToInt32(textStepA5->Text);
+		}
+		catch (...){
+			MessageBox::Show("Input incorrecto! 0 < Steps < 255");
+			textStepA5->Text = Convert::ToString(trackBar5->Value);
+			return;
+		}
+		try{
+			axis[5] = Convert::ToInt32(textStepA6->Text);
+		}
+		catch (...){
+			MessageBox::Show("Input incorrecto! 0 < Steps < 255");
+			textStepA6->Text = Convert::ToString(trackBar6->Value);
+			return;
+		}
 		for (size_t i = 0; i < 6; i++)
 		{
-			if (speed[i] < 0 || speed[i] > 5){
-				MessageBox::Show("Speed 0-5, by default speed=3");
-				speed[i] = 3;
+			if (axis[i] > 255 || axis[i] < 0){
+				MessageBox::Show("Input incorrecto!  0 < Steps < 255");
+				textStepA5->Text = Convert::ToString(trackBar5->Value);
+				return;
 			}
 		}
 
-		move_multiple_axis_speed(Cp, axis, speed);
-	}
-	else
-	{
-		move_multiple_axis(Cp, axis);
-	}
-	motor_status_all();
-}
-private: System::Void buttonCalibrate_Click(System::Object^  sender, System::EventArgs^  e) {
-	int steps[6] = {128,170,0,128,128,0};
-	int angle[6] = {0, 0, 0, 0, -100};
-	//Write Values to the trackbars in Step Page
-	trackBar1->Value = steps[0];
-	trackBar2->Value = steps[1];
-	trackBar3->Value = steps[2];
-	trackBar4->Value = steps[3];
-	trackBar5->Value = steps[4];
-	trackBar6->Value = steps[5];
-	//Write the values of Motor steps in the step control page
-	textStepA1->Text = Convert::ToString(steps[0]);
-	textStepA2->Text = Convert::ToString(steps[1]);
-	textStepA3->Text = Convert::ToString(steps[2]);
-	textStepA4->Text = Convert::ToString(steps[3]);
-	textStepA5->Text = Convert::ToString(steps[4]);
-	textStepA6->Text = Convert::ToString(steps[5]);
-	move_multiple_axis(Cp, steps);
-	//Write Values to the trackbars in Step Page
-	angleBar1->Value = angle[0];
-	angleBar2->Value = angle[1];
-	angleBar3->Value = angle[2];
-	angleBar4->Value = angle[3];
-	angleBar5->Value = angle[4];
-	angleBar6->Value = angle[5];
-	//Write the values of Motor steps in the step control page
-	angleBox1->Text = Convert::ToString(angle[0]);
-	angleBox2->Text = Convert::ToString(angle[1]);
-	angleBox3->Text = Convert::ToString(angle[2]);
-	angleBox4->Text = Convert::ToString(angle[3]);
-	angleBox5->Text = Convert::ToString(angle[4]);
-	angleBox6->Text = Convert::ToString(angle[5]);
-	//Update all motor status
-	motor_status_all();
-	//Enable Step buttons
-	buttonAxis1Step->Enabled = TRUE;
-	buttonAxis2Step->Enabled = TRUE;
-	buttonAxis3Step->Enabled = TRUE;
-	buttonAxis4Step->Enabled = TRUE;
-	buttonAxis5Step->Enabled = TRUE;
-	buttonAxis6Step->Enabled = TRUE;
-	buttonMoveAA->Enabled = TRUE;
-	//Enable angle buttons
-	buttonAxis1Angular->Enabled = TRUE;
-	buttonAxis2Angular->Enabled = TRUE;
-	buttonAxis3Angular->Enabled = TRUE;
-	buttonAxis4Angular->Enabled = TRUE;
-	buttonAxis5Angular->Enabled = TRUE;
-	buttonAxis6Angular->Enabled = TRUE;
-	moveAAAngle->Enabled = TRUE;
-	//Enable Go To Position
-	buttonGoToPos->Enabled = TRUE;
+		if (checkBoxSpeedStep->Checked == TRUE){
+			int speed[6];
+			speed[0] = Convert::ToInt32(speedStep1->SelectedItem);
+			speed[1] = Convert::ToInt32(speedStep2->SelectedItem);
+			speed[2] = Convert::ToInt32(speedStep3->SelectedItem);
+			speed[3] = Convert::ToInt32(speedStep4->SelectedItem);
+			speed[4] = Convert::ToInt32(speedStep5->SelectedItem);
+			speed[5] = Convert::ToInt32(speedStep6->SelectedItem);
+			for (size_t i = 0; i < 6; i++)
+			{
+				if (speed[i] < 0 || speed[i] > 5){
+					MessageBox::Show("Speed 0-5, by default speed=3");
+					speed[i] = 3;
+				}
+			}
 
-}
-private: System::Void buttonUpdateA1_Click(System::Object^  sender, System::EventArgs^  e) {
-	int step = motor_status(Cp, 1);
-	angleAxis1->Text = Convert::ToString(steps_to_degrees(step, 1));
-	stepAxis1->Text = Convert::ToString(step);
-}
-private: System::Void buttonUpdateA2_Click(System::Object^  sender, System::EventArgs^  e) {
-	int step = motor_status(Cp, 2);
-	angleAxis2->Text = Convert::ToString(steps_to_degrees(step, 2));
-	stepAxis2->Text = Convert::ToString(step);
-}
-private: System::Void buttonUpdateA3_Click(System::Object^  sender, System::EventArgs^  e) {
-	int step = motor_status(Cp, 3);
-	angleAxis3->Text = Convert::ToString(steps_to_degrees(step, 3));
-	stepAxis3->Text = Convert::ToString(step);
-}
-private: System::Void buttonUpdateA4_Click(System::Object^  sender, System::EventArgs^  e) {
-	int step = motor_status(Cp, 4);
-	angleAxis4->Text = Convert::ToString(steps_to_degrees(step, 4));
-	stepAxis4->Text = Convert::ToString(step);
-}
-private: System::Void buttonUpdateA5_Click(System::Object^  sender, System::EventArgs^  e) {
-	int step = motor_status(Cp, 5);
-	angleAxis5->Text = Convert::ToString(steps_to_degrees(step, 5));
-	stepAxis5->Text = Convert::ToString(step);
-}
-private: System::Void calibrateAngle_Click(System::Object^  sender, System::EventArgs^  e) {
-}
-private: System::Void moveAAAngle_Click(System::Object^  sender, System::EventArgs^  e) {
-}
-private: System::Void buttonAxis1Angular_Click(System::Object^  sender, System::EventArgs^  e) {
-}
-private: System::Void buttonAxis2Angular_Click(System::Object^  sender, System::EventArgs^  e) {
-}
-private: System::Void buttonAxis3Angular_Click(System::Object^  sender, System::EventArgs^  e) {
-}
-private: System::Void buttonAxis4Angular_Click(System::Object^  sender, System::EventArgs^  e) {
-}
-private: System::Void buttonAxis5Angular_Click(System::Object^  sender, System::EventArgs^  e) {
-}
-private: System::Void buttonAxis6Angular_Click(System::Object^  sender, System::EventArgs^  e) {
-}
-private: System::Void tabPage4_Click(System::Object^  sender, System::EventArgs^  e) {
-}
-private: System::Void angleBar1_Scroll(System::Object^  sender, System::EventArgs^  e) {
-	angleBox1->Text = Convert::ToString(angleBar1->Value);
-}
-private: System::Void angleBar2_Scroll(System::Object^  sender, System::EventArgs^  e) {
-	angleBox2->Text = Convert::ToString(angleBar2->Value);
-}
-private: System::Void angleBar3_Scroll(System::Object^  sender, System::EventArgs^  e) {
-	angleBox3->Text = Convert::ToString(angleBar3->Value);
-}
-private: System::Void angleBar4_Scroll(System::Object^  sender, System::EventArgs^  e) {
-	angleBox4->Text = Convert::ToString(angleBar4->Value);
-}
-private: System::Void angleBar5_Scroll(System::Object^  sender, System::EventArgs^  e) {
-	angleBox5->Text = Convert::ToString(angleBar5->Value);
-}
-private: System::Void angleBar6_Scroll(System::Object^  sender, System::EventArgs^  e) {
-	angleBox6->Text = Convert::ToString(angleBar6->Value);
-}
-private: System::Void updateGripperPosition(){
-	//TODO: FINISH THIS!!!!!!!!
-}
-private: System::Void tabControl1_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
-}
+			move_multiple_axis_speed(Cp, axis, speed);
+		}
+		else
+		{
+			move_multiple_axis(Cp, axis);
+		}
+		motor_status_all();
+	}
+	private: System::Void buttonCalibrate_Click(System::Object^  sender, System::EventArgs^  e) {
+		int steps[6] = { 128, 170, 0, 128, 128, 0 };
+		int angle[6] = { 0, 0, 0, 0, -100 };
+		//Write Values to the trackbars in Step Page
+		trackBar1->Value = steps[0];
+		trackBar2->Value = steps[1];
+		trackBar3->Value = steps[2];
+		trackBar4->Value = steps[3];
+		trackBar5->Value = steps[4];
+		trackBar6->Value = steps[5];
+		//Write the values of Motor steps in the step control page
+		textStepA1->Text = Convert::ToString(steps[0]);
+		textStepA2->Text = Convert::ToString(steps[1]);
+		textStepA3->Text = Convert::ToString(steps[2]);
+		textStepA4->Text = Convert::ToString(steps[3]);
+		textStepA5->Text = Convert::ToString(steps[4]);
+		textStepA6->Text = Convert::ToString(steps[5]);
+		move_multiple_axis(Cp, steps);
+		//Write Values to the trackbars in Step Page
+		angleBar1->Value = angle[0];
+		angleBar2->Value = angle[1];
+		angleBar3->Value = angle[2];
+		angleBar4->Value = angle[3];
+		angleBar5->Value = angle[4];
+		angleBar6->Value = angle[5];
+		//Write the values of Motor steps in the step control page
+		angleBox1->Text = Convert::ToString(angle[0]);
+		angleBox2->Text = Convert::ToString(angle[1]);
+		angleBox3->Text = Convert::ToString(angle[2]);
+		angleBox4->Text = Convert::ToString(angle[3]);
+		angleBox5->Text = Convert::ToString(angle[4]);
+		angleBox6->Text = Convert::ToString(angle[5]);
+		//Update all motor status
+		motor_status_all();
+		//Enable Step buttons
+		buttonAxis1Step->Enabled = TRUE;
+		buttonAxis2Step->Enabled = TRUE;
+		buttonAxis3Step->Enabled = TRUE;
+		buttonAxis4Step->Enabled = TRUE;
+		buttonAxis5Step->Enabled = TRUE;
+		buttonAxis6Step->Enabled = TRUE;
+		buttonMoveAA->Enabled = TRUE;
+		//Enable angle buttons
+		buttonAxis1Angular->Enabled = TRUE;
+		buttonAxis2Angular->Enabled = TRUE;
+		buttonAxis3Angular->Enabled = TRUE;
+		buttonAxis4Angular->Enabled = TRUE;
+		buttonAxis5Angular->Enabled = TRUE;
+		buttonAxis6Angular->Enabled = TRUE;
+		moveAAAngle->Enabled = TRUE;
+		//Enable Go To Position
+		buttonGoToPos->Enabled = TRUE;
+		updateGripperPosition();
+	}
+	private: System::Void buttonUpdateA1_Click(System::Object^  sender, System::EventArgs^  e) {
+		int step = motor_status(Cp, 1);
+		angleAxis1->Text = Convert::ToString(steps_to_degrees(step, 1));
+		stepAxis1->Text = Convert::ToString(step);
+		updateGripperPosition();
+	}
+	private: System::Void buttonUpdateA2_Click(System::Object^  sender, System::EventArgs^  e) {
+		int step = motor_status(Cp, 2);
+		angleAxis2->Text = Convert::ToString(steps_to_degrees(step, 2));
+		stepAxis2->Text = Convert::ToString(step);
+		updateGripperPosition();
+	}
+	private: System::Void buttonUpdateA3_Click(System::Object^  sender, System::EventArgs^  e) {
+		int step = motor_status(Cp, 3);
+		angleAxis3->Text = Convert::ToString(steps_to_degrees(step, 3));
+		stepAxis3->Text = Convert::ToString(step);
+		updateGripperPosition();
+	}
+	private: System::Void buttonUpdateA4_Click(System::Object^  sender, System::EventArgs^  e) {
+		int step = motor_status(Cp, 4);
+		angleAxis4->Text = Convert::ToString(steps_to_degrees(step, 4));
+		stepAxis4->Text = Convert::ToString(step);
+		updateGripperPosition();
+	}
+	private: System::Void buttonUpdateA5_Click(System::Object^  sender, System::EventArgs^  e) {
+		int step = motor_status(Cp, 5);
+		angleAxis5->Text = Convert::ToString(steps_to_degrees(step, 5));
+		stepAxis5->Text = Convert::ToString(step);
+		updateGripperPosition();
+	}
+	private: System::Void moveAAAngle_Click(System::Object^  sender, System::EventArgs^  e) {
+		int axis[6];
+
+		try{
+			axis[0] = Convert::ToInt32(angleBox1->Text);
+		}
+		catch (...){
+			MessageBox::Show("Input incorrecto! Eixo 1");
+			angleBox1->Text = Convert::ToString(angleBar1->Value);
+			return;
+		}
+		try{
+			axis[1] = Convert::ToInt32(angleBox2->Text);
+		}
+		catch (...){
+			MessageBox::Show("Input incorrecto! Eixo 2");
+			angleBox2->Text = Convert::ToString(angleBar2->Value);
+			return;
+		}
+		try{
+			axis[2] = Convert::ToInt32(angleBox3->Text);
+		}
+		catch (...){
+			MessageBox::Show("Input incorrecto! Eixo 3");
+			angleBox3->Text = Convert::ToString(angleBar3->Value);
+			return;
+		}
+		try{
+			axis[3] = Convert::ToInt32(angleBox4->Text);
+		}
+		catch (...){
+			MessageBox::Show("Input incorrecto! Eixo 4");
+			angleBox4->Text = Convert::ToString(angleBar4->Value);
+			return;
+		}
+		try{
+			axis[4] = Convert::ToInt32(angleBox5->Text);
+		}
+		catch (...){
+			MessageBox::Show("Input incorrecto! Eixo 5");
+			angleBox5->Text = Convert::ToString(angleBar5->Value);
+			return;
+		}
+		try{
+			axis[5] = Convert::ToInt32(angleBox6->Text);
+		}
+		catch (...){
+			MessageBox::Show("Input incorrecto! Eixo 6");
+			angleBox6->Text = Convert::ToString(angleBar6->Value);
+			return;
+		}
+		if (axis[0] > 80 || axis[0] < -80){
+			MessageBox::Show("Input incorrecto! Eixo 1");
+			angleBox1->Text = Convert::ToString(angleBar1->Value);
+			return;
+		}
+		if (axis[1] > 66 || axis[1] < -33){
+			MessageBox::Show("Input incorrecto! Eixo 2");
+			angleBox2->Text = Convert::ToString(angleBar2->Value);
+			return;
+		}
+		if (axis[2] > 0 || axis[2] < -100){
+			MessageBox::Show("Input incorrecto! Eixo 3");
+			angleBox3->Text = Convert::ToString(angleBar3->Value);
+			return;
+		}
+		if (axis[3] > 100 || axis[3] < -100){
+			MessageBox::Show("Input incorrecto! Eixo 4");
+			angleBox4->Text = Convert::ToString(angleBar4->Value);
+			return;
+		}
+		if (axis[4] > 0 || axis[4] < -200){
+			MessageBox::Show("Input incorrecto! Eixo 5");
+			angleBox5->Text = Convert::ToString(angleBar5->Value);
+			return;
+		}
+		if (axis[5] > 60 || axis[5] < 0){
+			MessageBox::Show("Input incorrecto! Eixo 6");
+			angleBox6->Text = Convert::ToString(angleBar6->Value);
+			return;
+		}
+		angleBar1->Value = axis[0];
+		angleBar2->Value = axis[1];
+		angleBar3->Value = axis[2];
+		angleBar4->Value = axis[3];
+		angleBar5->Value = axis[4];
+		angleBar6->Value = axis[5];
+		int steps[6];
+		for (size_t i = 0; i < 5; i++)
+		{
+			degrees_to_steps((double)axis[i], i+1);
+		}
+		steps[5] = mm_to_steps((double)axis[5]);
+		if (checkSpeedAngle->Checked == TRUE){
+			int speed[6];
+			speed[0] = Convert::ToInt32(speedBoxAngle1->SelectedItem);
+			speed[1] = Convert::ToInt32(speedBoxAngle2->SelectedItem);
+			speed[2] = Convert::ToInt32(speedBoxAngle3->SelectedItem);
+			speed[3] = Convert::ToInt32(speedBoxAngle4->SelectedItem);
+			speed[4] = Convert::ToInt32(speedBoxAngle5->SelectedItem);
+			speed[5] = Convert::ToInt32(speedBoxAngle6->SelectedItem);
+			for (size_t i = 0; i < 6; i++)
+			{
+				if (speed[i] < 0 || speed[i] > 5){
+					MessageBox::Show("Speed 0-5, by default speed=3");
+					speed[i] = 3;
+				}
+			}
+			move_multiple_axis_speed(Cp, steps, speed);
+		}
+		else
+		{
+			move_multiple_axis(Cp, steps);
+		}
+		motor_status_all();
+	}
+	private: System::Void buttonAxis1Angular_Click(System::Object^  sender, System::EventArgs^  e) {
+		int axis;
+
+		try{
+			axis = Convert::ToInt32(angleBox1->Text);
+		}
+		catch (...){
+			MessageBox::Show("Input incorrecto! Eixo 1");
+			angleBox1->Text = Convert::ToString(angleBar1->Value);
+			return;
+		}
+		if (axis > 80 || axis < -80){
+			MessageBox::Show("Input incorrecto! Eixo 1");
+			angleBox1->Text = Convert::ToString(angleBar1->Value);
+			return;
+		}
+		angleBar1->Value = axis;
+		int steps = degrees_to_steps((double)axis, 1);
+		if (checkSpeedAngle->Checked == TRUE){
+			int speed = Convert::ToInt32(speedBoxAngle1->SelectedItem);
+
+			if (speed < 0 || speed > 5){
+				MessageBox::Show("Speed 0-5, by default speed=3");
+				speed = 3;
+			}
+
+			move_one_axis_speed(Cp, 1, steps, speed);
+		}
+		else
+		{
+			move_one_axis(Cp, 1, steps);
+		}
+		steps = motor_status(Cp, 1);
+		stepAxis1->Text = Convert::ToString(steps);
+		angleAxis1->Text = Convert::ToString(steps_to_degrees(steps, 1));
+		updateGripperPosition();
+	}
+	private: System::Void buttonAxis2Angular_Click(System::Object^  sender, System::EventArgs^  e) {
+		int axis;
+
+		try{
+			axis = Convert::ToInt32(angleBox2->Text);
+		}
+		catch (...){
+			MessageBox::Show("Input incorrecto! Eixo 2");
+			angleBox2->Text = Convert::ToString(angleBar2->Value);
+			return;
+		}
+		if (axis > 66 || axis < -33){
+			MessageBox::Show("Input incorrecto! Eixo 2");
+			angleBox2->Text = Convert::ToString(angleBar2->Value);
+			return;
+		}
+		angleBar2->Value = axis;
+		int steps = degrees_to_steps((double)axis, 2);
+		if (checkSpeedAngle->Checked == TRUE){
+			int speed = Convert::ToInt32(speedBoxAngle2->SelectedItem);
+
+			if (speed < 0 || speed > 5){
+				MessageBox::Show("Speed 0-5, by default speed=3");
+				speed = 3;
+			}
+
+			move_one_axis_speed(Cp, 2, steps, speed);
+		}
+		else
+		{
+			move_one_axis(Cp, 2, steps);
+		}
+		steps = motor_status(Cp, 2);
+		stepAxis2->Text = Convert::ToString(steps);
+		angleAxis2->Text = Convert::ToString(steps_to_degrees(steps, 2));
+		updateGripperPosition();
+	}
+	private: System::Void buttonAxis3Angular_Click(System::Object^  sender, System::EventArgs^  e) {
+		int axis;
+
+		try{
+			axis = Convert::ToInt32(angleBox3->Text);
+		}
+		catch (...){
+			MessageBox::Show("Input incorrecto! Eixo 3");
+			angleBox3->Text = Convert::ToString(angleBar3->Value);
+			return;
+		}
+		if (axis > 0 || axis < -100){
+			MessageBox::Show("Input incorrecto! Eixo 2");
+			angleBox3->Text = Convert::ToString(angleBar3->Value);
+			return;
+		}
+		angleBar3->Value = axis;
+		int steps = degrees_to_steps((double)axis, 3);
+		if (checkSpeedAngle->Checked == TRUE){
+			int speed = Convert::ToInt32(speedBoxAngle3->SelectedItem);
+
+			if (speed < 0 || speed > 5){
+				MessageBox::Show("Speed 0-5, by default speed=3");
+				speed = 3;
+			}
+
+			move_one_axis_speed(Cp, 3, steps, speed);
+		}
+		else
+		{
+			move_one_axis(Cp, 3, steps);
+		}
+		steps = motor_status(Cp, 3);
+		stepAxis3->Text = Convert::ToString(steps);
+		angleAxis3->Text = Convert::ToString(steps_to_degrees(steps, 3));
+		updateGripperPosition();
+	}
+	private: System::Void buttonAxis4Angular_Click(System::Object^  sender, System::EventArgs^  e) {
+		int axis;
+
+		try{
+			axis = Convert::ToInt32(angleBox4->Text);
+		}
+		catch (...){
+			MessageBox::Show("Input incorrecto! Eixo 4");
+			angleBox4->Text = Convert::ToString(angleBar4->Value);
+			return;
+		}
+		if (axis > 100 || axis < -100){
+			MessageBox::Show("Input incorrecto! Eixo 4");
+			angleBox4->Text = Convert::ToString(angleBar4->Value);
+			return;
+		}
+		angleBar4->Value = axis;
+		int steps = degrees_to_steps((double)axis, 4);
+		if (checkSpeedAngle->Checked == TRUE){
+			int speed = Convert::ToInt32(speedBoxAngle4->SelectedItem);
+
+			if (speed < 0 || speed > 5){
+				MessageBox::Show("Speed 0-5, by default speed=3");
+				speed = 3;
+			}
+
+			move_one_axis_speed(Cp, 4, steps, speed);
+		}
+		else
+		{
+			move_one_axis(Cp, 4, steps);
+		}
+		steps = motor_status(Cp, 4);
+		stepAxis4->Text = Convert::ToString(steps);
+		angleAxis4->Text = Convert::ToString(steps_to_degrees(steps, 4));
+		updateGripperPosition();
+	}
+	private: System::Void buttonAxis5Angular_Click(System::Object^  sender, System::EventArgs^  e) {
+		int axis;
+
+		try{
+			axis = Convert::ToInt32(angleBox5->Text);
+		}
+		catch (...){
+			MessageBox::Show("Input incorrecto! Eixo 5");
+			angleBox5->Text = Convert::ToString(angleBar5->Value);
+			return;
+		}
+		if (axis > 0 || axis < -200){
+			MessageBox::Show("Input incorrecto! Eixo 5");
+			angleBox5->Text = Convert::ToString(angleBar5->Value);
+			return;
+		}
+		angleBar5->Value = axis;
+		int steps = degrees_to_steps((double)axis, 5);
+		if (checkSpeedAngle->Checked == TRUE){
+			int speed = Convert::ToInt32(speedBoxAngle5->SelectedItem);
+
+			if (speed < 0 || speed > 5){
+				MessageBox::Show("Speed 0-5, by default speed=3");
+				speed = 3;
+			}
+
+			move_one_axis_speed(Cp, 5, steps, speed);
+		}
+		else
+		{
+			move_one_axis(Cp, 5, steps);
+		}
+		steps = motor_status(Cp, 5);
+		stepAxis5->Text = Convert::ToString(steps);
+		angleAxis5->Text = Convert::ToString(steps_to_degrees(steps, 5));
+		updateGripperPosition();
+
+	}
+	private: System::Void buttonAxis6Angular_Click(System::Object^  sender, System::EventArgs^  e) {
+		int axis;
+
+		try{
+			axis = Convert::ToInt32(angleBox6->Text);
+		}
+		catch (...){
+			MessageBox::Show("Input incorrecto! Eixo 6");
+			angleBox6->Text = Convert::ToString(angleBar6->Value);
+			return;
+		}
+		if (axis > 60 || axis < 0){
+			MessageBox::Show("Input incorrecto! Eixo 6");
+			angleBox6->Text = Convert::ToString(angleBar6->Value);
+			return;
+		}
+		angleBar6->Value = axis;
+		int steps = mm_to_steps((double)axis);
+		if (checkSpeedAngle->Checked == TRUE){
+			int speed = Convert::ToInt32(speedBoxAngle6->SelectedItem);
+
+			if (speed < 0 || speed > 5){
+				MessageBox::Show("Speed 0-5, by default speed=3");
+				speed = 3;
+			}
+
+			move_one_axis_speed(Cp, 6, steps, speed);
+		}
+		else
+		{
+			move_one_axis(Cp, 6, steps);
+		}
+		//steps = motor_status(Cp, 2);
+		//stepAxis1->Text = Convert::ToString(steps);
+		//angleAxis1->Text = Convert::ToString(steps_to_degrees(steps, 2));
+	}
+	private: System::Void angleBar1_Scroll(System::Object^  sender, System::EventArgs^  e) {
+		angleBox1->Text = Convert::ToString(angleBar1->Value);
+	}
+	private: System::Void angleBar2_Scroll(System::Object^  sender, System::EventArgs^  e) {
+		angleBox2->Text = Convert::ToString(angleBar2->Value);
+	}
+	private: System::Void angleBar3_Scroll(System::Object^  sender, System::EventArgs^  e) {
+		angleBox3->Text = Convert::ToString(angleBar3->Value);
+	}
+	private: System::Void angleBar4_Scroll(System::Object^  sender, System::EventArgs^  e) {
+		angleBox4->Text = Convert::ToString(angleBar4->Value);
+	}
+	private: System::Void angleBar5_Scroll(System::Object^  sender, System::EventArgs^  e) {
+		angleBox5->Text = Convert::ToString(angleBar5->Value);
+	}
+	private: System::Void angleBar6_Scroll(System::Object^  sender, System::EventArgs^  e) {
+		angleBox6->Text = Convert::ToString(angleBar6->Value);
+	}
+	//Update the gripper position using forward kinematics
+	private: System::Void updateGripperPosition(){
+		int steps[5];
+		double angle[5], posAtt[6];
+		steps[0] = Convert::ToInt32(stepAxis1->Text);
+		steps[1] = Convert::ToInt32(stepAxis2->Text);
+		steps[2] = Convert::ToInt32(stepAxis3->Text);
+		steps[3] = Convert::ToInt32(stepAxis4->Text);
+		steps[4] = Convert::ToInt32(stepAxis5->Text);
+
+		for (size_t i = 0; i < 5; i++)
+		{
+			angle[i] = steps_to_degrees(steps[i], i + 1);
+		}
+
+		direct_kinematic(angle, posAtt);
+
+		labelX->Text = Convert::ToString(posAtt[0]);
+		labelY->Text = Convert::ToString(posAtt[1]);
+		labelZ->Text = Convert::ToString(posAtt[2]);
+		labelPitch->Text = Convert::ToString(posAtt[4]);
+		labelRoll->Text = Convert::ToString(posAtt[3]);
+		labelYaw->Text = Convert::ToString(posAtt[5]);
+
+	}
+			 // Vector posAtt 1: X 2: Y 3: Z 4: Roll 5: Pitch 6: Yaw
+	private: System::Void buttonGoToPos_Click(System::Object^  sender, System::EventArgs^  e) {
+		double posAtt[6], theta[5];
+		int steps[6];
+
+		posAtt[0] = Convert::ToDouble(posXBox->Text);
+		posAtt[1] = Convert::ToDouble(posYBox->Text);
+		posAtt[2] = Convert::ToDouble(posZBox->Text);
+		posAtt[3] = Convert::ToDouble(posRollBox->Text);
+		posAtt[4] = Convert::ToDouble(posPitchBox->Text);
+		posAtt[5] = Convert::ToDouble(posYawBox->Text);
+
+		//TODO
+		//CREATE INTEGRITY FUNCTION
+		if (integrityCheck(posAtt)){
+			backward_kinematic(posAtt, theta);
+			for (size_t i = 0; i < 5; i++)
+			{
+				steps[i] = degrees_to_steps(theta[i], i + 1);
+			}
+			steps[6] = 0;
+			move_multiple_axis(Cp, steps);
+		}
+		else{
+			MessageBox::Show("Robot Integrity Violation detected!!!!");
+		}
+
+		
+	}
+	private: bool integrityCheck(double* posAtt){
+		double d = sqrt(pow(posAtt[0], 2) + pow(posAtt[1], 2));
+		return ((d > 50) && posAtt[2]>0);
+	}
 };
 }

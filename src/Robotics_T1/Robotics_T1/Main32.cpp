@@ -405,7 +405,8 @@ void calibrate(TCommPort *Cp){
 	int steps[6] = { 27, 142, 203, 114, 44, 233 };
 	move_multiple_axis(Cp,steps);
 }
-
+//Implements the inverse kinematics
+// Vector posAtt 1: X 2: Y 3: Z 4: Roll 5: Pitch 6: Yaw
 void backward_kinematic(double *posAtt, double* theta)
 {
 	//posAtt 0-px, 1-py, 2-pz, 3-roll, 4-pitch, 5-yaw.
