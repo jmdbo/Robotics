@@ -1619,11 +1619,8 @@ private: System::Windows::Forms::TextBox^  posXBox;
 
 	private: System::Void button11_Click(System::Object^  sender, System::EventArgs^  e) {
 		//calibrate(Cp);
-
 		//textBox7->Text = Convert::ToString(degrees_to_steps(0, 1));
-
 		//motor_status();
-
 		//int theta[5];
 		//	backward_kinematic(246.64, 206.934, 567.888, 6.280, -36.35, theta);
 		double theta_tk[5] = { 0, 0, 0, 0, 0 };
@@ -1631,7 +1628,6 @@ private: System::Windows::Forms::TextBox^  posXBox;
 		direct_kinematic(theta_tk, posAtt);
 		backward_kinematic(posAtt, theta);
 		direct_kinematic(theta, posAtt2);
-
 		motor_status_all();
 	}
 
@@ -2078,6 +2074,7 @@ private: System::Windows::Forms::TextBox^  posXBox;
 			return;
 		}
 		try{
+
 			axis[4] = Convert::ToInt32(angleBox5->Text);
 		}
 		catch (...){
@@ -2132,7 +2129,7 @@ private: System::Windows::Forms::TextBox^  posXBox;
 		int steps[6];
 		for (size_t i = 0; i < 5; i++)
 		{
-			degrees_to_steps((double)axis[i], i+1);
+			steps[i] = degrees_to_steps((double)axis[i], i+1);
 		}
 		steps[5] = mm_to_steps((double)axis[5]);
 		if (checkSpeedAngle->Checked == TRUE){
@@ -2447,7 +2444,7 @@ private: System::Windows::Forms::TextBox^  posXBox;
 			move_multiple_axis(Cp, steps);
 		}
 		else{
-			MessageBox::Show("Robot Integrity Violation detected!!!!");
+			MessageBox::Show("Robot Intégrity Violation detected!!!!");
 		}
 
 		
