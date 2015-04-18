@@ -162,6 +162,10 @@ private: System::Windows::Forms::TextBox^  posXBox;
 	private: System::Windows::Forms::Label^  label15;
 	private: System::Windows::Forms::Label^  label14;
 	private: System::Windows::Forms::Label^  label13;
+private: System::Windows::Forms::Button^  button2;
+private: System::Windows::Forms::TabPage^  tabPage5;
+private: System::Windows::Forms::Button^  buttonHS;
+
 
 	private:
 		/// <summary>
@@ -241,6 +245,7 @@ private: System::Windows::Forms::TextBox^  posXBox;
 			this->angleBar2 = (gcnew System::Windows::Forms::TrackBar());
 			this->angleBar1 = (gcnew System::Windows::Forms::TrackBar());
 			this->tabPage4 = (gcnew System::Windows::Forms::TabPage());
+			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->label8 = (gcnew System::Windows::Forms::Label());
@@ -255,6 +260,8 @@ private: System::Windows::Forms::TextBox^  posXBox;
 			this->posZBox = (gcnew System::Windows::Forms::TextBox());
 			this->posYBox = (gcnew System::Windows::Forms::TextBox());
 			this->posXBox = (gcnew System::Windows::Forms::TextBox());
+			this->tabPage5 = (gcnew System::Windows::Forms::TabPage());
+			this->buttonHS = (gcnew System::Windows::Forms::Button());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->groupBox3 = (gcnew System::Windows::Forms::GroupBox());
 			this->groupBox4 = (gcnew System::Windows::Forms::GroupBox());
@@ -308,6 +315,7 @@ private: System::Windows::Forms::TextBox^  posXBox;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->angleBar1))->BeginInit();
 			this->tabPage4->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
+			this->tabPage5->SuspendLayout();
 			this->groupBox3->SuspendLayout();
 			this->groupBox4->SuspendLayout();
 			this->groupBox2->SuspendLayout();
@@ -321,6 +329,7 @@ private: System::Windows::Forms::TextBox^  posXBox;
 			this->tabControl1->Controls->Add(this->tabPage2);
 			this->tabControl1->Controls->Add(this->tabPage3);
 			this->tabControl1->Controls->Add(this->tabPage4);
+			this->tabControl1->Controls->Add(this->tabPage5);
 			this->tabControl1->Location = System::Drawing::Point(12, 12);
 			this->tabControl1->Name = L"tabControl1";
 			this->tabControl1->SelectedIndex = 0;
@@ -1004,6 +1013,7 @@ private: System::Windows::Forms::TextBox^  posXBox;
 			// tabPage4
 			// 
 			this->tabPage4->BackColor = System::Drawing::SystemColors::Control;
+			this->tabPage4->Controls->Add(this->button2);
 			this->tabPage4->Controls->Add(this->pictureBox1);
 			this->tabPage4->Controls->Add(this->label7);
 			this->tabPage4->Controls->Add(this->label8);
@@ -1025,10 +1035,20 @@ private: System::Windows::Forms::TextBox^  posXBox;
 			this->tabPage4->TabIndex = 3;
 			this->tabPage4->Text = L"PositionControl";
 			// 
+			// button2
+			// 
+			this->button2->Enabled = false;
+			this->button2->Location = System::Drawing::Point(6, 253);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(104, 23);
+			this->button2->TabIndex = 68;
+			this->button2->Text = L"Calibrate";
+			this->button2->UseVisualStyleBackColor = true;
+			// 
 			// pictureBox1
 			// 
 			this->pictureBox1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.BackgroundImage")));
-			this->pictureBox1->Location = System::Drawing::Point(349, 57);
+			this->pictureBox1->Location = System::Drawing::Point(349, 14);
 			this->pictureBox1->Name = L"pictureBox1";
 			this->pictureBox1->Size = System::Drawing::Size(372, 219);
 			this->pictureBox1->TabIndex = 13;
@@ -1140,6 +1160,27 @@ private: System::Windows::Forms::TextBox^  posXBox;
 			this->posXBox->Name = L"posXBox";
 			this->posXBox->Size = System::Drawing::Size(100, 20);
 			this->posXBox->TabIndex = 0;
+			// 
+			// tabPage5
+			// 
+			this->tabPage5->BackColor = System::Drawing::SystemColors::Control;
+			this->tabPage5->Controls->Add(this->buttonHS);
+			this->tabPage5->Location = System::Drawing::Point(4, 22);
+			this->tabPage5->Name = L"tabPage5";
+			this->tabPage5->Padding = System::Windows::Forms::Padding(3);
+			this->tabPage5->Size = System::Drawing::Size(752, 378);
+			this->tabPage5->TabIndex = 4;
+			this->tabPage5->Text = L"tabPage5";
+			// 
+			// buttonHS
+			// 
+			this->buttonHS->Location = System::Drawing::Point(202, 103);
+			this->buttonHS->Name = L"buttonHS";
+			this->buttonHS->Size = System::Drawing::Size(75, 23);
+			this->buttonHS->TabIndex = 0;
+			this->buttonHS->Text = L"Handshake!";
+			this->buttonHS->UseVisualStyleBackColor = true;
+			this->buttonHS->Click += gcnew System::EventHandler(this, &RoboticForm::buttonHS_Click);
 			// 
 			// button1
 			// 
@@ -1527,6 +1568,7 @@ private: System::Windows::Forms::TextBox^  posXBox;
 			this->tabPage4->ResumeLayout(false);
 			this->tabPage4->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
+			this->tabPage5->ResumeLayout(false);
 			this->groupBox3->ResumeLayout(false);
 			this->groupBox4->ResumeLayout(false);
 			this->groupBox4->PerformLayout();
@@ -2453,5 +2495,27 @@ private: System::Windows::Forms::TextBox^  posXBox;
 		double d = sqrt(pow(posAtt[0], 2) + pow(posAtt[1], 2));
 		return ((d > 50) && posAtt[2]>0);
 	}
+private: System::Void buttonHS_Click(System::Object^  sender, System::EventArgs^  e) {
+	int steps[6] = { 128, 94, 77, 128, 128, 0 };
+	char stepsInit[6];
+	int speed[6] = { 3, 3, 4, 3, 3, 3};
+	int angle[6] = { 0, 0, 0, 0, -100 };
+
+	all_motor_status(Cp, stepsInit);
+	move_multiple_axis(Cp, steps);
+	move_one_axis_speed(Cp, 6, 255, 2);
+	//Sleep(5000);
+	move_one_axis_speed(Cp, 3, 102, 4);
+	move_one_axis_speed(Cp, 3, 51, 4);
+	move_one_axis_speed(Cp, 3, 102, 4);
+	move_one_axis_speed(Cp, 3, 77, 4);
+	move_one_axis_speed(Cp, 6, 0, 2);
+	for (size_t i = 0; i < 6; i++)
+	{
+		steps[i] = (unsigned char)stepsInit[i];
+	}
+	move_multiple_axis(Cp, steps);
+	
+}
 };
 }
