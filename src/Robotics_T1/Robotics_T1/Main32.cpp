@@ -135,12 +135,13 @@ int motor_status(TCommPort *Cp, int axis){
 	return pos;
 }
 // nao funca*********************
-void digital_outputs(TCommPort *Cp, int* data)
+void digital_outputs(TCommPort *Cp, int data)
 {
 	int tam;
-	char Buff[8], command[10] = { 0x10, data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], 3 };
+	//data = 0x1;
+	char Buff[8], command[10] = { 0x10, data, 3 };
 
-	Cp->Enviar(command, 10, tam);
+	Cp->Enviar(command, 3, tam);
 	Cp->EsperarRecepcao();
 	Cp->Receber(Buff, 8, tam);
 	printf("Cheguei");
@@ -304,7 +305,7 @@ int direct_kinematic(double* theta, double* posAtt){
 }
 
 //You should implement the other required operations here.
-
+/*
 void robot_control_routine(TCommPort *port)
 {
 	//Create the control routine here with a menu that allows the user to choose
@@ -362,7 +363,7 @@ void robot_control_routine(TCommPort *port)
 			break;
 		case 6:
 
-			digital_outputs(port, data);
+			//digital_outputs(port, data);
 			break;
 
 		case 10: exit = FALSE;
@@ -375,6 +376,7 @@ void robot_control_routine(TCommPort *port)
 		menu = 0;
 	}
 }
+*/
 
 TCommPort* initialize_robot()
 {

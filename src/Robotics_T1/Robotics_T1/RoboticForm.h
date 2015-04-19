@@ -165,6 +165,8 @@ private: System::Windows::Forms::TextBox^  posXBox;
 private: System::Windows::Forms::Button^  button2;
 private: System::Windows::Forms::TabPage^  tabPage5;
 private: System::Windows::Forms::Button^  buttonHS;
+private: System::Windows::Forms::CheckBox^  checkIntegrityBP;
+private: System::Windows::Forms::Button^  button3;
 
 
 	private:
@@ -261,6 +263,7 @@ private: System::Windows::Forms::Button^  buttonHS;
 			this->posYBox = (gcnew System::Windows::Forms::TextBox());
 			this->posXBox = (gcnew System::Windows::Forms::TextBox());
 			this->tabPage5 = (gcnew System::Windows::Forms::TabPage());
+			this->checkIntegrityBP = (gcnew System::Windows::Forms::CheckBox());
 			this->buttonHS = (gcnew System::Windows::Forms::Button());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->groupBox3 = (gcnew System::Windows::Forms::GroupBox());
@@ -297,6 +300,7 @@ private: System::Windows::Forms::Button^  buttonHS;
 			this->buttonUpdateA2 = (gcnew System::Windows::Forms::Button());
 			this->statusStrip1 = (gcnew System::Windows::Forms::StatusStrip());
 			this->toolStripStatusLabel1 = (gcnew System::Windows::Forms::ToolStripStatusLabel());
+			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
 			this->tabPage2->SuspendLayout();
@@ -1044,6 +1048,7 @@ private: System::Windows::Forms::Button^  buttonHS;
 			this->button2->TabIndex = 68;
 			this->button2->Text = L"Calibrate";
 			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &RoboticForm::buttonCalibrate_Click);
 			// 
 			// pictureBox1
 			// 
@@ -1164,17 +1169,29 @@ private: System::Windows::Forms::Button^  buttonHS;
 			// tabPage5
 			// 
 			this->tabPage5->BackColor = System::Drawing::SystemColors::Control;
+			this->tabPage5->Controls->Add(this->button3);
+			this->tabPage5->Controls->Add(this->checkIntegrityBP);
 			this->tabPage5->Controls->Add(this->buttonHS);
 			this->tabPage5->Location = System::Drawing::Point(4, 22);
 			this->tabPage5->Name = L"tabPage5";
 			this->tabPage5->Padding = System::Windows::Forms::Padding(3);
 			this->tabPage5->Size = System::Drawing::Size(752, 378);
 			this->tabPage5->TabIndex = 4;
-			this->tabPage5->Text = L"tabPage5";
+			this->tabPage5->Text = L"Extra";
+			// 
+			// checkIntegrityBP
+			// 
+			this->checkIntegrityBP->AutoSize = true;
+			this->checkIntegrityBP->Location = System::Drawing::Point(489, 60);
+			this->checkIntegrityBP->Name = L"checkIntegrityBP";
+			this->checkIntegrityBP->Size = System::Drawing::Size(100, 17);
+			this->checkIntegrityBP->TabIndex = 1;
+			this->checkIntegrityBP->Text = L"Integrity Bypass";
+			this->checkIntegrityBP->UseVisualStyleBackColor = true;
 			// 
 			// buttonHS
 			// 
-			this->buttonHS->Location = System::Drawing::Point(202, 103);
+			this->buttonHS->Location = System::Drawing::Point(314, 162);
 			this->buttonHS->Name = L"buttonHS";
 			this->buttonHS->Size = System::Drawing::Size(75, 23);
 			this->buttonHS->TabIndex = 0;
@@ -1533,6 +1550,16 @@ private: System::Windows::Forms::Button^  buttonHS;
 			this->toolStripStatusLabel1->Size = System::Drawing::Size(79, 17);
 			this->toolStripStatusLabel1->Text = L"Disconnected";
 			// 
+			// button3
+			// 
+			this->button3->Location = System::Drawing::Point(6, 162);
+			this->button3->Name = L"button3";
+			this->button3->Size = System::Drawing::Size(75, 23);
+			this->button3->TabIndex = 2;
+			this->button3->Text = L"button3";
+			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &RoboticForm::button3_Click);
+			// 
 			// RoboticForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -1569,6 +1596,7 @@ private: System::Windows::Forms::Button^  buttonHS;
 			this->tabPage4->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->tabPage5->ResumeLayout(false);
+			this->tabPage5->PerformLayout();
 			this->groupBox3->ResumeLayout(false);
 			this->groupBox4->ResumeLayout(false);
 			this->groupBox4->PerformLayout();
@@ -1640,6 +1668,7 @@ private: System::Windows::Forms::Button^  buttonHS;
 			buttonCalibrate->Enabled = TRUE;
 			buttonUpdateAA->Enabled = TRUE;
 			calibrateAngle->Enabled = TRUE;
+			button2->Enabled = TRUE;
 
 			speedStep1->SelectedIndex = 2;
 			speedStep2->SelectedIndex = 2;
@@ -1655,6 +1684,7 @@ private: System::Windows::Forms::Button^  buttonHS;
 			speedBoxAngle5->SelectedIndex = 2;
 			speedBoxAngle6->SelectedIndex = 2;
 			button1->Enabled = FALSE;
+			
 		}
 
 	}
@@ -1708,24 +1738,30 @@ private: System::Windows::Forms::Button^  buttonHS;
 			return;
 		}
 		trackBar1->Value = axis;
-		if (checkBoxSpeedStep->Checked == TRUE){
-			int speed = Convert::ToInt32(speedStep1->SelectedItem);
+		double theta = steps_to_degrees(axis, 1);
+		if (integrityCheckOneAxis(theta, 1)){
+			if (checkBoxSpeedStep->Checked == TRUE){
+				int speed = Convert::ToInt32(speedStep1->SelectedItem);
 
-			if (speed < 0 || speed > 5){
-				MessageBox::Show("Speed 0-5, by default speed=3");
-				speed = 3;
+				if (speed < 0 || speed > 5){
+					MessageBox::Show("Speed 0-5, by default speed=3");
+					speed = 3;
+				}
+
+				move_one_axis_speed(Cp, 1, axis, speed);
 			}
-
-			move_one_axis_speed(Cp, 1, axis, speed);
+			else
+			{
+				move_one_axis(Cp, 1, axis);
+			}
+			int steps = motor_status(Cp, 1);
+			stepAxis1->Text = Convert::ToString(steps);
+			angleAxis1->Text = Convert::ToString(steps_to_degrees(steps, 1));
+			updateGripperPosition();
 		}
-		else
-		{
-			move_one_axis(Cp, 1, axis);
+		else{
+			MessageBox::Show("Robot Integrity Error!");
 		}
-		int steps = motor_status(Cp, 1);
-		stepAxis1->Text = Convert::ToString(steps);
-		angleAxis1->Text = Convert::ToString(steps_to_degrees(steps, 1));
-		updateGripperPosition();
 	}
 	private: System::Void buttonAxis2Step_Click(System::Object^  sender, System::EventArgs^  e) {
 		int axis;
@@ -1743,25 +1779,31 @@ private: System::Windows::Forms::Button^  buttonHS;
 			textStepA2->Text = Convert::ToString(trackBar2->Value);
 			return;
 		}
-		trackBar2->Value = axis;
-		if (checkBoxSpeedStep->Checked == TRUE){
-			int speed = Convert::ToInt32(speedStep2->SelectedItem);
+		trackBar2->Value = axis; 
+		double theta = steps_to_degrees(axis, 2);
+		if (integrityCheckOneAxis(theta, 2)){
+			if (checkBoxSpeedStep->Checked == TRUE){
+				int speed = Convert::ToInt32(speedStep2->SelectedItem);
 
-			if (speed < 0 || speed > 5){
-				MessageBox::Show("Speed 0-5, by default speed=3");
-				speed = 3;
+				if (speed < 0 || speed > 5){
+					MessageBox::Show("Speed 0-5, by default speed=3");
+					speed = 3;
+				}
+
+				move_one_axis_speed(Cp, 2, axis, speed);
 			}
-
-			move_one_axis_speed(Cp, 2, axis, speed);
+			else
+			{
+				move_one_axis(Cp, 2, axis);
+			}
+			int steps = motor_status(Cp, 2);
+			stepAxis2->Text = Convert::ToString(steps);
+			angleAxis2->Text = Convert::ToString(steps_to_degrees(steps, 2));
+			updateGripperPosition();
 		}
-		else
-		{
-			move_one_axis(Cp, 2, axis);
+		else{
+			MessageBox::Show("Robot Integrity Error!");
 		}
-		int steps = motor_status(Cp, 2);
-		stepAxis2->Text = Convert::ToString(steps);
-		angleAxis2->Text = Convert::ToString(steps_to_degrees(steps, 2));
-		updateGripperPosition();
 	}
 	private: System::Void buttonAxis3Step_Click(System::Object^  sender, System::EventArgs^  e) {
 		int axis;
@@ -1780,24 +1822,30 @@ private: System::Windows::Forms::Button^  buttonHS;
 			return;
 		}
 		trackBar3->Value = axis;
-		if (checkBoxSpeedStep->Checked == TRUE){
-			int speed = Convert::ToInt32(speedStep3->SelectedItem);
+		double theta = steps_to_degrees(axis, 3);
+		if (integrityCheckOneAxis(theta, 3)){
+			if (checkBoxSpeedStep->Checked == TRUE){
+				int speed = Convert::ToInt32(speedStep3->SelectedItem);
 
-			if (speed < 0 || speed > 5){
-				MessageBox::Show("Speed 0-5, by default speed=3");
-				speed = 3;
+				if (speed < 0 || speed > 5){
+					MessageBox::Show("Speed 0-5, by default speed=3");
+					speed = 3;
+				}
+
+				move_one_axis_speed(Cp, 3, axis, speed);
 			}
-
-			move_one_axis_speed(Cp, 3, axis, speed);
+			else
+			{
+				move_one_axis(Cp, 3, axis);
+			}
+			int steps = motor_status(Cp, 3);
+			stepAxis3->Text = Convert::ToString(steps);
+			angleAxis3->Text = Convert::ToString(steps_to_degrees(steps, 3));
+			updateGripperPosition();
 		}
-		else
-		{
-			move_one_axis(Cp, 3, axis);
+		else{
+			MessageBox::Show("Robot Integrity Error!");
 		}
-		int steps = motor_status(Cp, 3);
-		stepAxis3->Text = Convert::ToString(steps);
-		angleAxis3->Text = Convert::ToString(steps_to_degrees(steps, 3));
-		updateGripperPosition();
 	}
 	private: System::Void buttonAxis4Step_Click(System::Object^  sender, System::EventArgs^  e) {
 		int axis;
@@ -1816,24 +1864,30 @@ private: System::Windows::Forms::Button^  buttonHS;
 			return;
 		}
 		trackBar4->Value = axis;
-		if (checkBoxSpeedStep->Checked == TRUE){
-			int speed = Convert::ToInt32(speedStep4->SelectedItem);
+		double theta = steps_to_degrees(axis, 4);
+		if (integrityCheckOneAxis(theta, 4)){
+			if (checkBoxSpeedStep->Checked == TRUE){
+				int speed = Convert::ToInt32(speedStep4->SelectedItem);
 
-			if (speed < 0 || speed > 5){
-				MessageBox::Show("Speed 0-5, by default speed=3");
-				speed = 3;
+				if (speed < 0 || speed > 5){
+					MessageBox::Show("Speed 0-5, by default speed=3");
+					speed = 3;
+				}
+
+				move_one_axis_speed(Cp, 4, axis, speed);
 			}
-
-			move_one_axis_speed(Cp, 4, axis, speed);
+			else
+			{
+				move_one_axis(Cp, 4, axis);
+			}
+			int steps = motor_status(Cp, 4);
+			stepAxis4->Text = Convert::ToString(steps);
+			angleAxis4->Text = Convert::ToString(steps_to_degrees(steps, 4));
+			updateGripperPosition();
 		}
-		else
-		{
-			move_one_axis(Cp, 4, axis);
+		else{
+			MessageBox::Show("Robot Integrity Error!");
 		}
-		int steps = motor_status(Cp, 4);
-		stepAxis4->Text = Convert::ToString(steps);
-		angleAxis4->Text = Convert::ToString(steps_to_degrees(steps, 4));
-		updateGripperPosition();
 	}
 	private: System::Void buttonAxis5Step_Click(System::Object^  sender, System::EventArgs^  e) {
 		int axis;
@@ -1852,24 +1906,30 @@ private: System::Windows::Forms::Button^  buttonHS;
 			return;
 		}
 		trackBar5->Value = axis;
-		if (checkBoxSpeedStep->Checked == TRUE){
-			int speed = Convert::ToInt32(speedStep5->SelectedItem);
+		double theta = steps_to_degrees(axis, 5);
+		if (integrityCheckOneAxis(theta, 5)){
+			if (checkBoxSpeedStep->Checked == TRUE){
+				int speed = Convert::ToInt32(speedStep5->SelectedItem);
 
-			if (speed < 0 || speed > 5){
-				MessageBox::Show("Speed 0-5, by default speed=3");
-				speed = 3;
+				if (speed < 0 || speed > 5){
+					MessageBox::Show("Speed 0-5, by default speed=3");
+					speed = 3;
+				}
+
+				move_one_axis_speed(Cp, 5, axis, speed);
 			}
-
-			move_one_axis_speed(Cp, 5, axis, speed);
+			else
+			{
+				move_one_axis(Cp, 5, axis);
+			}
+			int steps = motor_status(Cp, 5);
+			stepAxis5->Text = Convert::ToString(steps);
+			angleAxis5->Text = Convert::ToString(steps_to_degrees(steps, 5));
+			updateGripperPosition();
 		}
-		else
-		{
-			move_one_axis(Cp, 5, axis);
+		else{
+			MessageBox::Show("Robot Integrity Error!");
 		}
-		int steps = motor_status(Cp, 5);
-		stepAxis5->Text = Convert::ToString(steps);
-		angleAxis5->Text = Convert::ToString(steps_to_degrees(steps, 5));
-		updateGripperPosition();
 	}
 	private: System::Void buttonAxis6Step_Click(System::Object^  sender, System::EventArgs^  e) {
 		int axis;
@@ -1971,31 +2031,42 @@ private: System::Windows::Forms::Button^  buttonHS;
 				return;
 			}
 		}
-
-		if (checkBoxSpeedStep->Checked == TRUE){
-			int speed[6];
-			speed[0] = Convert::ToInt32(speedStep1->SelectedItem);
-			speed[1] = Convert::ToInt32(speedStep2->SelectedItem);
-			speed[2] = Convert::ToInt32(speedStep3->SelectedItem);
-			speed[3] = Convert::ToInt32(speedStep4->SelectedItem);
-			speed[4] = Convert::ToInt32(speedStep5->SelectedItem);
-			speed[5] = Convert::ToInt32(speedStep6->SelectedItem);
-			for (size_t i = 0; i < 6; i++)
-			{
-				if (speed[i] < 0 || speed[i] > 5){
-					MessageBox::Show("Speed 0-5, by default speed=3");
-					speed[i] = 3;
-				}
-			}
-
-			move_multiple_axis_speed(Cp, axis, speed);
-		}
-		else
+		double theta[5], posAtt[6];
+		for (size_t i = 0; i < 5; i++)
 		{
-			move_multiple_axis(Cp, axis);
+			theta[i] = steps_to_degrees(axis[i], i);
 		}
-		motor_status_all();
+		direct_kinematic(theta, posAtt);
+		if (integrityCheck(posAtt)){
+			if (checkBoxSpeedStep->Checked == TRUE){
+				int speed[6];
+				speed[0] = Convert::ToInt32(speedStep1->SelectedItem);
+				speed[1] = Convert::ToInt32(speedStep2->SelectedItem);
+				speed[2] = Convert::ToInt32(speedStep3->SelectedItem);
+				speed[3] = Convert::ToInt32(speedStep4->SelectedItem);
+				speed[4] = Convert::ToInt32(speedStep5->SelectedItem);
+				speed[5] = Convert::ToInt32(speedStep6->SelectedItem);
+				for (size_t i = 0; i < 6; i++)
+				{
+					if (speed[i] < 0 || speed[i] > 5){
+						MessageBox::Show("Speed 0-5, by default speed=3");
+						speed[i] = 3;
+					}
+				}
+
+				move_multiple_axis_speed(Cp, axis, speed);
+			}
+			else
+			{
+				move_multiple_axis(Cp, axis);
+			}
+			motor_status_all();
+		}
+		else{
+			MessageBox::Show("Robot Integrity Error!");
+		}
 	}
+	//Calibrate The robot
 	private: System::Void buttonCalibrate_Click(System::Object^  sender, System::EventArgs^  e) {
 		int steps[6] = { 128, 170, 0, 128, 128, 0 };
 		int angle[6] = { 0, 0, 0, 0, -100 };
@@ -2048,6 +2119,8 @@ private: System::Windows::Forms::Button^  buttonHS;
 		moveAAAngle->Enabled = TRUE;
 		//Enable Go To Position
 		buttonGoToPos->Enabled = TRUE;
+		//Enable HandShake
+		buttonHS->Enabled = TRUE;
 		updateGripperPosition();
 	}
 	private: System::Void buttonUpdateA1_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -2169,33 +2242,41 @@ private: System::Windows::Forms::Button^  buttonHS;
 		angleBar5->Value = axis[4];
 		angleBar6->Value = axis[5];
 		int steps[6];
+		double theta[5], posAtt[6];
 		for (size_t i = 0; i < 5; i++)
 		{
 			steps[i] = degrees_to_steps((double)axis[i], i+1);
+			theta[i] = (double)axis[i];
 		}
+		direct_kinematic(theta, posAtt);
 		steps[5] = mm_to_steps((double)axis[5]);
-		if (checkSpeedAngle->Checked == TRUE){
-			int speed[6];
-			speed[0] = Convert::ToInt32(speedBoxAngle1->SelectedItem);
-			speed[1] = Convert::ToInt32(speedBoxAngle2->SelectedItem);
-			speed[2] = Convert::ToInt32(speedBoxAngle3->SelectedItem);
-			speed[3] = Convert::ToInt32(speedBoxAngle4->SelectedItem);
-			speed[4] = Convert::ToInt32(speedBoxAngle5->SelectedItem);
-			speed[5] = Convert::ToInt32(speedBoxAngle6->SelectedItem);
-			for (size_t i = 0; i < 6; i++)
-			{
-				if (speed[i] < 0 || speed[i] > 5){
-					MessageBox::Show("Speed 0-5, by default speed=3");
-					speed[i] = 3;
+		if (integrityCheck(posAtt)){
+			if (checkSpeedAngle->Checked == TRUE){
+				int speed[6];
+				speed[0] = Convert::ToInt32(speedBoxAngle1->SelectedItem);
+				speed[1] = Convert::ToInt32(speedBoxAngle2->SelectedItem);
+				speed[2] = Convert::ToInt32(speedBoxAngle3->SelectedItem);
+				speed[3] = Convert::ToInt32(speedBoxAngle4->SelectedItem);
+				speed[4] = Convert::ToInt32(speedBoxAngle5->SelectedItem);
+				speed[5] = Convert::ToInt32(speedBoxAngle6->SelectedItem);
+				for (size_t i = 0; i < 6; i++)
+				{
+					if (speed[i] < 0 || speed[i] > 5){
+						MessageBox::Show("Speed 0-5, by default speed=3");
+						speed[i] = 3;
+					}
 				}
+				move_multiple_axis_speed(Cp, steps, speed);
 			}
-			move_multiple_axis_speed(Cp, steps, speed);
+			else
+			{
+				move_multiple_axis(Cp, steps);
+			}
+			motor_status_all();
 		}
-		else
-		{
-			move_multiple_axis(Cp, steps);
+		else{
+			MessageBox::Show("Robot Integrity Error!");
 		}
-		motor_status_all();
 	}
 	private: System::Void buttonAxis1Angular_Click(System::Object^  sender, System::EventArgs^  e) {
 		int axis;
@@ -2215,24 +2296,29 @@ private: System::Windows::Forms::Button^  buttonHS;
 		}
 		angleBar1->Value = axis;
 		int steps = degrees_to_steps((double)axis, 1);
-		if (checkSpeedAngle->Checked == TRUE){
-			int speed = Convert::ToInt32(speedBoxAngle1->SelectedItem);
+		if (integrityCheckOneAxis(axis, 1)){
+			if (checkSpeedAngle->Checked == TRUE){
+				int speed = Convert::ToInt32(speedBoxAngle1->SelectedItem);
 
-			if (speed < 0 || speed > 5){
-				MessageBox::Show("Speed 0-5, by default speed=3");
-				speed = 3;
+				if (speed < 0 || speed > 5){
+					MessageBox::Show("Speed 0-5, by default speed=3");
+					speed = 3;
+				}
+
+				move_one_axis_speed(Cp, 1, steps, speed);
 			}
-
-			move_one_axis_speed(Cp, 1, steps, speed);
+			else
+			{
+				move_one_axis(Cp, 1, steps);
+			}
+			steps = motor_status(Cp, 1);
+			stepAxis1->Text = Convert::ToString(steps);
+			angleAxis1->Text = Convert::ToString(steps_to_degrees(steps, 1));
+			updateGripperPosition();
 		}
-		else
-		{
-			move_one_axis(Cp, 1, steps);
+		else{
+			MessageBox::Show("Robot Integrity Error!");
 		}
-		steps = motor_status(Cp, 1);
-		stepAxis1->Text = Convert::ToString(steps);
-		angleAxis1->Text = Convert::ToString(steps_to_degrees(steps, 1));
-		updateGripperPosition();
 	}
 	private: System::Void buttonAxis2Angular_Click(System::Object^  sender, System::EventArgs^  e) {
 		int axis;
@@ -2252,24 +2338,29 @@ private: System::Windows::Forms::Button^  buttonHS;
 		}
 		angleBar2->Value = axis;
 		int steps = degrees_to_steps((double)axis, 2);
-		if (checkSpeedAngle->Checked == TRUE){
-			int speed = Convert::ToInt32(speedBoxAngle2->SelectedItem);
+		if (integrityCheckOneAxis(axis, 2)){
+			if (checkSpeedAngle->Checked == TRUE){
+				int speed = Convert::ToInt32(speedBoxAngle2->SelectedItem);
 
-			if (speed < 0 || speed > 5){
-				MessageBox::Show("Speed 0-5, by default speed=3");
-				speed = 3;
+				if (speed < 0 || speed > 5){
+					MessageBox::Show("Speed 0-5, by default speed=3");
+					speed = 3;
+				}
+
+				move_one_axis_speed(Cp, 2, steps, speed);
 			}
-
-			move_one_axis_speed(Cp, 2, steps, speed);
+			else
+			{
+				move_one_axis(Cp, 2, steps);
+			}
+			steps = motor_status(Cp, 2);
+			stepAxis2->Text = Convert::ToString(steps);
+			angleAxis2->Text = Convert::ToString(steps_to_degrees(steps, 2));
+			updateGripperPosition();
 		}
-		else
-		{
-			move_one_axis(Cp, 2, steps);
+		else{
+			MessageBox::Show("Robot Integrity Error!");
 		}
-		steps = motor_status(Cp, 2);
-		stepAxis2->Text = Convert::ToString(steps);
-		angleAxis2->Text = Convert::ToString(steps_to_degrees(steps, 2));
-		updateGripperPosition();
 	}
 	private: System::Void buttonAxis3Angular_Click(System::Object^  sender, System::EventArgs^  e) {
 		int axis;
@@ -2289,24 +2380,29 @@ private: System::Windows::Forms::Button^  buttonHS;
 		}
 		angleBar3->Value = axis;
 		int steps = degrees_to_steps((double)axis, 3);
-		if (checkSpeedAngle->Checked == TRUE){
-			int speed = Convert::ToInt32(speedBoxAngle3->SelectedItem);
+		if (integrityCheckOneAxis(axis, 3)){
+			if (checkSpeedAngle->Checked == TRUE){
+				int speed = Convert::ToInt32(speedBoxAngle3->SelectedItem);
 
-			if (speed < 0 || speed > 5){
-				MessageBox::Show("Speed 0-5, by default speed=3");
-				speed = 3;
+				if (speed < 0 || speed > 5){
+					MessageBox::Show("Speed 0-5, by default speed=3");
+					speed = 3;
+				}
+
+				move_one_axis_speed(Cp, 3, steps, speed);
 			}
-
-			move_one_axis_speed(Cp, 3, steps, speed);
+			else
+			{
+				move_one_axis(Cp, 3, steps);
+			}
+			steps = motor_status(Cp, 3);
+			stepAxis3->Text = Convert::ToString(steps);
+			angleAxis3->Text = Convert::ToString(steps_to_degrees(steps, 3));
+			updateGripperPosition();
 		}
-		else
-		{
-			move_one_axis(Cp, 3, steps);
+		else{
+			MessageBox::Show("Robot Integrity Error!");
 		}
-		steps = motor_status(Cp, 3);
-		stepAxis3->Text = Convert::ToString(steps);
-		angleAxis3->Text = Convert::ToString(steps_to_degrees(steps, 3));
-		updateGripperPosition();
 	}
 	private: System::Void buttonAxis4Angular_Click(System::Object^  sender, System::EventArgs^  e) {
 		int axis;
@@ -2326,24 +2422,29 @@ private: System::Windows::Forms::Button^  buttonHS;
 		}
 		angleBar4->Value = axis;
 		int steps = degrees_to_steps((double)axis, 4);
-		if (checkSpeedAngle->Checked == TRUE){
-			int speed = Convert::ToInt32(speedBoxAngle4->SelectedItem);
+		if (integrityCheckOneAxis(axis, 4)){
+			if (checkSpeedAngle->Checked == TRUE){
+				int speed = Convert::ToInt32(speedBoxAngle4->SelectedItem);
 
-			if (speed < 0 || speed > 5){
-				MessageBox::Show("Speed 0-5, by default speed=3");
-				speed = 3;
+				if (speed < 0 || speed > 5){
+					MessageBox::Show("Speed 0-5, by default speed=3");
+					speed = 3;
+				}
+
+				move_one_axis_speed(Cp, 4, steps, speed);
 			}
-
-			move_one_axis_speed(Cp, 4, steps, speed);
+			else
+			{
+				move_one_axis(Cp, 4, steps);
+			}
+			steps = motor_status(Cp, 4);
+			stepAxis4->Text = Convert::ToString(steps);
+			angleAxis4->Text = Convert::ToString(steps_to_degrees(steps, 4));
+			updateGripperPosition();
 		}
-		else
-		{
-			move_one_axis(Cp, 4, steps);
+		else{
+			MessageBox::Show("Robot Integrity Error!");
 		}
-		steps = motor_status(Cp, 4);
-		stepAxis4->Text = Convert::ToString(steps);
-		angleAxis4->Text = Convert::ToString(steps_to_degrees(steps, 4));
-		updateGripperPosition();
 	}
 	private: System::Void buttonAxis5Angular_Click(System::Object^  sender, System::EventArgs^  e) {
 		int axis;
@@ -2363,24 +2464,30 @@ private: System::Windows::Forms::Button^  buttonHS;
 		}
 		angleBar5->Value = axis;
 		int steps = degrees_to_steps((double)axis, 5);
-		if (checkSpeedAngle->Checked == TRUE){
-			int speed = Convert::ToInt32(speedBoxAngle5->SelectedItem);
+		if (integrityCheckOneAxis(axis, 5)){
+			if (checkSpeedAngle->Checked == TRUE){
+				int speed = Convert::ToInt32(speedBoxAngle5->SelectedItem);
 
-			if (speed < 0 || speed > 5){
-				MessageBox::Show("Speed 0-5, by default speed=3");
-				speed = 3;
+				if (speed < 0 || speed > 5){
+					MessageBox::Show("Speed 0-5, by default speed=3");
+					speed = 3;
+				}
+
+				move_one_axis_speed(Cp, 5, steps, speed);
 			}
-
-			move_one_axis_speed(Cp, 5, steps, speed);
+			else
+			{
+				move_one_axis(Cp, 5, steps);
+			}
+			steps = motor_status(Cp, 5);
+			stepAxis5->Text = Convert::ToString(steps);
+			angleAxis5->Text = Convert::ToString(steps_to_degrees(steps, 5));
+			updateGripperPosition();
 		}
-		else
-		{
-			move_one_axis(Cp, 5, steps);
+		else{
+			MessageBox::Show("Robot Integrity Validation Error!!");
 		}
-		steps = motor_status(Cp, 5);
-		stepAxis5->Text = Convert::ToString(steps);
-		angleAxis5->Text = Convert::ToString(steps_to_degrees(steps, 5));
-		updateGripperPosition();
+		
 
 	}
 	private: System::Void buttonAxis6Angular_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -2493,8 +2600,21 @@ private: System::Windows::Forms::Button^  buttonHS;
 	}
 	private: bool integrityCheck(double* posAtt){
 		double d = sqrt(pow(posAtt[0], 2) + pow(posAtt[1], 2));
-		return ((d > 50) && posAtt[2]>0);
+		return (((d > 50) && posAtt[2]>0)||checkIntegrityBP->Checked);
 	}
+private: bool integrityCheckOneAxis(double angle, int axis){
+	double posAtt[6];
+	double angles[5];
+	angles[0] = steps_to_degrees(Convert::ToInt32(stepAxis1->Text), 1);
+	angles[1] = steps_to_degrees(Convert::ToInt32(stepAxis2->Text), 2);
+	angles[2] = steps_to_degrees(Convert::ToInt32(stepAxis3->Text), 3);
+	angles[3] = steps_to_degrees(Convert::ToInt32(stepAxis4->Text), 4);
+	angles[4] = steps_to_degrees(Convert::ToInt32(stepAxis5->Text), 5);
+
+	angles[axis - 1] = angle;
+	direct_kinematic(angles, posAtt);
+	return integrityCheck(posAtt);
+}
 private: System::Void buttonHS_Click(System::Object^  sender, System::EventArgs^  e) {
 	int steps[6] = { 128, 94, 77, 128, 128, 0 };
 	char stepsInit[6];
@@ -2516,6 +2636,9 @@ private: System::Void buttonHS_Click(System::Object^  sender, System::EventArgs^
 	}
 	move_multiple_axis(Cp, steps);
 	
+}
+private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
+	digital_outputs(Cp, 0x1);
 }
 };
 }
