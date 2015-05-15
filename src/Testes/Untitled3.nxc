@@ -1,0 +1,26 @@
+#define MOVE_TIME 500
+#define TURN_TIME 360
+#define THRESHOLD_BLACK 30
+#define THRESHOLD_WHITE 60
+#define THRESHOLD_GREY 40
+#define NEAR 30
+
+task main()
+{
+     while(true)
+     {
+                SetSensorLight(IN_3);
+                SetSensorLight(IN_4);
+                SetSensorLowspeed(IN_2);
+                if(Sensor(IN_3) < THRESHOLD_BLACK ){
+                while(SensorUS(IN_2)>30){
+                OnFwd(OUT_AC, 75);
+                Wait(MOVE_TIME);
+                //until(Sensor(IN_3)>=THRESHOLD_BLACK);
+                Off(OUT_AC);
+                Wait(MOVE_TIME);
+                }
+                }
+
+     }
+}
