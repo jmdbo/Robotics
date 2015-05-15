@@ -47,13 +47,8 @@ void move_one_axis_speed(TCommPort* Cp, int axis, int steps, int speed)
 		//*******************************************************
 		//Falar com Peres
 		//robot will respond with 15
-<<<<<<< HEAD
 		Cp->EsperarRecepcao();
 		Cp->Receber(Buff, 1, tam);
-=======
-		//Cp->EsperarRecepcao();
-		//Cp->Receber(Buff, 1, tam);
->>>>>>> Pedro
 		//printf("\n%s...", Cp->GetMensagem());
 	}
 }
@@ -76,12 +71,8 @@ void move_multiple_axis(TCommPort *Cp, int* steps)
 void move_multiple_axis_speed(TCommPort *Cp, int* steps, int* speed)
 {
 	int tam, count = 0;
-<<<<<<< HEAD
 	char Buff[128];
 	char command1[20] = { 0x47, 3 };
-=======
-	char Buff[128], command1[20] = { 0x47, 3 };
->>>>>>> Pedro
 	/**
 	Cp->Enviar(command1, 2, tam);
 	Cp->EsperarRecepcao();
@@ -96,22 +87,13 @@ void move_multiple_axis_speed(TCommPort *Cp, int* steps, int* speed)
 	}
 	*/
 	//if (count <= 6){
-<<<<<<< HEAD
 	char command[20] = { 0x7F, steps[0], steps[1], steps[2], steps[3], steps[4], steps[5], speed[0], speed[1], speed[2], speed[3], speed[4], speed[5], 3, 0};
-=======
-	char command[20] = { 0x7F, steps[0], speed[0], steps[1], speed[1], steps[2], speed[2], steps[3], speed[3], steps[4], speed[4], steps[5], speed[5], 3 };
->>>>>>> Pedro
 	Cp->Enviar(command, 14, tam);
 	printf("\n%s...", Cp->GetMensagem());
 	Sleep(500);
 	//robot wil respond with 15
-<<<<<<< HEAD
 	Cp->EsperarRecepcao();
 	Cp->Receber(Buff, 1, tam);
-=======
-	//Cp->EsperarRecepcao();
-	//Cp->Receber(Buff, 1, tam);
->>>>>>> Pedro
 	//printf("\n%s...", Cp->GetMensagem());
 	//}
 }
