@@ -15,7 +15,7 @@ double steps_to_degrees(int steps, int axis);
 double stpes_to_mm(int steps);
 int direct_kinematic(double* theta, double* posAtt);
 void robot_control_routine(TCommPort *port);
-void digital_outputs(TCommPort *Cp, int* data);
+void digital_outputs(TCommPort *Cp, int data);
 
 TCommPort* initialize_robot();
 int close_robot(TCommPort* Cp);

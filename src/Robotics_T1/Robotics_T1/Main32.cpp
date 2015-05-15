@@ -47,8 +47,8 @@ void move_one_axis_speed(TCommPort* Cp, int axis, int steps, int speed)
 		//*******************************************************
 		//Falar com Peres
 		//robot will respond with 15
-		//Cp->EsperarRecepcao();
-		//Cp->Receber(Buff, 1, tam);
+		Cp->EsperarRecepcao();
+		Cp->Receber(Buff, 1, tam);
 		//printf("\n%s...", Cp->GetMensagem());
 	}
 }
@@ -71,7 +71,8 @@ void move_multiple_axis(TCommPort *Cp, int* steps)
 void move_multiple_axis_speed(TCommPort *Cp, int* steps, int* speed)
 {
 	int tam, count = 0;
-	char Buff[128], command1[20] = { 0x47, 3 };
+	char Buff[128];
+	char command1[20] = { 0x47, 3 };
 	/**
 	Cp->Enviar(command1, 2, tam);
 	Cp->EsperarRecepcao();
@@ -86,13 +87,13 @@ void move_multiple_axis_speed(TCommPort *Cp, int* steps, int* speed)
 	}
 	*/
 	//if (count <= 6){
-	char command[20] = { 0x7F, steps[0], speed[0], steps[1], speed[1], steps[2], speed[2], steps[3], speed[3], steps[4], speed[4], steps[5], speed[5], 3 };
+	char command[20] = { 0x7F, steps[0], steps[1], steps[2], steps[3], steps[4], steps[5], speed[0], speed[1], speed[2], speed[3], speed[4], speed[5], 3, 0};
 	Cp->Enviar(command, 14, tam);
 	printf("\n%s...", Cp->GetMensagem());
 	Sleep(500);
 	//robot wil respond with 15
-	//Cp->EsperarRecepcao();
-	//Cp->Receber(Buff, 1, tam);
+	Cp->EsperarRecepcao();
+	Cp->Receber(Buff, 1, tam);
 	//printf("\n%s...", Cp->GetMensagem());
 	//}
 }
@@ -134,12 +135,13 @@ int motor_status(TCommPort *Cp, int axis){
 	return pos;
 }
 // nao funca*********************
-void digital_outputs(TCommPort *Cp, int* data)
+void digital_outputs(TCommPort *Cp, int data)
 {
 	int tam;
-	char Buff[8], command[10] = { 0x10, data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], 3 };
+	//data = 0x1;
+	char Buff[8], command[10] = { 0x10, data, 3 };
 
-	Cp->Enviar(command, 10, tam);
+	Cp->Enviar(command, 3, tam);
 	Cp->EsperarRecepcao();
 	Cp->Receber(Buff, 8, tam);
 	printf("Cheguei");
@@ -303,7 +305,7 @@ int direct_kinematic(double* theta, double* posAtt){
 }
 
 //You should implement the other required operations here.
-
+/*
 void robot_control_routine(TCommPort *port)
 {
 	//Create the control routine here with a menu that allows the user to choose
@@ -361,7 +363,7 @@ void robot_control_routine(TCommPort *port)
 			break;
 		case 6:
 
-			digital_outputs(port, data);
+			//digital_outputs(port, data);
 			break;
 
 		case 10: exit = FALSE;
@@ -374,6 +376,7 @@ void robot_control_routine(TCommPort *port)
 		menu = 0;
 	}
 }
+*/
 
 TCommPort* initialize_robot()
 {
