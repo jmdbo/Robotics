@@ -1,0 +1,71 @@
+#define MOVE_TIME 500
+#define TURN_TIME 200
+#define THRESHOLD_BLACK 30
+#define THRESHOLD_WHITE 60
+#define THRESHOLD_GREY 40
+#define NEAR 25
+
+void obstacleDetected(){
+    int i=0,l1=0,l2=0;
+    
+    OnRev(OUT_C,15);
+    Wait(TURN_TIME);
+    OnFwd(OUT_C,50);
+
+
+
+    for(i=0; i<=25;i++){
+      Wait(20);
+      l1=Sensor(IN_2);
+      l2=Sensor(IN_2);
+    }
+    
+    if(l1==0 || l2==0){
+      OnRev(OUT_A,15);
+      Wait(TURN_TIME);
+      OnFwd(OUT_A,50);
+      
+      for(i=0;i<=25;i++){
+        Wait(20);
+      }
+      
+      OnRev(OUT_A,15);
+      Wait(TURN_TIME);
+      OnFwd(OUT_A,50);
+    }
+    
+
+}
+
+task main()
+{
+     SetSensorLight(IN_3);
+     SetSensorLight(IN_4);
+     SetSensorLowspeed(IN_2);
+     
+     while(true)
+     {
+                while(SensorUS(IN_2)>NEAR){
+                
+                  OnFwd(OUT_AC,50);
+                
+                  if(Sensor(IN_3) > THRESHOLD_BLACK-10 && Sensor(IN_3) < THRESHOLD_BLACK+10  ){
+                    OnRev(OUT_A,15);
+                    Wait(TURN_TIME);
+                    OnFwd(OUT_A,50);
+                  }
+                
+                  if(Sensor(IN_4) > THRESHOLD_BLACK-10 && Sensor(IN_4) < THRESHOLD_BLACK+10 ){
+                    OnRev(OUT_C,15);
+                    Wait(TURN_TIME);
+                    OnFwd(OUT_C,50);
+                  }
+
+                }
+                Off(OUT_AC);
+                
+                obstacleDetected();
+
+
+     }
+}
