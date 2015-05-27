@@ -1,0 +1,347 @@
+//Lines TresHold
+#define THRESHOLD_BLACK 30
+#define THRESHOLD_WHITE 60
+#define THRESHOLD_GREY 40
+//Map
+int map[][];
+#define mapRes_length 10
+#define mapRes_wiidth 10
+
+#define NEAR 20
+
+
+//Semaphores
+/*
+mutex motorAC;
+mutex motorB;
+mutex lightSensor;
+mutex sonarSensor;
+*/
+int Treshold_Line=0;
+int Treshold_Line1=0;
+int Treshold_Victim=0;
+int Treshold_Victim1=0;
+
+#define sensorRange 8
+
+struct tasksRunning{
+  bool mainTask;
+  bool getGroundSensors;
+  bool getDistances;
+};
+
+struct interruptTable{
+   bool lightSensor_interrupt;
+   bool sonarSensor_interrupt;
+};
+
+struct flags
+{
+   bool stopFlag;
+   bool on_fwd;
+   bool on_rev;
+   bool turnFlag;
+   bool head_is_moving;
+   bool head_is_stopped;
+};
+
+struct distanceSensor{
+   int d1;
+   int d2;
+   int d3;
+   int d4;
+   int last_angle;
+};
+
+struct lightSensor{
+   int sensor_in3;
+   int sensor_in4;
+   int last_activated;
+};
+
+struct timerTable{
+  long lineTime;
+  long blackTime;
+};
+
+tasksRunning mytasks;
+interruptTable myinterrupt;
+flags myflags;
+distanceSensor mydist;
+lightSensor mylight;
+timerTable mytimer;
+
+sub init(){
+     SetSensorLight(IN_3);
+     SetSensorLight(IN_4);
+     SetSensorLowspeed(IN_2);
+     
+     //interrupt initialization
+     myinterrupt.lightSensor_interrupt=false;
+     myinterrupt.sonarSensor_interrupt=true;  //start off
+}
+
+sub calibration(){
+     int calibrationDone=0;
+
+     while(calibrationDone<2){
+
+       mydist.d3=SensorUS(IN_2);
+       mylight.sensor_in3=Sensor(IN_3);
+       mylight.sensor_in4=Sensor(IN_4);
+
+       if(calibrationDone==0) {
+       TextOut(1,LCD_LINE1,"Calibrate Lines",true);
+          if(mydist.d3<NEAR){
+             PlayToneEx(300,400,5,FALSE);
+             Treshold_Line=mylight.sensor_in3;
+             Treshold_Line1=mylight.sensor_in4;
+
+             //apagar ou comentar***********
+             //Treshold_Line=THRESHOLD_BLACK;
+             //Treshold_Line1=THRESHOLD_BLACK;
+             //******************************
+
+             TextOut(5,LCD_LINE2,"Done",true);
+             NumOut(60,LCD_LINE3,Treshold_Line);
+             NumOut(60,LCD_LINE4,Treshold_Line1);
+             Wait(2000);
+             calibrationDone++;
+          }
+       }
+
+       mydist.d3=SensorUS(IN_2);
+
+       if(calibrationDone==1) {
+          TextOut(1,LCD_LINE3,"Calibrate Victims",true);
+          if(mydist.d3<NEAR){
+             PlayToneEx(300,400,5,FALSE);
+             Treshold_Victim=mylight.sensor_in3;
+             Treshold_Victim1=mylight.sensor_in3;
+
+             //Apagar ou comentar************
+             //Treshold_Victim1=THRESHOLD_GREY;
+             //Treshold_Victim=THRESHOLD_GREY;
+             //******************************
+
+             TextOut(5,LCD_LINE2,"Done",true);
+             NumOut(60,LCD_LINE3,Treshold_Victim);
+             NumOut(60,LCD_LINE4,Treshold_Victim1);
+             Wait(100);
+             calibrationDone++;
+          }
+       }
+
+     }
+
+
+
+     do{
+     mydist.d3=SensorUS(IN_2);
+     }
+     while(mydist.d3>=NEAR)
+
+     PlayToneEx(262,400,3,FALSE);
+     Wait(500);
+     PlayToneEx(250,400,3,FALSE);
+}
+
+sub moveFwdSyncAC(int speed, int angle, int turn){
+   //Acquire(motorAC);
+   if(myflags.stopFlag == true || myflags.turnFlag == true)
+   speed=0;
+   RotateMotorEx(OUT_AC,speed,angle,turn,true,true);
+   //Release(motorAC);
+}
+
+
+
+sub moveFwdSyncB(int speed, int angle, int turn){
+   //Acquire(motorAC);
+   RotateMotorEx(OUT_B,speed,angle,turn,true,true);
+   //Release(motorAC);
+}
+
+sub moveOnRevSyncAC( int speed, int angle, int turn){
+   //Acquire(motorAC);
+   if(myflags.stopFlag == true || myflags.turnFlag == true)
+   speed=0;
+   RotateMotorEx(OUT_AC,speed,-angle,turn,true,true);
+   //Release(motorAC);
+}
+
+sub moveOnRevSyncB( int speed, int angle, int turn){
+   //Acquire(motorAC);
+   RotateMotorEx(OUT_B,speed,-angle,turn,true,true);
+   //Release(motorAC);
+}
+
+sub stopMotorAC(){
+   //Acquire(motorAC);
+   Off(OUT_AC);
+   //Release(motorAC);
+}
+
+task getGroundSensors(){
+   mytasks.getGroundSensors=true;
+
+   while(true){
+     //Acquire(lightSensor);
+     mylight.sensor_in3=Sensor(IN_3);
+     mylight.sensor_in4=Sensor(IN_4);
+
+     if(myinterrupt.lightSensor_interrupt!=true){
+       //Release(lightSensor);
+       mytasks.getGroundSensors=false;
+     }
+   }
+}
+
+sub checkLine(){
+   int lineCount=0;
+   int victimCount=0;
+   
+  mylight.sensor_in3=Sensor(IN_3);
+  mylight.sensor_in4=Sensor(IN_4);
+    
+  if((mylight.sensor_in3 > Treshold_Line-sensorRange && mylight.sensor_in3 < Treshold_Line+sensorRange)  &&
+    (mylight.sensor_in4 > Treshold_Line1-sensorRange && mylight.sensor_in4 < Treshold_Line1+sensorRange)){
+    //ignore 2 black lines
+    //after some time stop if continue to detect black lines.
+    //When black line is to big stop everything.
+    mytimer.blackTime=CurrentTick();
+    do{
+        if(CurrentTick() - mytimer.blackTime > 100)
+        {
+          //rever colocar timer em vez de contar preto
+          Off(OUT_AC);
+          return;
+        }
+        mylight.sensor_in3=Sensor(IN_3);
+        mylight.sensor_in4=Sensor(IN_4);
+
+      }while((mylight.sensor_in3 > Treshold_Line-sensorRange && mylight.sensor_in3 < Treshold_Line+sensorRange)  && (mylight.sensor_in4 > Treshold_Line1-sensorRange && mylight.sensor_in4 < Treshold_Line1+sensorRange))
+      
+      moveFwdSyncAC(50,90,0);
+      mytimer.lineTime=CurrentTick();
+   }else if(mylight.sensor_in3 > Treshold_Line-sensorRange && mylight.sensor_in3 < Treshold_Line+sensorRange ){
+    //Turn Left
+    OnFwdSync(OUT_AC,70,100);
+    while(mylight.sensor_in3 > Treshold_Line-sensorRange && mylight.sensor_in3 < Treshold_Line+sensorRange){
+      TextOut(5,LCD_LINE2,"Turning Left",true);
+      mylight.sensor_in3=Sensor(IN_3);
+    }
+    //moveFwdSyncAC(60,60,100);
+    mylight.last_activated=3;
+    mytimer.lineTime=CurrentTick();
+   }else if(mylight.sensor_in4 > Treshold_Line1-sensorRange && mylight.sensor_in4 < Treshold_Line1+sensorRange ){
+    //turn right
+    OnFwdSync(OUT_AC, 70,-100);
+    //  moveFwdSyncAC(60,60,-100);
+    while(mylight.sensor_in4 > Treshold_Line1-sensorRange && mylight.sensor_in4 < Treshold_Line1+sensorRange){
+      TextOut(5,LCD_LINE2,"Turning Right",true);
+      mylight.sensor_in4=Sensor(IN_4);
+    }
+    mylight.last_activated=4;
+    mytimer.lineTime=CurrentTick();
+   }else if((mylight.sensor_in3 > Treshold_Victim-sensorRange && mylight.sensor_in3 < Treshold_Victim+sensorRange)  && (mylight.sensor_in4 > Treshold_Victim1-sensorRange && mylight.sensor_in4 < Treshold_Victim1+sensorRange)){
+      //detect victim, stop and play sound
+      moveFwdSyncAC(40,30,0);
+      mylight.sensor_in3=Sensor(IN_3);
+      mylight.sensor_in4=Sensor(IN_4);
+      if((mylight.sensor_in3 > Treshold_Victim-sensorRange && mylight.sensor_in3 < Treshold_Victim+sensorRange)  && (mylight.sensor_in4 > Treshold_Victim1-sensorRange && mylight.sensor_in4 < Treshold_Victim1+sensorRange)){
+        
+        if(victimCount==0){
+          PlayToneEx(180,400,3,FALSE);
+          mytimer.lineTime=CurrentTick();
+          Off(OUT_AC);
+          Wait(500);
+          victimCount++;
+        }else if(CurrentTick()-mytimer.lineTime>80){
+          //Acquire(motorAC);
+          Off(OUT_AC);
+          Wait(900);
+          //Release(motorAC);
+          victimCount=0;
+        }
+
+      }      
+
+      moveFwdSyncAC(40,90,0);
+   }else{
+    OnFwdSync(OUT_AC,40,0);
+    TextOut(5,LCD_LINE2,"Moving forward",true);
+    //moveFwdSyncAC(60,10,0);
+   }
+}
+
+sub getDistances(int i){
+     //Acquire(motorB);
+     //turn sensor Right.
+     mydist.d3= SensorUS(IN_2);
+     /*if(i!=0){
+       RotateMotor(OUT_B,100,-90);
+       mydist.d1 = SensorUS(IN_2);
+       //turn sensor Left
+       RotateMotor(OUT_B,100,180);
+       mydist.d2 = SensorUS(IN_2);
+       RotateMotor(OUT_B,100,-90);
+       mydist.d3= SensorUS(IN_2);
+     }*/
+     //Release(motorB);
+}
+
+task mainRoutine(){
+   mytasks.mainTask=true;
+   int close=0;
+   int loopcount=0;
+   init();
+   calibration();
+
+   moveFwdSyncAC(60,10,0);
+
+   while(!close){
+      //getDistances(0);
+      if(loopcount==6){
+        TextOut(5,LCD_LINE2,"conta",true);
+        mydist.d3= SensorUS(IN_2);
+        //Acquire(motorAC);
+        Off(OUT_AC);
+        OnRevSync(OUT_AC,100,0);
+        Wait(100);
+        Off(OUT_AC);
+        //Release(motorAC);
+        loopcount=0;
+      }
+      checkLine();
+   }
+}
+
+task main(){
+   //Precedes(getGroundSensors,mainRoutine);
+   //StartTask(getGroundSensors);
+   //StartTask(mainRoutine);
+  //mytasks.mainTask=true;
+   int close=0;
+   int loopcount=0;
+   init();
+   calibration();
+
+   moveFwdSyncAC(60,10,0);
+
+   while(!close){
+      //getDistances(0);
+      if(loopcount==6){
+        TextOut(5,LCD_LINE2,"conta",true);
+        mydist.d3= SensorUS(IN_2);
+        //Acquire(motorAC);
+        Off(OUT_AC);
+        OnRevSync(OUT_AC,100,0);
+        Wait(100);
+        Off(OUT_AC);
+        //Release(motorAC);
+        loopcount=0;
+      }
+      checkLine();
+   }
+}
