@@ -1,0 +1,2534 @@
+#SYMBOLS
+Index	Identifier	Type	Flag	Data	Size	RefCount
+0	__D0main	6	1	0	4	14
+1	__D0mazeSolver	6	1	4	4	121
+2	__D0getDistances	6	1	8	4	18
+3	__DU0getDistances	5	1	12	4	4
+4	__D0SetSensorLowspeed_inline_init	6	1	16	4	3
+5	__DU0SetSensorLowspeed_inline_init	5	1	20	4	2
+6	__D0SetSensorLight_inline_init	6	1	24	4	6
+7	__DU0SetSensorLight_inline_init	5	1	28	4	4
+8	__D0calibration	6	1	32	4	61
+9	__CLSWMutex1	9	0	36	4	2
+10	__CLSRMutex1	9	0	40	4	2
+11	__rotate_theAngle4	5	1	44	4	2
+12	__CLSCSMutex1	9	0	48	4	2
+13	__SPTArgsMutex	9	0	52	4	12
+14	__SPFArgsMutex	9	0	56	4	2
+15	__TextOutMutex	9	0	60	4	34
+16	__RLSBmutex1	9	0	64	4	14
+17	__signed_stack_001calibration	6	1	68	4	36
+18	__signed_stack_004mazeSolver	6	1	72	4	26
+19	distanceMutex	9	0	76	4	20
+20	__signed_stack_002mazeSolver	6	1	80	4	52
+21	__signed_stack_003mazeSolver	6	1	84	4	26
+22	__Wait_7qG2_ms_7qG2_000_inline_mazeSolver	5	1	88	4	3
+23	__Wait_7qG2_ms_7qG2_000_inline_main	5	1	92	4	3
+24	motorBMutex	9	0	96	4	2
+25	__Wait_7qG2_ms_7qG2_000_inline_calibration	5	1	100	4	3
+26	__signed_stack_001mazeSolver	6	1	104	4	90
+27	__signed_stack_001getDistances	6	1	108	4	8
+28	__signed_stack_001main	6	1	112	4	11
+29	__signed_stack_002calibration	6	1	116	4	24
+30	__signed_stack_003calibration	6	1	120	4	8
+31	__signed_stack_004main	6	1	124	4	2
+32	__signed_stack_005main	6	1	128	4	2
+33	__signed_stack_002main	6	1	132	4	9
+34	__signed_stack_003main	6	1	136	4	8
+35	__rotate_theAngle1	5	1	140	4	2
+36	__rotate_angle1	6	1	144	4	7
+37	__rotate_angle4	6	1	148	4	16
+38	__rotateMutex1	9	0	152	4	8
+39	__constVal200	4	0	156	2	2
+40	__mazeSolver_7qG2_compensan_7qG2_000	4	1	158	2	18
+41	__mazeSolver_7qG2_minDist_7qG2_000	4	1	160	2	2
+42	__mazeSolver_7qG2_maxDist_7qG2_000	4	1	162	2	2
+43	Treshold_Line1	4	1	164	2	3
+44	Treshold_Line	4	1	166	2	3
+45	__ArrHelper__main_73_0	4	1	168	2	2
+46	__calibration_7qG2_calibrationDone_7qG2_000	4	1	170	2	8
+47	Treshold_Victim1	4	1	172	2	2
+48	Treshold_Victim	4	1	174	2	3
+49	__rotate_OldRotCount1	4	1	176	2	2
+50	__mazeSolver_7qG2_oldD3_7qG2_000	4	1	178	2	2
+51	__mazeSolver_7qG2_oldD2_7qG2_000	4	1	180	2	2
+52	__rotate_RotCount1	4	1	182	2	4
+53	__rotate_OldRotCount4	4	1	184	2	2
+54	__rotate_RotCount4	4	1	186	2	4
+55	__mazeSolver_7qG2_oldD1_7qG2_000	4	1	188	2	4
+56	__mazeSolver_7qG2_d1_7qG2_000	4	1	190	2	16
+57	__mazeSolver_7qG2_orientation_7qG2_000	4	1	192	2	23
+58	__mazeSolver_7qG2_isMaze_7qG2_000	4	1	194	2	2
+59	__mazeSolver_7qG2_d4_7qG2_000	4	1	196	2	2
+60	__mazeSolver_7qG2_d3_7qG2_000	4	1	198	2	7
+61	__mazeSolver_7qG2_d2_7qG2_000	4	1	200	2	8
+62	__rotate_sync1	1	1	202	1	5
+63	__rotate_firstPort1	1	1	203	1	5
+64	__rotate_stop1	1	1	204	1	5
+65	__rotate_theRVI1	1	1	205	1	5
+66	__rotate_theRVP1	1	1	206	1	5
+67	__rotate_rs1	1	1	207	1	2
+68	__rotate_theRVD1	1	1	208	1	5
+69	__rotate_theRS1	1	1	209	1	3
+70	__rotate_theUF1	1	1	210	1	6
+71	__rotate_turnpct1	2	1	211	1	6
+72	__rotate_theRM1	1	1	212	1	4
+73	__rotate_theOM1	1	1	213	1	7
+74	__SetSensorMode_7qG2_port_7qG2_000_inline_SetSensorLowspeed_inline_init	1	1	214	1	2
+75	__SetSensorMode_7qG2_mode_7qG2_000_inline_SetSensorLowspeed_inline_init	1	1	215	1	2
+76	__SetSensorType_7qG2_type_7qG2_000_inline_SetSensorLowspeed_inline_init	1	1	216	1	2
+77	__SetSensorLowspeed_7qG2_bIsPowered_7qG2_000_inline_init	1	1	217	1	2
+78	__SetSensorType_7qG2_port_7qG2_000_inline_SetSensorLowspeed_inline_init	1	1	218	1	2
+79	__calibration_return	1	1	219	1	3
+80	__constVal63	2	0	220	1	4
+81	____initialize_global_data_return	1	1	221	1	3
+82	__mazeSolver_return	1	1	222	1	3
+83	__rotate_power1	1	1	223	1	7
+84	__constVal96	2	0	224	1	21
+85	__SetSensorLight_7qG2_port_7qG2_000_inline_init	1	1	225	1	10
+86	__SetSensorLight_7qG2_bActive_7qG2_000_inline_init	1	1	226	1	4
+87	__init_return	1	1	227	1	3
+88	lookingLeft	1	0	228	1	1
+89	lookingRigt	1	1	229	1	5
+90	__SetSensorType_7qG2_port_7qG2_000_inline_SetSensorLight_inline_init	1	1	230	1	4
+91	__ResetSensor_7qG2_port_7qG2_000_inline_SetSensorLight_inline_init	1	1	231	1	2
+92	__SetSensorLowspeed_7qG2_port_7qG2_000_inline_init	1	1	232	1	4
+93	__SetSensorMode_7qG2_mode_7qG2_000_inline_SetSensorLight_inline_init	1	1	233	1	4
+94	__SetSensorType_7qG2_type_7qG2_000_inline_SetSensorLight_inline_init	1	1	234	1	4
+95	__SetSensorMode_7qG2_port_7qG2_000_inline_SetSensorLight_inline_init	1	1	235	1	4
+96	__zfSetSensorLowspeed_inline_init	1	1	236	1	2
+97	__rotate_theRVP4	1	1	237	1	14
+98	__rotate_theRS4	1	1	238	1	3
+99	__rotate_theRM4	1	1	239	1	4
+100	__ResetSensorPort	1	1	240	1	5
+101	__ResetSensorTmp	1	1	241	1	2
+102	____ResetSensorSubroutine_return	1	1	242	1	5
+103	__RLSBResult1	2	1	243	1	7
+104	__RLSBytesCount1	1	1	244	1	13
+105	__RLSBIterations1	1	1	245	1	4
+106	__rotate_theOM4	1	1	246	1	7
+107	____ReadLSBytes1_return	1	1	247	1	9
+108	__rotate_theUF4	1	1	248	1	6
+109	__constVal4	2	0	249	1	5
+110	__rotate_theRVI4	1	1	250	1	14
+111	__rotate_theTurnPct4	2	1	251	1	4
+112	__constVal32	2	0	252	1	35
+113	__rotate_theRVD4	1	1	253	1	14
+114	__rotate_rs4	1	1	254	1	2
+115	__rotate_thePower4	2	1	255	1	4
+116	____RotateMotor4_return	1	1	256	1	15
+117	__constVal3	2	0	257	1	2
+118	__constVal6	2	0	258	1	2
+119	__constVal1	2	0	259	1	25
+120	__constVal0	2	1	260	1	40
+121	____RotateMotor1_return	1	1	261	1	6
+122	__zfcalibration	1	1	262	1	18
+123	__rotate_firstPort4	1	1	263	1	5
+124	__rotate_sync4	1	1	264	1	14
+125	__rotate_turnpct4	2	1	265	1	15
+126	__rotate_stop4	1	1	266	1	14
+127	__zfgetDistances	1	1	267	1	6
+128	__zfSetSensorLight_inline_init	1	1	268	1	4
+129	__rotate_thePower1	2	1	269	1	4
+130	__rotate_theTurnPct1	2	1	270	1	4
+131	__rotate_power4	1	1	271	1	16
+132	__zfmazeSolver	1	1	272	1	70
+133	__constVal7	2	0	273	1	3
+134	__constVal2	2	0	274	1	6
+135	__PointOutArgs	8	0	3	12	4
+136	__PointOutArgs.Result	2	1	276	1	4
+137	__PointOutArgs.Location	8	0	2	4	4
+138	__PointOutArgs.Location.X	4	1	280	2	4
+139	__PointOutArgs.Location.Y	4	1	282	2	4
+140	__PointOutArgs.Options	5	1	284	4	4
+141	__TextOutArgs	8	0	4	16	102
+142	__TextOutArgs.Result	2	1	288	1	102
+143	__TextOutArgs.Location	8	0	2	4	102
+144	__TextOutArgs.Location.X	4	1	292	2	102
+145	__TextOutArgs.Location.Y	4	1	294	2	102
+146	__TextOutArgs.Text	7	0	296	4	102
+147	__TextOutArgs.Text.Text_type	1	0	0	1	0
+148	__TextOutArgs.Options	5	1	300	4	102
+149	__SPTArgs	8	0	5	8	36
+150	__SPTArgs.Result	2	1	304	1	36
+151	__SPTArgs.Frequency	3	1	306	2	36
+152	__SPTArgs.Duration	3	1	308	2	36
+153	__SPTArgs.Loop	1	1	310	1	36
+154	__SPTArgs.Volume	1	1	311	1	36
+155	mylight	8	0	3	8	5
+156	mylight.sensor_in3	4	1	312	2	5
+157	mylight.sensor_in4	4	1	314	2	5
+158	mylight.last_activated	4	1	316	2	5
+159	mydist	8	0	4	8	25
+160	mydist.d1	4	1	320	2	25
+161	mydist.d2	4	1	322	2	25
+162	mydist.d3	4	1	324	2	25
+163	mydist.d4	4	1	326	2	25
+164	__CLSRArgs1	8	0	4	12	5
+165	__CLSRArgs1.Result	2	1	328	1	5
+166	__CLSRArgs1.Port	1	1	329	1	5
+167	__CLSRArgs1.Buffer	7	0	330	4	5
+168	__CLSRArgs1.Buffer.Buffer_type	1	0	0	1	0
+169	__CLSRArgs1.BufferLen	1	1	332	1	5
+170	__SPFArgs	8	0	4	12	5
+171	__SPFArgs.Result	2	1	336	1	5
+172	__SPFArgs.Filename	7	0	338	4	5
+173	__SPFArgs.Filename.Filename_type	1	0	0	1	0
+174	__SPFArgs.Loop	1	1	340	1	5
+175	__SPFArgs.Volume	1	1	341	1	5
+176	__CLSWArgs1	8	0	4	12	5
+177	__CLSWArgs1.Result	2	1	344	1	5
+178	__CLSWArgs1.Port	1	1	345	1	5
+179	__CLSWArgs1.Buffer	7	0	346	4	5
+180	__CLSWArgs1.Buffer.Buffer_type	1	0	0	1	0
+181	__CLSWArgs1.ReturnLen	1	1	348	1	5
+182	__CLSCSArgs1	8	0	3	4	4
+183	__CLSCSArgs1.Result	2	1	352	1	4
+184	__CLSCSArgs1.Port	1	1	353	1	4
+185	__CLSCSArgs1.BytesReady	1	1	354	1	4
+186	__constStr0014	7	0	356	4	1
+187	__constStr0014.__constStr0014_type	1	1	0	1	0
+188	__OUT_AC	7	0	358	4	17
+189	__OUT_AC.__OUT_AC_type	1	0	0	1	0
+190	__constStr0017	7	0	360	4	1
+191	__constStr0017.__constStr0017_type	1	1	0	1	0
+192	__constStr0012	7	0	362	4	1
+193	__constStr0012.__constStr0012_type	1	1	0	1	0
+194	__constStr0013	7	0	364	4	1
+195	__constStr0013.__constStr0013_type	1	1	0	1	0
+196	__main_7qG2_array_7qG2_000	7	0	366	4	2
+197	__main_7qG2_array_7qG2_000.__main_7qG2_array_7qG2_000_type	4	0	0	2	0
+198	__main_7qG2_matrix_7qG2_000	7	0	368	4	5
+199	__main_7qG2_matrix_7qG2_000.__main_7qG2_matrix_7qG2_000_type	7	0	0	4	0
+200	__main_7qG2_matrix_7qG2_000.__main_7qG2_matrix_7qG2_000_type.__main_7qG2_matrix_7qG2_000_type_type	7	0	0	4	0
+201	__main_7qG2_matrix_7qG2_000.__main_7qG2_matrix_7qG2_000_type.__main_7qG2_matrix_7qG2_000_type_type.__main_7qG2_matrix_7qG2_000_type_type_type	4	0	0	2	0
+202	__main_7qG2_matrix1_7qG2_000	7	0	370	4	2
+203	__main_7qG2_matrix1_7qG2_000.__main_7qG2_matrix1_7qG2_000_type	7	0	0	4	0
+204	__main_7qG2_matrix1_7qG2_000.__main_7qG2_matrix1_7qG2_000_type.__main_7qG2_matrix1_7qG2_000_type_type	4	0	0	2	0
+205	__constStr0015	7	0	372	4	1
+206	__constStr0015.__constStr0015_type	1	1	0	1	0
+207	__constStr0016	7	0	374	4	1
+208	__constStr0016.__constStr0016_type	1	1	0	1	0
+209	__RLSReadBuf1	7	0	376	4	20
+210	__RLSReadBuf1.__RLSReadBuf1_type	1	0	0	1	0
+211	__ArrHelper__main_237_0	7	0	378	4	7
+212	__ArrHelper__main_237_0.__ArrHelper__main_237_0_type	7	0	0	4	0
+213	__ArrHelper__main_237_0.__ArrHelper__main_237_0_type.__ArrHelper__main_237_0_type_type	4	0	0	2	0
+214	__ArrHelper__main_236_0	7	0	380	4	6
+215	__ArrHelper__main_236_0.__ArrHelper__main_236_0_type	4	0	0	2	0
+216	__strbufcalibration	7	0	382	4	8
+217	__strbufcalibration.__strbufcalibration_type	1	0	0	1	0
+218	__constStr0009	7	0	384	4	1
+219	__constStr0009.__constStr0009_type	1	1	0	1	0
+220	__constStr0010	7	0	386	4	2
+221	__constStr0010.__constStr0010_type	1	1	0	1	0
+222	__constStr0011	7	0	388	4	1
+223	__constStr0011.__constStr0011_type	1	1	0	1	0
+224	__strbufmain	7	0	390	4	2
+225	__strbufmain.__strbufmain_type	1	0	0	1	0
+226	__RLSLastGoodRead1	7	0	392	4	2
+227	__RLSLastGoodRead1.__RLSLastGoodRead1_type	1	0	0	1	0
+228	__strbufmazeSolver	7	0	394	4	10
+229	__strbufmazeSolver.__strbufmazeSolver_type	1	0	0	1	0
+230	__RLSBbufLSWrite1	7	0	396	4	7
+231	__RLSBbufLSWrite1.__RLSBbufLSWrite1_type	1	0	0	1	0
+232	__rotate_ports4	7	0	398	4	18
+233	__rotate_ports4.__rotate_ports4_type	1	0	0	1	0
+234	__rotate_ports1	7	0	400	4	9
+235	__rotate_ports1.__rotate_ports1_type	1	0	0	1	0
+#SOURCES
+Clump	Line	PC	Source
+0	326	0	#line 326 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	327	0		subcall __initialize_global_data, ____initialize_global_data_return
+0	326	2	#line 326 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	330	2	#line 330 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	331	2		arrinit __main_7qG2_array_7qG2_000, __constVal0, __constVal4
+0	330	6	#line 330 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	330	6	#line 330 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	331	6	#line 331 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	332	6		arrinit __main_7qG2_matrix1_7qG2_000, __main_7qG2_array_7qG2_000, __constVal6
+0	331	10	#line 331 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	331	10	#line 331 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	332	10	#line 332 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	333	10		arrinit __main_7qG2_matrix_7qG2_000, __main_7qG2_matrix1_7qG2_000, __constVal6
+0	332	14	#line 332 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	332	14	#line 332 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	333	14	#line 333 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	334	14		set __signed_stack_001main, 1
+0	333	17	#line 333 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	333	17	#line 333 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	334	17		index __ArrHelper__main_237_0, __main_7qG2_matrix_7qG2_000, __signed_stack_001main
+0	333	21	#line 333 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	334	21		set __signed_stack_002main, 1
+0	333	24	#line 333 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	333	24	#line 333 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	334	24		index __ArrHelper__main_236_0, __ArrHelper__main_237_0, __signed_stack_002main
+0	333	28	#line 333 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	334	28		set __signed_stack_003main, 1
+0	333	31	#line 333 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	334	31	#line 334 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	335	31		set __D0main, 2
+0	334	34	#line 334 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	335	34		replace __ArrHelper__main_236_0, __ArrHelper__main_236_0, __signed_stack_003main, __D0main
+0	334	39	#line 334 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	335	39		replace __ArrHelper__main_237_0, __ArrHelper__main_237_0, __signed_stack_002main, __ArrHelper__main_236_0
+0	334	44	#line 334 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	335	44		replace __main_7qG2_matrix_7qG2_000, __main_7qG2_matrix_7qG2_000, __signed_stack_001main, __ArrHelper__main_237_0
+0	334	49	#line 334 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	334	49	#line 334 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	335	49		set __signed_stack_001main, 15
+0	334	52	#line 334 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	334	52	#line 334 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	335	52		set __signed_stack_002main, 48
+0	334	55	#line 334 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	334	55	#line 334 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	335	55		set __signed_stack_003main, 1
+0	334	58	#line 334 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	334	58	#line 334 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	335	58		index __ArrHelper__main_237_0, __main_7qG2_matrix_7qG2_000, __signed_stack_003main
+0	334	62	#line 334 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	335	62		set __signed_stack_004main, 0
+0	334	65	#line 334 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	334	65	#line 334 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	335	65		index __ArrHelper__main_236_0, __ArrHelper__main_237_0, __signed_stack_004main
+0	334	69	#line 334 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	335	69		set __signed_stack_005main, 1
+0	334	72	#line 334 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	334	72	#line 334 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	335	72		index __ArrHelper__main_73_0, __ArrHelper__main_236_0, __signed_stack_005main
+0	334	76	#line 334 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	335	76		mov __D0main, __ArrHelper__main_73_0
+0	335	78	#line 335 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	336	78		acquire __TextOutMutex
+0	335	79	#line 335 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	336	79		mov __TextOutArgs.Location.X, __signed_stack_001main
+0	335	81	#line 335 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	336	81		mov __TextOutArgs.Location.Y, __signed_stack_002main
+0	335	83	#line 335 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	336	83		set __TextOutArgs.Options, 0
+0	335	86	#line 335 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	336	86		numtostr __TextOutArgs.Text, __D0main
+0	335	89	#line 335 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	336	89		syscall 13, __TextOutArgs
+0	335	92	#line 335 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	336	92		mov __D0main, __TextOutArgs.Result
+0	335	95	#line 335 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	336	95		release __TextOutMutex
+0	335	96	#line 335 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	335	96	#line 335 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	336	96		set __signed_stack_001main, 330
+0	335	99	#line 335 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	335	99	#line 335 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	336	99		set __signed_stack_002main, 400
+0	335	102	#line 335 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	335	102	#line 335 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	336	102		set __signed_stack_003main, 3
+0	335	105	#line 335 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	335	105	#line 335 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	336	105		set __D0main, 0
+0	335	108	#line 335 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	336	108		acquire __SPTArgsMutex
+0	335	109	#line 335 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	336	109		mov __SPTArgs.Frequency, __signed_stack_001main
+0	335	111	#line 335 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	336	111		mov __SPTArgs.Duration, __signed_stack_002main
+0	335	113	#line 335 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	336	113		mov __SPTArgs.Volume, __signed_stack_003main
+0	335	115	#line 335 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	336	115		mov __SPTArgs.Loop, __D0main
+0	335	118	#line 335 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	336	118		syscall 10, __SPTArgs
+0	335	121	#line 335 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	336	121		mov __D0main, __SPTArgs.Result
+0	335	124	#line 335 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	336	124		release __SPTArgsMutex
+0	335	125	#line 335 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	335	125	#line 335 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	336	125		set __Wait_7qG2_ms_7qG2_000_inline_main, 250
+0	335	128	#line 335 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	7921	128	#line 7921 "NXCDefs.h"
+0	7922	128		wait 250
+0	7921	130	#line 7921 "NXCDefs.h"
+0	337	130	#line 337 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	337	130	#line 337 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	338	130		set __signed_stack_001main, 262
+0	337	133	#line 337 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	337	133	#line 337 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	338	133		set __signed_stack_002main, 1600
+0	337	136	#line 337 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	337	136	#line 337 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	338	136		set __signed_stack_003main, 3
+0	337	139	#line 337 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	337	139	#line 337 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	338	139		set __D0main, 0
+0	337	142	#line 337 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	338	142		acquire __SPTArgsMutex
+0	337	143	#line 337 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	338	143		mov __SPTArgs.Frequency, __signed_stack_001main
+0	337	145	#line 337 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	338	145		mov __SPTArgs.Duration, __signed_stack_002main
+0	337	147	#line 337 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	338	147		mov __SPTArgs.Volume, __signed_stack_003main
+0	337	149	#line 337 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	338	149		mov __SPTArgs.Loop, __D0main
+0	337	152	#line 337 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	338	152		syscall 10, __SPTArgs
+0	337	155	#line 337 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	338	155		mov __D0main, __SPTArgs.Result
+0	337	158	#line 337 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	338	158		release __SPTArgsMutex
+0	337	159	#line 337 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	337	159	#line 337 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	338	159		set __Wait_7qG2_ms_7qG2_000_inline_main, 250
+0	337	162	#line 337 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	7921	162	#line 7921 "NXCDefs.h"
+0	7922	162		wait 250
+0	7921	164	#line 7921 "NXCDefs.h"
+0	338	164	#line 338 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	338	164	#line 338 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	339	164		strcat __strbufmain, __constStr0017
+0	338	168	#line 338 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	339	168		set __signed_stack_001main, 3
+0	338	171	#line 338 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	338	171	#line 338 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	339	171		set __D0main, 0
+0	339	174	#line 339 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	340	174		acquire __SPFArgsMutex
+0	339	175	#line 339 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	340	175		mov __SPFArgs.Filename, __strbufmain
+0	339	177	#line 339 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	340	177		mov __SPFArgs.Volume, __signed_stack_001main
+0	339	180	#line 339 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	340	180		mov __SPFArgs.Loop, __D0main
+0	339	183	#line 339 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	340	183		syscall 9, __SPFArgs
+0	339	186	#line 339 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	340	186		mov __D0main, __SPFArgs.Result
+0	339	189	#line 339 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	340	189		release __SPFArgsMutex
+0	339	190	#line 339 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	339	190	#line 339 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	340	190		set __Wait_7qG2_ms_7qG2_000_inline_main, 3000
+0	339	193	#line 339 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	7921	193	#line 7921 "NXCDefs.h"
+0	7922	193		wait 3000
+0	7921	195	#line 7921 "NXCDefs.h"
+0	340	195	#line 340 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	341	195	#line 341 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	342	195		subcall init, __init_return
+0	341	197	#line 341 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	342	197	#line 342 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	343	197		subcall calibration, __calibration_return
+0	342	199	#line 342 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	343	199	#line 343 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	344	199		start getDistances
+0	343	201	#line 343 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	344	201	#line 344 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	345	201		subcall mazeSolver, __mazeSolver_return
+0	344	203	#line 344 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+0	345	203		exit -1, -1
+1	4529	0		brtst 4, __rotate_Done1, __rotate_angle1
+1	4530	3		sign __rotate_thePower1, __rotate_angle1
+1	4531	6		abs __rotate_theAngle1, __rotate_angle1
+1	4532	9		mul __rotate_thePower1, __rotate_thePower1, __rotate_power1
+1	4534	13		set __rotate_theUF1, 23
+1	4535	16		brtst 4, __rotate_NoSync1, __rotate_sync1
+1	4536	19		set __rotate_theOM1, 7
+1	4537	22		set __rotate_theRM1, 2
+1	4538	25		mov __rotate_theTurnPct1, __rotate_turnpct1
+1	4539	27		brtst 4, __rotate_Start1, __rotate_theTurnPct1
+1	4540	30		add __rotate_theUF1, __rotate_theUF1, __constVal32
+1	4541	34		jmp __rotate_Start1
+1	4543	36		set __rotate_theOM1, 3
+1	4544	39		set __rotate_theRM1, 0
+1	4545	42		set __rotate_theTurnPct1, 0
+1	4547	45		set __rotate_theRS1, 32
+1	4548	48		setout __rotate_ports1, 1, __rotate_theOM1, 8, __rotate_theRM1, 5, __rotate_theAngle1, 6, __rotate_theRS1, 10, __rotate_theRVP1, 11, __rotate_theRVI1, 12, __rotate_theRVD1, 2, __rotate_thePower1, 7, __rotate_turnpct1, 0, __rotate_theUF1
+1	4551	71		index __rotate_firstPort1, __rotate_ports1, 65535
+1	4553	75		getout __rotate_power1, __rotate_firstPort1, 2
+1	4554	79		brtst 4, __rotate_doneRunning1, __rotate_power1
+1	4555	82		getout __rotate_rs1, __rotate_firstPort1, 6
+1	4556	86		brcmp 4, __rotate_Running1, __rotate_rs1, __constVal32
+1	4558	90		brtst 4, __rotate_Reset1, __rotate_stop1
+1	4560	93		set __rotate_theOM1, 7
+1	4561	96		set __rotate_theUF1, 7
+1	4562	99		setout __rotate_ports1, 1, __rotate_theOM1, 8, __constVal1, 6, __rotate_theRS1, 2, __constVal0, 5, __constVal0, 0, __rotate_theUF1
+1	4564	114		getout __rotate_RotCount1, __rotate_firstPort1, 14
+1	4566	118		mov __rotate_OldRotCount1, __rotate_RotCount1
+1	4567	120		wait 50
+1	4569	122		getout __rotate_RotCount1, __rotate_firstPort1, 14
+1	4570	126		brcmp 5, __rotate_Stabilize1, __rotate_OldRotCount1, __rotate_RotCount1
+1	4571	130		set __rotate_theOM1, 4
+1	4572	133		setout __rotate_ports1, 8, __rotate_theRM1, 6, __constVal0, 1, __rotate_theOM1, 0, __constVal1
+1	4575	144		brtst 4, __rotate_Done1, __rotate_theTurnPct1
+1	4576	147		setout __rotate_ports1, 0, __constVal32
+1	4578	152		subret ____RotateMotor1_return
+2	4688	0		brtst 4, __rotate_Done4, __rotate_angle4
+2	4689	3		sign __rotate_thePower4, __rotate_angle4
+2	4690	6		abs __rotate_theAngle4, __rotate_angle4
+2	4691	9		mul __rotate_thePower4, __rotate_thePower4, __rotate_power4
+2	4693	13		set __rotate_theUF4, 23
+2	4694	16		brtst 4, __rotate_NoSync4, __rotate_sync4
+2	4695	19		set __rotate_theOM4, 7
+2	4696	22		set __rotate_theRM4, 2
+2	4697	25		mov __rotate_theTurnPct4, __rotate_turnpct4
+2	4698	27		brtst 4, __rotate_Start4, __rotate_theTurnPct4
+2	4699	30		add __rotate_theUF4, __rotate_theUF4, __constVal32
+2	4700	34		jmp __rotate_Start4
+2	4702	36		set __rotate_theOM4, 3
+2	4703	39		set __rotate_theRM4, 0
+2	4704	42		set __rotate_theTurnPct4, 0
+2	4706	45		set __rotate_theRS4, 32
+2	4707	48		setout __rotate_ports4, 1, __rotate_theOM4, 8, __rotate_theRM4, 5, __rotate_theAngle4, 6, __rotate_theRS4, 10, __rotate_theRVP4, 11, __rotate_theRVI4, 12, __rotate_theRVD4, 2, __rotate_thePower4, 7, __rotate_turnpct4, 0, __rotate_theUF4
+2	4710	71		index __rotate_firstPort4, __rotate_ports4, 65535
+2	4712	75		getout __rotate_power4, __rotate_firstPort4, 2
+2	4713	79		brtst 4, __rotate_doneRunning4, __rotate_power4
+2	4714	82		getout __rotate_rs4, __rotate_firstPort4, 6
+2	4715	86		brcmp 4, __rotate_Running4, __rotate_rs4, __constVal32
+2	4717	90		brtst 4, __rotate_Reset4, __rotate_stop4
+2	4719	93		set __rotate_theOM4, 7
+2	4720	96		set __rotate_theUF4, 7
+2	4721	99		setout __rotate_ports4, 1, __rotate_theOM4, 8, __constVal1, 6, __rotate_theRS4, 2, __constVal0, 5, __constVal0, 0, __rotate_theUF4
+2	4723	114		getout __rotate_RotCount4, __rotate_firstPort4, 14
+2	4725	118		mov __rotate_OldRotCount4, __rotate_RotCount4
+2	4726	120		wait 50
+2	4728	122		getout __rotate_RotCount4, __rotate_firstPort4, 14
+2	4729	126		brcmp 5, __rotate_Stabilize4, __rotate_OldRotCount4, __rotate_RotCount4
+2	4730	130		set __rotate_theOM4, 4
+2	4731	133		setout __rotate_ports4, 8, __rotate_theRM4, 6, __constVal0, 1, __rotate_theOM4, 0, __constVal1
+2	4734	144		brtst 4, __rotate_Done4, __rotate_theTurnPct4
+2	4735	147		setout __rotate_ports4, 0, __constVal32
+2	4737	152		subret ____RotateMotor4_return
+3	4885	0		setin __constVal1, __ResetSensorPort, 5
+3	4887	4		getin __ResetSensorTmp, __ResetSensorPort, 5
+3	4888	8		brtst 5, __SensorStillInvalid, __ResetSensorTmp
+3	4889	11		subret ____ResetSensorSubroutine_return
+4	5710	0	#pragma macro 25
+4	5710	0		acquire __CLSWMutex1
+4	5710	1		set __CLSWArgs1.Port, 1
+4	5710	4		mov __CLSWArgs1.ReturnLen, __RLSBytesCount1
+4	5710	6		mov __CLSWArgs1.Buffer, __RLSReadBuf1
+4	5710	8		syscall 21, __CLSWArgs1
+4	5710	11		mov __RLSBResult1, __CLSWArgs1.Result
+4	5710	13		release __CLSWMutex1
+4	5710	14	#line 5710 "NXTDefs.h"
+4	5711	14		brtst 4, __RLSBReturn1, __RLSBytesCount1
+4	5712	17		arrinit __RLSReadBuf1, __constVal0, __RLSBytesCount1
+4	5713	21		brtst 5, __RLSBError1, __RLSBResult1
+4	5714	24		set __RLSBIterations1, 4
+4	5716	27	#pragma macro 23
+4	5716	27		acquire __CLSCSMutex1
+4	5716	28		set __CLSCSArgs1.Port, 1
+4	5716	31		syscall 23, __CLSCSArgs1
+4	5716	34		mov __RLSBytesCount1, __CLSCSArgs1.BytesReady
+4	5716	36		mov __RLSBResult1, __CLSCSArgs1.Result
+4	5716	38		release __CLSCSMutex1
+4	5716	39	#line 5716 "NXTDefs.h"
+4	5717	39		sub __RLSBIterations1, __RLSBIterations1, __constVal1
+4	5718	43		brtst 2, __RLSBError1, __RLSBIterations1
+4	5719	46		brtst 0, __RLSBError1, __RLSBResult1
+4	5720	49		brtst 4, __RLSBReadyToRead1, __RLSBResult1
+4	5722	52		wait 15
+4	5723	54		jmp __RLSBDoCheckStatus1
+4	5726	56	#pragma macro 25
+4	5726	56		acquire __CLSRMutex1
+4	5726	57		set __CLSRArgs1.Port, 1
+4	5726	60		mov __CLSRArgs1.BufferLen, __RLSBytesCount1
+4	5726	62		syscall 22, __CLSRArgs1
+4	5726	65		mov __RLSReadBuf1, __CLSRArgs1.Buffer
+4	5726	67		mov __RLSBResult1, __CLSRArgs1.Result
+4	5726	69		release __CLSRMutex1
+4	5726	70	#line 5726 "NXTDefs.h"
+4	5727	70		brtst 5, __RLSBError1, __RLSBResult1
+4	5728	73		mov __RLSLastGoodRead1, __RLSReadBuf1
+4	5729	75		jmp __RLSBDone1
+4	5731	77		mov __RLSReadBuf1, __RLSLastGoodRead1
+4	5733	79		arrsize __RLSBytesCount1, __RLSReadBuf1
+4	5735	82		subret ____ReadLSBytes1_return
+5	66	0	#line 66 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+5	67	0		set __SetSensorLight_7qG2_port_7qG2_000_inline_init, 2
+5	66	3	#line 66 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+5	67	3	#line 67 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+5	68	3		mov __SetSensorLight_7qG2_bActive_7qG2_000_inline_init, __constVal1
+5	3729	5	#line 3729 "NXCDefs.h"
+5	3730	5		mov __SetSensorType_7qG2_port_7qG2_000_inline_SetSensorLight_inline_init, __SetSensorLight_7qG2_port_7qG2_000_inline_init
+5	3729	7	#line 3729 "NXCDefs.h"
+5	3729	7	#line 3729 "NXCDefs.h"
+5	3730	7		mov __DU0SetSensorLight_inline_init, __SetSensorLight_7qG2_bActive_7qG2_000_inline_init
+5	3729	9	#line 3729 "NXCDefs.h"
+5	3730	9		tst 5, __zfSetSensorLight_inline_init, __DU0SetSensorLight_inline_init
+5	3729	12	#line 3729 "NXCDefs.h"
+5	3730	12		brtst 4, __001__NXC_Label_4, __zfSetSensorLight_inline_init
+5	3729	15	#line 3729 "NXCDefs.h"
+5	3730	15		set __D0SetSensorLight_inline_init, 5
+5	3729	18	#line 3729 "NXCDefs.h"
+5	3730	18		jmp __001__NXC_Label_5
+5	3729	20	#line 3729 "NXCDefs.h"
+5	3730	20		set __D0SetSensorLight_inline_init, 6
+5	3729	23	#line 3729 "NXCDefs.h"
+5	3730	23		mov __SetSensorType_7qG2_type_7qG2_000_inline_SetSensorLight_inline_init, __D0SetSensorLight_inline_init
+5	3663	25	#line 3663 "NXCDefs.h"
+5	3664	25		setin __SetSensorType_7qG2_type_7qG2_000_inline_SetSensorLight_inline_init, __SetSensorType_7qG2_port_7qG2_000_inline_SetSensorLight_inline_init, 0
+5	3663	29	#line 3663 "NXCDefs.h"
+5	3730	29	#line 3730 "NXCDefs.h"
+5	3730	29	#line 3730 "NXCDefs.h"
+5	3731	29		mov __SetSensorMode_7qG2_port_7qG2_000_inline_SetSensorLight_inline_init, __SetSensorLight_7qG2_port_7qG2_000_inline_init
+5	3730	31	#line 3730 "NXCDefs.h"
+5	3730	31	#line 3730 "NXCDefs.h"
+5	3731	31		set __SetSensorMode_7qG2_mode_7qG2_000_inline_SetSensorLight_inline_init, 128
+5	3730	34	#line 3730 "NXCDefs.h"
+5	3676	34	#line 3676 "NXCDefs.h"
+5	3677	34		setin __SetSensorMode_7qG2_mode_7qG2_000_inline_SetSensorLight_inline_init, __SetSensorMode_7qG2_port_7qG2_000_inline_SetSensorLight_inline_init, 1
+5	3676	38	#line 3676 "NXCDefs.h"
+5	3731	38	#line 3731 "NXCDefs.h"
+5	3731	38	#line 3731 "NXCDefs.h"
+5	3732	38		mov __ResetSensor_7qG2_port_7qG2_000_inline_SetSensorLight_inline_init, __SetSensorLight_7qG2_port_7qG2_000_inline_init
+5	3731	40	#line 3731 "NXCDefs.h"
+5	3694	40	#line 3694 "NXCDefs.h"
+5	3695	40	#pragma macro 4
+5	3695	40		mov __ResetSensorPort, __SetSensorLight_7qG2_port_7qG2_000_inline_init
+5	3695	42		subcall __ResetSensorSubroutine, ____ResetSensorSubroutine_return
+5	6814	44	#line 6814 "NXCDefs.h"
+5	3694	44	#line 3694 "NXCDefs.h"
+5	3732	44	#line 3732 "NXCDefs.h"
+5	67	44	#line 67 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+5	67	44	#line 67 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+5	68	44		set __SetSensorLight_7qG2_port_7qG2_000_inline_init, 3
+5	67	47	#line 67 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+5	68	47	#line 68 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+5	69	47		mov __SetSensorLight_7qG2_bActive_7qG2_000_inline_init, __constVal1
+5	3729	49	#line 3729 "NXCDefs.h"
+5	3730	49		mov __SetSensorType_7qG2_port_7qG2_000_inline_SetSensorLight_inline_init, __SetSensorLight_7qG2_port_7qG2_000_inline_init
+5	3729	51	#line 3729 "NXCDefs.h"
+5	3729	51	#line 3729 "NXCDefs.h"
+5	3730	51		mov __DU0SetSensorLight_inline_init, __SetSensorLight_7qG2_bActive_7qG2_000_inline_init
+5	3729	53	#line 3729 "NXCDefs.h"
+5	3730	53		tst 5, __zfSetSensorLight_inline_init, __DU0SetSensorLight_inline_init
+5	3729	56	#line 3729 "NXCDefs.h"
+5	3730	56		brtst 4, __002__NXC_Label_4, __zfSetSensorLight_inline_init
+5	3729	59	#line 3729 "NXCDefs.h"
+5	3730	59		set __D0SetSensorLight_inline_init, 5
+5	3729	62	#line 3729 "NXCDefs.h"
+5	3730	62		jmp __002__NXC_Label_5
+5	3729	64	#line 3729 "NXCDefs.h"
+5	3730	64		set __D0SetSensorLight_inline_init, 6
+5	3729	67	#line 3729 "NXCDefs.h"
+5	3730	67		mov __SetSensorType_7qG2_type_7qG2_000_inline_SetSensorLight_inline_init, __D0SetSensorLight_inline_init
+5	3663	69	#line 3663 "NXCDefs.h"
+5	3664	69		setin __SetSensorType_7qG2_type_7qG2_000_inline_SetSensorLight_inline_init, __SetSensorType_7qG2_port_7qG2_000_inline_SetSensorLight_inline_init, 0
+5	3663	73	#line 3663 "NXCDefs.h"
+5	3730	73	#line 3730 "NXCDefs.h"
+5	3730	73	#line 3730 "NXCDefs.h"
+5	3731	73		mov __SetSensorMode_7qG2_port_7qG2_000_inline_SetSensorLight_inline_init, __SetSensorLight_7qG2_port_7qG2_000_inline_init
+5	3730	75	#line 3730 "NXCDefs.h"
+5	3730	75	#line 3730 "NXCDefs.h"
+5	3731	75		set __SetSensorMode_7qG2_mode_7qG2_000_inline_SetSensorLight_inline_init, 128
+5	3730	78	#line 3730 "NXCDefs.h"
+5	3676	78	#line 3676 "NXCDefs.h"
+5	3677	78		setin __SetSensorMode_7qG2_mode_7qG2_000_inline_SetSensorLight_inline_init, __SetSensorMode_7qG2_port_7qG2_000_inline_SetSensorLight_inline_init, 1
+5	3676	82	#line 3676 "NXCDefs.h"
+5	3731	82	#line 3731 "NXCDefs.h"
+5	3731	82	#line 3731 "NXCDefs.h"
+5	3732	82		mov __ResetSensor_7qG2_port_7qG2_000_inline_SetSensorLight_inline_init, __SetSensorLight_7qG2_port_7qG2_000_inline_init
+5	3731	84	#line 3731 "NXCDefs.h"
+5	3694	84	#line 3694 "NXCDefs.h"
+5	3695	84	#pragma macro 4
+5	3695	84		mov __ResetSensorPort, __SetSensorLight_7qG2_port_7qG2_000_inline_init
+5	3695	86		subcall __ResetSensorSubroutine, ____ResetSensorSubroutine_return
+5	6881	88	#line 6881 "NXCDefs.h"
+5	3694	88	#line 3694 "NXCDefs.h"
+5	3732	88	#line 3732 "NXCDefs.h"
+5	68	88	#line 68 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+5	68	88	#line 68 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+5	69	88		set __SetSensorLowspeed_7qG2_port_7qG2_000_inline_init, 1
+5	68	91	#line 68 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+5	70	91	#line 70 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+5	71	91		mov __SetSensorLowspeed_7qG2_bIsPowered_7qG2_000_inline_init, __constVal1
+5	3758	93	#line 3758 "NXCDefs.h"
+5	3759	93		mov __SetSensorType_7qG2_port_7qG2_000_inline_SetSensorLowspeed_inline_init, __SetSensorLowspeed_7qG2_port_7qG2_000_inline_init
+5	3758	95	#line 3758 "NXCDefs.h"
+5	3758	95	#line 3758 "NXCDefs.h"
+5	3759	95		mov __DU0SetSensorLowspeed_inline_init, __SetSensorLowspeed_7qG2_bIsPowered_7qG2_000_inline_init
+5	3758	97	#line 3758 "NXCDefs.h"
+5	3759	97		tst 5, __zfSetSensorLowspeed_inline_init, __DU0SetSensorLowspeed_inline_init
+5	3758	100	#line 3758 "NXCDefs.h"
+5	3759	100		brtst 4, __004__NXC_Label_36, __zfSetSensorLowspeed_inline_init
+5	3758	103	#line 3758 "NXCDefs.h"
+5	3759	103		set __D0SetSensorLowspeed_inline_init, 11
+5	3758	106	#line 3758 "NXCDefs.h"
+5	3759	106		jmp __004__NXC_Label_37
+5	3758	108	#line 3758 "NXCDefs.h"
+5	3759	108		set __D0SetSensorLowspeed_inline_init, 10
+5	3758	111	#line 3758 "NXCDefs.h"
+5	3759	111		mov __SetSensorType_7qG2_type_7qG2_000_inline_SetSensorLowspeed_inline_init, __D0SetSensorLowspeed_inline_init
+5	3663	113	#line 3663 "NXCDefs.h"
+5	3664	113		setin __SetSensorType_7qG2_type_7qG2_000_inline_SetSensorLowspeed_inline_init, __SetSensorType_7qG2_port_7qG2_000_inline_SetSensorLowspeed_inline_init, 0
+5	3663	117	#line 3663 "NXCDefs.h"
+5	3759	117	#line 3759 "NXCDefs.h"
+5	3759	117	#line 3759 "NXCDefs.h"
+5	3760	117		mov __SetSensorMode_7qG2_port_7qG2_000_inline_SetSensorLowspeed_inline_init, __SetSensorLowspeed_7qG2_port_7qG2_000_inline_init
+5	3759	119	#line 3759 "NXCDefs.h"
+5	3759	119	#line 3759 "NXCDefs.h"
+5	3760	119		set __SetSensorMode_7qG2_mode_7qG2_000_inline_SetSensorLowspeed_inline_init, 0
+5	3759	122	#line 3759 "NXCDefs.h"
+5	3676	122	#line 3676 "NXCDefs.h"
+5	3677	122		setin __SetSensorMode_7qG2_mode_7qG2_000_inline_SetSensorLowspeed_inline_init, __SetSensorMode_7qG2_port_7qG2_000_inline_SetSensorLowspeed_inline_init, 1
+5	3676	126	#line 3676 "NXCDefs.h"
+5	3760	126	#line 3760 "NXCDefs.h"
+5	3760	126	#line 3760 "NXCDefs.h"
+5	3760	126	#line 3760 "NXCDefs.h"
+5	3694	126	#line 3694 "NXCDefs.h"
+5	3695	126	#pragma macro 4
+5	3695	126		mov __ResetSensorPort, __SetSensorLowspeed_7qG2_port_7qG2_000_inline_init
+5	3695	128		subcall __ResetSensorSubroutine, ____ResetSensorSubroutine_return
+5	6976	130	#line 6976 "NXCDefs.h"
+5	3694	130	#line 3694 "NXCDefs.h"
+5	3761	130	#line 3761 "NXCDefs.h"
+5	70	130	#line 70 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+5	72	130	#line 72 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+5	73	130		subret __init_return
+6	75	0	#line 75 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	76	0		set __calibration_7qG2_calibrationDone_7qG2_000, 0
+6	75	3	#line 75 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	75	3	#line 75 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	76	3		mov __signed_stack_001calibration, __calibration_7qG2_calibrationDone_7qG2_000
+6	75	5	#line 75 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	75	5	#line 75 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	76	5		set __D0calibration, 2
+6	75	8	#line 75 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	76	8		cmp 0, __zfcalibration, __signed_stack_001calibration, __D0calibration
+6	75	12	#line 75 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	76	12		mov __D0calibration, __zfcalibration
+6	77	14	#line 77 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	78	14		brtst 4, __NXC_Label_613, __zfcalibration
+6	77	17	#line 77 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	78	17	#pragma macro 26
+6	78	17		acquire __RLSBmutex1
+6	78	18		mov __RLSReadBuf1, __RLSBbufLSWrite1
+6	78	20		set __RLSBytesCount1, 1
+6	78	23		wait 15
+6	78	25		subcall __ReadLSBytes1, ____ReadLSBytes1_return
+6	78	27		index __D0calibration, __RLSReadBuf1, 65535
+6	78	31		release __RLSBmutex1
+6	7011	32	#line 7011 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	77	32	#line 77 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	78	32		mov mydist.d3, __D0calibration
+6	77	35	#line 77 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	77	35	#line 77 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	78	35	#line 78 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	79	35		getin mylight.sensor_in3, __constVal2, 4
+6	78	39	#line 78 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	78	39	#line 78 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	78	39	#line 78 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	79	39	#line 79 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	80	39		getin mylight.sensor_in4, __constVal3, 4
+6	79	43	#line 79 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	79	43	#line 79 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	79	43	#line 79 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	81	43	#line 81 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	82	43		mov __signed_stack_001calibration, __calibration_7qG2_calibrationDone_7qG2_000
+6	81	45	#line 81 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	81	45	#line 81 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	82	45		set __D0calibration, 0
+6	81	48	#line 81 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	82	48		cmp 4, __zfcalibration, __signed_stack_001calibration, __D0calibration
+6	81	52	#line 81 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	82	52		mov __D0calibration, __zfcalibration
+6	82	54	#line 82 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	83	54		brtst 4, __NXC_Label_624, __zfcalibration
+6	82	57	#line 82 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	83	57		set __signed_stack_001calibration, 1
+6	82	60	#line 82 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	82	60	#line 82 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	83	60		set __signed_stack_002calibration, 56
+6	82	63	#line 82 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	82	63	#line 82 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	83	63		strcat __strbufcalibration, __constStr0009
+6	82	67	#line 82 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	83	67		set __D0calibration, 1
+6	83	70	#line 83 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	84	70		acquire __TextOutMutex
+6	83	71	#line 83 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	84	71		mov __TextOutArgs.Location.X, __signed_stack_001calibration
+6	83	73	#line 83 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	84	73		mov __TextOutArgs.Location.Y, __signed_stack_002calibration
+6	83	75	#line 83 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	84	75		mov __TextOutArgs.Options, __D0calibration
+6	83	78	#line 83 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	84	78		mov __TextOutArgs.Text, __strbufcalibration
+6	83	80	#line 83 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	84	80		syscall 13, __TextOutArgs
+6	83	83	#line 83 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	84	83		mov __D0calibration, __TextOutArgs.Result
+6	83	86	#line 83 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	84	86		release __TextOutMutex
+6	83	87	#line 83 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	83	87	#line 83 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	84	87		mov __signed_stack_001calibration, mydist.d3
+6	83	90	#line 83 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	83	90	#line 83 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	84	90		set __D0calibration, 14
+6	83	93	#line 83 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	84	93		cmp 0, __zfcalibration, __signed_stack_001calibration, __D0calibration
+6	83	97	#line 83 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	84	97		mov __D0calibration, __zfcalibration
+6	84	99	#line 84 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	85	99		brtst 4, __NXC_Label_633, __zfcalibration
+6	84	102	#line 84 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	85	102		set __signed_stack_001calibration, 300
+6	84	105	#line 84 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	84	105	#line 84 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	85	105		set __signed_stack_002calibration, 400
+6	84	108	#line 84 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	84	108	#line 84 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	85	108		set __signed_stack_003calibration, 5
+6	84	111	#line 84 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	84	111	#line 84 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	85	111		set __D0calibration, 0
+6	85	114	#line 85 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	86	114		acquire __SPTArgsMutex
+6	85	115	#line 85 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	86	115		mov __SPTArgs.Frequency, __signed_stack_001calibration
+6	85	118	#line 85 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	86	118		mov __SPTArgs.Duration, __signed_stack_002calibration
+6	85	120	#line 85 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	86	120		mov __SPTArgs.Volume, __signed_stack_003calibration
+6	85	122	#line 85 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	86	122		mov __SPTArgs.Loop, __D0calibration
+6	85	125	#line 85 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	86	125		syscall 10, __SPTArgs
+6	85	128	#line 85 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	86	128		mov __D0calibration, __SPTArgs.Result
+6	85	131	#line 85 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	86	131		release __SPTArgsMutex
+6	85	132	#line 85 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	86	132	#line 86 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	87	132		mov Treshold_Line, mylight.sensor_in3
+6	86	134	#line 86 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	86	134	#line 86 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	89	134	#line 89 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	90	134		mov Treshold_Line1, mylight.sensor_in4
+6	89	136	#line 89 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	89	136	#line 89 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	90	136	#line 90 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	91	136		set Treshold_Line, 30
+6	90	139	#line 90 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	90	139	#line 90 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	93	139	#line 93 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	94	139		set Treshold_Line1, 30
+6	93	142	#line 93 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	93	142	#line 93 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	93	142	#line 93 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	94	142		set __signed_stack_001calibration, 5
+6	93	145	#line 93 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	93	145	#line 93 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	94	145		set __signed_stack_002calibration, 48
+6	93	148	#line 93 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	93	148	#line 93 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	94	148		strcat __strbufcalibration, __constStr0010
+6	93	152	#line 93 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	94	152		set __D0calibration, 1
+6	94	155	#line 94 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	95	155		acquire __TextOutMutex
+6	94	156	#line 94 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	95	156		mov __TextOutArgs.Location.X, __signed_stack_001calibration
+6	94	158	#line 94 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	95	158		mov __TextOutArgs.Location.Y, __signed_stack_002calibration
+6	94	160	#line 94 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	95	160		mov __TextOutArgs.Options, __D0calibration
+6	94	163	#line 94 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	95	163		mov __TextOutArgs.Text, __strbufcalibration
+6	94	165	#line 94 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	95	165		syscall 13, __TextOutArgs
+6	94	168	#line 94 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	95	168		mov __D0calibration, __TextOutArgs.Result
+6	94	171	#line 94 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	95	171		release __TextOutMutex
+6	94	172	#line 94 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	94	172	#line 94 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	95	172		set __signed_stack_001calibration, 60
+6	94	175	#line 94 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	94	175	#line 94 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	95	175		set __signed_stack_002calibration, 40
+6	94	178	#line 94 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	94	178	#line 94 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	95	178		mov __D0calibration, Treshold_Line
+6	95	180	#line 95 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	96	180		acquire __TextOutMutex
+6	95	181	#line 95 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	96	181		mov __TextOutArgs.Location.X, __signed_stack_001calibration
+6	95	183	#line 95 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	96	183		mov __TextOutArgs.Location.Y, __signed_stack_002calibration
+6	95	185	#line 95 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	96	185		set __TextOutArgs.Options, 0
+6	95	188	#line 95 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	96	188		numtostr __TextOutArgs.Text, __D0calibration
+6	95	191	#line 95 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	96	191		syscall 13, __TextOutArgs
+6	95	194	#line 95 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	96	194		mov __D0calibration, __TextOutArgs.Result
+6	95	197	#line 95 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	96	197		release __TextOutMutex
+6	95	198	#line 95 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	95	198	#line 95 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	96	198		set __signed_stack_001calibration, 60
+6	95	201	#line 95 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	95	201	#line 95 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	96	201		set __signed_stack_002calibration, 32
+6	95	204	#line 95 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	95	204	#line 95 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	96	204		mov __D0calibration, Treshold_Line1
+6	96	206	#line 96 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	97	206		acquire __TextOutMutex
+6	96	207	#line 96 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	97	207		mov __TextOutArgs.Location.X, __signed_stack_001calibration
+6	96	209	#line 96 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	97	209		mov __TextOutArgs.Location.Y, __signed_stack_002calibration
+6	96	211	#line 96 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	97	211		set __TextOutArgs.Options, 0
+6	96	214	#line 96 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	97	214		numtostr __TextOutArgs.Text, __D0calibration
+6	96	217	#line 96 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	97	217		syscall 13, __TextOutArgs
+6	96	220	#line 96 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	97	220		mov __D0calibration, __TextOutArgs.Result
+6	96	223	#line 96 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	97	223		release __TextOutMutex
+6	96	224	#line 96 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	96	224	#line 96 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	97	224		set __Wait_7qG2_ms_7qG2_000_inline_calibration, 2000
+6	96	227	#line 96 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	7921	227	#line 7921 "NXCDefs.h"
+6	7922	227		wait 2000
+6	7921	229	#line 7921 "NXCDefs.h"
+6	97	229	#line 97 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	98	229	#line 98 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	99	229		add __calibration_7qG2_calibrationDone_7qG2_000, __calibration_7qG2_calibrationDone_7qG2_000, __constVal1
+6	98	233	#line 98 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	101	233	#line 101 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	101	233	#line 101 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	101	233	#line 101 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	102	233	#pragma macro 26
+6	102	233		acquire __RLSBmutex1
+6	102	234		mov __RLSReadBuf1, __RLSBbufLSWrite1
+6	102	236		set __RLSBytesCount1, 1
+6	102	239		wait 15
+6	102	241		subcall __ReadLSBytes1, ____ReadLSBytes1_return
+6	102	243		index __D0calibration, __RLSReadBuf1, 65535
+6	102	247		release __RLSBmutex1
+6	7287	248	#line 7287 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	101	248	#line 101 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	102	248		mov mydist.d3, __D0calibration
+6	101	251	#line 101 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	101	251	#line 101 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	103	251	#line 103 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	104	251		mov __signed_stack_001calibration, __calibration_7qG2_calibrationDone_7qG2_000
+6	103	253	#line 103 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	103	253	#line 103 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	104	253		set __D0calibration, 1
+6	103	256	#line 103 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	104	256		cmp 4, __zfcalibration, __signed_stack_001calibration, __D0calibration
+6	103	260	#line 103 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	104	260		mov __D0calibration, __zfcalibration
+6	104	262	#line 104 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	105	262		brtst 4, __NXC_Label_674, __zfcalibration
+6	104	265	#line 104 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	105	265		set __signed_stack_001calibration, 1
+6	104	268	#line 104 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	104	268	#line 104 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	105	268		set __signed_stack_002calibration, 40
+6	104	271	#line 104 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	104	271	#line 104 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	105	271		strcat __strbufcalibration, __constStr0011
+6	104	275	#line 104 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	105	275		set __D0calibration, 1
+6	105	278	#line 105 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	106	278		acquire __TextOutMutex
+6	105	279	#line 105 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	106	279		mov __TextOutArgs.Location.X, __signed_stack_001calibration
+6	105	281	#line 105 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	106	281		mov __TextOutArgs.Location.Y, __signed_stack_002calibration
+6	105	283	#line 105 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	106	283		mov __TextOutArgs.Options, __D0calibration
+6	105	286	#line 105 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	106	286		mov __TextOutArgs.Text, __strbufcalibration
+6	105	288	#line 105 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	106	288		syscall 13, __TextOutArgs
+6	105	291	#line 105 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	106	291		mov __D0calibration, __TextOutArgs.Result
+6	105	294	#line 105 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	106	294		release __TextOutMutex
+6	105	295	#line 105 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	105	295	#line 105 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	106	295		mov __signed_stack_001calibration, mydist.d3
+6	105	298	#line 105 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	105	298	#line 105 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	106	298		set __D0calibration, 14
+6	105	301	#line 105 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	106	301		cmp 0, __zfcalibration, __signed_stack_001calibration, __D0calibration
+6	105	305	#line 105 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	106	305		mov __D0calibration, __zfcalibration
+6	106	307	#line 106 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	107	307		brtst 4, __NXC_Label_683, __zfcalibration
+6	106	310	#line 106 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	107	310		set __signed_stack_001calibration, 300
+6	106	313	#line 106 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	106	313	#line 106 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	107	313		set __signed_stack_002calibration, 400
+6	106	316	#line 106 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	106	316	#line 106 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	107	316		set __signed_stack_003calibration, 5
+6	106	319	#line 106 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	106	319	#line 106 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	107	319		set __D0calibration, 0
+6	107	322	#line 107 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	108	322		acquire __SPTArgsMutex
+6	107	323	#line 107 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	108	323		mov __SPTArgs.Frequency, __signed_stack_001calibration
+6	107	326	#line 107 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	108	326		mov __SPTArgs.Duration, __signed_stack_002calibration
+6	107	328	#line 107 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	108	328		mov __SPTArgs.Volume, __signed_stack_003calibration
+6	107	330	#line 107 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	108	330		mov __SPTArgs.Loop, __D0calibration
+6	107	333	#line 107 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	108	333		syscall 10, __SPTArgs
+6	107	336	#line 107 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	108	336		mov __D0calibration, __SPTArgs.Result
+6	107	339	#line 107 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	108	339		release __SPTArgsMutex
+6	107	340	#line 107 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	108	340	#line 108 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	109	340		mov Treshold_Victim, mylight.sensor_in3
+6	108	342	#line 108 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	108	342	#line 108 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	111	342	#line 111 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	111	342	#line 111 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	111	342	#line 111 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	112	342	#line 112 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	113	342		set Treshold_Victim1, 40
+6	112	345	#line 112 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	112	345	#line 112 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	115	345	#line 115 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	116	345		set Treshold_Victim, 40
+6	115	348	#line 115 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	115	348	#line 115 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	115	348	#line 115 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	116	348		set __signed_stack_001calibration, 5
+6	115	351	#line 115 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	115	351	#line 115 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	116	351		set __signed_stack_002calibration, 48
+6	115	354	#line 115 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	115	354	#line 115 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	116	354		strcat __strbufcalibration, __constStr0010
+6	115	358	#line 115 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	116	358		set __D0calibration, 1
+6	116	361	#line 116 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	117	361		acquire __TextOutMutex
+6	116	362	#line 116 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	117	362		mov __TextOutArgs.Location.X, __signed_stack_001calibration
+6	116	364	#line 116 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	117	364		mov __TextOutArgs.Location.Y, __signed_stack_002calibration
+6	116	366	#line 116 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	117	366		mov __TextOutArgs.Options, __D0calibration
+6	116	369	#line 116 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	117	369		mov __TextOutArgs.Text, __strbufcalibration
+6	116	371	#line 116 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	117	371		syscall 13, __TextOutArgs
+6	116	374	#line 116 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	117	374		mov __D0calibration, __TextOutArgs.Result
+6	116	377	#line 116 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	117	377		release __TextOutMutex
+6	116	378	#line 116 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	116	378	#line 116 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	117	378		set __signed_stack_001calibration, 60
+6	116	381	#line 116 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	116	381	#line 116 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	117	381		set __signed_stack_002calibration, 40
+6	116	384	#line 116 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	116	384	#line 116 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	117	384		mov __D0calibration, Treshold_Victim
+6	117	386	#line 117 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	118	386		acquire __TextOutMutex
+6	117	387	#line 117 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	118	387		mov __TextOutArgs.Location.X, __signed_stack_001calibration
+6	117	389	#line 117 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	118	389		mov __TextOutArgs.Location.Y, __signed_stack_002calibration
+6	117	391	#line 117 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	118	391		set __TextOutArgs.Options, 0
+6	117	394	#line 117 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	118	394		numtostr __TextOutArgs.Text, __D0calibration
+6	117	397	#line 117 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	118	397		syscall 13, __TextOutArgs
+6	117	400	#line 117 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	118	400		mov __D0calibration, __TextOutArgs.Result
+6	117	403	#line 117 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	118	403		release __TextOutMutex
+6	117	404	#line 117 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	117	404	#line 117 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	118	404		set __signed_stack_001calibration, 60
+6	117	407	#line 117 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	117	407	#line 117 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	118	407		set __signed_stack_002calibration, 32
+6	117	410	#line 117 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	117	410	#line 117 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	118	410		mov __D0calibration, Treshold_Victim1
+6	118	412	#line 118 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	119	412		acquire __TextOutMutex
+6	118	413	#line 118 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	119	413		mov __TextOutArgs.Location.X, __signed_stack_001calibration
+6	118	415	#line 118 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	119	415		mov __TextOutArgs.Location.Y, __signed_stack_002calibration
+6	118	417	#line 118 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	119	417		set __TextOutArgs.Options, 0
+6	118	420	#line 118 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	119	420		numtostr __TextOutArgs.Text, __D0calibration
+6	118	423	#line 118 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	119	423		syscall 13, __TextOutArgs
+6	118	426	#line 118 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	119	426		mov __D0calibration, __TextOutArgs.Result
+6	118	429	#line 118 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	119	429		release __TextOutMutex
+6	118	430	#line 118 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	118	430	#line 118 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	119	430		set __Wait_7qG2_ms_7qG2_000_inline_calibration, 100
+6	118	433	#line 118 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	7921	433	#line 7921 "NXCDefs.h"
+6	7922	433		wait 100
+6	7921	435	#line 7921 "NXCDefs.h"
+6	119	435	#line 119 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	120	435	#line 120 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	121	435		add __calibration_7qG2_calibrationDone_7qG2_000, __calibration_7qG2_calibrationDone_7qG2_000, __constVal1
+6	120	439	#line 120 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	123	439	#line 123 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	127	439	#line 127 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	127	439	#line 127 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	128	439		jmp __NXC_Label_612
+6	127	441	#line 127 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	128	441	#line 128 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	129	441	#pragma macro 26
+6	129	441		acquire __RLSBmutex1
+6	129	442		mov __RLSReadBuf1, __RLSBbufLSWrite1
+6	129	444		set __RLSBytesCount1, 1
+6	129	447		wait 15
+6	129	449		subcall __ReadLSBytes1, ____ReadLSBytes1_return
+6	129	451		index __D0calibration, __RLSReadBuf1, 65535
+6	129	455		release __RLSBmutex1
+6	7548	456	#line 7548 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	128	456	#line 128 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	129	456		mov mydist.d3, __D0calibration
+6	128	459	#line 128 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	128	459	#line 128 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	129	459	#line 129 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	130	459		mov __signed_stack_001calibration, __D0calibration
+6	129	461	#line 129 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	131	461	#line 131 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	132	461		set __D0calibration, 14
+6	131	464	#line 131 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	132	464		cmp 3, __zfcalibration, __signed_stack_001calibration, __D0calibration
+6	131	468	#line 131 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	132	468		mov __D0calibration, __zfcalibration
+6	131	470	#line 131 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	132	470		brtst 4, __NXC_Label_721, __zfcalibration
+6	131	473	#line 131 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	132	473		jmp __NXC_Label_720
+6	131	475	#line 131 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	131	475	#line 131 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	132	475		set __signed_stack_001calibration, 262
+6	131	478	#line 131 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	131	478	#line 131 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	132	478		set __signed_stack_002calibration, 400
+6	131	481	#line 131 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	131	481	#line 131 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	132	481		set __signed_stack_003calibration, 3
+6	131	484	#line 131 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	131	484	#line 131 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	132	484		set __D0calibration, 0
+6	132	487	#line 132 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	133	487		acquire __SPTArgsMutex
+6	132	488	#line 132 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	133	488		mov __SPTArgs.Frequency, __signed_stack_001calibration
+6	132	491	#line 132 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	133	491		mov __SPTArgs.Duration, __signed_stack_002calibration
+6	132	493	#line 132 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	133	493		mov __SPTArgs.Volume, __signed_stack_003calibration
+6	132	495	#line 132 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	133	495		mov __SPTArgs.Loop, __D0calibration
+6	132	498	#line 132 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	133	498		syscall 10, __SPTArgs
+6	132	501	#line 132 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	133	501		mov __D0calibration, __SPTArgs.Result
+6	132	504	#line 132 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	133	504		release __SPTArgsMutex
+6	132	505	#line 132 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	132	505	#line 132 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	133	505		set __Wait_7qG2_ms_7qG2_000_inline_calibration, 500
+6	132	508	#line 132 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	7921	508	#line 7921 "NXCDefs.h"
+6	7922	508		wait 500
+6	7921	510	#line 7921 "NXCDefs.h"
+6	133	510	#line 133 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	133	510	#line 133 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	134	510		set __signed_stack_001calibration, 250
+6	133	513	#line 133 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	133	513	#line 133 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	134	513		set __signed_stack_002calibration, 400
+6	133	516	#line 133 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	133	516	#line 133 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	134	516		set __signed_stack_003calibration, 3
+6	133	519	#line 133 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	133	519	#line 133 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	134	519		set __D0calibration, 0
+6	134	522	#line 134 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	135	522		acquire __SPTArgsMutex
+6	134	523	#line 134 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	135	523		mov __SPTArgs.Frequency, __signed_stack_001calibration
+6	134	526	#line 134 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	135	526		mov __SPTArgs.Duration, __signed_stack_002calibration
+6	134	528	#line 134 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	135	528		mov __SPTArgs.Volume, __signed_stack_003calibration
+6	134	530	#line 134 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	135	530		mov __SPTArgs.Loop, __D0calibration
+6	134	533	#line 134 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	135	533		syscall 10, __SPTArgs
+6	134	536	#line 134 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	135	536		mov __D0calibration, __SPTArgs.Result
+6	134	539	#line 134 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	135	539		release __SPTArgsMutex
+6	134	540	#line 134 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	136	540	#line 136 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+6	137	540		subret __calibration_return
+7	163	0	#line 163 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	164	0		set __mazeSolver_7qG2_maxDist_7qG2_000, 23
+7	163	3	#line 163 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	164	3	#line 164 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	165	3		set __mazeSolver_7qG2_minDist_7qG2_000, 20
+7	164	6	#line 164 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	165	6	#line 165 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	166	6		set __mazeSolver_7qG2_compensan_7qG2_000, 0
+7	165	9	#line 165 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	166	9	#line 166 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	167	9		set __mazeSolver_7qG2_isMaze_7qG2_000, 1
+7	166	12	#line 166 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	167	12	#line 167 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	168	12		set __mazeSolver_7qG2_orientation_7qG2_000, 1
+7	167	15	#line 167 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	172	15	#line 172 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	173	15		acquire distanceMutex
+7	172	16	#line 172 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	173	16	#line 173 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	174	16		mov __mazeSolver_7qG2_oldD1_7qG2_000, mydist.d1
+7	173	18	#line 173 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	173	18	#line 173 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	174	18	#line 174 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	175	18		mov __mazeSolver_7qG2_oldD2_7qG2_000, mydist.d2
+7	174	20	#line 174 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	174	20	#line 174 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	175	20	#line 175 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	176	20		mov __mazeSolver_7qG2_oldD3_7qG2_000, mydist.d3
+7	175	22	#line 175 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	175	22	#line 175 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	176	22	#line 176 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	177	22		release distanceMutex
+7	176	23	#line 176 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	176	23	#line 176 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	177	23		set __signed_stack_001mazeSolver, 20
+7	176	26	#line 176 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	176	26	#line 176 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	177	26		mov __D0mazeSolver, __mazeSolver_7qG2_compensan_7qG2_000
+7	177	28	#line 177 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	178	28	#pragma macro 7
+7	178	28		setout __OUT_AC, 2, __signed_stack_001mazeSolver, 1, __constVal7, 8, __constVal2, 7, __D0mazeSolver, 6, __constVal32, 5, __constVal0, 10, __constVal96, 11, __constVal32, 12, __constVal32, 0, __constVal63
+7	7946	51	#line 7946 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	177	51	#line 177 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	177	51	#line 177 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	178	51		mov __D0mazeSolver, __mazeSolver_7qG2_isMaze_7qG2_000
+7	178	53	#line 178 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	179	53		tst 5, __zfmazeSolver, __D0mazeSolver
+7	178	56	#line 178 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	179	56		brtst 4, __NXC_Label_801, __zfmazeSolver
+7	179	59	#line 179 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	180	59		mov __mazeSolver_7qG2_oldD1_7qG2_000, __mazeSolver_7qG2_d1_7qG2_000
+7	179	61	#line 179 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	179	61	#line 179 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	180	61	#line 180 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	181	61		mov __mazeSolver_7qG2_oldD2_7qG2_000, __mazeSolver_7qG2_d2_7qG2_000
+7	180	63	#line 180 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	180	63	#line 180 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	181	63	#line 181 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	182	63		mov __mazeSolver_7qG2_oldD3_7qG2_000, __mazeSolver_7qG2_d3_7qG2_000
+7	181	65	#line 181 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	181	65	#line 181 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	182	65	#line 182 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	183	65		acquire distanceMutex
+7	182	66	#line 182 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	183	66	#line 183 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	184	66		mov __mazeSolver_7qG2_d1_7qG2_000, mydist.d1
+7	183	68	#line 183 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	183	68	#line 183 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	184	68	#line 184 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	185	68		mov __mazeSolver_7qG2_d2_7qG2_000, mydist.d2
+7	184	70	#line 184 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	184	70	#line 184 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	185	70	#line 185 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	186	70		mov __mazeSolver_7qG2_d3_7qG2_000, mydist.d3
+7	185	72	#line 185 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	185	72	#line 185 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	186	72	#line 186 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	187	72		release distanceMutex
+7	186	73	#line 186 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	6069	73	#line 6069 "NXCDefs.h"
+7	6070	73	#pragma macro 6
+7	6070	73		mov __PointOutArgs.Location.X, __constVal200
+7	6070	75		mov __PointOutArgs.Location.Y, __constVal200
+7	6070	77		mov __PointOutArgs.Options, __constVal1
+7	6070	79		syscall 14, __PointOutArgs
+7	8006	82	#line 8006 "NXCDefs.h"
+7	6069	82	#line 6069 "NXCDefs.h"
+7	187	82	#line 187 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	187	82	#line 187 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	188	82		set __signed_stack_001mazeSolver, 15
+7	187	85	#line 187 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	187	85	#line 187 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	188	85		set __signed_stack_002mazeSolver, 48
+7	187	88	#line 187 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	187	88	#line 187 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	188	88		strcat __strbufmazeSolver, __constStr0012
+7	188	92	#line 188 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	189	92		acquire __TextOutMutex
+7	188	93	#line 188 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	189	93		mov __TextOutArgs.Location.X, __signed_stack_001mazeSolver
+7	188	95	#line 188 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	189	95		mov __TextOutArgs.Location.Y, __signed_stack_002mazeSolver
+7	188	97	#line 188 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	189	97		set __TextOutArgs.Options, 0
+7	188	100	#line 188 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	189	100		mov __TextOutArgs.Text, __strbufmazeSolver
+7	188	102	#line 188 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	189	102		syscall 13, __TextOutArgs
+7	188	105	#line 188 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	189	105		mov __D0mazeSolver, __TextOutArgs.Result
+7	188	108	#line 188 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	189	108		release __TextOutMutex
+7	188	109	#line 188 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	188	109	#line 188 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	189	109		set __signed_stack_001mazeSolver, 40
+7	188	112	#line 188 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	188	112	#line 188 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	189	112		set __signed_stack_002mazeSolver, 40
+7	188	115	#line 188 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	188	115	#line 188 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	189	115		mov __D0mazeSolver, __mazeSolver_7qG2_compensan_7qG2_000
+7	189	117	#line 189 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	190	117		acquire __TextOutMutex
+7	189	118	#line 189 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	190	118		mov __TextOutArgs.Location.X, __signed_stack_001mazeSolver
+7	189	120	#line 189 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	190	120		mov __TextOutArgs.Location.Y, __signed_stack_002mazeSolver
+7	189	122	#line 189 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	190	122		set __TextOutArgs.Options, 0
+7	189	125	#line 189 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	190	125		numtostr __TextOutArgs.Text, __D0mazeSolver
+7	189	128	#line 189 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	190	128		syscall 13, __TextOutArgs
+7	189	131	#line 189 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	190	131		mov __D0mazeSolver, __TextOutArgs.Result
+7	189	134	#line 189 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	190	134		release __TextOutMutex
+7	189	135	#line 189 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	189	135	#line 189 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	190	135		set __signed_stack_001mazeSolver, 0
+7	189	138	#line 189 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	189	138	#line 189 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	190	138		set __signed_stack_002mazeSolver, 32
+7	189	141	#line 189 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	189	141	#line 189 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	190	141		strcat __strbufmazeSolver, __constStr0013
+7	190	145	#line 190 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	191	145		acquire __TextOutMutex
+7	190	146	#line 190 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	191	146		mov __TextOutArgs.Location.X, __signed_stack_001mazeSolver
+7	190	148	#line 190 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	191	148		mov __TextOutArgs.Location.Y, __signed_stack_002mazeSolver
+7	190	150	#line 190 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	191	150		set __TextOutArgs.Options, 0
+7	190	153	#line 190 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	191	153		mov __TextOutArgs.Text, __strbufmazeSolver
+7	190	155	#line 190 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	191	155		syscall 13, __TextOutArgs
+7	190	158	#line 190 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	191	158		mov __D0mazeSolver, __TextOutArgs.Result
+7	190	161	#line 190 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	191	161		release __TextOutMutex
+7	190	162	#line 190 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	190	162	#line 190 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	191	162		set __signed_stack_001mazeSolver, 40
+7	190	165	#line 190 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	190	165	#line 190 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	191	165		set __signed_stack_002mazeSolver, 32
+7	190	168	#line 190 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	190	168	#line 190 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	191	168		mov __D0mazeSolver, __mazeSolver_7qG2_d1_7qG2_000
+7	191	170	#line 191 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	192	170		acquire __TextOutMutex
+7	191	171	#line 191 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	192	171		mov __TextOutArgs.Location.X, __signed_stack_001mazeSolver
+7	191	173	#line 191 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	192	173		mov __TextOutArgs.Location.Y, __signed_stack_002mazeSolver
+7	191	175	#line 191 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	192	175		set __TextOutArgs.Options, 0
+7	191	178	#line 191 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	192	178		numtostr __TextOutArgs.Text, __D0mazeSolver
+7	191	181	#line 191 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	192	181		syscall 13, __TextOutArgs
+7	191	184	#line 191 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	192	184		mov __D0mazeSolver, __TextOutArgs.Result
+7	191	187	#line 191 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	192	187		release __TextOutMutex
+7	191	188	#line 191 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	191	188	#line 191 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	192	188		set __signed_stack_001mazeSolver, 0
+7	191	191	#line 191 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	191	191	#line 191 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	192	191		set __signed_stack_002mazeSolver, 32
+7	191	194	#line 191 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	191	194	#line 191 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	192	194		strcat __strbufmazeSolver, __constStr0014
+7	192	198	#line 192 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	193	198		acquire __TextOutMutex
+7	192	199	#line 192 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	193	199		mov __TextOutArgs.Location.X, __signed_stack_001mazeSolver
+7	192	201	#line 192 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	193	201		mov __TextOutArgs.Location.Y, __signed_stack_002mazeSolver
+7	192	203	#line 192 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	193	203		set __TextOutArgs.Options, 0
+7	192	206	#line 192 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	193	206		mov __TextOutArgs.Text, __strbufmazeSolver
+7	192	208	#line 192 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	193	208		syscall 13, __TextOutArgs
+7	192	211	#line 192 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	193	211		mov __D0mazeSolver, __TextOutArgs.Result
+7	192	214	#line 192 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	193	214		release __TextOutMutex
+7	192	215	#line 192 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	192	215	#line 192 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	193	215		set __signed_stack_001mazeSolver, 40
+7	192	218	#line 192 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	192	218	#line 192 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	193	218		set __signed_stack_002mazeSolver, 24
+7	192	221	#line 192 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	192	221	#line 192 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	193	221		mov __D0mazeSolver, __mazeSolver_7qG2_d3_7qG2_000
+7	194	223	#line 194 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	195	223		acquire __TextOutMutex
+7	194	224	#line 194 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	195	224		mov __TextOutArgs.Location.X, __signed_stack_001mazeSolver
+7	194	226	#line 194 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	195	226		mov __TextOutArgs.Location.Y, __signed_stack_002mazeSolver
+7	194	228	#line 194 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	195	228		set __TextOutArgs.Options, 0
+7	194	231	#line 194 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	195	231		numtostr __TextOutArgs.Text, __D0mazeSolver
+7	194	234	#line 194 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	195	234		syscall 13, __TextOutArgs
+7	194	237	#line 194 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	195	237		mov __D0mazeSolver, __TextOutArgs.Result
+7	194	240	#line 194 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	195	240		release __TextOutMutex
+7	194	241	#line 194 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	194	241	#line 194 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	195	241		mov __signed_stack_001mazeSolver, __mazeSolver_7qG2_d1_7qG2_000
+7	194	243	#line 194 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	194	243	#line 194 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	195	243		set __D0mazeSolver, 40
+7	194	246	#line 194 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	195	246		cmp 1, __zfmazeSolver, __signed_stack_001mazeSolver, __D0mazeSolver
+7	194	250	#line 194 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	195	250		mov __D0mazeSolver, __zfmazeSolver
+7	194	253	#line 194 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	195	253		brtst 4, __NXC_Label_847, __zfmazeSolver
+7	194	256	#line 194 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	195	256		mov __signed_stack_001mazeSolver, __D0mazeSolver
+7	194	258	#line 194 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	195	258		mov __signed_stack_002mazeSolver, __mazeSolver_7qG2_d1_7qG2_000
+7	194	260	#line 194 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	194	260	#line 194 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	195	260		set __D0mazeSolver, 110
+7	194	263	#line 194 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	195	263		cmp 0, __zfmazeSolver, __signed_stack_002mazeSolver, __D0mazeSolver
+7	194	267	#line 194 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	194	267	#line 194 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	195	267		and __D0mazeSolver, __signed_stack_001mazeSolver, __zfmazeSolver
+7	196	271	#line 196 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	197	271		tst 5, __zfmazeSolver, __D0mazeSolver
+7	196	274	#line 196 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	197	274		brtst 4, __NXC_Label_848, __zfmazeSolver
+7	196	277	#line 196 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	197	277		set __signed_stack_001mazeSolver, 20
+7	196	280	#line 196 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	196	280	#line 196 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	197	280		set __signed_stack_002mazeSolver, 180
+7	196	283	#line 196 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	196	283	#line 196 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	197	283		set __signed_stack_003mazeSolver, 0
+7	196	286	#line 196 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	196	286	#line 196 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	197	286		set __signed_stack_004mazeSolver, 1
+7	196	289	#line 196 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	196	289	#line 196 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	197	289		set __D0mazeSolver, 1
+7	197	292	#line 197 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	198	292	#pragma macro 35
+7	198	292		mov __rotate_ports4, __OUT_AC
+7	198	294		mov __rotate_power4, __signed_stack_001mazeSolver
+7	198	296		mov __rotate_angle4, __signed_stack_002mazeSolver
+7	198	298		mov __rotate_turnpct4, __signed_stack_003mazeSolver
+7	198	300		mov __rotate_sync4, __signed_stack_004mazeSolver
+7	198	302		mov __rotate_stop4, __D0mazeSolver
+7	198	304		mov __rotate_theRVP4, __constVal32
+7	198	306		mov __rotate_theRVI4, __constVal0
+7	198	308		mov __rotate_theRVD4, __constVal96
+7	198	310		subcall __RotateMotor4, ____RotateMotor4_return
+7	8262	312	#line 8262 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	197	312	#line 197 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	198	312	#line 198 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	199	312		set lookingRigt, 1
+7	198	315	#line 198 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	198	315	#line 198 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	198	315	#line 198 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	199	315		set __Wait_7qG2_ms_7qG2_000_inline_mazeSolver, 2000
+7	198	318	#line 198 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	7921	318	#line 7921 "NXCDefs.h"
+7	7922	318		wait 2000
+7	7921	320	#line 7921 "NXCDefs.h"
+7	199	320	#line 199 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	200	320	#line 200 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	201	320		acquire distanceMutex
+7	200	321	#line 200 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	201	321	#line 201 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	202	321		mov __mazeSolver_7qG2_d1_7qG2_000, mydist.d1
+7	201	323	#line 201 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	201	323	#line 201 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	202	323	#line 202 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	203	323		mov __mazeSolver_7qG2_d2_7qG2_000, mydist.d2
+7	202	325	#line 202 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	202	325	#line 202 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	203	325	#line 203 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	204	325		mov __mazeSolver_7qG2_d3_7qG2_000, mydist.d3
+7	203	327	#line 203 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	203	327	#line 203 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	204	327	#line 204 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	205	327		release distanceMutex
+7	204	328	#line 204 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	204	328	#line 204 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	205	328		set __signed_stack_001mazeSolver, 20
+7	204	331	#line 204 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	204	331	#line 204 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	205	331		set __signed_stack_002mazeSolver, 135
+7	204	334	#line 204 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	204	334	#line 204 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	205	334		set __signed_stack_003mazeSolver, -100
+7	204	337	#line 204 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	204	337	#line 204 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	205	337		set __signed_stack_004mazeSolver, 1
+7	204	340	#line 204 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	204	340	#line 204 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	205	340		set __D0mazeSolver, 1
+7	205	343	#line 205 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	206	343	#pragma macro 35
+7	206	343		mov __rotate_ports4, __OUT_AC
+7	206	345		mov __rotate_power4, __signed_stack_001mazeSolver
+7	206	347		mov __rotate_angle4, __signed_stack_002mazeSolver
+7	206	349		mov __rotate_turnpct4, __signed_stack_003mazeSolver
+7	206	351		mov __rotate_sync4, __signed_stack_004mazeSolver
+7	206	353		mov __rotate_stop4, __D0mazeSolver
+7	206	355		mov __rotate_theRVP4, __constVal32
+7	206	357		mov __rotate_theRVI4, __constVal0
+7	206	359		mov __rotate_theRVD4, __constVal96
+7	206	361		subcall __RotateMotor4, ____RotateMotor4_return
+7	8341	363	#line 8341 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	205	363	#line 205 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	205	363	#line 205 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	206	363		set __signed_stack_001mazeSolver, 20
+7	205	366	#line 205 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	205	366	#line 205 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	206	366		set __signed_stack_002mazeSolver, 360
+7	205	369	#line 205 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	205	369	#line 205 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	206	369		set __signed_stack_003mazeSolver, 0
+7	205	372	#line 205 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	205	372	#line 205 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	206	372		set __signed_stack_004mazeSolver, 1
+7	205	375	#line 205 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	205	375	#line 205 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	206	375		set __D0mazeSolver, 1
+7	206	378	#line 206 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	207	378	#pragma macro 35
+7	207	378		mov __rotate_ports4, __OUT_AC
+7	207	380		mov __rotate_power4, __signed_stack_001mazeSolver
+7	207	382		mov __rotate_angle4, __signed_stack_002mazeSolver
+7	207	384		mov __rotate_turnpct4, __signed_stack_003mazeSolver
+7	207	386		mov __rotate_sync4, __signed_stack_004mazeSolver
+7	207	388		mov __rotate_stop4, __D0mazeSolver
+7	207	390		mov __rotate_theRVP4, __constVal32
+7	207	392		mov __rotate_theRVI4, __constVal0
+7	207	394		mov __rotate_theRVD4, __constVal96
+7	207	396		subcall __RotateMotor4, ____RotateMotor4_return
+7	8372	398	#line 8372 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	206	398	#line 206 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	206	398	#line 206 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	207	398		set __signed_stack_001mazeSolver, 15
+7	206	401	#line 206 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	206	401	#line 206 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	207	401		set __signed_stack_002mazeSolver, 48
+7	206	404	#line 206 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	206	404	#line 206 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	207	404		strcat __strbufmazeSolver, __constStr0015
+7	207	408	#line 207 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	208	408		acquire __TextOutMutex
+7	207	409	#line 207 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	208	409		mov __TextOutArgs.Location.X, __signed_stack_001mazeSolver
+7	207	411	#line 207 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	208	411		mov __TextOutArgs.Location.Y, __signed_stack_002mazeSolver
+7	207	413	#line 207 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	208	413		set __TextOutArgs.Options, 0
+7	207	416	#line 207 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	208	416		mov __TextOutArgs.Text, __strbufmazeSolver
+7	207	418	#line 207 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	208	418		syscall 13, __TextOutArgs
+7	207	421	#line 207 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	208	421		mov __D0mazeSolver, __TextOutArgs.Result
+7	207	424	#line 207 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	208	424		release __TextOutMutex
+7	207	425	#line 207 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	207	425	#line 207 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	208	425		set __Wait_7qG2_ms_7qG2_000_inline_mazeSolver, 1000
+7	207	428	#line 207 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	7921	428	#line 7921 "NXCDefs.h"
+7	7922	428		wait 1000
+7	7921	430	#line 7921 "NXCDefs.h"
+7	208	430	#line 208 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	209	430	#line 209 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	210	430		acquire distanceMutex
+7	209	431	#line 209 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	210	431	#line 210 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	211	431		mov __mazeSolver_7qG2_d1_7qG2_000, mydist.d1
+7	210	433	#line 210 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	210	433	#line 210 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	211	433	#line 211 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	212	433		mov __mazeSolver_7qG2_d2_7qG2_000, mydist.d2
+7	211	435	#line 211 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	211	435	#line 211 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	212	435	#line 212 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	213	435		mov __mazeSolver_7qG2_d3_7qG2_000, mydist.d3
+7	212	437	#line 212 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	212	437	#line 212 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	213	437	#line 213 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	214	437		release distanceMutex
+7	213	438	#line 213 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	213	438	#line 213 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	214	438		mov __signed_stack_001mazeSolver, __mazeSolver_7qG2_d1_7qG2_000
+7	213	440	#line 213 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	213	440	#line 213 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	214	440		set __D0mazeSolver, 40
+7	213	443	#line 213 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	214	443		cmp 1, __zfmazeSolver, __signed_stack_001mazeSolver, __D0mazeSolver
+7	213	447	#line 213 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	214	447		mov __D0mazeSolver, __zfmazeSolver
+7	214	450	#line 214 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	215	450		brtst 4, __NXC_Label_903, __zfmazeSolver
+7	214	453	#line 214 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	215	453		set __signed_stack_001mazeSolver, 20
+7	214	456	#line 214 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	214	456	#line 214 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	215	456		set __signed_stack_002mazeSolver, 135
+7	214	459	#line 214 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	214	459	#line 214 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	215	459		set __signed_stack_003mazeSolver, -100
+7	214	462	#line 214 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	214	462	#line 214 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	215	462		set __signed_stack_004mazeSolver, 1
+7	214	465	#line 214 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	214	465	#line 214 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	215	465		set __D0mazeSolver, 1
+7	215	468	#line 215 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	216	468	#pragma macro 35
+7	216	468		mov __rotate_ports4, __OUT_AC
+7	216	470		mov __rotate_power4, __signed_stack_001mazeSolver
+7	216	472		mov __rotate_angle4, __signed_stack_002mazeSolver
+7	216	474		mov __rotate_turnpct4, __signed_stack_003mazeSolver
+7	216	476		mov __rotate_sync4, __signed_stack_004mazeSolver
+7	216	478		mov __rotate_stop4, __D0mazeSolver
+7	216	480		mov __rotate_theRVP4, __constVal32
+7	216	482		mov __rotate_theRVI4, __constVal0
+7	216	484		mov __rotate_theRVD4, __constVal96
+7	216	486		subcall __RotateMotor4, ____RotateMotor4_return
+7	8485	488	#line 8485 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	215	488	#line 215 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	215	488	#line 215 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	216	488		set __signed_stack_001mazeSolver, 20
+7	215	491	#line 215 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	215	491	#line 215 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	216	491		set __signed_stack_002mazeSolver, 360
+7	215	494	#line 215 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	215	494	#line 215 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	216	494		set __signed_stack_003mazeSolver, 0
+7	215	497	#line 215 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	215	497	#line 215 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	216	497		set __signed_stack_004mazeSolver, 1
+7	215	500	#line 215 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	215	500	#line 215 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	216	500		set __D0mazeSolver, 1
+7	216	503	#line 216 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	217	503	#pragma macro 35
+7	217	503		mov __rotate_ports4, __OUT_AC
+7	217	505		mov __rotate_power4, __signed_stack_001mazeSolver
+7	217	507		mov __rotate_angle4, __signed_stack_002mazeSolver
+7	217	509		mov __rotate_turnpct4, __signed_stack_003mazeSolver
+7	217	511		mov __rotate_sync4, __signed_stack_004mazeSolver
+7	217	513		mov __rotate_stop4, __D0mazeSolver
+7	217	515		mov __rotate_theRVP4, __constVal32
+7	217	517		mov __rotate_theRVI4, __constVal0
+7	217	519		mov __rotate_theRVD4, __constVal96
+7	217	521		subcall __RotateMotor4, ____RotateMotor4_return
+7	8516	523	#line 8516 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	216	523	#line 216 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	217	523	#line 217 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	217	523	#line 217 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	218	523		sub __mazeSolver_7qG2_orientation_7qG2_000, __mazeSolver_7qG2_orientation_7qG2_000, __constVal2
+7	217	527	#line 217 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	217	527	#line 217 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	218	527		mov __signed_stack_001mazeSolver, __mazeSolver_7qG2_orientation_7qG2_000
+7	217	529	#line 217 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	217	529	#line 217 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	218	529		set __D0mazeSolver, 0
+7	217	532	#line 217 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	218	532		cmp 2, __zfmazeSolver, __signed_stack_001mazeSolver, __D0mazeSolver
+7	217	536	#line 217 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	218	536		mov __D0mazeSolver, __zfmazeSolver
+7	218	539	#line 218 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	219	539		brtst 4, __NXC_Label_928, __zfmazeSolver
+7	219	542	#line 219 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	219	542	#line 219 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	220	542		add __mazeSolver_7qG2_orientation_7qG2_000, __mazeSolver_7qG2_orientation_7qG2_000, __constVal4
+7	219	546	#line 219 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	220	546	#line 220 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	221	546	#line 221 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	222	546		jmp __NXC_Label_931
+7	222	548	#line 222 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	223	548		sub __mazeSolver_7qG2_orientation_7qG2_000, __mazeSolver_7qG2_orientation_7qG2_000, __constVal1
+7	222	552	#line 222 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	223	552	#line 223 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	224	552	#line 224 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	225	552		set lookingRigt, 0
+7	224	555	#line 224 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	224	555	#line 224 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	226	555	#line 226 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	227	555		set __mazeSolver_7qG2_compensan_7qG2_000, 0
+7	226	558	#line 226 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	226	558	#line 226 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	228	558	#line 228 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	228	558	#line 228 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	229	558		mov __signed_stack_001mazeSolver, __mazeSolver_7qG2_d1_7qG2_000
+7	228	560	#line 228 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	228	560	#line 228 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	229	560		mov __D0mazeSolver, __mazeSolver_7qG2_minDist_7qG2_000
+7	228	562	#line 228 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	229	562		cmp 0, __zfmazeSolver, __signed_stack_001mazeSolver, __D0mazeSolver
+7	228	566	#line 228 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	229	566		mov __D0mazeSolver, __zfmazeSolver
+7	228	569	#line 228 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	229	569		brtst 4, __NXC_Label_937, __zfmazeSolver
+7	228	572	#line 228 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	229	572		mov __signed_stack_001mazeSolver, __D0mazeSolver
+7	228	574	#line 228 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	229	574		mov __signed_stack_002mazeSolver, __mazeSolver_7qG2_oldD1_7qG2_000
+7	228	576	#line 228 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	228	576	#line 228 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	229	576		mov __D0mazeSolver, __mazeSolver_7qG2_d1_7qG2_000
+7	228	578	#line 228 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	229	578		cmp 5, __zfmazeSolver, __signed_stack_002mazeSolver, __D0mazeSolver
+7	228	582	#line 228 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	228	582	#line 228 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	229	582		and __D0mazeSolver, __signed_stack_001mazeSolver, __zfmazeSolver
+7	229	586	#line 229 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	230	586		tst 5, __zfmazeSolver, __D0mazeSolver
+7	229	589	#line 229 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	230	589		brtst 4, __NXC_Label_938, __zfmazeSolver
+7	229	592	#line 229 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	230	592		mov __signed_stack_001mazeSolver, __mazeSolver_7qG2_compensan_7qG2_000
+7	229	594	#line 229 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	229	594	#line 229 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	230	594		set __D0mazeSolver, 0
+7	229	597	#line 229 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	230	597		cmp 0, __zfmazeSolver, __signed_stack_001mazeSolver, __D0mazeSolver
+7	229	601	#line 229 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	230	601		mov __D0mazeSolver, __zfmazeSolver
+7	230	604	#line 230 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	231	604		brtst 4, __NXC_Label_941, __zfmazeSolver
+7	231	607	#line 231 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	232	607		set __mazeSolver_7qG2_compensan_7qG2_000, 0
+7	231	610	#line 231 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	231	610	#line 231 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	232	610	#line 232 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	233	610		jmp __NXC_Label_944
+7	232	612	#line 232 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	233	612		mov __signed_stack_001mazeSolver, __mazeSolver_7qG2_compensan_7qG2_000
+7	232	614	#line 232 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	232	614	#line 232 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	233	614		set __D0mazeSolver, 5
+7	232	617	#line 232 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	233	617		cmp 0, __zfmazeSolver, __signed_stack_001mazeSolver, __D0mazeSolver
+7	232	621	#line 232 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	233	621		mov __D0mazeSolver, __zfmazeSolver
+7	233	624	#line 233 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	234	624		brtst 4, __NXC_Label_947, __zfmazeSolver
+7	233	627	#line 233 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	233	627	#line 233 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	234	627	#line 234 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	234	627	#line 234 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	235	627		add __mazeSolver_7qG2_compensan_7qG2_000, __mazeSolver_7qG2_compensan_7qG2_000, __constVal1
+7	234	631	#line 234 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	234	631	#line 234 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	236	631	#line 236 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	236	631	#line 236 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	236	631	#line 236 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	237	631		set __signed_stack_001mazeSolver, 20
+7	236	634	#line 236 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	236	634	#line 236 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	237	634		set __signed_stack_002mazeSolver, 90
+7	236	637	#line 236 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	236	637	#line 236 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	237	637		mov __signed_stack_003mazeSolver, __mazeSolver_7qG2_compensan_7qG2_000
+7	236	639	#line 236 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	236	639	#line 236 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	237	639		set __signed_stack_004mazeSolver, 1
+7	236	642	#line 236 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	236	642	#line 236 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	237	642		set __D0mazeSolver, 0
+7	237	645	#line 237 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	238	645	#pragma macro 35
+7	238	645		mov __rotate_ports4, __OUT_AC
+7	238	647		mov __rotate_power4, __signed_stack_001mazeSolver
+7	238	649		mov __rotate_angle4, __signed_stack_002mazeSolver
+7	238	651		mov __rotate_turnpct4, __signed_stack_003mazeSolver
+7	238	653		mov __rotate_sync4, __signed_stack_004mazeSolver
+7	238	655		mov __rotate_stop4, __D0mazeSolver
+7	238	657		mov __rotate_theRVP4, __constVal32
+7	238	659		mov __rotate_theRVI4, __constVal0
+7	238	661		mov __rotate_theRVD4, __constVal96
+7	238	663		subcall __RotateMotor4, ____RotateMotor4_return
+7	8688	665	#line 8688 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	237	665	#line 237 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	237	665	#line 237 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	238	665		set __signed_stack_001mazeSolver, 20
+7	237	668	#line 237 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	237	668	#line 237 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	238	668		mov __D0mazeSolver, __mazeSolver_7qG2_compensan_7qG2_000
+7	238	670	#line 238 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	239	670	#pragma macro 7
+7	239	670		setout __OUT_AC, 2, __signed_stack_001mazeSolver, 1, __constVal7, 8, __constVal2, 7, __D0mazeSolver, 6, __constVal32, 5, __constVal0, 10, __constVal96, 11, __constVal32, 12, __constVal32, 0, __constVal63
+7	8701	693	#line 8701 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	238	693	#line 238 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	239	693	#line 239 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	240	693		jmp __NXC_Label_964
+7	239	695	#line 239 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	240	695		mov __signed_stack_001mazeSolver, __mazeSolver_7qG2_d1_7qG2_000
+7	239	697	#line 239 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	239	697	#line 239 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	240	697		mov __D0mazeSolver, __mazeSolver_7qG2_maxDist_7qG2_000
+7	239	699	#line 239 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	240	699		cmp 1, __zfmazeSolver, __signed_stack_001mazeSolver, __D0mazeSolver
+7	239	703	#line 239 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	240	703		mov __D0mazeSolver, __zfmazeSolver
+7	239	706	#line 239 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	240	706		brtst 4, __NXC_Label_966, __zfmazeSolver
+7	239	709	#line 239 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	240	709		mov __signed_stack_001mazeSolver, __D0mazeSolver
+7	239	711	#line 239 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	240	711		mov __signed_stack_002mazeSolver, __mazeSolver_7qG2_oldD1_7qG2_000
+7	239	713	#line 239 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	239	713	#line 239 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	240	713		mov __D0mazeSolver, __mazeSolver_7qG2_d1_7qG2_000
+7	239	715	#line 239 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	240	715		cmp 5, __zfmazeSolver, __signed_stack_002mazeSolver, __D0mazeSolver
+7	239	719	#line 239 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	239	719	#line 239 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	240	719		and __D0mazeSolver, __signed_stack_001mazeSolver, __zfmazeSolver
+7	240	723	#line 240 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	241	723		tst 5, __zfmazeSolver, __D0mazeSolver
+7	240	726	#line 240 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	241	726		brtst 4, __NXC_Label_967, __zfmazeSolver
+7	240	729	#line 240 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	241	729		mov __signed_stack_001mazeSolver, __mazeSolver_7qG2_compensan_7qG2_000
+7	240	731	#line 240 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	240	731	#line 240 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	241	731		set __D0mazeSolver, 0
+7	240	734	#line 240 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	241	734		cmp 1, __zfmazeSolver, __signed_stack_001mazeSolver, __D0mazeSolver
+7	240	738	#line 240 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	241	738		mov __D0mazeSolver, __zfmazeSolver
+7	241	741	#line 241 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	242	741		brtst 4, __NXC_Label_970, __zfmazeSolver
+7	242	744	#line 242 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	243	744		set __mazeSolver_7qG2_compensan_7qG2_000, 0
+7	242	747	#line 242 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	242	747	#line 242 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	243	747	#line 243 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	244	747		jmp __NXC_Label_973
+7	243	749	#line 243 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	244	749		mov __signed_stack_001mazeSolver, __mazeSolver_7qG2_compensan_7qG2_000
+7	243	751	#line 243 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	243	751	#line 243 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	244	751		set __D0mazeSolver, -5
+7	243	754	#line 243 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	244	754		cmp 1, __zfmazeSolver, __signed_stack_001mazeSolver, __D0mazeSolver
+7	243	758	#line 243 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	244	758		mov __D0mazeSolver, __zfmazeSolver
+7	244	761	#line 244 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	245	761		brtst 4, __NXC_Label_976, __zfmazeSolver
+7	244	764	#line 244 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	244	764	#line 244 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	245	764	#line 245 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	245	764	#line 245 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	246	764		sub __mazeSolver_7qG2_compensan_7qG2_000, __mazeSolver_7qG2_compensan_7qG2_000, __constVal1
+7	245	768	#line 245 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	245	768	#line 245 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	246	768	#line 246 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	246	768	#line 246 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	246	768	#line 246 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	247	768		set __signed_stack_001mazeSolver, 20
+7	246	771	#line 246 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	246	771	#line 246 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	247	771		set __signed_stack_002mazeSolver, 90
+7	246	774	#line 246 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	246	774	#line 246 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	247	774		mov __signed_stack_003mazeSolver, __mazeSolver_7qG2_compensan_7qG2_000
+7	246	776	#line 246 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	246	776	#line 246 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	247	776		set __signed_stack_004mazeSolver, 1
+7	246	779	#line 246 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	246	779	#line 246 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	247	779		set __D0mazeSolver, 0
+7	247	782	#line 247 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	248	782	#pragma macro 35
+7	248	782		mov __rotate_ports4, __OUT_AC
+7	248	784		mov __rotate_power4, __signed_stack_001mazeSolver
+7	248	786		mov __rotate_angle4, __signed_stack_002mazeSolver
+7	248	788		mov __rotate_turnpct4, __signed_stack_003mazeSolver
+7	248	790		mov __rotate_sync4, __signed_stack_004mazeSolver
+7	248	792		mov __rotate_stop4, __D0mazeSolver
+7	248	794		mov __rotate_theRVP4, __constVal32
+7	248	796		mov __rotate_theRVI4, __constVal0
+7	248	798		mov __rotate_theRVD4, __constVal96
+7	248	800		subcall __RotateMotor4, ____RotateMotor4_return
+7	8822	802	#line 8822 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	247	802	#line 247 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	247	802	#line 247 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	248	802		set __signed_stack_001mazeSolver, 20
+7	247	805	#line 247 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	247	805	#line 247 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	248	805		mov __D0mazeSolver, __mazeSolver_7qG2_compensan_7qG2_000
+7	248	807	#line 248 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	249	807	#pragma macro 7
+7	249	807		setout __OUT_AC, 2, __signed_stack_001mazeSolver, 1, __constVal7, 8, __constVal2, 7, __D0mazeSolver, 6, __constVal32, 5, __constVal0, 10, __constVal96, 11, __constVal32, 12, __constVal32, 0, __constVal63
+7	8835	830	#line 8835 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	248	830	#line 248 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	249	830	#line 249 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	249	830	#line 249 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	249	830	#line 249 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	250	830		mov __signed_stack_001mazeSolver, __mazeSolver_7qG2_d3_7qG2_000
+7	249	832	#line 249 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	249	832	#line 249 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	250	832		set __D0mazeSolver, 14
+7	249	835	#line 249 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	250	835		cmp 0, __zfmazeSolver, __signed_stack_001mazeSolver, __D0mazeSolver
+7	249	839	#line 249 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	250	839		mov __D0mazeSolver, __zfmazeSolver
+7	250	842	#line 250 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	251	842		brtst 4, __NXC_Label_995, __zfmazeSolver
+7	251	845	#line 251 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	252	845	#pragma macro 7
+7	252	845		setout __OUT_AC, 2, __constVal0, 1, __constVal3, 8, __constVal0, 6, __constVal32, 7, __constVal0, 5, __constVal0, 10, __constVal96, 11, __constVal32, 12, __constVal32, 0, __constVal63
+7	8856	868	#line 8856 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	251	868	#line 251 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	252	868	#line 252 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	253	868		set lookingRigt, 1
+7	252	871	#line 252 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	252	871	#line 252 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	252	871	#line 252 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	253	871		set __signed_stack_001mazeSolver, 15
+7	252	874	#line 252 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	252	874	#line 252 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	253	874		set __signed_stack_002mazeSolver, 48
+7	252	877	#line 252 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	252	877	#line 252 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	253	877		strcat __strbufmazeSolver, __constStr0016
+7	253	881	#line 253 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	254	881		acquire __TextOutMutex
+7	253	882	#line 253 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	254	882		mov __TextOutArgs.Location.X, __signed_stack_001mazeSolver
+7	253	884	#line 253 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	254	884		mov __TextOutArgs.Location.Y, __signed_stack_002mazeSolver
+7	253	886	#line 253 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	254	886		set __TextOutArgs.Options, 0
+7	253	889	#line 253 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	254	889		mov __TextOutArgs.Text, __strbufmazeSolver
+7	253	891	#line 253 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	254	891		syscall 13, __TextOutArgs
+7	253	894	#line 253 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	254	894		mov __D0mazeSolver, __TextOutArgs.Result
+7	253	897	#line 253 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	254	897		release __TextOutMutex
+7	253	898	#line 253 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	253	898	#line 253 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	254	898		set __Wait_7qG2_ms_7qG2_000_inline_mazeSolver, 2000
+7	253	901	#line 253 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	7921	901	#line 7921 "NXCDefs.h"
+7	7922	901		wait 2000
+7	7921	903	#line 7921 "NXCDefs.h"
+7	255	903	#line 255 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	256	903	#line 256 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	257	903		acquire distanceMutex
+7	256	904	#line 256 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	257	904	#line 257 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	258	904		mov __mazeSolver_7qG2_d1_7qG2_000, mydist.d1
+7	257	906	#line 257 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	257	906	#line 257 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	258	906	#line 258 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	259	906		mov __mazeSolver_7qG2_d2_7qG2_000, mydist.d2
+7	258	908	#line 258 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	258	908	#line 258 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	259	908	#line 259 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	260	908		mov __mazeSolver_7qG2_d3_7qG2_000, mydist.d3
+7	259	910	#line 259 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	259	910	#line 259 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	260	910	#line 260 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	261	910		mov __mazeSolver_7qG2_d4_7qG2_000, mydist.d4
+7	260	912	#line 260 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	260	912	#line 260 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	261	912	#line 261 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	262	912		release distanceMutex
+7	261	913	#line 261 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	261	913	#line 261 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	262	913		mov __signed_stack_001mazeSolver, __mazeSolver_7qG2_d2_7qG2_000
+7	261	915	#line 261 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	261	915	#line 261 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	262	915		mov __D0mazeSolver, __mazeSolver_7qG2_d1_7qG2_000
+7	261	917	#line 261 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	262	917		cmp 1, __zfmazeSolver, __signed_stack_001mazeSolver, __D0mazeSolver
+7	261	921	#line 261 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	262	921		mov __D0mazeSolver, __zfmazeSolver
+7	261	924	#line 261 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	262	924		brtst 4, __NXC_Label_1013, __zfmazeSolver
+7	261	927	#line 261 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	262	927		mov __signed_stack_001mazeSolver, __D0mazeSolver
+7	261	929	#line 261 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	262	929		mov __signed_stack_002mazeSolver, __mazeSolver_7qG2_d2_7qG2_000
+7	261	931	#line 261 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	261	931	#line 261 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	262	931		set __D0mazeSolver, 25
+7	261	934	#line 261 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	262	934		cmp 1, __zfmazeSolver, __signed_stack_002mazeSolver, __D0mazeSolver
+7	261	938	#line 261 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	261	938	#line 261 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	262	938		and __D0mazeSolver, __signed_stack_001mazeSolver, __zfmazeSolver
+7	262	942	#line 262 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	263	942		tst 5, __zfmazeSolver, __D0mazeSolver
+7	262	945	#line 262 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	263	945		brtst 4, __NXC_Label_1014, __zfmazeSolver
+7	262	948	#line 262 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	263	948		set __signed_stack_001mazeSolver, 20
+7	262	951	#line 262 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	262	951	#line 262 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	263	951		set __signed_stack_002mazeSolver, -90
+7	262	954	#line 262 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	262	954	#line 262 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	263	954		set __signed_stack_003mazeSolver, 0
+7	262	957	#line 262 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	262	957	#line 262 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	263	957		set __signed_stack_004mazeSolver, 1
+7	262	960	#line 262 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	262	960	#line 262 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	263	960		set __D0mazeSolver, 1
+7	263	963	#line 263 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	264	963	#pragma macro 35
+7	264	963		mov __rotate_ports4, __OUT_AC
+7	264	965		mov __rotate_power4, __signed_stack_001mazeSolver
+7	264	967		mov __rotate_angle4, __signed_stack_002mazeSolver
+7	264	969		mov __rotate_turnpct4, __signed_stack_003mazeSolver
+7	264	971		mov __rotate_sync4, __signed_stack_004mazeSolver
+7	264	973		mov __rotate_stop4, __D0mazeSolver
+7	264	975		mov __rotate_theRVP4, __constVal32
+7	264	977		mov __rotate_theRVI4, __constVal0
+7	264	979		mov __rotate_theRVD4, __constVal96
+7	264	981		subcall __RotateMotor4, ____RotateMotor4_return
+7	9001	983	#line 9001 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	263	983	#line 263 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	263	983	#line 263 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	264	983		set __signed_stack_001mazeSolver, 20
+7	263	986	#line 263 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	263	986	#line 263 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	264	986		set __signed_stack_002mazeSolver, -135
+7	263	989	#line 263 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	263	989	#line 263 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	264	989		set __signed_stack_003mazeSolver, 100
+7	263	992	#line 263 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	263	992	#line 263 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	264	992		set __signed_stack_004mazeSolver, 1
+7	263	995	#line 263 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	263	995	#line 263 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	264	995		set __D0mazeSolver, 1
+7	264	998	#line 264 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	265	998	#pragma macro 35
+7	265	998		mov __rotate_ports4, __OUT_AC
+7	265	1000		mov __rotate_power4, __signed_stack_001mazeSolver
+7	265	1002		mov __rotate_angle4, __signed_stack_002mazeSolver
+7	265	1004		mov __rotate_turnpct4, __signed_stack_003mazeSolver
+7	265	1006		mov __rotate_sync4, __signed_stack_004mazeSolver
+7	265	1008		mov __rotate_stop4, __D0mazeSolver
+7	265	1010		mov __rotate_theRVP4, __constVal32
+7	265	1012		mov __rotate_theRVI4, __constVal0
+7	265	1014		mov __rotate_theRVD4, __constVal96
+7	265	1016		subcall __RotateMotor4, ____RotateMotor4_return
+7	9032	1018	#line 9032 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	264	1018	#line 264 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	265	1018	#line 265 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	266	1018		add __mazeSolver_7qG2_orientation_7qG2_000, __mazeSolver_7qG2_orientation_7qG2_000, __constVal1
+7	265	1022	#line 265 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	265	1022	#line 265 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	266	1022		mov __signed_stack_001mazeSolver, __mazeSolver_7qG2_orientation_7qG2_000
+7	265	1024	#line 265 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	265	1024	#line 265 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	266	1024		set __D0mazeSolver, 4
+7	265	1027	#line 265 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	266	1027		cmp 1, __zfmazeSolver, __signed_stack_001mazeSolver, __D0mazeSolver
+7	265	1031	#line 265 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	266	1031		mov __D0mazeSolver, __zfmazeSolver
+7	266	1034	#line 266 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	267	1034		brtst 4, __NXC_Label_1037, __zfmazeSolver
+7	267	1037	#line 267 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	267	1037	#line 267 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	268	1037		sub __mazeSolver_7qG2_orientation_7qG2_000, __mazeSolver_7qG2_orientation_7qG2_000, __constVal4
+7	267	1041	#line 267 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	268	1041	#line 268 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	268	1041	#line 268 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	269	1041		jmp __NXC_Label_1040
+7	268	1043	#line 268 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	269	1043		mov __signed_stack_001mazeSolver, __mazeSolver_7qG2_d1_7qG2_000
+7	268	1045	#line 268 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	268	1045	#line 268 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	269	1045		mov __D0mazeSolver, __mazeSolver_7qG2_d2_7qG2_000
+7	268	1047	#line 268 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	269	1047		cmp 1, __zfmazeSolver, __signed_stack_001mazeSolver, __D0mazeSolver
+7	268	1051	#line 268 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	269	1051		mov __D0mazeSolver, __zfmazeSolver
+7	268	1054	#line 268 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	269	1054		brtst 4, __NXC_Label_1042, __zfmazeSolver
+7	268	1057	#line 268 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	269	1057		mov __signed_stack_001mazeSolver, __D0mazeSolver
+7	268	1059	#line 268 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	269	1059		mov __signed_stack_002mazeSolver, __mazeSolver_7qG2_d1_7qG2_000
+7	268	1061	#line 268 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	268	1061	#line 268 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	269	1061		set __D0mazeSolver, 25
+7	268	1064	#line 268 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	269	1064		cmp 1, __zfmazeSolver, __signed_stack_002mazeSolver, __D0mazeSolver
+7	268	1068	#line 268 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	268	1068	#line 268 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	269	1068		and __D0mazeSolver, __signed_stack_001mazeSolver, __zfmazeSolver
+7	269	1072	#line 269 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	270	1072		tst 5, __zfmazeSolver, __D0mazeSolver
+7	269	1075	#line 269 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	270	1075		brtst 4, __NXC_Label_1043, __zfmazeSolver
+7	269	1078	#line 269 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	270	1078		set __signed_stack_001mazeSolver, 20
+7	269	1081	#line 269 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	269	1081	#line 269 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	270	1081		set __signed_stack_002mazeSolver, 90
+7	269	1084	#line 269 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	269	1084	#line 269 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	270	1084		set __signed_stack_003mazeSolver, 0
+7	269	1087	#line 269 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	269	1087	#line 269 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	270	1087		set __signed_stack_004mazeSolver, 1
+7	269	1090	#line 269 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	269	1090	#line 269 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	270	1090		set __D0mazeSolver, 1
+7	270	1093	#line 270 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	271	1093	#pragma macro 35
+7	271	1093		mov __rotate_ports4, __OUT_AC
+7	271	1095		mov __rotate_power4, __signed_stack_001mazeSolver
+7	271	1097		mov __rotate_angle4, __signed_stack_002mazeSolver
+7	271	1099		mov __rotate_turnpct4, __signed_stack_003mazeSolver
+7	271	1101		mov __rotate_sync4, __signed_stack_004mazeSolver
+7	271	1103		mov __rotate_stop4, __D0mazeSolver
+7	271	1105		mov __rotate_theRVP4, __constVal32
+7	271	1107		mov __rotate_theRVI4, __constVal0
+7	271	1109		mov __rotate_theRVD4, __constVal96
+7	271	1111		subcall __RotateMotor4, ____RotateMotor4_return
+7	9124	1113	#line 9124 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	270	1113	#line 270 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	270	1113	#line 270 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	271	1113		set __signed_stack_001mazeSolver, 20
+7	270	1116	#line 270 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	270	1116	#line 270 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	271	1116		set __signed_stack_002mazeSolver, 135
+7	270	1119	#line 270 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	270	1119	#line 270 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	271	1119		set __signed_stack_003mazeSolver, 100
+7	270	1122	#line 270 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	270	1122	#line 270 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	271	1122		set __signed_stack_004mazeSolver, 1
+7	270	1125	#line 270 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	270	1125	#line 270 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	271	1125		set __D0mazeSolver, 1
+7	271	1128	#line 271 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	272	1128	#pragma macro 35
+7	272	1128		mov __rotate_ports4, __OUT_AC
+7	272	1130		mov __rotate_power4, __signed_stack_001mazeSolver
+7	272	1132		mov __rotate_angle4, __signed_stack_002mazeSolver
+7	272	1134		mov __rotate_turnpct4, __signed_stack_003mazeSolver
+7	272	1136		mov __rotate_sync4, __signed_stack_004mazeSolver
+7	272	1138		mov __rotate_stop4, __D0mazeSolver
+7	272	1140		mov __rotate_theRVP4, __constVal32
+7	272	1142		mov __rotate_theRVI4, __constVal0
+7	272	1144		mov __rotate_theRVD4, __constVal96
+7	272	1146		subcall __RotateMotor4, ____RotateMotor4_return
+7	9155	1148	#line 9155 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	271	1148	#line 271 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	272	1148	#line 272 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	273	1148		sub __mazeSolver_7qG2_orientation_7qG2_000, __mazeSolver_7qG2_orientation_7qG2_000, __constVal1
+7	272	1152	#line 272 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	272	1152	#line 272 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	273	1152		mov __signed_stack_001mazeSolver, __mazeSolver_7qG2_orientation_7qG2_000
+7	272	1154	#line 272 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	272	1154	#line 272 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	273	1154		set __D0mazeSolver, 0
+7	272	1157	#line 272 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	273	1157		cmp 2, __zfmazeSolver, __signed_stack_001mazeSolver, __D0mazeSolver
+7	272	1161	#line 272 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	273	1161		mov __D0mazeSolver, __zfmazeSolver
+7	273	1164	#line 273 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	274	1164		brtst 4, __NXC_Label_1066, __zfmazeSolver
+7	274	1167	#line 274 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	274	1167	#line 274 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	275	1167		add __mazeSolver_7qG2_orientation_7qG2_000, __mazeSolver_7qG2_orientation_7qG2_000, __constVal4
+7	274	1171	#line 274 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	275	1171	#line 275 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	275	1171	#line 275 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	276	1171		jmp __NXC_Label_1069
+7	275	1173	#line 275 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	276	1173		mov __signed_stack_001mazeSolver, __mazeSolver_7qG2_d4_7qG2_000
+7	275	1175	#line 275 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	275	1175	#line 275 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	276	1175		set __D0mazeSolver, 25
+7	275	1178	#line 275 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	276	1178		cmp 1, __zfmazeSolver, __signed_stack_001mazeSolver, __D0mazeSolver
+7	275	1182	#line 275 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	276	1182		mov __D0mazeSolver, __zfmazeSolver
+7	277	1185	#line 277 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	278	1185		brtst 4, __NXC_Label_1072, __zfmazeSolver
+7	277	1188	#line 277 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	278	1188		set __signed_stack_001mazeSolver, 20
+7	277	1191	#line 277 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	277	1191	#line 277 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	278	1191		set __signed_stack_002mazeSolver, -90
+7	277	1194	#line 277 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	277	1194	#line 277 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	278	1194		set __signed_stack_003mazeSolver, 0
+7	277	1197	#line 277 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	277	1197	#line 277 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	278	1197		set __signed_stack_004mazeSolver, 1
+7	277	1200	#line 277 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	277	1200	#line 277 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	278	1200		set __D0mazeSolver, 1
+7	278	1203	#line 278 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	279	1203	#pragma macro 35
+7	279	1203		mov __rotate_ports4, __OUT_AC
+7	279	1205		mov __rotate_power4, __signed_stack_001mazeSolver
+7	279	1207		mov __rotate_angle4, __signed_stack_002mazeSolver
+7	279	1209		mov __rotate_turnpct4, __signed_stack_003mazeSolver
+7	279	1211		mov __rotate_sync4, __signed_stack_004mazeSolver
+7	279	1213		mov __rotate_stop4, __D0mazeSolver
+7	279	1215		mov __rotate_theRVP4, __constVal32
+7	279	1217		mov __rotate_theRVI4, __constVal0
+7	279	1219		mov __rotate_theRVD4, __constVal96
+7	279	1221		subcall __RotateMotor4, ____RotateMotor4_return
+7	9229	1223	#line 9229 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	278	1223	#line 278 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	278	1223	#line 278 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	279	1223		set __signed_stack_001mazeSolver, 20
+7	278	1226	#line 278 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	278	1226	#line 278 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	279	1226		set __signed_stack_002mazeSolver, -300
+7	278	1229	#line 278 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	278	1229	#line 278 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	279	1229		set __signed_stack_003mazeSolver, 100
+7	278	1232	#line 278 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	278	1232	#line 278 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	279	1232		set __signed_stack_004mazeSolver, 1
+7	278	1235	#line 278 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	278	1235	#line 278 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	279	1235		set __D0mazeSolver, 1
+7	279	1238	#line 279 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	280	1238	#pragma macro 35
+7	280	1238		mov __rotate_ports4, __OUT_AC
+7	280	1240		mov __rotate_power4, __signed_stack_001mazeSolver
+7	280	1242		mov __rotate_angle4, __signed_stack_002mazeSolver
+7	280	1244		mov __rotate_turnpct4, __signed_stack_003mazeSolver
+7	280	1246		mov __rotate_sync4, __signed_stack_004mazeSolver
+7	280	1248		mov __rotate_stop4, __D0mazeSolver
+7	280	1250		mov __rotate_theRVP4, __constVal32
+7	280	1252		mov __rotate_theRVI4, __constVal0
+7	280	1254		mov __rotate_theRVD4, __constVal96
+7	280	1256		subcall __RotateMotor4, ____RotateMotor4_return
+7	9260	1258	#line 9260 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	279	1258	#line 279 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	280	1258	#line 280 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	280	1258	#line 280 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	281	1258		sub __mazeSolver_7qG2_orientation_7qG2_000, __mazeSolver_7qG2_orientation_7qG2_000, __constVal2
+7	280	1262	#line 280 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	280	1262	#line 280 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	281	1262		mov __signed_stack_001mazeSolver, __mazeSolver_7qG2_orientation_7qG2_000
+7	280	1264	#line 280 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	280	1264	#line 280 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	281	1264		set __D0mazeSolver, 0
+7	280	1267	#line 280 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	281	1267		cmp 2, __zfmazeSolver, __signed_stack_001mazeSolver, __D0mazeSolver
+7	280	1271	#line 280 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	281	1271		mov __D0mazeSolver, __zfmazeSolver
+7	281	1274	#line 281 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	282	1274		brtst 4, __NXC_Label_1097, __zfmazeSolver
+7	282	1277	#line 282 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	282	1277	#line 282 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	283	1277		add __mazeSolver_7qG2_orientation_7qG2_000, __mazeSolver_7qG2_orientation_7qG2_000, __constVal4
+7	282	1281	#line 282 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	284	1281	#line 284 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	284	1281	#line 284 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	284	1281	#line 284 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	284	1281	#line 284 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	285	1281	#line 285 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	286	1281		set lookingRigt, 0
+7	285	1284	#line 285 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	285	1284	#line 285 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	287	1284	#line 287 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	289	1284	#line 289 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	290	1284		jmp __NXC_Label_800
+7	289	1286	#line 289 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	289	1286	#line 289 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+7	290	1286		subret __mazeSolver_return
+8	290	0	#line 290 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	291	0		set __D0getDistances, 1
+8	292	3	#line 292 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	293	3		tst 5, __zfgetDistances, __D0getDistances
+8	292	6	#line 292 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	293	6		brtst 4, __NXC_Label_1103, __zfgetDistances
+8	293	9	#line 293 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	294	9		acquire motorBMutex
+8	293	10	#line 293 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	293	10	#line 293 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	294	10		mov __DU0getDistances, lookingLeft
+8	294	12	#line 294 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	295	12		tst 5, __zfgetDistances, __DU0getDistances
+8	294	15	#line 294 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	295	15		brtst 4, __NXC_Label_1108, __zfgetDistances
+8	295	18	#line 295 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	296	18		acquire distanceMutex
+8	295	19	#line 295 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	295	19	#line 295 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	296	19	#pragma macro 26
+8	296	19		acquire __RLSBmutex1
+8	296	20		mov __RLSReadBuf1, __RLSBbufLSWrite1
+8	296	22		set __RLSBytesCount1, 1
+8	296	25		wait 15
+8	296	27		subcall __ReadLSBytes1, ____ReadLSBytes1_return
+8	296	29		index __D0getDistances, __RLSReadBuf1, 65535
+8	296	33		release __RLSBmutex1
+8	9340	34	#line 9340 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	295	34	#line 295 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	296	34		mov mydist.d3, __D0getDistances
+8	295	37	#line 295 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	295	37	#line 295 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	298	37	#line 298 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	299	37		release distanceMutex
+8	298	38	#line 298 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	298	38	#line 298 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	299	38		set __signed_stack_001getDistances, 60
+8	298	41	#line 298 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	298	41	#line 298 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	299	41		set __D0getDistances, -90
+8	299	44	#line 299 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	300	44	#pragma macro 33
+8	300	44		acquire __rotateMutex1
+8	300	45		arrbuild __rotate_ports1, __constVal1
+8	300	49		mov __rotate_power1, __signed_stack_001getDistances
+8	300	51		mov __rotate_angle1, __D0getDistances
+8	300	53		mov __rotate_turnpct1, __constVal0
+8	300	55		mov __rotate_sync1, __constVal0
+8	300	57		mov __rotate_stop1, __constVal1
+8	300	59		mov __rotate_theRVP1, __constVal32
+8	300	61		mov __rotate_theRVI1, __constVal0
+8	300	63		mov __rotate_theRVD1, __constVal96
+8	300	65		subcall __RotateMotor1, ____RotateMotor1_return
+8	300	67		release __rotateMutex1
+8	9361	68	#line 9361 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	299	68	#line 299 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	300	68	#line 300 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	301	68		acquire distanceMutex
+8	300	69	#line 300 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	300	69	#line 300 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	301	69	#pragma macro 26
+8	301	69		acquire __RLSBmutex1
+8	301	70		mov __RLSReadBuf1, __RLSBbufLSWrite1
+8	301	72		set __RLSBytesCount1, 1
+8	301	75		wait 15
+8	301	77		subcall __ReadLSBytes1, ____ReadLSBytes1_return
+8	301	79		index __D0getDistances, __RLSReadBuf1, 65535
+8	301	83		release __RLSBmutex1
+8	9367	84	#line 9367 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	300	84	#line 300 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	301	84		mov mydist.d1, __D0getDistances
+8	300	87	#line 300 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	300	87	#line 300 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	303	87	#line 303 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	304	87		release distanceMutex
+8	303	88	#line 303 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	303	88	#line 303 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	304	88		set __signed_stack_001getDistances, 60
+8	303	91	#line 303 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	303	91	#line 303 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	304	91		set __D0getDistances, 90
+8	304	94	#line 304 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	305	94	#pragma macro 33
+8	305	94		acquire __rotateMutex1
+8	305	95		arrbuild __rotate_ports1, __constVal1
+8	305	99		mov __rotate_power1, __signed_stack_001getDistances
+8	305	101		mov __rotate_angle1, __D0getDistances
+8	305	103		mov __rotate_turnpct1, __constVal0
+8	305	105		mov __rotate_sync1, __constVal0
+8	305	107		mov __rotate_stop1, __constVal1
+8	305	109		mov __rotate_theRVP1, __constVal32
+8	305	111		mov __rotate_theRVI1, __constVal0
+8	305	113		mov __rotate_theRVD1, __constVal96
+8	305	115		subcall __RotateMotor1, ____RotateMotor1_return
+8	305	117		release __rotateMutex1
+8	9388	118	#line 9388 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	304	118	#line 304 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	305	118	#line 305 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	306	118		release distanceMutex
+8	305	119	#line 305 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	306	119	#line 306 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	306	119	#line 306 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	307	119		mov __DU0getDistances, lookingRigt
+8	307	121	#line 307 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	308	121		tst 5, __zfgetDistances, __DU0getDistances
+8	307	124	#line 307 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	308	124		brtst 4, __NXC_Label_1123, __zfgetDistances
+8	308	127	#line 308 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	309	127		acquire distanceMutex
+8	308	128	#line 308 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	308	128	#line 308 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	309	128	#pragma macro 26
+8	309	128		acquire __RLSBmutex1
+8	309	129		mov __RLSReadBuf1, __RLSBbufLSWrite1
+8	309	131		set __RLSBytesCount1, 1
+8	309	134		wait 15
+8	309	136		subcall __ReadLSBytes1, ____ReadLSBytes1_return
+8	309	138		index __D0getDistances, __RLSReadBuf1, 65535
+8	309	142		release __RLSBmutex1
+8	9407	143	#line 9407 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	308	143	#line 308 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	309	143		mov mydist.d3, __D0getDistances
+8	308	146	#line 308 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	308	146	#line 308 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	311	146	#line 311 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	312	146		release distanceMutex
+8	311	147	#line 311 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	311	147	#line 311 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	312	147		set __signed_stack_001getDistances, 60
+8	311	150	#line 311 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	311	150	#line 311 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	312	150		set __D0getDistances, 90
+8	312	153	#line 312 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	313	153	#pragma macro 33
+8	313	153		acquire __rotateMutex1
+8	313	154		arrbuild __rotate_ports1, __constVal1
+8	313	158		mov __rotate_power1, __signed_stack_001getDistances
+8	313	160		mov __rotate_angle1, __D0getDistances
+8	313	162		mov __rotate_turnpct1, __constVal0
+8	313	164		mov __rotate_sync1, __constVal0
+8	313	166		mov __rotate_stop1, __constVal1
+8	313	168		mov __rotate_theRVP1, __constVal32
+8	313	170		mov __rotate_theRVI1, __constVal0
+8	313	172		mov __rotate_theRVD1, __constVal96
+8	313	174		subcall __RotateMotor1, ____RotateMotor1_return
+8	313	176		release __rotateMutex1
+8	9428	177	#line 9428 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	312	177	#line 312 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	313	177	#line 313 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	314	177		acquire distanceMutex
+8	313	178	#line 313 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	313	178	#line 313 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	314	178	#pragma macro 26
+8	314	178		acquire __RLSBmutex1
+8	314	179		mov __RLSReadBuf1, __RLSBbufLSWrite1
+8	314	181		set __RLSBytesCount1, 1
+8	314	184		wait 15
+8	314	186		subcall __ReadLSBytes1, ____ReadLSBytes1_return
+8	314	188		index __D0getDistances, __RLSReadBuf1, 65535
+8	314	192		release __RLSBmutex1
+8	9434	193	#line 9434 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	313	193	#line 313 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	314	193		mov mydist.d2, __D0getDistances
+8	313	196	#line 313 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	313	196	#line 313 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	316	196	#line 316 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	317	196		release distanceMutex
+8	316	197	#line 316 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	316	197	#line 316 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	317	197		set __signed_stack_001getDistances, 60
+8	316	200	#line 316 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	316	200	#line 316 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	317	200		set __D0getDistances, -90
+8	317	203	#line 317 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	318	203	#pragma macro 33
+8	318	203		acquire __rotateMutex1
+8	318	204		arrbuild __rotate_ports1, __constVal1
+8	318	208		mov __rotate_power1, __signed_stack_001getDistances
+8	318	210		mov __rotate_angle1, __D0getDistances
+8	318	212		mov __rotate_turnpct1, __constVal0
+8	318	214		mov __rotate_sync1, __constVal0
+8	318	216		mov __rotate_stop1, __constVal1
+8	318	218		mov __rotate_theRVP1, __constVal32
+8	318	220		mov __rotate_theRVI1, __constVal0
+8	318	222		mov __rotate_theRVD1, __constVal96
+8	318	224		subcall __RotateMotor1, ____RotateMotor1_return
+8	318	226		release __rotateMutex1
+8	9455	227	#line 9455 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	317	227	#line 317 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	318	227	#line 318 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	319	227		release distanceMutex
+8	318	228	#line 318 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	319	228	#line 319 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	321	228	#line 321 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	322	228		release motorBMutex
+8	321	229	#line 321 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	324	229	#line 324 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	325	229		jmp __NXC_Label_1102
+8	324	231	#line 324 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+8	325	231		exit -1, -1
+9	347	0	#line 347 "C:\dev\Robotics\src\Robotics_T2\teste2.nxc"
+9	348	0		subret ____initialize_global_data_return
+#CLUMPS
+Clump	Name	Offset	File
+0	main	0	C:\dev\Robotics\src\Robotics_T2\teste2.nxc
+1	__RotateMotor1	206	NXTDefs.h
+2	__RotateMotor4	360	NXTDefs.h
+3	__ResetSensorSubroutine	514	NXTDefs.h
+4	__ReadLSBytes1	527	NXTDefs.h
+5	init	611	C:\dev\Robotics\src\Robotics_T2\teste2.nxc
+6	calibration	743	C:\dev\Robotics\src\Robotics_T2\teste2.nxc
+7	mazeSolver	1285	C:\dev\Robotics\src\Robotics_T2\teste2.nxc
+8	getDistances	2573	C:\dev\Robotics\src\Robotics_T2\teste2.nxc
+9	__initialize_global_data	2807	C:\dev\Robotics\src\Robotics_T2\teste2.nxc
