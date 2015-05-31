@@ -31,6 +31,7 @@ int Treshold_Victim1 = 0;
 
 struct flags
 {
+
   bool _stopFlag;
 };
 
@@ -160,8 +161,8 @@ sub acquireDistances(int i){
 
 
 sub mazeSolver(){
-  int maxDist = 23;
-  int minDist = 20;
+  int maxDist = 18;
+  int minDist = 15;
   int compensan=0;
   int isMaze=1;
   int orientation = 1;
@@ -202,7 +203,8 @@ sub mazeSolver(){
       d2 = mydist.d2;
       d3 = mydist.d3;
       Release(distanceMutex);
-      RotateMotorEx(OUT_AC, 20, 135,-100, true, true);
+      RotateMotorEx(OUT_AC, 20, 150,-100, true, true);
+      Wait(50);
       RotateMotorEx(OUT_AC, 20, 360, 0, true, true);
       TextOut(15, LCD_LINE2, "Checking Wall...");
       Wait(1000);
@@ -212,7 +214,8 @@ sub mazeSolver(){
       d3 = mydist.d3;
       Release(distanceMutex);
       if(d1>40){
-        RotateMotorEx(OUT_AC, 20, 135,-100, true, true);
+        RotateMotorEx(OUT_AC, 20, 150,-100, true, true);
+        Wait(50);
         RotateMotorEx(OUT_AC, 20, 360, 0, true, true);
         orientation-=2;
         if(orientation<=0){
@@ -251,7 +254,7 @@ sub mazeSolver(){
       Off(OUT_AC);
       lookingRigt = true;
       TextOut(15, LCD_LINE2, "Acquiring Distances");
-      wait(2000);
+      Wait(2000);
 
       Acquire(distanceMutex);
       d1 = mydist.d1;
@@ -261,14 +264,16 @@ sub mazeSolver(){
       Release(distanceMutex);
       if(d2>d1 && d2>NEAR_TURN){        
         RotateMotorEx(OUT_AC, 20, -90, 0, true, true);
-        RotateMotorEx(OUT_AC, 20, -135,100, true, true);
+        Wait(50);
+        RotateMotorEx(OUT_AC, 20, -150,100, true, true);
         orientation++;
         if(orientation>4){
           orientation-=4;
         }
       }else if(d1>d2 && d1>NEAR_TURN){
         RotateMotorEx(OUT_AC, 20, 90, 0, true, true);
-        RotateMotorEx(OUT_AC, 20, 135,100, true, true);
+        Wait(50);
+        RotateMotorEx(OUT_AC, 20, 150,100, true, true);
         orientation--;
         if(orientation<=0){
           orientation+=4;
@@ -276,6 +281,7 @@ sub mazeSolver(){
       }else if(d4>NEAR_TURN){
         //Roda para trás.
         RotateMotorEx(OUT_AC, 20, -90, 0, true, true);
+        Wait(50);
         RotateMotorEx(OUT_AC, 20, -300,100, true, true);
         orientation-=2;
         if(orientation<=0){

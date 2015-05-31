@@ -31,6 +31,7 @@ int Treshold_Victim1 = 0;
 
 struct flags
 {
+
   bool _stopFlag;
 };
 
@@ -57,6 +58,7 @@ mutex motorBMutex;
 
 
 bool lookingLeft=true;
+bool lookingRigt=false;
 flags myflags;
 distanceSensor mydist;
 lightSensor mylight;
@@ -194,24 +196,26 @@ sub mazeSolver(){
     if(d1>40 && d1<110){
 
       RotateMotorEx(OUT_AC, 20, 180, 0, true, true);
-      acquireDistances(2);
+      lookingRigt = true;
+      Wait(2000);
       Acquire(distanceMutex);
       d1 = mydist.d1;
       d2 = mydist.d2;
       d3 = mydist.d3;
       Release(distanceMutex);
-      RotateMotorEx(OUT_AC, 20, 135,-100, true, true);
+      RotateMotorEx(OUT_AC, 20, 180,-100, true, true);
+      Wait(50);
       RotateMotorEx(OUT_AC, 20, 360, 0, true, true);
       TextOut(15, LCD_LINE2, "Checking Wall...");
       Wait(1000);
-      acquireDistances(1);
       Acquire(distanceMutex);
       d1 = mydist.d1;
       d2 = mydist.d2;
       d3 = mydist.d3;
       Release(distanceMutex);
       if(d1>40){
-        RotateMotorEx(OUT_AC, 20, 135,-100, true, true);
+        RotateMotorEx(OUT_AC, 20, 180,-100, true, true);
+        Wait(50);
         RotateMotorEx(OUT_AC, 20, 360, 0, true, true);
         orientation-=2;
         if(orientation<=0){
@@ -220,7 +224,7 @@ sub mazeSolver(){
       }else{
         orientation--;        
       }      
-      
+      lookingRigt=false;
       compensan=0;
 
     }//Fim do contorno da parede
@@ -248,7 +252,10 @@ sub mazeSolver(){
     }
     if(d3<NEAR){
       Off(OUT_AC);
-      acquireDistances(2);
+      lookingRigt = true;
+      TextOut(15, LCD_LINE2, "Acquiring Distances");
+      Wait(2000);
+
       Acquire(distanceMutex);
       d1 = mydist.d1;
       d2 = mydist.d2;
@@ -257,14 +264,16 @@ sub mazeSolver(){
       Release(distanceMutex);
       if(d2>d1 && d2>NEAR_TURN){        
         RotateMotorEx(OUT_AC, 20, -90, 0, true, true);
-        RotateMotorEx(OUT_AC, 20, -135,100, true, true);
+        Wait(50);
+        RotateMotorEx(OUT_AC, 20, -150,100, true, true);
         orientation++;
         if(orientation>4){
           orientation-=4;
         }
       }else if(d1>d2 && d1>NEAR_TURN){
         RotateMotorEx(OUT_AC, 20, 90, 0, true, true);
-        RotateMotorEx(OUT_AC, 20, 135,100, true, true);
+        Wait(50);
+        RotateMotorEx(OUT_AC, 20, 150,100, true, true);
         orientation--;
         if(orientation<=0){
           orientation+=4;
@@ -272,24 +281,26 @@ sub mazeSolver(){
       }else if(d4>NEAR_TURN){
         //Roda para trás.
         RotateMotorEx(OUT_AC, 20, -90, 0, true, true);
+        Wait(50);
         RotateMotorEx(OUT_AC, 20, -300,100, true, true);
         orientation-=2;
         if(orientation<=0){
           orientation+=4;
         }
-      }      
+      } 
+      lookingRigt = false;     
     }
   }
 }
 
 task getDistances(){
   while(true){
-    Acquire(distanceMutex);
+    
     Acquire(motorBMutex);
     if(lookingLeft){
+      Acquire(distanceMutex);
       mydist.d3 = SensorUS(IN_2);
       Release(distanceMutex);
-
       //turn sensor Left.
       RotateMotor(OUT_B, 60, -90);
       Acquire(distanceMutex);
@@ -297,7 +308,10 @@ task getDistances(){
       Release(distanceMutex);
       //turn sensor Right
       RotateMotor(OUT_B, 60, 90);
-    }else{
+      Release(distanceMutex);
+    }
+    if(lookingRigt){
+      Acquire(distanceMutex);
       mydist.d3 = SensorUS(IN_2);
       Release(distanceMutex);
       //turn sensor Left.
@@ -306,10 +320,10 @@ task getDistances(){
       mydist.d2 = SensorUS(IN_2);
       Release(distanceMutex);
       //turn sensor Right
-      RotateMotor(OUT_B, 60, -90); 
+      RotateMotor(OUT_B, 60, -90);
+      Release(distanceMutex); 
     }
     Release(motorBMutex);
-    Release(distanceMutex);
 
   }
 }
