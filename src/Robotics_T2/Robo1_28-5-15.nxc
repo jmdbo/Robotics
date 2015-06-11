@@ -46,6 +46,7 @@ struct lightSensor{
 };
 
 struct timerTable{
+  long startTime;
   long lineTime;
   long blackTime;
 };
@@ -148,14 +149,14 @@ sub acquireDistances(int i){
 
 
 sub mazeSolver(){
-  int maxDist = 30;
-  int minDist = 20;
+  int maxDist = 18;
+  int minDist = 15;
   int compensan=0;
   int isMaze=1;
-  char orientation = 'N';
+  int orientation = 1;
   int d1;
   int d2;
-  int d3;
+  int d3,d4;
   int oldD1, oldD2, oldD3;
   Acquire(distanceMutex);
     oldD1 = mydist.d1;
@@ -175,26 +176,156 @@ sub mazeSolver(){
     ClearScreen();
     TextOut(15, LCD_LINE2, "Solving maze...");
     NumOut(40, LCD_LINE3, compensan);
+    TextOut(0, LCD_LINE4,"D1: ");
+    NumOut(40, LCD_LINE4, d1);
+    TextOut(0, LCD_LINE4,"D3: ");
+    NumOut(40, LCD_LINE5, d3);
+    //Contorno de parede
+    if(d1>40 && d1<110){
 
+      RotateMotorEx(OUT_AC, 20, 180, 0, true, true);
+      lookingRigt = true;
+      Wait(2000);
+      Acquire(distanceMutex);
+      d1 = mydist.d1;
+      d2 = mydist.d2;
+      d3 = mydist.d3;
+      Release(distanceMutex);
+      RotateMotorEx(OUT_AC, 20, 150,-100, true, true);
+      Wait(50);
+      RotateMotorEx(OUT_AC, 20, 360, 0, true, true);
+      TextOut(15, LCD_LINE2, "Checking Wall...");
+      Wait(1000);
+      Acquire(distanceMutex);
+      d1 = mydist.d1;
+      d2 = mydist.d2;
+      d3 = mydist.d3;
+      Release(distanceMutex);
+      if(d1>40){
+        RotateMotorEx(OUT_AC, 20, 150,-100, true, true);
+        Wait(50);
+        RotateMotorEx(OUT_AC, 20, 360, 0, true, true);
+        orientation-=2;
+        if(orientation<=0){
+          orientation+=4;
+        }
+      }else{
+        orientation--;        
+      }      
+      lookingRigt=false;
+      compensan=0;
 
-    if(d1<NEAR){
-      if(compensan <20){
+    }//Fim do contorno da parede
+
+    if(d1<minDist && oldD1!=d1){
+      if(compensan<0){
+        compensan = 0;
+      }
+      else if(compensan <5){
       compensan= compensan +1;
       }
       
-      RotateMotorEx(OUT_AC, MAX_AD_VEL, 90, compensan, true, false);
+      RotateMotorEx(OUT_AC, 20, 90, compensan, true, false);
       OnFwdSync(OUT_AC, 20, compensan);
     }
-    else if(d1>maxDist){
-      if(compensan > -20){
+    else if(d1>maxDist && oldD1!=d1){
+      if(compensan>0){
+        compensan = 0;
+      }
+      else if(compensan > -5){
       compensan = compensan - 1;
       }
-      RotateMotorEx(OUT_AC, MAX_AD_VEL, 90, compensan, true, false);
+      RotateMotorEx(OUT_AC, 20, 90, compensan, true, false);
       OnFwdSync(OUT_AC, 20, compensan);
     }
     if(d3<NEAR){
       Off(OUT_AC);
+      lookingRigt = true;
+      TextOut(15, LCD_LINE2, "Acquiring Distances");
+      Wait(2000);
+
+      Acquire(distanceMutex);
+      d1 = mydist.d1;
+      d2 = mydist.d2;
+      d3 = mydist.d3;
+      d4 = mydist.d4;
+      Release(distanceMutex);
+      if(d2>d1 && d2>NEAR_TURN){        
+        RotateMotorEx(OUT_AC, 20, -90, 0, true, true);
+        Wait(50);
+        RotateMotorEx(OUT_AC, 20, -150,100, true, true);
+        orientation++;
+        if(orientation>4){
+          orientation-=4;
+        }
+      }else if(d1>d2 && d1>NEAR_TURN){
+        RotateMotorEx(OUT_AC, 20, 90, 0, true, true);
+        Wait(50);
+        RotateMotorEx(OUT_AC, 20, 150,100, true, true);
+        orientation--;
+        if(orientation<=0){
+          orientation+=4;
+        }
+      }else if(d4>NEAR_TURN){
+        //Roda para trás.
+        RotateMotorEx(OUT_AC, 20, -90, 0, true, true);
+        Wait(50);
+        RotateMotorEx(OUT_AC, 20, -300,100, true, true);
+        orientation-=2;
+        if(orientation<=0){
+          orientation+=4;
+        }
+      } 
+      lookingRigt = false;     
     }
+    if ((mylight.sensor_in3 > Treshold_Line - sensorRange && mylight.sensor_in3 < Treshold_Line + sensorRange) &&
+    (mylight.sensor_in4 > Treshold_Line1 - sensorRange && mylight.sensor_in4 < Treshold_Line1 + sensorRange)){
+      Off(OUT_AC);
+      TextOut(15, LCD_LINE1, "Line Victims:");
+      NumOut(40,LCD_LINE2,victimCount);
+      TextOut(15, LCD_LINE3, "Temperature Victims:");
+      NumOut(40,LCD_LINE4,0);
+      TextOut(15, LCD_LINE5, "Total Time in seconds:");
+      mytimer.startTime = CurrentTick()- mytimer.startTime;
+      long seconds = mytimer.startTime/1000;
+      NumOut(40, LCD_LINE6,mytimer.startTime);
+
+    }
+  }
+}
+
+task getDistances(){
+  while(true){
+    
+    Acquire(motorBMutex);
+    if(lookingLeft){
+      Acquire(distanceMutex);
+      mydist.d3 = SensorUS(IN_2);
+      Release(distanceMutex);
+      //turn sensor Left.
+      RotateMotor(OUT_B, 60, -90);
+      Acquire(distanceMutex);
+      mydist.d1 = SensorUS(IN_2);
+      Release(distanceMutex);
+      //turn sensor Right
+      RotateMotor(OUT_B, 60, 90);
+      Release(distanceMutex);
+    }
+    if(lookingRigt){
+      Acquire(distanceMutex);
+      mydist.d3 = SensorUS(IN_2);
+      Release(distanceMutex);
+      //turn sensor Left.
+      RotateMotor(OUT_B, 60, 90);
+      Acquire(distanceMutex);
+      mydist.d2 = SensorUS(IN_2);
+      Release(distanceMutex);
+      //turn sensor Right
+      RotateMotor(OUT_B, 60, -90);
+      Release(distanceMutex); 
+    }
+    Release(motorBMutex);
+
   }
 }
 
@@ -420,35 +551,6 @@ sub checkLine(){
   }
 }
 
-task getDistances(){
-  while(true){
-    Acquire(distanceMutex);
-    if(lookingLeft){
-      mydist.d3 = SensorUS(IN_2);
-      Release(distanceMutex);
-
-      //turn sensor Left.
-      RotateMotor(OUT_B, 60, -90);
-      Acquire(distanceMutex);
-      mydist.d1 = SensorUS(IN_2);
-      Release(distanceMutex);
-      //turn sensor Right
-      RotateMotor(OUT_B, 60, 90);
-    }else{
-      mydist.d3 = SensorUS(IN_2);
-      Release(distanceMutex);
-      //turn sensor Left.
-      RotateMotor(OUT_B, 60, 90);
-      Acquire(distanceMutex);
-      mydist.d2 = SensorUS(IN_2);
-      Release(distanceMutex);
-      //turn sensor Right
-      RotateMotor(OUT_B, 60, -90); 
-    }
-    Release(distanceMutex);
-    Wait(50);
-  }
-}
 
 task main(){
   int close = 0;
@@ -459,9 +561,11 @@ task main(){
   int isObstacle = 0;
 
   moveFwdSyncAC(60, 10, 0);
+  mytimer.startTime = CurrentTick();
 
   while (!close){
-    acquireDistances(0);
+    acquireDistances(0);    
+    checkLine();
 
     if (mydist.d3 < NEAR){
       Off(OUT_AC);
@@ -526,12 +630,13 @@ task main(){
       else {
         TextOut(5, LCD_LINE4, "NOT OBSTACLE!!!");
         start getDistances;
+        close=1;
         mazeSolver();
       }
       mytimer.lineTime = CurrentTick();
     }
 
-    checkLine();
+    
 
     /*if(CurrentTick()-mytimer.lineTime>2000){
     acquireDistances(1);

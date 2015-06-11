@@ -443,9 +443,9 @@ void backward_kinematic(double *posAtt, double* theta)
 		sint3 = 0;
 	}
 
-	theta[2] = s_atan2(cost3,-sqrt(sint3));
+	theta[2] = s_atan2(cost3,sqrt(sint3));
 	if (theta[2] > 0){
-		s_atan2(cost3, sqrt(sint3));
+		theta[2] = s_atan2(cost3, -sqrt(sint3));
 	}
 	long double x = (a2 + a3*cos(theta[2]))*(-d5*cos(theta123) + cos(theta[0])*px + sin(theta[0])*py) + a3*sin(theta[2])*(-d1 + pz - d5*sin(theta123));
 	long double y = (a2 + a3*cos(theta[2]))*(-d1 + pz - d5*sin(theta123)) - a3*sin(theta[2])*(cos(theta[0])*px + sin(theta[0])*py - d5*cos(theta123));
