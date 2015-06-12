@@ -383,7 +383,7 @@ TCommPort* initialize_robot()
 	TCommPort *Cp;
 	Cp = new TCommPort();
 
-	if (!Cp->Abrir(L"\\\\.\\com6"))
+	if (!Cp->Abrir(L"\\\\.\\com10"))
 	{
 		printf("\n%s...", Cp->GetMensagem());
 		return NULL;
