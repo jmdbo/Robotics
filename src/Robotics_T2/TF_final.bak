@@ -8,6 +8,7 @@ int map[][];
 #define mapRes_wiidth 10
 
 #define NEAR 14
+#define NEAR_TURN 25
 //Wait times****************
 #define MOVE_TIME 500
 #define TURN_TIME 300
@@ -20,7 +21,6 @@ int Treshold_Line = 0;
 int Treshold_Line1 = 0;
 int Treshold_Victim = 0;
 int Treshold_Victim1 = 0;
-
 int victimCount = 0;
 
 #define sensorRange 8
@@ -54,9 +54,11 @@ struct timerTable{
 };
 
 mutex distanceMutex;
+mutex motorBMutex;
 
 
 bool lookingLeft=true;
+bool lookingRigt=false;
 flags myflags;
 distanceSensor mydist;
 lightSensor mylight;
@@ -167,6 +169,8 @@ sub mazeSolver(){
   Release(distanceMutex);
   OnFwdSync(OUT_AC, 20, compensan);
   while(isMaze){
+    mylight.sensor_in3 = Sensor(IN_3);
+    mylight.sensor_in4 = Sensor(IN_4);
     oldD1=d1;
     oldD2=d2;
     oldD3=d3;
@@ -183,6 +187,20 @@ sub mazeSolver(){
     TextOut(0, LCD_LINE4,"D3: ");
     NumOut(40, LCD_LINE5, d3);
     //Contorno de parede
+     if ((mylight.sensor_in3 > Treshold_Line - sensorRange && mylight.sensor_in3 < Treshold_Line + sensorRange) &&
+    (mylight.sensor_in4 > Treshold_Line1 - sensorRange && mylight.sensor_in4 < Treshold_Line1 + sensorRange)){
+      Off(OUT_AC);
+      TextOut(15, LCD_LINE1, "Line Victims:");
+      NumOut(40,LCD_LINE2,victimCount);
+      TextOut(15, LCD_LINE3, "Temperature Victims:");
+      NumOut(40,LCD_LINE4,0);
+      TextOut(15, LCD_LINE5, "Total Time in seconds:");
+      mytimer.startTime = CurrentTick()- mytimer.startTime;
+      long seconds = mytimer.startTime/1000;
+      NumOut(40, LCD_LINE6,mytimer.startTime);
+      break;
+
+    }
     if(d1>40 && d1<110){
 
       RotateMotorEx(OUT_AC, 20, 180, 0, true, true);
@@ -279,19 +297,6 @@ sub mazeSolver(){
         }
       } 
       lookingRigt = false;     
-    }
-    if ((mylight.sensor_in3 > Treshold_Line - sensorRange && mylight.sensor_in3 < Treshold_Line + sensorRange) &&
-    (mylight.sensor_in4 > Treshold_Line1 - sensorRange && mylight.sensor_in4 < Treshold_Line1 + sensorRange)){
-      Off(OUT_AC);
-      TextOut(15, LCD_LINE1, "Line Victims:");
-      NumOut(40,LCD_LINE2,victimCount);
-      TextOut(15, LCD_LINE3, "Temperature Victims:");
-      NumOut(40,LCD_LINE4,0);
-      TextOut(15, LCD_LINE5, "Total Time in seconds:");
-      mytimer.startTime = CurrentTick()- mytimer.startTime;
-      long seconds = mytimer.startTime/1000;
-      NumOut(40, LCD_LINE6,mytimer.startTime);
-
     }
   }
 }
@@ -481,6 +486,7 @@ sub checkLine(){
     //ignore 2 black lines
     //after some time stop if continue to detect black lines.
     //When black line is to big stop everything.
+    /*
     mytimer.blackTime = CurrentTick();
     do{
       if (CurrentTick() - mytimer.blackTime > 100)
@@ -493,7 +499,7 @@ sub checkLine(){
       mylight.sensor_in4 = Sensor(IN_4);
 
     } while ((mylight.sensor_in3 > Treshold_Line - sensorRange && mylight.sensor_in3 < Treshold_Line + sensorRange) && (mylight.sensor_in4 > Treshold_Line1 - sensorRange && mylight.sensor_in4 < Treshold_Line1 + sensorRange))
-
+      */
       moveFwdSyncAC(50, 90, 0);
     mytimer.lineTime = CurrentTick();
   }
@@ -523,7 +529,7 @@ sub checkLine(){
   }
   else if ((mylight.sensor_in3 > Treshold_Victim - sensorRange && mylight.sensor_in3 < Treshold_Victim + sensorRange) && (mylight.sensor_in4 > Treshold_Victim1 - sensorRange && mylight.sensor_in4 < Treshold_Victim1 + sensorRange)){
     //detect victim, stop and play sound
-    moveFwdSyncAC(40, 30, 0);
+    moveFwdSyncAC(40, 10, 0);
     mylight.sensor_in3 = Sensor(IN_3);
     mylight.sensor_in4 = Sensor(IN_4);
     if ((mylight.sensor_in3 > Treshold_Victim - sensorRange && mylight.sensor_in3 < Treshold_Victim + sensorRange) && (mylight.sensor_in4 > Treshold_Victim1 - sensorRange && mylight.sensor_in4 < Treshold_Victim1 + sensorRange)){
@@ -633,6 +639,7 @@ task main(){
         start getDistances;
         close=1;
         mazeSolver();
+        Wait(10000);
       }
       mytimer.lineTime = CurrentTick();
     }

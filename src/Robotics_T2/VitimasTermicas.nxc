@@ -1,6 +1,3 @@
-#define TPA81_PORT IN_1
-#define TPA81_ADDR 0xD0
-
 safecall void MyI2CRead(byte port, byte addr, byte reg, byte cnt, byte& outbuf[]) {
 byte cmdbuf[];      // The buffer of data that will be sent
 byte nByteReady;    // required for getting the status
@@ -15,17 +12,35 @@ byte nByteReady;    // required for getting the status
 }
 
 task main() {
-byte inbuf[10];
 
-  SetSensorLowspeed(TPA81_PORT);
+  byte buff[10];
+
+  SetSensorLowspeed(IN_1);
+  int i=1;
 
   while(true) {
-    MyI2CRead(TPA81_PORT, TPA81_ADDR, 0, 10, inbuf);
-    ClearScreen();
-    for (int i = 0; i < 8; i ++){
-      NumOut(0, LCD_LINE1 - (i*8), inbuf[i+2]);
-      
+  
+    i++;
+    MyI2CRead(IN_1, 0xD0, 0, 10, buff); //ler o buffer
+
+    RectOut(5,5,90,50);  //Desenha quadrado
+    Wait(200);
+    
+    TextOut(0,LCD_LINE1,"Temp: ", false);  //Apresenta Temp
+    NumOut(40,LCD_LINE1, buff[i]);
+
+    //int a = buff[i];
+    //PointOut(a, a);       //mete um ponto no ecrã
+
+    if(buff[i] > 35)
+    	TextOut(15, LCD_LINE7, "VITIMA !", false);
+      while(buff[i]>35);
+        
+    else{
+    TextOut(15, LCD_LINE7, "          ", false);
     }
+
+
     Wait(200);
   }
 }
