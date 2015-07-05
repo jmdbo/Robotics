@@ -1,0 +1,82 @@
+#SYMBOLS
+Index	Identifier	Type	Flag	Data	Size	RefCount
+0	__D0main	6	1	0	4	2
+1	__signed_stack_001main	6	1	4	4	4
+2	__Wait_7qG2_ms_7qG2_000_inline_main	5	1	8	4	2
+3	move_time	4	1	12	2	5
+4	__constVal200	4	0	14	2	1
+5	__constVal63	2	0	16	1	3
+6	__constVal96	2	0	17	1	3
+7	____initialize_global_data_return	1	1	18	1	3
+8	__constVal1	2	0	19	1	1
+9	__constVal32	2	0	20	1	9
+10	__OnRev_Tmp	2	1	21	1	2
+11	__constVal0	2	1	22	1	10
+12	__constVal75	2	0	23	1	1
+13	__constVal2	2	0	24	1	1
+14	__constVal3	2	0	25	1	3
+15	__OUT_AC	7	0	26	4	2
+16	__OUT_AC.__OUT_AC_type	1	0	0	1	0
+#SOURCES
+Clump	Line	PC	Source
+0	6	0	#line 6 "C:\dev\Robotics\src\Testes\Untitled1.nxc"
+0	7	0		subcall __initialize_global_data, ____initialize_global_data_return
+0	6	2	#line 6 "C:\dev\Robotics\src\Testes\Untitled1.nxc"
+0	7	2	#line 7 "C:\dev\Robotics\src\Testes\Untitled1.nxc"
+0	8	2		set move_time, 200
+0	7	5	#line 7 "C:\dev\Robotics\src\Testes\Untitled1.nxc"
+0	7	5	#line 7 "C:\dev\Robotics\src\Testes\Untitled1.nxc"
+0	7	5	#line 7 "C:\dev\Robotics\src\Testes\Untitled1.nxc"
+0	8	5		set __signed_stack_001main, 50
+0	8	8	#line 8 "C:\dev\Robotics\src\Testes\Untitled1.nxc"
+0	8	8	#line 8 "C:\dev\Robotics\src\Testes\Untitled1.nxc"
+0	9	8		sub __signed_stack_001main, __signed_stack_001main, __constVal1
+0	8	12	#line 8 "C:\dev\Robotics\src\Testes\Untitled1.nxc"
+0	9	12		brtst 0, __NXC_Label_607, __signed_stack_001main
+0	8	15	#line 8 "C:\dev\Robotics\src\Testes\Untitled1.nxc"
+0	9	15		set __D0main, 75
+0	9	18	#line 9 "C:\dev\Robotics\src\Testes\Untitled1.nxc"
+0	10	18	#pragma macro 7
+0	10	18		setout __OUT_AC, 2, __D0main, 1, __constVal3, 8, __constVal0, 6, __constVal32, 7, __constVal0, 5, __constVal0, 10, __constVal96, 11, __constVal32, 12, __constVal32, 0, __constVal63
+0	5812	41	#line 5812 "C:\dev\Robotics\src\Testes\Untitled1.nxc"
+0	9	41	#line 9 "C:\dev\Robotics\src\Testes\Untitled1.nxc"
+0	9	41	#line 9 "C:\dev\Robotics\src\Testes\Untitled1.nxc"
+0	10	41		mov __Wait_7qG2_ms_7qG2_000_inline_main, move_time
+0	9	43	#line 9 "C:\dev\Robotics\src\Testes\Untitled1.nxc"
+0	7921	43	#line 7921 "NXCDefs.h"
+0	7922	43		waitv move_time
+0	7921	45	#line 7921 "NXCDefs.h"
+0	10	45	#line 10 "C:\dev\Robotics\src\Testes\Untitled1.nxc"
+0	10	45	#line 10 "C:\dev\Robotics\src\Testes\Untitled1.nxc"
+0	11	45	#line 11 "C:\dev\Robotics\src\Testes\Untitled1.nxc"
+0	12	45	#pragma macro 10
+0	12	45		neg __OnRev_Tmp, __constVal75
+0	12	48		setout __constVal2, 2, __OnRev_Tmp, 1, __constVal3, 8, __constVal0, 6, __constVal32, 7, __constVal0, 5, __constVal0, 10, __constVal96, 11, __constVal32, 12, __constVal32, 0, __constVal63
+0	5833	71	#line 5833 "C:\dev\Robotics\src\Testes\Untitled1.nxc"
+0	11	71	#line 11 "C:\dev\Robotics\src\Testes\Untitled1.nxc"
+0	11	71	#line 11 "C:\dev\Robotics\src\Testes\Untitled1.nxc"
+0	12	71		set __Wait_7qG2_ms_7qG2_000_inline_main, 360
+0	11	74	#line 11 "C:\dev\Robotics\src\Testes\Untitled1.nxc"
+0	7921	74	#line 7921 "NXCDefs.h"
+0	7922	74		wait 360
+0	7921	76	#line 7921 "NXCDefs.h"
+0	12	76	#line 12 "C:\dev\Robotics\src\Testes\Untitled1.nxc"
+0	13	76	#line 13 "C:\dev\Robotics\src\Testes\Untitled1.nxc"
+0	13	76	#line 13 "C:\dev\Robotics\src\Testes\Untitled1.nxc"
+0	14	76		add move_time, move_time, __constVal200
+0	13	80	#line 13 "C:\dev\Robotics\src\Testes\Untitled1.nxc"
+0	14	80	#line 14 "C:\dev\Robotics\src\Testes\Untitled1.nxc"
+0	15	80		jmp __NXC_Label_606
+0	14	82	#line 14 "C:\dev\Robotics\src\Testes\Untitled1.nxc"
+0	15	82	#line 15 "C:\dev\Robotics\src\Testes\Untitled1.nxc"
+0	16	82	#pragma macro 7
+0	16	82		setout __OUT_AC, 2, __constVal0, 1, __constVal3, 8, __constVal0, 6, __constVal32, 7, __constVal0, 5, __constVal0, 10, __constVal96, 11, __constVal32, 12, __constVal32, 0, __constVal63
+0	5857	105	#line 5857 "C:\dev\Robotics\src\Testes\Untitled1.nxc"
+0	15	105	#line 15 "C:\dev\Robotics\src\Testes\Untitled1.nxc"
+0	16	105		exit -1, -1
+1	18	0	#line 18 "C:\dev\Robotics\src\Testes\Untitled1.nxc"
+1	19	0		subret ____initialize_global_data_return
+#CLUMPS
+Clump	Name	Offset	File
+0	main	0	C:\dev\Robotics\src\Testes\Untitled1.nxc
+1	__initialize_global_data	108	C:\dev\Robotics\src\Testes\Untitled1.nxc
