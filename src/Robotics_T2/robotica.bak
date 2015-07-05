@@ -1,71 +1,508 @@
+//Wait times****************
 #define MOVE_TIME 500
-#define TURN_TIME 200
+#define TURN_TIME 300
+#define WAIT_TIME 200
+//Sound*********************
+#define VOL 3
+//Distances*****************
+#define NEAR 20
+#define NEAR_SIDE 30
+//apagar ou comentar********
 #define THRESHOLD_BLACK 30
 #define THRESHOLD_WHITE 60
 #define THRESHOLD_GREY 40
-#define NEAR 25
+//Speed*********************
+#define SLOW_VEL 25
+#define MAX_AD_VEL 50
+//Sensor********************
+#define sensorRange 8
+//Semaphores****************
+mutex motorACmutex;
+mutex motorBmutex;
+mutex objectDetectedmutex;
+mutex tunelDetectedmutex;
 
-void obstacleDetected(){
-    int i=0,l1=0,l2=0;
-    
-    OnRev(OUT_C,15);
-    Wait(TURN_TIME);
-    OnFwd(OUT_C,50);
+int Treshold_Line=0;
+int Treshold_Line1=0;
+int Treshold_Victim=0;
+int Treshold_Victim1=0;
+long Time_Without_Line=0;
+long t0;
+int victimCount=0;
 
+int d=0, d1=NEAR, d2=NEAR_SIDE,d3=NEAR_SIDE, d4=0;
 
+/*****************************************************************
+sub init();
+sub acquireDistances(int i);
+sub avoid_obstacle_front(int v, int angle, int pangle,bool noStop);
+sub obstacleDetected();
+sub tunellDetected();
+sub obstacle_not_ended(int isRight);
+//*****************************************************************/
 
-    for(i=0; i<=25;i++){
-      Wait(20);
-      l1=Sensor(IN_2);
-      l2=Sensor(IN_2);
+//initialize sensors
+sub init(){
+     SetSensorLight(IN_3);
+     SetSensorLight(IN_4);
+     SetSensorLowspeed(IN_2);
+}
+
+//Acquire distances from front, back, left and right.
+sub acquireDistances(int i){
+   Acquire(motorBmutex);
+   //turn sensor Right.
+   d3= SensorUS(IN_2);
+   RotateMotor(OUT_B,100,-90);
+   d1 = SensorUS(IN_2);
+   //turn sensor Left
+   RotateMotor(OUT_B,100,180);
+   d2 = SensorUS(IN_2);
+   if(!i==0){
+     RotateMotor(OUT_B,100,90);
+     d4=SensorUS(IN_2);
+     RotateMotor(OUT_B,100,-90);
+   }
+   RotateMotor(OUT_B,100,-90);
+   d3= SensorUS(IN_2);
+   Release(motorBmutex);
+}
+
+//Avoid obstacle in front of robot.
+sub avoid_obstacle_front(int v, int angle, int pangle,bool noStop){
+     RotateMotorEx(OUT_AC,v,angle,pangle,true,noStop);
+     OnFwd(OUT_AC,50);
+     Wait(200);
+     RotateMotorEx(OUT_AC,v,angle,-pangle,true,noStop);
+}
+
+//obstacle not ended handler
+sub obstacle_not_ended(int isRight){
+    int obstacle=1;
+
+    Acquire(motorBmutex);
+
+    if(isRight==1){
+       RotateMotor(OUT_B,100,-45);
+       while(obstacle){
+          d2 = SensorUS(IN_2);
+          if(d2<NEAR){
+             OnFwd(OUT_AC,100);
+             Wait(250);
+             Off(OUT_AC);
+          }
+          else{
+             obstacle=0;
+          }
+       }
+       RotateMotor(OUT_B,100,45);
+    }else{
+       RotateMotor(OUT_B,100,45);
+       while(obstacle){
+          d1 = SensorUS(IN_2);
+          if(d1<NEAR){
+             OnFwd(OUT_AC,100);
+             Wait(250);
+             Off(OUT_AC);
+          }
+          else{
+             obstacle=0;
+          }
+       }
+       RotateMotor(OUT_B,100,-45);
     }
-    
-    if(l1==0 || l2==0){
-      OnRev(OUT_A,15);
-      Wait(TURN_TIME);
-      OnFwd(OUT_A,50);
-      
-      for(i=0;i<=25;i++){
-        Wait(20);
-      }
-      
-      OnRev(OUT_A,15);
-      Wait(TURN_TIME);
-      OnFwd(OUT_A,50);
-    }
-    
 
+    Release(motorBmutex);
+}
+
+//Obstacle handler
+sub obstacleDetected(){
+    Acquire(objectDetectedmutex);
+    TextOut(15,LCD_LINE2,"ObstacleDetected",true);
+    acquireDistances(0);
+
+    Acquire(motorACmutex);
+    OnRev(OUT_AC,100);
+    Wait(WAIT_TIME);
+    Off(OUT_AC);
+    Release(motorACmutex);
+    d=d1-d2;
+
+    if(d>=0){
+     NumOut(60,LCD_LINE3,d);
+     Acquire(motorACmutex);
+     RotateMotorEx(OUT_AC,MAX_AD_VEL,150,100,true,true);
+
+     if(Sensor(IN_3)<NEAR)
+       avoid_obstacle_front(MAX_AD_VEL, 150, -100,true);
+     obstacle_not_ended(0);
+
+     OnFwd(OUT_AC,50);
+     Wait(700);
+     RotateMotorEx(OUT_AC,MAX_AD_VEL,180,-100,true,true);
+
+     if(Sensor(IN_3)<NEAR)
+       avoid_obstacle_front(MAX_AD_VEL, 180, 100,true);
+     obstacle_not_ended(0);
+
+     OnFwd(OUT_AC,MAX_AD_VEL);
+     Wait(1500);
+     RotateMotorEx(OUT_AC,MAX_AD_VEL,200,-100,true,true);
+
+     if(Sensor(IN_3)<NEAR)
+       avoid_obstacle_front(MAX_AD_VEL, 200, 100,true);
+     obstacle_not_ended(0);
+
+     OnFwd(OUT_AC,50);
+     Wait(500);
+     RotateMotorEx(OUT_AC,MAX_AD_VEL,110,100,true,true);
+
+     }else
+     if(d<0){
+       NumOut(60,LCD_LINE3,d);
+       Acquire(motorACmutex);
+       RotateMotorEx(OUT_AC,MAX_AD_VEL,120,-100,true,true);
+
+       avoid_obstacle_front(MAX_AD_VEL, 120, 100,true);
+       obstacle_not_ended(1);
+
+       OnFwd(OUT_AC,50);
+       Wait(700);
+       RotateMotorEx(OUT_AC,MAX_AD_VEL,180,100,true,true);
+
+       if(Sensor(IN_3)<NEAR)
+       avoid_obstacle_front(MAX_AD_VEL, 180, -100,true);
+       obstacle_not_ended(1);
+
+       OnFwd(OUT_AC,50);
+       Wait(1500);
+       RotateMotorEx(OUT_AC,MAX_AD_VEL,200,100,true,true);
+
+       if(Sensor(IN_3)<NEAR)
+       avoid_obstacle_front(MAX_AD_VEL, 200, -100,true);
+       obstacle_not_ended(1);
+
+       OnFwd(OUT_AC,50);
+       Wait(500);
+       RotateMotorEx(OUT_AC,MAX_AD_VEL,110,-100,true,true);
+
+     }
+     OnFwd(OUT_AC,50);
+     Release(motorACmutex);
+     Release(objectDetectedmutex);
+}
+
+//wall handler
+sub wallDetected(){
+    TextOut(15,LCD_LINE2,"WallDetected",true);
+    int noLine=1;
+    Acquire(motorBmutex);
+    //turn sensor backwards
+    RotateMotor(OUT_B,100,-180);
+    d4= SensorUS(IN_2);
+    Release(motorBmutex);
+
+    if(d3<NEAR){
+       Acquire(motorBmutex);
+       Acquire(motorACmutex);
+
+       while(noLine){
+         OnRev(OUT_AC,25);
+         Wait(500);
+         d4= SensorUS(IN_2);
+         if((Sensor(IN_3)> Treshold_Line-sensorRange && Sensor(IN_3) < Treshold_Line+sensorRange)  || (Sensor(IN_4) > Treshold_Line1-sensorRange && Sensor(IN_4) < Treshold_Line1+sensorRange)){
+            noLine=0;
+         }else if(d4<NEAR){
+            Off(OUT_AC);
+            Wait(2000);
+         }
+       }
+       RotateMotor(OUT_B,100,180);
+       Release(motorACmutex);
+       Release(motorBmutex);
+    }
+}
+
+sub justnothing(){
+    while(true){
+       acquireDistances(0);
+       PlayToneEx(200,400,VOL,FALSE);
+       Wait(500);
+       PlayToneEx(210,400,VOL,FALSE);
+       PlayToneEx(220,400,VOL,FALSE);
+       Wait(500);
+       PlayToneEx(230,400,VOL,FALSE);
+       PlayToneEx(240,400,VOL,FALSE);
+       Wait(500);
+       PlayToneEx(250,400,VOL,FALSE);
+       PlayToneEx(260,400,VOL,FALSE);
+       Wait(500);
+       PlayToneEx(270,400,VOL,FALSE);
+    }
+}
+
+//Tunel handler
+sub tunellDetected(){
+    Acquire(tunelDetectedmutex);
+    int isTunell=1,noTunel=0;
+
+       TextOut(15,LCD_LINE2,"Tunel",true);
+
+       if(d1>=d2){
+          TextOut(15,LCD_LINE2,"Tunel 1",true);
+          OnFwd(OUT_AC,SLOW_VEL);
+
+          Acquire(motorBmutex);
+
+          while(isTunell){
+             //turn sensors**************
+             RotateMotor(OUT_B,100,90);
+             Wait(250);
+             d2= SensorUS(IN_2);
+
+             RotateMotor(OUT_B,100,-90);
+             Wait(250);
+             d3= SensorUS(IN_2);
+             Wait(250);
+             //**************************
+
+             if(d2<10){
+                RotateMotorEx(OUT_AC,SLOW_VEL,35,-100,true,false);
+                Wait(100);
+                OnFwd(OUT_AC,SLOW_VEL);
+             }else if(d2>15){
+                RotateMotorEx(OUT_AC,SLOW_VEL,35,100,true,false);
+                Wait(100);
+                OnFwd(OUT_AC,SLOW_VEL);
+             }
+
+             if(d3<NEAR){
+                Off(OUT_AC);
+                OnRev(OUT_AC,100);
+                Wait(150);
+                Off(OUT_AC);
+                isTunell=0;
+             }
+          }
+
+          Release(motorBmutex);
+
+          }else{
+             TextOut(15,LCD_LINE2,"Tunel 2",true);
+             OnFwd(OUT_AC,25);
+
+             Acquire(motorBmutex);
+
+             while(isTunell){
+                //Rotate Sensor US
+                RotateMotor(OUT_B,100,-90);
+                Wait(250);
+                d1 = SensorUS(IN_2);
+
+                RotateMotor(OUT_B,100,90);
+                Wait(250);
+                d3=SensorUS(IN_2);
+                //Rotate Sensor US
+                NumOut(60,LCD_LINE3,d1);
+                
+                if(d1<=10){
+                   RotateMotorEx(OUT_AC,SLOW_VEL,34,100,true,true);
+                   Wait(100);
+                   OnFwd(OUT_AC,25);
+                }else if(d1>15){
+                   RotateMotorEx(OUT_AC,SLOW_VEL,35,-100,true,true);
+                   Wait(100);
+                   OnFwd(OUT_AC,25);
+                }
+                if(d3<NEAR){
+                   Off(OUT_AC);
+                   OnRev(OUT_AC,100);
+                   Wait(150);
+                   Off(OUT_AC);
+                   isTunell=0;
+                }
+          }
+
+          Release(motorBmutex);
+
+          acquireDistances(0);
+          justnothing();
+
+    Release(tunelDetectedmutex);
 }
 
 task main()
 {
-     SetSensorLight(IN_3);
-     SetSensorLight(IN_4);
-     SetSensorLowspeed(IN_2);
-     
-     while(true)
-     {
-                while(SensorUS(IN_2)>NEAR){
-                
-                  OnFwd(OUT_AC,50);
-                
-                  if(Sensor(IN_3) > THRESHOLD_BLACK-10 && Sensor(IN_3) < THRESHOLD_BLACK+10  ){
-                    OnRev(OUT_A,15);
-                    Wait(TURN_TIME);
-                    OnFwd(OUT_A,50);
-                  }
-                
-                  if(Sensor(IN_4) > THRESHOLD_BLACK-10 && Sensor(IN_4) < THRESHOLD_BLACK+10 ){
-                    OnRev(OUT_C,15);
-                    Wait(TURN_TIME);
-                    OnFwd(OUT_C,50);
-                  }
+     init();
+     int sensor_in3=0;
+     int sensor_in4=0;
+     int calibrationDone=0;
+     int lineCount=0;
+     int close=0;
 
-                }
-                Off(OUT_AC);
-                
-                obstacleDetected();
+     //Sensor Claibration
+     while(calibrationDone<2){
 
+       d3=SensorUS(IN_2);
+       sensor_in3=Sensor(IN_3);
+       sensor_in4=Sensor(IN_4);
+
+       if(calibrationDone==0) {
+       TextOut(1,LCD_LINE1,"Calibrate Lines",true);
+          if(d3<NEAR){
+             PlayToneEx(300,400,VOL,FALSE);
+             Treshold_Line=sensor_in3;
+             Treshold_Line1=sensor_in4;
+
+             //apagar ou comentar***********
+             //Treshold_Line=THRESHOLD_BLACK;
+             //Treshold_Line1=THRESHOLD_BLACK;
+             //******************************
+
+             TextOut(5,LCD_LINE2,"Done",true);
+             NumOut(60,LCD_LINE3,Treshold_Line);
+             Wait(100);
+             calibrationDone++;
+          }
+       }
+
+       d3=SensorUS(IN_2);
+
+       if(calibrationDone==1) {
+          TextOut(1,LCD_LINE3,"Calibrate Victims",true);
+          if(d3<NEAR){
+             PlayToneEx(300,400,VOL,FALSE);
+             Treshold_Victim=sensor_in3;
+             Treshold_Victim1=sensor_in3;
+
+             //Apagar ou comentar************
+             //Treshold_Victim1=THRESHOLD_GREY;
+             //Treshold_Victim=THRESHOLD_GREY;
+             //******************************
+
+             TextOut(5,LCD_LINE2,"Done",true);
+             NumOut(60,LCD_LINE3,Treshold_Victim);
+             Wait(100);
+             calibrationDone++;
+          }
+       }
 
      }
+
+     do{
+     d3=SensorUS(IN_2);
+     }
+     while(d3>=NEAR)
+
+     PlayToneEx(262,400,VOL,FALSE);
+     Wait(500);
+     PlayToneEx(250,400,VOL,FALSE);
+
+     Acquire(motorBmutex);
+     OnFwd(OUT_AC,MAX_AD_VEL);
+     Release(motorBmutex);
+
+     Time_Without_Line=CurrentTick();
+     while(true)
+     {
+       TextOut(15,LCD_LINE2,"MAIN",true);
+       d3= SensorUS(IN_2);
+       sensor_in3=Sensor(IN_3);
+       sensor_in4=Sensor(IN_4);
+
+       if((sensor_in3 > Treshold_Line-sensorRange && sensor_in3 < Treshold_Line+sensorRange)  && (sensor_in4 > Treshold_Line1-sensorRange && sensor_in4 < Treshold_Line1+sensorRange)){
+         //ignore 2 black lines
+         //after some time stop if continue to detect black lines.
+
+         TextOut(5,LCD_LINE2,"black lines",true);
+         
+         sensor_in3=100;
+         sensor_in4=100;
+
+         Acquire(motorACmutex);
+         OnFwd(OUT_AC,MAX_AD_VEL);
+         Release(motorACmutex);
+
+         //When black line is to big stop everything.
+         lineCount++;
+         if(lineCount>5)
+         {
+           //rever colocar timer em vez de contar preto
+           Off(OUT_AC);
+           close=1;
+         }
+         Time_Without_Line=CurrentTick();
+       }else if(sensor_in3 > Treshold_Line-sensorRange && sensor_in3 < Treshold_Line+sensorRange ){
+         //turn left
+         
+         TextOut(5,LCD_LINE2,"left",true);
+         
+         Acquire(motorACmutex);
+         OnRev(OUT_A,25);
+         Wait(TURN_TIME);
+         OnFwd(OUT_A,MAX_AD_VEL);
+         Release(motorACmutex);
+         Time_Without_Line=CurrentTick();
+       }else if(sensor_in4 > Treshold_Line1-sensorRange && sensor_in4 < Treshold_Line1+sensorRange ){
+         //turn right
+         
+         TextOut(5,LCD_LINE2,"right",true);
+         
+         Acquire(motorACmutex);
+         OnRev(OUT_C,25);
+         Wait(TURN_TIME);
+         OnFwd(OUT_C,MAX_AD_VEL);
+         Release(motorACmutex);
+         Time_Without_Line=CurrentTick();
+       }
+
+       if((sensor_in3 > Treshold_Victim-sensorRange && sensor_in3 < Treshold_Victim+sensorRange)  && (sensor_in4 > Treshold_Victim1-sensorRange && sensor_in4 < Treshold_Victim1+sensorRange)){
+          //detect victim, stop and play sound
+          
+          TextOut(5,LCD_LINE2,"victim",true);
+          
+          if(victimCount==0){
+            PlayToneEx(180,400,3,FALSE);
+            t0=CurrentTick();
+            Time_Without_Line=t0;
+            victimCount++;
+          }
+          else if(CurrentTick()-t0>80){
+            Acquire(motorACmutex);
+            Off(OUT_AC);
+            Wait(900);
+            Release(motorACmutex);
+            victimCount=0;
+          }
+          
+          Acquire(motorACmutex);
+          OnFwd(OUT_AC,MAX_AD_VEL);
+          Release(motorACmutex);
+       } else{
+              Acquire(motorACmutex);
+              OnFwd(OUT_AC,MAX_AD_VEL);
+              Release(motorACmutex);
+       }
+
+       if(d3 < NEAR){
+       
+         TextOut(5,LCD_LINE2,"obstacle",true);
+         
+         Time_Without_Line=CurrentTick();
+         Acquire(motorACmutex);
+         Off(OUT_AC);
+         Release(motorACmutex);
+
+         obstacleDetected();
+       }
+       if(CurrentTick()-Time_Without_Line>2000){
+         Time_Without_Line=CurrentTick();
+         
+         TextOut(5,LCD_LINE2,"timer",true);
+
+         acquireDistances(0);
+         if(d1<NEAR_SIDE || d2<NEAR_SIDE)
+           tunellDetected();
+       }
+  }
 }

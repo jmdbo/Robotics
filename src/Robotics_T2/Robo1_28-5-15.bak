@@ -1,0 +1,529 @@
+//Lines TresHold
+#define THRESHOLD_BLACK 30
+#define THRESHOLD_WHITE 60
+#define THRESHOLD_GREY 40
+//Map
+int map[][];
+#define mapRes_length 10
+#define mapRes_wiidth 10
+
+#define NEAR 14
+//Wait times****************
+#define MOVE_TIME 500
+#define TURN_TIME 300
+#define WAIT_TIME 200
+//Speed*********************
+#define SLOW_VEL 25
+#define MAX_AD_VEL 50
+
+int Treshold_Line = 0;
+int Treshold_Line1 = 0;
+int Treshold_Victim = 0;
+int Treshold_Victim1 = 0;
+
+#define sensorRange 8
+
+//TODO: ID Number Victims and Type
+//TODO: Route time
+//TODO: Victims Sound
+
+struct flags
+{
+  bool _stopFlag;
+};
+
+struct distanceSensor{
+  int d1; //Esquerda
+  int d2; //Direita
+  int d3; //Frente
+  int d4; //Tras
+};
+
+struct lightSensor{
+  int sensor_in3;
+  int sensor_in4;
+  int last_activated;
+};
+
+struct timerTable{
+  long lineTime;
+  long blackTime;
+};
+
+mutex distanceMutex;
+
+
+bool lookingLeft=true;
+flags myflags;
+distanceSensor mydist;
+lightSensor mylight;
+timerTable mytimer;
+
+sub init(){
+  SetSensorLight(IN_3);
+  SetSensorLight(IN_4);
+  SetSensorLowspeed(IN_2);
+
+}
+
+sub calibration(){
+  int calibrationDone = 0;
+
+  while (calibrationDone < 2){
+
+    mydist.d3 = SensorUS(IN_2);
+    mylight.sensor_in3 = Sensor(IN_3);
+    mylight.sensor_in4 = Sensor(IN_4);
+
+    if (calibrationDone == 0) {
+      TextOut(1, LCD_LINE1, "Calibrate Lines", true);
+      if (mydist.d3 < NEAR){
+        PlayToneEx(300, 400, 5, FALSE);
+        Treshold_Line = mylight.sensor_in3;
+        Treshold_Line1 = mylight.sensor_in4;
+
+        //apagar ou comentar***********
+        //Treshold_Line=THRESHOLD_BLACK;
+        //Treshold_Line1=THRESHOLD_BLACK;
+        //******************************
+
+        TextOut(5, LCD_LINE2, "Done", true);
+        NumOut(60, LCD_LINE3, Treshold_Line);
+        NumOut(60, LCD_LINE4, Treshold_Line1);
+        Wait(2000);
+        calibrationDone++;
+      }
+    }
+
+    mydist.d3 = SensorUS(IN_2);
+
+    if (calibrationDone == 1) {
+      TextOut(1, LCD_LINE3, "Calibrate Victims", true);
+      if (mydist.d3 < NEAR){
+        PlayToneEx(300, 400, 5, FALSE);
+        Treshold_Victim = mylight.sensor_in3;
+        Treshold_Victim1 = mylight.sensor_in3;
+
+        //Apagar ou comentar************
+        //Treshold_Victim1=THRESHOLD_GREY;
+        //Treshold_Victim=THRESHOLD_GREY;
+        //******************************
+
+        TextOut(5, LCD_LINE2, "Done", true);
+        NumOut(60, LCD_LINE3, Treshold_Victim);
+        NumOut(60, LCD_LINE4, Treshold_Victim1);
+        Wait(100);
+        calibrationDone++;
+      }
+    }
+
+  }
+
+
+
+  do{
+    mydist.d3 = SensorUS(IN_2);
+  } while (mydist.d3 >= NEAR)
+
+    PlayToneEx(262, 400, 3, FALSE);
+  Wait(500);
+  PlayToneEx(250, 400, 3, FALSE);
+}
+
+sub acquireDistances(int i){
+  Acquire(distanceMutex);
+  mydist.d3 = SensorUS(IN_2);
+  if (i != 0){
+    //turn sensor Left.
+    RotateMotor(OUT_B, 100, -90);
+    mydist.d1 = SensorUS(IN_2);
+    //turn sensor Right
+    RotateMotor(OUT_B, 100, 180);
+    mydist.d2 = SensorUS(IN_2);
+    RotateMotor(OUT_B, 100, -90);
+  }
+  Release(distanceMutex);
+  
+}
+
+
+sub mazeSolver(){
+  int maxDist = 30;
+  int minDist = 15;
+  int compensan=0;
+  int isMaze=1;
+  int d1;
+  int d2;
+  int d3;
+  while(isMaze){
+    Acquire(distanceMutex);
+    d1 = mydist.d1;
+    d2 = mydist.d2;
+    d3 = mydist.d3;
+    Release(distanceMutex);
+    ClearScreen();
+    TextOut(15, LCD_LINE2, "Solving maze...");
+    NumOut(40, LCD_LINE3, compensan);
+
+    if(d1<NEAR){
+      if(compensan <50){
+      compensan= compensan +1;
+      }
+      
+      RotateMotorEx(OUT_AC, MAX_AD_VEL, 90, compensan, true, false);
+      OnFwdSync(OUT_AC, 30, compensan);
+    }
+    else if(d1>maxDist){
+      if(compensan > -50){
+      compensan = compensan - 1;
+      }
+      RotateMotorEx(OUT_AC, MAX_AD_VEL, 90, compensan, true, false);
+      OnFwdSync(OUT_AC, 30, compensan);
+    }
+    if(d3<NEAR){
+      Off(OUT_AC);
+    }
+  }
+}
+
+//Obstacle handler
+sub obstacleDetected(int d){
+  TextOut(15, LCD_LINE2, "ObstacleDetected", true);
+  /*
+  OnRev(OUT_AC, 50);
+  Wait(WAIT_TIME);
+  Off(OUT_AC);*/
+
+  //int d = mydist.d1 - mydist.d2;
+
+  if (d < 0){
+    NumOut(60, LCD_LINE3, d);
+    //RotateMotorEx(OUT_AC, MAX_AD_VEL, 150, 100, true, true);
+
+    OnFwdSync(OUT_AC, MAX_AD_VEL, 0);
+    Wait(1000);
+    RotateMotorEx(OUT_AC, MAX_AD_VEL, 180, -100, true, true);
+
+    OnFwdSync(OUT_AC, MAX_AD_VEL, 0);
+    Wait(2200);
+    RotateMotorEx(OUT_AC, MAX_AD_VEL, 180, -100, true, true);
+
+    OnFwdSync(OUT_AC, MAX_AD_VEL, 0);
+    Wait(500);
+    RotateMotorEx(OUT_AC, MAX_AD_VEL, 50, 100, true, true);
+
+  }
+  else{
+    NumOut(60, LCD_LINE3, d);
+    //RotateMotorEx(OUT_AC, MAX_AD_VEL, 120, -100, true, true);
+
+    OnFwdSync(OUT_AC, MAX_AD_VEL, 0);
+    Wait(1000);
+    RotateMotorEx(OUT_AC, MAX_AD_VEL, 180, 100, true, true);
+
+    OnFwdSync(OUT_AC, MAX_AD_VEL, 0);
+    Wait(2200);
+    RotateMotorEx(OUT_AC, MAX_AD_VEL, 180, 100, true, true);
+
+    OnFwdSync(OUT_AC, MAX_AD_VEL, 0);
+    Wait(500);
+    RotateMotorEx(OUT_AC, MAX_AD_VEL, 50, -100, true, true);
+
+    }
+  OnFwdSync(OUT_AC, MAX_AD_VEL, 0);
+}
+
+sub tunellDetected(){
+  int isTunell = 1;
+
+  TextOut(15, LCD_LINE2, "Tunel");
+
+  if (mydist.d1 >= mydist.d2){
+    TextOut(15, LCD_LINE2, "Tunel 1");
+    //OnFwd(OUT_AC,SLOW_VEL);
+    OnFwdSync(OUT_AC, SLOW_VEL, 0);
+
+    while (isTunell){
+      //turn sensors**************
+      RotateMotor(OUT_B, 100, 90);
+      Wait(10);
+      mydist.d2 = SensorUS(IN_2);
+
+      RotateMotor(OUT_B, 100, -90);
+      Wait(10);
+      mydist.d3 = SensorUS(IN_2);
+      //**************************
+
+      if (mydist.d2 < 10){
+        RotateMotorEx(OUT_AC, SLOW_VEL, 35, -100, true, false);
+        OnFwdSync(OUT_AC, SLOW_VEL, 0);
+      }
+      else if (mydist.d2 > 15){
+        RotateMotorEx(OUT_AC, SLOW_VEL, 35, 100, true, false);
+        OnFwdSync(OUT_AC, SLOW_VEL, 0);
+      }
+
+      if (mydist.d3 < NEAR){
+        Off(OUT_AC);
+        OnRevSync(OUT_AC, MAX_AD_VEL, 0);
+        Wait(150);
+        Off(OUT_AC);
+        isTunell = 0;
+      }
+    }
+
+
+  }
+  else{
+    TextOut(15, LCD_LINE2, "Tunel 2");
+    OnFwdSync(OUT_AC, SLOW_VEL, 0);
+
+    while (isTunell){
+      //Rotate Sensor US****************
+      RotateMotor(OUT_B, 100, -90);
+      Wait(10);
+      mydist.d1 = SensorUS(IN_2);
+
+      RotateMotor(OUT_B, 100, 90);
+      Wait(10);
+      mydist.d3 = SensorUS(IN_2);
+      //********************************
+      NumOut(60, LCD_LINE3, mydist.d1);
+
+      if (mydist.d1 <= 10){
+        RotateMotorEx(OUT_AC, SLOW_VEL, 34, 100, true, true);
+        OnFwdSync(OUT_AC, SLOW_VEL, 0);
+      }
+      else if (mydist.d1 > 15){
+        RotateMotorEx(OUT_AC, SLOW_VEL, 35, -100, true, true);
+        OnFwdSync(OUT_AC, SLOW_VEL, 0);
+      }
+      if (mydist.d3 < NEAR){
+        Off(OUT_AC);
+        OnRevSync(OUT_AC, MAX_AD_VEL, 0);
+        Wait(150);
+        Off(OUT_AC);
+        isTunell = 0;
+      }
+    }
+  }
+  acquireDistances(0);
+  int d = mydist.d1 - mydist.d2;
+
+  if (d >= 0){
+    RotateMotorEx(OUT_AC, MAX_AD_VEL, 180, 100, true, true);
+  }
+  else if (d < 0){
+    RotateMotorEx(OUT_AC, MAX_AD_VEL, 180, -100, true, true);
+  }
+}
+
+sub moveFwdSyncAC(int speed, int angle, int turn){
+  if (myflags._stopFlag == true)
+    speed = 0;
+  RotateMotorEx(OUT_AC, speed, angle, turn, true, true);
+}
+
+
+sub checkLine(){
+  int lineCount = 0;
+  int victimCount = 0;
+
+  mylight.sensor_in3 = Sensor(IN_3);
+  mylight.sensor_in4 = Sensor(IN_4);
+
+  if ((mylight.sensor_in3 > Treshold_Line - sensorRange && mylight.sensor_in3 < Treshold_Line + sensorRange) &&
+    (mylight.sensor_in4 > Treshold_Line1 - sensorRange && mylight.sensor_in4 < Treshold_Line1 + sensorRange)){
+    //ignore 2 black lines
+    //after some time stop if continue to detect black lines.
+    //When black line is to big stop everything.
+    mytimer.blackTime = CurrentTick();
+    do{
+      if (CurrentTick() - mytimer.blackTime > 100)
+      {
+        //rever colocar timer em vez de contar preto
+        Off(OUT_AC);
+        return;
+      }
+      mylight.sensor_in3 = Sensor(IN_3);
+      mylight.sensor_in4 = Sensor(IN_4);
+
+    } while ((mylight.sensor_in3 > Treshold_Line - sensorRange && mylight.sensor_in3 < Treshold_Line + sensorRange) && (mylight.sensor_in4 > Treshold_Line1 - sensorRange && mylight.sensor_in4 < Treshold_Line1 + sensorRange))
+
+      moveFwdSyncAC(50, 90, 0);
+    mytimer.lineTime = CurrentTick();
+  }
+  else if (mylight.sensor_in3 > Treshold_Line - sensorRange && mylight.sensor_in3 < Treshold_Line + sensorRange){
+    //Turn Left
+    OnFwdSync(OUT_AC, 60, 100);
+    while (mylight.sensor_in3 > Treshold_Line - sensorRange && mylight.sensor_in3 < Treshold_Line + sensorRange && (mylight.sensor_in4 < Treshold_Line1 - sensorRange || mylight.sensor_in4 > Treshold_Line1 + sensorRange) ){
+      TextOut(5, LCD_LINE2, "Turning Left", true);
+      mylight.sensor_in3 = Sensor(IN_3);
+      OnFwdSync(OUT_AC, 60, 100);
+    }
+    //moveFwdSyncAC(60,60,100);
+    mylight.last_activated = 3;
+    mytimer.lineTime = CurrentTick();
+  }
+  else if (mylight.sensor_in4 > Treshold_Line1 - sensorRange && mylight.sensor_in4 < Treshold_Line1 + sensorRange){
+    //turn right
+    OnFwdSync(OUT_AC, 60, -100);
+    //  moveFwdSyncAC(60,60,-100);
+    while (mylight.sensor_in4 > Treshold_Line1 - sensorRange && mylight.sensor_in4 < Treshold_Line1 + sensorRange && (mylight.sensor_in3 < Treshold_Line - sensorRange || mylight.sensor_in3 > Treshold_Line + sensorRange)){
+      TextOut(5, LCD_LINE2, "Turning Right", true);
+      mylight.sensor_in4 = Sensor(IN_4);
+      OnFwdSync(OUT_AC, 60, -100);
+    }
+    mylight.last_activated = 4;
+    mytimer.lineTime = CurrentTick();
+  }
+  else if ((mylight.sensor_in3 > Treshold_Victim - sensorRange && mylight.sensor_in3 < Treshold_Victim + sensorRange) && (mylight.sensor_in4 > Treshold_Victim1 - sensorRange && mylight.sensor_in4 < Treshold_Victim1 + sensorRange)){
+    //detect victim, stop and play sound
+    moveFwdSyncAC(40, 30, 0);
+    mylight.sensor_in3 = Sensor(IN_3);
+    mylight.sensor_in4 = Sensor(IN_4);
+    if ((mylight.sensor_in3 > Treshold_Victim - sensorRange && mylight.sensor_in3 < Treshold_Victim + sensorRange) && (mylight.sensor_in4 > Treshold_Victim1 - sensorRange && mylight.sensor_in4 < Treshold_Victim1 + sensorRange)){
+
+      if (victimCount == 0){
+        PlayToneEx(180, 400, 3, FALSE);
+        PlayToneEx(180, 400, 3, FALSE);
+        mytimer.lineTime = CurrentTick();
+        Off(OUT_AC);
+        Wait(500);
+        victimCount++;
+      }
+      else if (CurrentTick() - mytimer.lineTime > 80){
+        Off(OUT_AC);
+        Wait(900);
+        victimCount = 0;
+      }
+
+    }
+
+    moveFwdSyncAC(40, 90, 0);
+  }
+  else{
+    OnFwdSync(OUT_AC, 40, 0);
+    TextOut(5, LCD_LINE2, "Moving forward");
+  }
+}
+
+task getDistances(){
+  while(true){
+    Acquire(distanceMutex);
+    if(lookingLeft){
+      mydist.d3 = SensorUS(IN_2);
+      Release(distanceMutex);
+
+      //turn sensor Left.
+      RotateMotor(OUT_B, 60, -90);
+      Acquire(distanceMutex);
+      mydist.d1 = SensorUS(IN_2);
+      Release(distanceMutex);
+      //turn sensor Right
+      RotateMotor(OUT_B, 60, 90);
+    }else{
+      mydist.d3 = SensorUS(IN_2);
+      Release(distanceMutex);
+      //turn sensor Left.
+      RotateMotor(OUT_B, 60, 90);
+      Acquire(distanceMutex);
+      mydist.d2 = SensorUS(IN_2);
+      Release(distanceMutex);
+      //turn sensor Right
+      RotateMotor(OUT_B, 60, -90); 
+    }
+    Release(distanceMutex);
+    Wait(50);
+  }
+}
+
+task main(){
+  int close = 0;
+  int loopcount = 0;
+  int i;
+  init();
+  calibration();
+  int isObstacle = 0;
+
+  moveFwdSyncAC(60, 10, 0);
+
+  while (!close){
+    acquireDistances(0);
+
+    if (mydist.d3 < NEAR){
+      Off(OUT_AC);
+      Wait(10);
+
+      acquireDistances(1);
+      int d = mydist.d1 - mydist.d2;
+
+      OnRev(OUT_AC, 50);
+      Wait(WAIT_TIME);
+      Off(OUT_AC);
+
+      if (d<0){
+        TextOut(5, LCD_LINE5, "d<0");
+        TextOut(5, LCD_LINE8, "d<0");
+        TextOut(5, LCD_LINE4, "NOT DETECTED");
+        isObstacle = 0;
+
+        for (i = 0; i<9; i++){
+          moveFwdSyncAC(40, 20, 100);
+          mylight.sensor_in3 = Sensor(IN_3);
+          mylight.sensor_in4 = Sensor(IN_4);
+          NumOut(20, LCD_LINE6, mylight.sensor_in3);
+          NumOut(20, LCD_LINE7, mylight.sensor_in4);
+          if ((mylight.sensor_in3 > Treshold_Line - sensorRange && mylight.sensor_in3 < Treshold_Line + sensorRange) || (mylight.sensor_in4 > Treshold_Line1 - sensorRange && mylight.sensor_in4 < Treshold_Line1 + sensorRange)){
+            if (!isObstacle)
+              isObstacle = 1;
+            TextOut(5, LCD_LINE4, "IS OBSTACLE!!!");
+          }
+        }
+        if (!isObstacle)
+          TextOut(5, LCD_LINE4, "NOT OBSTACLE!!!");
+        Off(OUT_AC);
+        Wait(500);
+      }
+      else{
+
+        TextOut(5, LCD_LINE5, "d>0");
+        TextOut(5, LCD_LINE8, "d>0");
+        TextOut(5, LCD_LINE4, "NOT DETECTED");
+
+        for (i = 0; i<9; i++){
+          moveFwdSyncAC(40, 20, -100);
+          mylight.sensor_in3 = Sensor(IN_3);
+          mylight.sensor_in4 = Sensor(IN_4);
+          NumOut(20, LCD_LINE6, mylight.sensor_in3);
+          NumOut(20, LCD_LINE7, mylight.sensor_in4);
+          if ((mylight.sensor_in3 > Treshold_Line - sensorRange && mylight.sensor_in3 < Treshold_Line + sensorRange) || (mylight.sensor_in4 > Treshold_Line1 - sensorRange && mylight.sensor_in4 < Treshold_Line1 + sensorRange)){
+            if (!isObstacle)
+              isObstacle = 1;
+            TextOut(5, LCD_LINE4, "IS OBSTACLE!!!");
+          }
+        }
+
+        Off(OUT_AC);
+        Wait(500);
+      }
+      if (isObstacle){
+        obstacleDetected(d);
+
+      }
+      else {
+        TextOut(5, LCD_LINE4, "NOT OBSTACLE!!!");
+        start getDistances;
+        mazeSolver();
+      }
+      mytimer.lineTime = CurrentTick();
+    }
+
+    checkLine();
+
+    /*if(CurrentTick()-mytimer.lineTime>2000){
+    acquireDistances(1);
+    }*/
+
+  }
+}

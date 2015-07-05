@@ -1,0 +1,12 @@
+task main(){
+	RotateMotorEx(OUT_AC, 20, 180, 0, true, true);
+      lookingRigt = true;
+      Wait(2000);
+      Acquire(distanceMutex);
+      d1 = mydist.d1;
+      d2 = mydist.d2;
+      d3 = mydist.d3;
+      Release(distanceMutex);
+      RotateMotorEx(OUT_AC, 20, 135,-100, true, true);
+      RotateMotorEx(OUT_AC, 20, 360, 0, true, true);
+}
